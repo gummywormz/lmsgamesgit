@@ -1,0 +1,305 @@
+//crystal man scavenger hunt
+
+actor CrystalDropperCrystalMarker : Inventory
+{
+inventory.amount 1
+inventory.maxamount 1
+}
+
+actor CrystalDropperCrystalScavenge : CustomInventory
+{
++INVENTORY.AUTOACTIVATE
++FLOORHUGGER
+inventory.respawntics 35
+inventory.amount 1
+inventory.maxamount 1
+inventory.pickupmessage "You found a Crystal Dropper Crystal!"
+Inventory.PickupSound "item/1up"
+scale 2.0
++COUNTITEM
+states
+{
+Spawn:
+CRFL A 1
+LOOP
+Pickup:
+TNT1 A 1
+TNT1 A 1 A_JumpIfInventory("CrystalDropperCrystalMarker",1,"Fale")
+TNT1 A 1 A_GiveInventory("CrystalDropperCrystalMarker",1)
+TNT1 A 1 A_GiveInventory("ScavengeItemGet",1)
+stop
+Fale:
+CMHD A 1
+fail
+}
+}
+
+actor CrystalDropperCrystalPersistant : RandomSpawner {
+Dropitem "CrystalDropperCrystalScavenge" 255
+}
+
+actor EyeDropsMarker : Inventory
+{
+inventory.amount 1
+inventory.maxamount 1
+}
+
+actor EyeDropsScavenge : CustomInventory
+{
++INVENTORY.AUTOACTIVATE
++FLOORHUGGER
+inventory.respawntics 35
+inventory.amount 1
+inventory.maxamount 1
+inventory.pickupmessage "You found Eye Drops! Now you have crystal clear eyes!"
+Inventory.PickupSound "item/1up"
+scale 2.0
++COUNTITEM
+states
+{
+Spawn:
+CSCV A 1
+LOOP
+Pickup:
+TNT1 A 1
+TNT1 A 1 A_JumpIfInventory("EyeDropsMarker",1,"Fale")
+TNT1 A 1 A_GiveInventory("EyeDropsMarker",1)
+TNT1 A 1 A_GiveInventory("ScavengeItemGet",1)
+stop
+Fale:
+CSCV A 1
+fail
+}
+}
+
+actor EyeDropsPersistant : RandomSpawner {
+Dropitem "EyeDropsScavenge" 255
+}
+
+actor UpsideDownWTankMarker : Inventory
+{
+inventory.amount 1
+inventory.maxamount 1
+}
+
+actor UpsideDownWTankScavenge : CustomInventory
+{
++INVENTORY.AUTOACTIVATE
++CEILINGHUGGER
+inventory.respawntics 35
+inventory.amount 1
+inventory.maxamount 1
+inventory.pickupmessage "You found an M-Tank! No wait it was an upside down W-Tank..."
+Inventory.PickupSound "item/1up"
+scale 2.0
++COUNTITEM
+states
+{
+Spawn:
+EBAL EG 6
+LOOP
+Pickup:
+TNT1 A 1
+TNT1 A 1 A_JumpIfInventory("UpsideDownWTankMarker",1,"Fale")
+TNT1 A 1 A_GiveInventory("UpsideDownWTankMarker",1)
+TNT1 A 1 A_GiveInventory("ScavengeItemGet",1)
+stop
+Fale:
+CMHD A 1
+fail
+}
+}
+
+actor UpsideDownWTankPersistant : RandomSpawner {
+Dropitem "UpsideDownWTankScavenge" 255
+}
+
+actor SMB2CrystalMarker : Inventory
+{
+inventory.amount 1
+inventory.maxamount 1
+}
+
+actor SMB2CrystalScavenge : CustomInventory
+{
++INVENTORY.AUTOACTIVATE
++FLOORHUGGER
+inventory.respawntics 35
+inventory.amount 1
+inventory.maxamount 1
+inventory.pickupmessage "You found the Crystal!"
+Inventory.PickupSound "item/1up"
+scale 2.0
++COUNTITEM
+states
+{
+Spawn:
+CSCV FGHI 3
+LOOP
+Pickup:
+TNT1 A 1
+TNT1 A 1 A_JumpIfInventory("SMB2CrystalMarker",1,"Fale")
+TNT1 A 1 A_GiveInventory("SMB2CrystalMarker",1)
+TNT1 A 1 A_GiveInventory("ScavengeItemGet",1)
+stop
+Fale:
+CSCV I 1
+fail
+}
+}
+
+actor SMB2CrystalPersistant : RandomSpawner {
+Dropitem "SMB2CrystalScavenge" 255
+}
+
+actor ContactLensMarker : Inventory
+{
+inventory.amount 1
+inventory.maxamount 1
+}
+
+actor ContactLensScavenge : CustomInventory
+{
++INVENTORY.AUTOACTIVATE
++FLOORHUGGER
+inventory.respawntics 35
+inventory.amount 1
+inventory.maxamount 1
+inventory.pickupmessage "You stepped on a contact lens..."
+Inventory.PickupSound "item/1up"
+scale 2.0
++COUNTITEM
+states
+{
+Spawn:
+CSCV B 1
+LOOP
+Pickup:
+TNT1 A 1
+TNT1 A 1 A_JumpIfInventory("ContactLensMarker",1,"Fale")
+TNT1 A 1 A_GiveInventory("ContactLensMarker",1)
+TNT1 A 1 A_GiveInventory("ScavengeItemGet",1)
+stop
+Fale:
+CSCV B 1
+fail
+}
+}
+
+actor ContactLensPersistant : RandomSpawner {
+Dropitem "ContactLensScavenge" 255
+}
+
+actor CrystalMansLeftFootMarker : Inventory
+{
+inventory.amount 1
+inventory.maxamount 1
+}
+
+actor CrystalMansLeftFootScavenge : CustomInventory
+{
++INVENTORY.AUTOACTIVATE
++FLOORHUGGER
+inventory.respawntics 35
+inventory.amount 1
+inventory.maxamount 1
+inventory.pickupmessage "You found Crystal Man's Left Foot..."
+Inventory.PickupSound "item/1up"
+scale 2.0
++COUNTITEM
+states
+{
+Spawn:
+CSCV C 1
+LOOP
+Pickup:
+TNT1 A 1
+TNT1 A 1 A_JumpIfInventory("CrystalMansLeftFootMarker",1,"Fale")
+TNT1 A 1 A_GiveInventory("CrystalMansLeftFootMarker",1)
+TNT1 A 1 A_GiveInventory("ScavengeItemGet",1)
+stop
+Fale:
+CSCV C 1
+fail
+}
+}
+
+actor CrystalMansLeftFootPersistant : RandomSpawner {
+Dropitem "CrystalMansLeftFootScavenge" 255
+}
+
+actor CrystalSkullMarker : Inventory
+{
+inventory.amount 1
+inventory.maxamount 1
+}
+
+actor CrystalSkullScavenge : CustomInventory
+{
++INVENTORY.AUTOACTIVATE
++FLOORHUGGER
+inventory.respawntics 35
+inventory.amount 1
+inventory.maxamount 1
+inventory.pickupmessage "You found the Crystal Skull!"
+Inventory.PickupSound "item/1up"
+scale 2.0
++COUNTITEM
+states
+{
+Spawn:
+CSCV D 1
+LOOP
+Pickup:
+TNT1 A 1
+TNT1 A 1 A_JumpIfInventory("CrystalSkullMarker",1,"Fale")
+TNT1 A 1 A_GiveInventory("CrystalSkullMarker",1)
+TNT1 A 1 A_GiveInventory("ScavengeItemGet",1)
+stop
+Fale:
+CSCV D 1
+fail
+}
+}
+
+actor CrystalSkullPersistant : RandomSpawner 6906 {
+Dropitem "CrystalSkullScavenge" 255
+}
+
+actor GammasThirdKnuckleSpikeMarker : Inventory
+{
+inventory.amount 1
+inventory.maxamount 1
+}
+
+actor GammasThirdKnuckleSpikeScavenge : CustomInventory
+{
++INVENTORY.AUTOACTIVATE
++FLOORHUGGER
+inventory.respawntics 35
+inventory.amount 1
+inventory.maxamount 1
+inventory.pickupmessage "You found Gamma's Third Knuckle Spike!"
+Inventory.PickupSound "item/1up"
+scale 2.0
++COUNTITEM
+states
+{
+Spawn:
+CSCV E 1
+LOOP
+Pickup:
+TNT1 A 1
+TNT1 A 1 A_JumpIfInventory("GammasThirdKnuckleSpikeMarker",1,"Fale")
+TNT1 A 1 A_GiveInventory("GammasThirdKnuckleSpikeMarker",1)
+TNT1 A 1 A_GiveInventory("ScavengeItemGet",1)
+stop
+Fale:
+CSCV E 1
+fail
+}
+}
+
+actor GammasThirdKnuckleSpikePersistant : RandomSpawner {
+Dropitem "GammasThirdKnuckleSpikeScavenge" 255
+}

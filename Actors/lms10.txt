@@ -1,0 +1,444 @@
+//pharaoh man scavenger hunt
+
+actor YashMarker : Inventory
+{
+inventory.amount 1
+inventory.maxamount 1
+}
+
+ACTOR SkeleDemon
+{
+Health 150
+PainChance 180
+Scale 2.5
+Speed 15
+Radius 30
++SOLID
+Height 56
+Mass 400
+Monster
+damagefactor "Beam", 0.0
+PainSound "misc/metdie"
+DeathSound "misc/metdie"
+Obituary "%o angered the Skeleton Joes."
+States
+{
+Spawn:
+SKEJ AB 10 A_Look
+SKEJ AB 5 A_Wander
+SKEJ A 1 A_ChangeFlag("SOLID",1)
+Loop
+See:
+SKEJ AABBAABB 2 A_Chase
+Loop
+Melee:
+SKEJ AB 4 A_FaceTarget
+SKEJ AB 4 A_SargAttack
+Goto See
+Pain:
+SKEJ A 2
+SKEJ A 2 A_Pain
+Goto See
+Death:
+MMFX B 0 A_Scream
+MMFX B 0 A_Fall
+MMFX FGHI 3 A_Stop
+Stop
+UnActive:
+SKEJ AB 10 A_ChangeFlag("SOLID",0)
+LOOP
+}
+}
+
+actor EvilYashichi
+{
+scale 2.5
+speed 5
+Height 16
+Radius 16
+Obituary "%o touched the Evil Yashichi."
++LOOKALLAROUND
++NOCLIP
++NOGRAVITY
++FLOAT
+-NOBLOCKMONST
+States
+{
+Spawn:
+YASH B 0
+YASH B 0 A_Wander
+YASH B 0 A_Chase
+YASH B 1 A_Look
+YASH B 0 A_JumpIfCloser(10000,"Spawn") 
+Loop
+See:
+YASH B 1 A_SpawnItemEx("EvilYashichiDamage",0,0,0)
+YASH B 1 A_Chase
+Loop
+UnActive:
+YASH B 1
+loop
+}
+}
+
+actor EvilYashichiDamage
+{
+PROJECTILE
++DONTSPLASH
+Obituary "%o touched the Evil Yashichi."
+Damagetype "Beam"
+Damage 0
+States
+{
+Spawn:
+TNT1 A 0
+TNT1 A 0 A_ClearTarget
+TNT1 A 1 A_Explode(255,16,0)
+stop
+}
+}
+
+actor YashichiScavenge : CustomInventory
+{
++INVENTORY.AUTOACTIVATE
++NOGRAVITY
+inventory.respawntics 35
+inventory.amount 1
+inventory.maxamount 1
+inventory.pickupmessage "You got the Yashichi!"
+Inventory.PickupSound "item/1up"
+scale 2.0
++COUNTITEM
+states
+{
+Spawn:
+YASH A 1
+LOOP
+Pickup:
+TNT1 A 1
+TNT1 A 1 A_JumpIfInventory("YashMarker",1,"Fale")
+TNT1 A 1 A_GiveInventory("YashMarker",1)
+TNT1 A 1 A_GiveInventory("ScavengeItemGet",1)
+stop
+Fale:
+YASH A 1
+fail
+}
+}
+
+actor YashPersistant : RandomSpawner {
+Dropitem "YashichiScavenge" 255
+}
+
+actor CactusMarker : Inventory
+{
+inventory.amount 1
+inventory.maxamount 1
+}
+
+actor CactusScavenge : CustomInventory
+{
++INVENTORY.AUTOACTIVATE
++FLOORHUGGER
+inventory.respawntics 35
+inventory.amount 1
+inventory.maxamount 1
+inventory.pickupmessage "You got a cactus!"
+Inventory.PickupSound "item/1up"
+scale 2.0
++COUNTITEM
+states
+{
+Spawn:
+CACT A 1
+LOOP
+Pickup:
+TNT1 A 1
+TNT1 A 1 A_JumpIfInventory("CactusMarker",1,"Fale")
+TNT1 A 1 A_GiveInventory("CactusMarker",1)
+TNT1 A 1 A_GiveInventory("ScavengeItemGet",1)
+stop
+Fale:
+CACT A 1
+fail
+}
+}
+
+actor CactusPersistant : RandomSpawner {
+Dropitem "CactusScavenge" 255
+}
+
+actor TornDMarker : Inventory
+{
+inventory.amount 1
+inventory.maxamount 1
+}
+
+actor TornDScavenge : CustomInventory
+{
++INVENTORY.AUTOACTIVATE
++FLOORHUGGER
+inventory.respawntics 35
+inventory.amount 1
+inventory.maxamount 1
+inventory.pickupmessage "You got a torn document. You can only make out 'Do no dis my place'."
+Inventory.PickupSound "item/1up"
+scale 2.0
++COUNTITEM
+states
+{
+Spawn:
+TDOC A 1
+LOOP
+Pickup:
+TNT1 A 1
+TNT1 A 1 A_JumpIfInventory("TornDMarker",1,"Fale")
+TNT1 A 1 A_GiveInventory("TornDMarker",1)
+TNT1 A 1 A_GiveInventory("ScavengeItemGet",1)
+stop
+Fale:
+TDOC A 1
+fail
+}
+}
+
+actor TornDPersistant : RandomSpawner {
+Dropitem "TornDScavenge" 255
+}
+
+actor TorchMarker : Inventory
+{
+inventory.amount 1
+inventory.maxamount 1
+}
+
+actor TorchScavenge : CustomInventory
+{
++INVENTORY.AUTOACTIVATE
++NOGRAVITY
++FIXMAPTHINGPOS
+inventory.respawntics 35
+inventory.amount 1
+inventory.maxamount 1
+inventory.pickupmessage "You got a torch!"
+Inventory.PickupSound "item/1up"
+scale 2.0
++COUNTITEM
+states
+{
+Spawn:
+FTOR ABC 4
+LOOP
+Pickup:
+TNT1 A 1
+TNT1 A 1 A_JumpIfInventory("TorchMarker",1,"Fale")
+TNT1 A 1 A_GiveInventory("TorchMarker",1)
+TNT1 A 1 A_GiveInventory("ScavengeItemGet",1)
+stop
+Fale:
+FTOR ABC 4
+fail
+}
+}
+
+actor TorchPersistant : RandomSpawner {
+Dropitem "TorchScavenge" 255
+}
+
+actor BoringTorch 2058
+{
++FORCEYBILLBOARD
++CLIENTSIDEONLY
++NOGRAVITY
+Height 32
+radius 16
+scale 2.5
+states
+{
+Spawn:
+FTOR ABC 4
+loop
+}
+}
+
+actor EmeraldMarker : Inventory
+{
+inventory.amount 1
+inventory.maxamount 1
+}
+
+actor EmeraldScavenge : CustomInventory
+{
++INVENTORY.AUTOACTIVATE
++FLOORHUGGER
+inventory.respawntics 35
+inventory.amount 1
+inventory.maxamount 1
+inventory.pickupmessage "You found a Chaos Emerald!"
+Inventory.PickupSound "item/1up"
+scale 2.0
++COUNTITEM
+states
+{
+Spawn:
+GCEM A 1
+LOOP
+Pickup:
+TNT1 A 1
+TNT1 A 1 A_JumpIfInventory("EmeraldMarker",1,"Fale")
+TNT1 A 1 A_GiveInventory("EmeraldMarker",1)
+TNT1 A 1 A_GiveInventory("ScavengeItemGet",1)
+stop
+Fale:
+GCEM A 1
+fail
+}
+}
+
+actor EmeraldPersistant : RandomSpawner {
+Dropitem "EmeraldScavenge" 255
+}
+
+actor SkullHeadMarker : Inventory
+{
+inventory.amount 1
+inventory.maxamount 1
+}
+
+actor SkullScavenge : CustomInventory
+{
++INVENTORY.AUTOACTIVATE
++FLOORHUGGER
+inventory.respawntics 35
+inventory.amount 1
+inventory.maxamount 1
+inventory.pickupmessage "You found Skull Man's Head..."
+Inventory.PickupSound "item/1up"
+scale 2.0
++COUNTITEM
+states
+{
+Spawn:
+SKUH A 1
+LOOP
+Pickup:
+TNT1 A 1
+TNT1 A 1 A_JumpIfInventory("SkullHeadMarker",1,"Fale")
+TNT1 A 1 A_GiveInventory("SkullHeadMarker",1)
+TNT1 A 1 A_GiveInventory("ScavengeItemGet",1)
+stop
+Fale:
+SKUH A 1
+fail
+}
+}
+
+actor SkullPersistant : RandomSpawner {
+Dropitem "SkullScavenge" 255
+}
+
+actor CutHeadMarker : Inventory
+{
+inventory.amount 1
+inventory.maxamount 1
+}
+
+actor CutHeadScavenge : CustomInventory
+{
++INVENTORY.AUTOACTIVATE
++FLOORHUGGER
+inventory.respawntics 35
+inventory.amount 1
+inventory.maxamount 1
+inventory.pickupmessage "You found Cut Man's Head..."
+Inventory.PickupSound "item/1up"
+scale 2.0
++COUNTITEM
+states
+{
+Spawn:
+CMHD A 1
+LOOP
+Pickup:
+TNT1 A 1
+TNT1 A 1 A_JumpIfInventory("CutHeadMarker",1,"Fale")
+TNT1 A 1 A_GiveInventory("CutHeadMarker",1)
+TNT1 A 1 A_GiveInventory("ScavengeItemGet",1)
+stop
+Fale:
+CMHD A 1
+fail
+}
+}
+
+actor CutHeadPersistant : RandomSpawner {
+Dropitem "CutHeadScavenge" 255
+}
+
+actor 1UpMarker : Inventory
+{
+inventory.amount 1
+inventory.maxamount 1
+}
+
+actor 1UpScavenge : CustomInventory
+{
++INVENTORY.AUTOACTIVATE
++FLOORHUGGER
+inventory.respawntics 35
+inventory.amount 1
+inventory.maxamount 1
+inventory.pickupmessage "You found a 1Up..."
+Inventory.PickupSound "item/1up"
+scale 2.0
++COUNTITEM
+states
+{
+Spawn:
+1UPC A 1
+LOOP
+Pickup:
+TNT1 A 1
+TNT1 A 1 A_JumpIfInventory("1UpMarker",1,"Fale")
+TNT1 A 1 A_GiveInventory("1UpMarker",1)
+TNT1 A 1 A_GiveInventory("ScavengeItemGet",1)
+stop
+Fale:
+1UPC A 1
+fail
+}
+}
+
+actor 1UpPersistant : RandomSpawner {
+Dropitem "1UpScavenge" 255
+}
+
+actor IMadeIt : Inventory
+{
+inventory.amount 1
+inventory.maxamount 1
+}
+
+actor QuickBeamShooter2 : QuickBeamShooter replaces QuickBeamShooter
+{
++NOGRAVITY
+-SOLID
+reactiontime 60 
+obituary "%k was not quick enough to avoid the beams."
+States
+{
+Spawn:
+TNT1 A 1 
+loop
+Fire:
+TNT1 A 1
+TNT1 A 1 A_CustomMissile("QuickBeam",0,0,0,2,0)
+TNT1 AAAAAAAAA 1 A_CustomMissile("NoLagQuickBeam",0,0,0,2,0)
+TNT1 A 1 A_CountDown
+Goto Fire+1
+Death:
+TNT1 A 0
+TNT1 A 1
+goto Spawn
+}
+}

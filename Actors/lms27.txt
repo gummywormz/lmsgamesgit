@@ -1,0 +1,45 @@
+actor BoxcarCossack
+{
+PROJECTILE
++RIPPER
+Damage (99999)
+speed 35
+scale 2.5
+radius 32
+painchance 256
+obituary "%o was ran over by Cossack's Boxcar."
+Damagetype "CossackMole"
+States
+{
+Spawn:
+BCOS A 1 A_ClearTarget
+loop
+}
+}
+
+actor Goaled : Inventory
+{
+inventory.amount 1
+inventory.maxamount 9999
+}
+
+actor keeper 6910
+{
+MONSTER
+HEALTH 99999
++ISMONSTER
+Scale 2.5
+HEIGHT 350
+RADIUS 200
+PainChance 256
+States
+{
+Spawn:
+KEPR A 0
+KEPR ABC 5
+loop
+Pain:
+KEPR A 1 A_GiveToTarget("Goaled",1)
+goto Spawn+1
+}
+}

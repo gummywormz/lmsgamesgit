@@ -1,0 +1,70 @@
+//knight man's castle
+
+actor ConfusedSpeed : Powerspeed
+{
++INVENTORY.ALWAYSPICKUP
++INVENTORY.AUTOACTIVATE
+powerup.duration -3
+Speed -1.0
+}
+
+actor FastSpeed : Powerspeed
+{
++INVENTORY.ALWAYSPICKUP
++INVENTORY.AUTOACTIVATE
+powerup.duration -3
+Speed 1.5
+}
+
+actor ConfusedSpeed2 : Powerspeed
+{
++INVENTORY.ALWAYSPICKUP
++INVENTORY.AUTOACTIVATE
+powerup.duration -6
+Speed -1.0
+}
+
+actor FastSpeed2 : Powerspeed
+{
++INVENTORY.ALWAYSPICKUP
++INVENTORY.AUTOACTIVATE
+powerup.duration -6
+Speed 1.5
+}
+
+actor SlowedSpeed2 : Powerspeed
+{
++INVENTORY.ALWAYSPICKUP
++INVENTORY.AUTOACTIVATE
+powerup.duration -6
+Speed 0.5
+}
+
+actor SlowedSpeed : Powerspeed
+{
++INVENTORY.ALWAYSPICKUP
++INVENTORY.AUTOACTIVATE
+powerup.duration -3
+Speed 0.5
+}
+
+Actor HardNipper
+{
+PROJECTILE
+Height 20
+Radius 32
+Scale 2.5
++RIPPER
+Damage (0)
+Speed 0
+States
+{
+Spawn:
+HTRP AB 2
+HTRP B 1 A_PlaySoundEx("misc/hardtrap","Voice")
+HTRP CB 2 A_Explode(30,32,0)
+HTRP A 1
+TNT1 A 1
+stop
+}
+}

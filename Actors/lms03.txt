@@ -1,0 +1,221 @@
+//giant telly
+
+ACTOR GiantTelly 5894
+{
++ISMONSTER
++FOILINVUL
+Damagetype "Nope"
+damagefactor "Shock", 0.0
+DamageFactor "Met", 0.0
+DamageFactor "Nope", 0.0
+Health 666
+Radius 32
+Height 110
+Mass 999
+Speed 10
+SCALE 2.5
+Species "Telly"
++NOINFIGHTING
+PainChance 0
++NOPAIN
+Damage 30
+MONSTER
+MeleeRange 300
+PainSound "misc/metdie"
++SHOOTABLE
+RenderStyle "Normal"
+-DONTFALL
++ACTIVATEMCROSS
++SOLID
+-NOBLOCKMONST
++LOOKALLAROUND
++QUICKTORETALIATE
++NOBLOOD
++NOSPLASHALERT
++WINDTHRUST
++DONTBLAST
++NODAMAGETHRUST
++FLOAT
++NOGRAVITY
++MISSILEEVENMORE
++MISSILEMORE
++STANDSTILL
+Obituary "%o pissed off the giant telly."
+States
+{
+Spawn:
+BTLY A 1
+BTLY ABCDDDEF 5 A_Look
+Loop
+See:
+BTLY ABCDDDEF 6 A_Chase
+Loop
+Melee:
+BTLY ABCDDDEF 3 A_FaceTarget
+BTLY ABCDDDEF 3 A_SkullAttack
+BTLY ABCDDDEF 2
+BTLY ABCDDDEF 6 A_CustomMissile("TellyBomb",0,0,0)
+BTLY A 1 A_DualPainAttack("BombTellys")
+BTLY A 1 A_DualPainAttack("BombTellys")
+BTLY A 1 A_DualPainAttack("BombTellys")
+Goto Spawn+1
+Missile:
+BTLY A 0
+goto Melee
+//Pain:
+//BTLY D 3
+//BTLY D 3 A_Pain
+//Goto See
+Death:
+BTLY A 0 ACS_ExecuteAlways(12,0)
+BTLY A 0 A_Fall
+BTLY A 2 A_SpawnItemEx("GenericExplosions",random(0,64),random(0,90),0,0,0,0)
+BTLY A 2
+BTLY A 0 A_PlaySoundEx("weapon/drillexplode", "Voice")
+BTLY A 2 A_SpawnItemEx("GenericExplosions",random(0,64),random(0,90),0,0,0,0)
+BTLY A 2
+BTLY A 0 A_PlaySoundEx("weapon/drillexplode", "Voice")
+BTLY A 2 A_SpawnItemEx("GenericExplosions",random(0,64),random(0,90),0,0,0,0)
+BTLY A 2
+BTLY A 0 A_PlaySoundEx("weapon/drillexplode", "Voice")
+BTLY A 2 A_SpawnItemEx("GenericExplosions",random(0,64),random(0,90),0,0,0,0)
+BTLY A 2
+BTLY A 0 A_PlaySoundEx("weapon/drillexplode", "Voice")
+BTLY A 2 A_SpawnItemEx("GenericExplosions",random(0,64),random(0,90),0,0,0,0)
+BTLY A 2
+BTLY A 0 A_PlaySoundEx("weapon/drillexplode", "Voice")
+Stop
+SilentDeath:
+BTLY A 0 ACS_ExecuteAlways(12,0)
+BTLY A 0 A_Fall
+stop
+}
+}
+
+actor BombTellys : TellySoul
+{
+Health 70
+DamageFactor "Nope", 0.0
+States
+{
+Missile:
+TELY ABCDDDEF 1 A_FaceTarget
+TELY ABCDDDEF 2 A_SkullAttack
+TELY ABCDDDEF 2
+TELY A 1 A_CustomMissile("RemMissile",0,0,0,0)
+TELY A 2
+TELY A 1 A_CustomMissile("RemMissile",0,0,0,0)
+TELY A 1
+TELY A 1 A_CustomMissile("RemMissile",0,0,0,0)
+Goto Missile+2
+}
+}
+
+actor FlashBombTelly : FlashBomb
+{
+-NOGRAVITY
++FOILINVUL
+DamageType "Nope"
+}
+
+actor BombRain
+{
+PROJECTILE
+-NOGRAVITY
++RIPPER
+Damage (0)
+Height 5
+Radius 5
+Scale 2.5
+speed 0
+States
+{
+Spawn:
+WVBL A 1
+TNT1 A 0 A_SpawnItemEx("FlashGrenade", 30, 0, 110, 15, 0, 0, 0)
+TNT1 A 0 A_SpawnItemEx("FlashGrenade", 30, 0, 110, 15, 0, 0, 45)
+TNT1 A 0 A_SpawnItemEx("FlashGrenade", 30, 0, 110, 15, 0, 0, 90)
+TNT1 A 0 A_SpawnItemEx("FlashGrenade", 30, 0, 110, 15, 0, 0, 67)
+TNT1 A 0 A_SpawnItemEx("FlashGrenade", 30, 0, 110, 15, 0, 0, 123)
+TNT1 A 0 A_SpawnItemEx("FlashGrenade", 30, 0, 110, 15, 0, 0, 180)
+TNT1 A 0 A_SpawnItemEx("FlashGrenade", 30, 0, 110, 15, 0, 0, 225)
+TNT1 A 1 A_SpawnItemEx("FlashGrenade", 30, 0, 110, 15, 0, 0, 270)
+stop
+}
+}
+
+actor TellyBomb
+{
+PROJECTILE
++FOILINVUL
++FIXMAPTHINGPOS
+Radius 6
+Height 7
+ReactionTime 20
+scale 2.5
+damagetype "Nope"
+-NOGRAVITY
+States
+{
+Spawn:
+BTLY I 0
+BTLY I 1 A_PlaySoundEx("weapon/bombfall","Voice")
+BTLY I 1
+BTLY I 1 A_CountDown
+BTLY I 1
+Goto Spawn+3
+Death:
+NAPA A 0 A_Stop
+NAPA A 0 A_PlaySoundEx("weapon/drillexplode", "Voice")
+NAPA A 0 A_ChangeFlag("NOGRAVITY",1)
+NAPA A 0 A_Explode(40, 128, 0)
+NAPA EFGHIJKLMNOPQRS 2
+stop
+}
+}
+
+actor BallisticMissile
+{
+PROJECTILE
++FOILINVUL
+Radius 6
+Height 7
+Speed 55
+scale 2.5
+damagetype "Nope"
+States
+{
+Spawn:
+NAPA A 1
+loop
+Death:
+NAPA A 0 A_Stop
+NAPA A 0 A_SpawnItemEx("NapalmBomb2",-30,0,0,30,0,0,180)
+NAPA A 0 A_PlaySoundEx("weapon/drillexplode", "Voice")
+NAPA A 0 A_ChangeFlag("NOGRAVITY",1)
+NAPA A 0 A_Explode(40, 128, 0)
+NAPA EFGHIJKLMNOPQRS 2
+stop
+}
+}
+
+actor NapalmBomb2 : NapalmBomb
+{
+DamageType "Nope"
++FOILINVUL
+}
+
+Actor GenericExplosions
+{
++CLIENTSIDEONLY
+States
+{
+Spawn:
+TNT1 A 1
+NAPA EFGHIJKLMNOPQRS 2
+NAPA EFGHIJKLMNOPQRS 2
+NAPA EFGHIJKLMNOPQRS 2
+NAPA EFGHIJKLMNOPQRS 2
+stop
+}
+}

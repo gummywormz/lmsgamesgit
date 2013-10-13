@@ -1,0 +1,563 @@
+//vs nightmare upgraded
+
+actor StarRodLMSWep2 : MegaBuster
+{
+Weapon.AmmoUse 0
+Weapon.AmmoGive 28
+Weapon.SlotNumber 1
+Obituary "%o was magic'd by %k's Star Rod."
+Inventory.Pickupmessage "Power up! Star Rod!"
+Inventory.Icon "STRICO"
+weapon.ammotype "BusterAmmo"
+inventory.pickupsound "weapon/weaponup"
++WEAPON.AMMO_OPTIONAL
+Scale 2.0
+States
+{
+Spawn:
+MSHD C 1
+loop
+Ready:
+MSHD A 0 ACS_ExecuteAlways(998,0,0)
+MSHD A 1 A_WeaponReady
+Goto Ready+1
+Deselect:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Lower
+MSHD A 1 A_Lower
+Loop
+Select:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Raise
+MSHD A 1 A_Raise
+Loop
+Fire:
+MSHD A 0 A_JumpIfNoAmmo("NoAmmo")
+MSHD A 0 A_PlaySoundEx("weapon/magicwand","Weapon")
+MSHD A 0 A_FireCustomMissile("MagicStar2",0,0,15,0)
+MSHD B 3
+MSHD A 12
+MSHD A 0 A_Refire
+Goto Ready+1
+NoAmmo:
+MSHD A 1 ACS_Execute(979,0)
+Goto Ready+1
+}
+}
+
+actor MagicStar2
+{
+PROJECTILE
++NOTARGETSWITCH
+damagetype "Bolt"
+scale 2.5
+Speed 60
+Radius 7
+Height 6
+Damage (15)
+States
+{
+Spawn:
+MSTA ABCD 4
+loop
+Death:
+TNT1 A 0 
+TNT1 A 0
+MSTA EFG 3
+stop
+}
+}
+
+actor NightMareFormTwo 5888
+{
++ISMONSTER
++FOILINVUL
+Scale 5.0
+Damagetype "Nope"
+damagefactor "Shock", 0.0
+damagefactor "Fall", 0.0
+DamageFactor "Met", 0.0
+DamageFactor "Nope", 0.0
+Radius 48
+Height 320
+Mass 999
+Health 1500
+Speed 40
+Species "Telly"
++NOINFIGHTING
+Damage 30
+MONSTER
++SHOOTABLE
+RenderStyle "Normal"
+-DONTFALL
++ACTIVATEMCROSS
++SOLID
+-INVULNERABLE
+-NOBLOCKMONST
++LOOKALLAROUND
++QUICKTORETALIATE
++NOBLOOD
++NOSPLASHALERT
++WINDTHRUST
++NOPAIN
++TELESTOMP
++DONTBLAST
++NODAMAGETHRUST
++MISSILEEVENMORE
++MISSILEMORE
++STANDSTILL
+Obituary "%o was Smitten by nightmare upgraded."
+States
+{
+Spawn:
+NGMR H 1
+NGMR H 3 A_Look
+Loop
+See:
+NGMR H 4 A_Chase
+Loop
+Missile:
+NGMR H 9 A_FaceTarget
+NGMR H 1 A_Jump(64,"Needle")
+NGMR H 1 A_Jump(64,"FireStorm")
+NGMR H 1 A_Jump(64,"ZappyZap")
+NGMR H 1 A_Jump(64,"FreezeMan")
+//NGMR H 1 A_Jump(10,"ForceBeamz")
+NGMR H 1 A_Jump(64,"Dash")
+Goto Missile+1
+Needle:
+NGMR M 1 A_PlaySoundEx("weapon/mbuster","Voice")
+NGMR LM 3 A_CustomMissile("NeedleN",64,0,0)
+NGMR L 0 A_FaceTarget
+NGMR M 1 A_PlaySoundEx("weapon/mbuster","Voice")
+NGMR LM 3 A_CustomMissile("NeedleN",64,0,0)
+NGMR L 0 A_FaceTarget
+NGMR M 1 A_PlaySoundEx("weapon/mbuster","Voice")
+NGMR LM 3 A_CustomMissile("NeedleN",64,0,0)
+NGMR L 0 A_FaceTarget
+NGMR M 1 A_PlaySoundEx("weapon/mbuster","Voice")
+NGMR LM 3 A_CustomMissile("NeedleN",64,0,0)
+NGMR L 0 A_FaceTarget
+NGMR M 1 A_PlaySoundEx("weapon/mbuster","Voice")
+NGMR LM 3 A_CustomMissile("NeedleN",64,0,0)
+NGMR L 0 A_FaceTarget
+NGMR M 1 A_PlaySoundEx("weapon/mbuster","Voice")
+NGMR LM 3 A_CustomMissile("NeedleN",64,0,0)
+NGMR L 0 A_FaceTarget
+NGMR M 1 A_PlaySoundEx("weapon/mbuster","Voice")
+NGMR LM 3 A_CustomMissile("NeedleN",64,0,0)
+NGMR L 0 A_FaceTarget
+NGMR M 1 A_PlaySoundEx("weapon/mbuster","Voice")
+NGMR LM 3 A_CustomMissile("NeedleN",64,0,0)
+NGMR L 0 A_FaceTarget
+NGMR M 1 A_PlaySoundEx("weapon/mbuster","Voice")
+NGMR LM 3 A_CustomMissile("NeedleN",64,0,0)
+NGMR L 0 A_FaceTarget
+NGMR M 1 A_PlaySoundEx("weapon/mbuster","Voice")
+NGMR LM 3 A_CustomMissile("NeedleN",64,0,0)
+NGMR L 0 A_FaceTarget
+goto Spawn
+ForceBeamz:
+NGMR O 1 A_PlaySoundEx("weapon/protocharge","Voice")
+NGMR O 35
+NGMR O 1 A_PlaySoundEx("misc/quicktrap","Voice")
+NGMR O 4 A_CustomMissile("QuickBeam",64,0,0)
+NGMR O 4 A_CustomMissile("QuickBeam",64,0,0)
+NGMR O 4 A_CustomMissile("QuickBeam",64,0,0)
+NGMR O 4 A_CustomMissile("QuickBeam",64,0,0)
+NGMR O 4 A_CustomMissile("QuickBeam",64,0,0)
+NGMR O 4 A_CustomMissile("QuickBeam",64,0,0)
+NGMR O 4 A_CustomMissile("QuickBeam",64,0,0)
+NGMR O 4 A_CustomMissile("QuickBeam",64,0,0)
+NGMR O 4 A_CustomMissile("QuickBeam",64,0,0)
+NGMR O 4 A_CustomMissile("QuickBeam",64,0,0)
+NGMR O 4 A_CustomMissile("QuickBeam",64,0,0)
+NGMR O 4 A_CustomMissile("QuickBeam",64,0,0)
+NGMR O 4 A_CustomMissile("QuickBeam",64,0,0)
+NGMR O 4 A_CustomMissile("QuickBeam",64,0,0)
+NGMR O 4 A_CustomMissile("QuickBeam",64,0,0)
+goto Spawn
+FreezeMan:
+NGMR I 1 A_PlaySoundEx("weapon/ringboomerang","Voice")
+NGMR I 2 A_CustomMissile("FreezeCrackerN",64,0,0)
+NGMR I 1 A_Jump(64,"See")
+loop
+ZappyZap:
+NGMR K 1 A_PlaySoundEx("weapon/thunderbolt","Voice")
+NGMR K 2 A_CustomMissile("ZapMissile",64,0,0)
+NGMR K 13
+NGMR K 1 A_PlaySoundEx("weapon/thunderbolt","Voice")
+NGMR K 2 A_CustomMissile("ZapMissile",64,0,0)
+NGMR K 13
+NGMR K 1 A_PlaySoundEx("weapon/thunderbolt","Voice")
+NGMR K 2 A_CustomMissile("ZapMissile",64,0,0)
+goto See
+FireStorm:
+NGMR N 1 A_PlaySoundEx("weapon/firestorm","Voice")
+NGMR N 2 A_CustomMissile("FireStormN",random(0,256),random(0,64),0)
+NGMR N 5
+NGMR N 1 A_Jump(64,"See")
+loop
+Dash:
+NGMR A 1 A_ChangeFlag("Invulnerable",1)
+NGMR A 1 A_ChangeFlag("SOLID",0)
+NGMR ABCDEFG 5
+TNT1 A 1 A_Wander
+TNT1 A 1 A_Wander
+TNT1 A 1 A_Wander
+TNT1 A 1 A_Wander
+TNT1 A 1 A_Wander
+TNT1 A 1 A_Wander
+TNT1 A 1 A_Wander
+TNT1 A 1 A_Wander
+TNT1 A 1 A_Wander
+TNT1 A 1 A_Wander
+TNT1 A 1 A_Wander
+TNT1 A 1 A_Wander
+TNT1 A 1 A_Wander
+TNT1 A 1 A_Wander
+TNT1 A 1 A_Wander
+TNT1 A 1 A_Wander
+TNT1 A 1 A_Wander
+TNT1 A 1 A_Wander
+TNT1 A 1 A_Wander
+TNT1 A 1 A_Wander
+TNT1 A 1 A_Wander
+TNT1 A 1 A_Wander
+TNT1 A 1 A_Wander
+TNT1 A 1 A_Wander
+TNT1 A 1 A_Wander
+TNT1 A 1 A_Wander
+TNT1 A 1 A_Wander
+TNT1 A 1 A_Wander
+TNT1 A 1 A_Wander
+TNT1 A 1 A_Wander
+TNT1 A 1 A_Wander
+TNT1 A 1 A_Wander
+TNT1 A 1 A_Wander
+TNT1 A 1 A_Wander
+TNT1 A 1 A_Wander
+TNT1 A 1 A_Wander
+TNT1 A 1 A_Wander
+TNT1 A 1 A_Wander
+TNT1 A 1 A_Wander
+TNT1 A 1 A_Wander
+TNT1 A 1 A_Wander
+TNT1 A 1 A_Wander
+TNT1 A 1 A_Wander
+TNT1 A 1 A_Wander
+TNT1 A 1 A_Wander
+TNT1 A 1 A_Wander
+TNT1 A 1 A_Wander
+TNT1 A 1 A_Wander
+TNT1 A 15
+NGMR A 1 A_ChangeFlag("Invulnerable",0)
+NGMR A 1 A_ChangeFlag("SOLID",1)
+NGMR GFEDCBA 5
+NGMR H 1 A_SpawnItemEx("MagicBoomer")
+goto See
+Pain:
+NGMR E 8 A_Pain
+Goto See
+Death:
+NGMR H 0 ACS_Execute(21,0)
+NGMR H 1 A_Fall
+NGMR H 2 A_SpawnItemEx("GenericExplosions",random(0,64),random(0,90),0,0,0,0)
+NGMR H 2
+NGMR H 0 A_PlaySoundEx("weapon/drillexplode", "Voice")
+NGMR H 2 A_SpawnItemEx("GenericExplosions",random(0,64),random(0,90),0,0,0,0)
+NGMR H 2
+NGMR H 0 A_PlaySoundEx("weapon/drillexplode", "Voice")
+NGMR H 2 A_SpawnItemEx("GenericExplosions",random(0,64),random(0,90),0,0,0,0)
+NGMR H 2
+NGMR H 0 A_PlaySoundEx("weapon/drillexplode", "Voice")
+NGMR H 2 A_SpawnItemEx("GenericExplosions",random(0,64),random(0,90),0,0,0,0)
+NGMR H 2
+NGMR H 0 A_PlaySoundEx("weapon/drillexplode", "Voice")
+NGMR H 2 A_SpawnItemEx("GenericExplosions",random(0,64),random(0,90),0,0,0,0)
+NGMR H 2
+NGMR H 0 A_PlaySoundEx("weapon/drillexplode", "Voice")
+Stop
+SilentDeath:
+NGMR A 0 ACS_ExecuteAlways(21,0)
+NGMR A 1 A_Fall
+stop
+}
+}
+
+actor NeedleN : Needle
+{
+Damage (14)
++FOILINVUL
+Damagetype "Nope"
+}
+
+actor FreezeCrackerN : FreezeCracker
+{
++FOILINVUL
+Damage (35)
+Damagetype "Nope"
+}
+
+actor FireStormN : FireStorm
+{
++FOILINVUL
+Damage (30)
+Damagetype "Nope"
+}
+
+actor MagicBoomer
+{
++FOILINVUL
+PROJECTILE
+Damage 1
+Speed 0
+DamageType "Nope"
+States
+{
+Spawn:
+TNT1 A 1
+TNT1 A 1 A_Explode(30,580,0)
+stop
+}
+}
+
+actor CloudFX
+{
+scale 2.5
+-SOLID
++NOGRAVITY
++CLIENTSIDEONLY
+height 0
+radius 0
+States
+{
+Spawn:
+CLOF ABCDEF 1
+stop
+}
+}
+
+actor ZapMissile : MageStaffFX2
+{
+PROJECTILE
++FOILINVUL
+Radius 8
+Height 5
+scale 2.5
+damagetype "Nope"
+damage (34)
+speed 47
++SEEKERMISSILE
+-EXTREMEDEATH
+reactiontime 60
+States
+{
+Spawn:
+CLOF ABCDEF 1 A_SpawnItemEx("CloudFX")
+CLOF A 1 A_MStaffTrack
+CLOF A 1 A_CountDown
+loop
+Death:
+tnt1 a 1
+stop
+}
+}
+
+actor NightMareFormOne 5893
+{
++NOGRAVITY
++FLOAT
++ISMONSTER
++FOILINVUL
++NOPAIN
+Scale 5.0
+Damagetype "Nope"
+damagefactor "Shock", 0.0
+damagefactor "Fall", 0.0
+DamageFactor "Met", 0.0
+DamageFactor "Nope", 0.0
+Radius 48
+Height 128
+Mass 999
+Health 1000
+Speed 30
+Species "Telly"
++NOINFIGHTING
+PainChance 0
+Damage 30
+MONSTER
++SHOOTABLE
+RenderStyle "Normal"
+-DONTFALL
++ACTIVATEMCROSS
++SOLID
+-NOBLOCKMONST
++LOOKALLAROUND
++QUICKTORETALIATE
++NOBLOOD
++NOSPLASHALERT
++WINDTHRUST
++DONTBLAST
++NODAMAGETHRUST
++MISSILEEVENMORE
++MISSILEMORE
++STANDSTILL
+Obituary "%o was star struck by nightmare upgraded."
+States
+{
+Spawn:
+NIGM A 1
+NIGM ABCD 6 A_Look
+Loop
+See:
+NIGM ABCD 6 A_Chase
+Loop
+Missile:
+NIGM ABCD 6 A_FaceTarget
+NIGM A 0 A_Jump(64,"StarMachine")
+NIGM A 0 A_Jump(64,"StarTwo")
+NIGM A 0 A_Jump(64,"StarThree")
+NIGM A 0 A_Jump(64,"StarSix")
+NIGM A 0 A_Jump(64,"Wave")
+NIGM A 0 A_Jump(64,"Dash")
+Goto Missile+1
+StarMachine:
+NIGM A 1 A_PlaySoundEx("weapon/magicwand","Voice")
+NIGM A 1 A_CustomMissile("DarkStar",32,0,0)
+NIGM A 4 A_FaceTarget
+NIGM A 1 A_PlaySoundEx("weapon/magicwand","Voice")
+NIGM B 1 A_CustomMissile("DarkStar",32,0,0)
+NIGM B 4 A_FaceTarget
+NIGM A 1 A_PlaySoundEx("weapon/magicwand","Voice")
+NIGM C 1 A_CustomMissile("DarkStar",32,0,0)
+NIGM C 4 A_FaceTarget
+NIGM A 1 A_PlaySoundEx("weapon/magicwand","Voice")
+NIGM D 1 A_CustomMissile("DarkStar",32,0,0)
+NIGM D 4 A_FaceTarget
+NIGM A 1 A_PlaySoundEx("weapon/magicwand","Voice")
+NIGM A 1 A_CustomMissile("DarkStar",32,0,0)
+NIGM A 4 A_FaceTarget
+NIGM A 1 A_PlaySoundEx("weapon/magicwand","Voice")
+NIGM B 1 A_CustomMissile("DarkStar",32,0,0)
+NIGM B 4 A_FaceTarget
+NIGM A 1 A_PlaySoundEx("weapon/magicwand","Voice")
+NIGM C 1 A_CustomMissile("DarkStar",32,0,0)
+NIGM C 4 A_FaceTarget
+NIGM A 1 A_PlaySoundEx("weapon/magicwand","Voice")
+NIGM D 1 A_CustomMissile("DarkStar",32,0,0)
+NIGM D 4
+NIGM A 1 A_PlaySoundEx("weapon/magicwand","Voice")
+NIGM A 1 A_CustomMissile("DarkStar",32,0,0)
+NIGM A 4 A_FaceTarget
+NIGM A 1 A_PlaySoundEx("weapon/magicwand","Voice")
+NIGM B 1 A_CustomMissile("DarkStar",32,0,0)
+NIGM B 4 A_FaceTarget
+NIGM A 1 A_PlaySoundEx("weapon/magicwand","Voice")
+NIGM C 1 A_CustomMissile("DarkStar",32,0,0)
+NIGM C 4 A_FaceTarget
+NIGM A 1 A_PlaySoundEx("weapon/magicwand","Voice")
+NIGM D 1 A_CustomMissile("DarkStar",32,0,0)
+NIGM D 4 A_FaceTarget
+NIGM A 1 A_PlaySoundEx("weapon/magicwand","Voice")
+NIGM A 1 A_CustomMissile("DarkStar",32,0,0)
+NIGM A 4 A_FaceTarget
+NIGM A 1 A_PlaySoundEx("weapon/magicwand","Voice")
+NIGM B 1 A_CustomMissile("DarkStar",32,0,0)
+NIGM B 4 A_FaceTarget
+NIGM A 1 A_PlaySoundEx("weapon/magicwand","Voice")
+NIGM C 1 A_CustomMissile("DarkStar",32,0,0)
+NIGM C 4 A_FaceTarget
+NIGM A 1 A_PlaySoundEx("weapon/magicwand","Voice")
+NIGM D 1 A_CustomMissile("DarkStar",32,0,0)
+NIGM D 4
+goto See
+StarTwo:
+NIGM A 1 A_FaceTarget
+NIGM A 1 A_PlaySoundEx("weapon/magicwand","Voice")
+NIGM A 0 A_CustomMissile("DarkStar",128,0,0)
+NIGM A 0 A_CustomMissile("DarkStar",0,0,0)
+goto See
+StarThree:
+NIGM A 1 A_FaceTarget
+NIGM A 1 A_PlaySoundEx("weapon/magicwand","Voice")
+NIGM A 0 A_CustomMissile("DarkStar",128,0,0)
+NIGM A 0 A_CustomMissile("DarkStar",32,0,0)
+NIGM A 0 A_CustomMissile("DarkStar",0,0,0)
+goto See
+StarSix:
+NIGM A 1 A_FaceTarget
+NIGM A 1 A_PlaySoundEx("weapon/magicwand","Voice")
+NIGM A 0 A_CustomMissile("DarkStar",-32,0,0)
+NIGM A 0 A_CustomMissile("DarkStar",-128,0,0)
+NIGM A 0 A_CustomMissile("DarkStar",128,0,0)
+NIGM A 0 A_CustomMissile("DarkStar",32,0,0)
+NIGM A 0 A_CustomMissile("DarkStar",0,0,0)
+goto See
+Wave:
+NIGM A 1 A_FaceTarget
+NIGM A 1 A_PlaySoundEx("misc/quicktrap","Voice")
+NIGM A 1 A_CustomMissile("DarkWave",32,0,0)
+goto See
+Dash:
+NIGM A 1 A_FaceTarget
+NIGM A 1 A_PlaySoundEx("weapon/chargekick","Voice")
+NIGM A 1 A_SkullAttack(50)
+goto See
+Pain:
+NIGM E 8 A_Pain
+Goto See
+Death:
+NIGM A 0 ACS_Execute(12,0)
+NIGM A 1 A_Fall
+Stop
+SilentDeath:
+NIGM A 0 ACS_ExecuteAlways(12,0)
+NIGM A 1 A_Fall
+stop
+}
+}
+
+actor DarkStar
+{
+PROJECTILE
++FOILINVUL
+damagetype "Nope"
+scale 2.5
+Speed 40
+Radius 7
++RIPPER
+Height 6
+Damage (10)
+States
+{
+Spawn:
+NSTA ABCD 4
+loop
+Death:
+TNT1 A 0 
+TNT1 A 1
+stop
+}
+}
+
+actor DarkWave
+{
+PROJECTILE
++FOILINVUL
+damagetype "Nope"
+scale 2.5
+Speed 60
+Radius 7
++RIPPER
+Height 6
+Damage (20)
+States
+{
+Spawn:
+MIRR DE 2
+loop
+Death:
+TNT1 A 0 
+TNT1 A 1
+stop
+}
+}

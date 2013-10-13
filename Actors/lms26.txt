@@ -1,0 +1,304 @@
+//zombie invasion
+
+
+actor ZombieKilled : Inventory
+{
+inventory.amount 1
+inventory.maxamount 999
+}
+
+actor MissileZombie 6901
+{
+Height 60
+DropItem "SmallHealth" 28
+DropItem "WeaponEnergy" 28
+DropItem "BigHealth" 10
+DropItem "BigWeaponEnergy" 10
+Scale 2.5
+Radius 32
++ISMONSTER
+Damage (0)
+Translation "192:192=162:162", "198:198=118:118"
+Health 60
+MaxStepHeight 32
+MeleeRange 55
+PainChance 75
+HitObituary "%o was eaten by a missile zombie."
+Obituary "%o was burnt by a missile zombie."
+DamageFactor "Crush", 0.0
+Mass 999999999
+Damagetype "Nope"
+DamageFactor "Nope", 0.0
++FOILINVUL
+Speed 50
++LOOKALLAROUND
+DeathSound "misc/metdie"
+PainSound "misc/metdie"
++MISSILEMORE
++MISSILEEVENMORE
++CANTSEEK
++NOINFIGHTING
++NOBLOOD
++DROPOFF
++DONTBLAST
+-SOLID
++SHOOTABLE
+States
+{
+Spawn:
+ZOMB BCDE 5 A_Look
+ZOMB E 1
+ZOMB E 1
+ZOMB E 1
+Loop
+Raise:
+ZOMB A 1
+goto See
+See:
+ZOMB BCDE 5 A_Chase("Missile","Missile")
+ZOMB B 1
+loop
+Missile:
+ZOMB F 0 A_FaceTarget
+ZOMB FG 2 A_CustomComboAttack("FireRocket",32,30,"misc/polarroar","Nope",0)
+ZOMB A 1 A_MonsterRefire(135,"See")
+ZOMB A 9
+goto See
+Pain:
+ZOMB A 1 A_Pain
+ZOMB A 1 A_FaceTarget
+goto Spawn
+Death:
+MMFX B 0 A_GiveToTarget("ZombieKilled",1)
+MMFX B 0 A_Fall
+MMFX B 0 A_Scream
+MMFX FGHI 3 A_Stop
+Stop
+}
+}
+
+actor ZombieZombie : MissileZombie
+{
+HitObituary "%o was eaten by a zombie."
+Obituary "%o was haxxed by a zombie."
+Speed 50
+Health 40
+States
+{
+See:
+ZOMB BCDE 5 A_Chase("Melee")
+ZOMB B 1
+loop
+Melee:
+ZOMB F 0 A_FaceTarget
+ZOMB FG 2 A_CustomMeleeAttack(40,"misc/polarroar","weapon/slashclaw","Nope",0)
+ZOMB A 13
+ZOMB A 1 A_MonsterRefire(135,"See")
+goto See
+}
+}
+
+actor ScoutZombie : MissileZombie
+{
+HitObituary "%o was quickly eaten by a scout zombie."
+Obituary "%o was quickly burned by a scout zombie."
+Health 20
+Speed 100
+}
+
+Actor ChainGunZombie : MissileZombie replaces ChainGunZombie
+{
+HitObituary "%o was eaten by a chaingun zombie."
+Obituary "%o was perforated by a chaingun zombie."
+Health 45
+Speed 50
+States
+{
+Missile:
+ZOMB F 0 A_FaceTarget
+ZOMB FG 2 A_CustomComboAttack("ChainGunFire",32,12,"misc/polarroar","Nope",0)
+ZOMB A 1 A_MonsterRefire(135,"See")
+goto See
+}
+}
+
+actor HulkZombie : ZombieZombie
+{
++BOSS
++BOSSDEATH
+Height 100
+DeathSound "weapon/drillexplode"
+HitObituary "%o was smashed and eaten by a Hulk zombie."
+Obituary "%o was haxxed by a Hulk zombie."
+Health 250
+Speed 40
+Scale 4.5
+States
+{
+MELEE:
+ZOMB F 0 A_FaceTarget
+ZOMB FG 2 A_CustomMeleeAttack(60,"misc/polarroar","weapon/slashclaw","Nope",0)
+ZOMB A 19
+ZOMB A 1 A_MonsterRefire(135,"See")
+goto See
+Death:
+TNT1 A 1 A_SpawnItemEx("FakeDeathFX", 0, 0, 32)
+TNT1 A 0 A_GiveToTarget("ZombieKilled",10)
+TNT1 A 0 A_Fall
+TNT1 A 0 A_Scream
+TNT1 A 3 A_Stop
+}
+}
+
+actor GhostZombie : ZombieZombie
+{
+HitObituary "%o was scared and then promptly eaten by a Ghost zombie."
+Obituary "%o was haxxed by a Ghost zombie."
+RenderStyle Translucent
+Alpha 0.4
+Speed 75
+}
+
+Actor FlyingZombie : MissileZombie
+{
+-NOGRAVITY
+Speed 40
+HitObituary "%o was made into airline food by a flying zombie."
+Obituary "%o was burnt by a flying zombie."
+Health 25
++FLOAT
+}
+
+Actor ArchZombie : MissileZombie
+{
+HitObituary "%o was eaten by a chaingun zombie."
+Obituary "%o was perforated by a chaingun zombie."
+Health 70
+Speed 40
+States
+{
+Missile:
+ZOMB A 1 A_Jump(25,"ActualSummons")
+goto See
+ActualSummons:
+ZOMB F 1 A_SpawnItemEx("ZombieZombie",90,0,1)
+ZOMB G 1 A_SpawnItemEx("ScoutZombie",-90,0,1)
+goto See
+Heal:
+ZOMB A 10
+goto see
+See:
+ZOMB BCDE 5 A_Chase("Missile","Missile",CHF_RESURRECT)
+ZOMB B 1
+loop
+}
+}
+
+Actor BossZombie : MissileZombie replaces BossZombie
+{
+Health 4000
++BOSS
+Height 360
+Radius 90
++BOSSDEATH
+DeathSound "weapon/drillexplode"
+Scale 5.5
+HitObituary "%o was obliterated by the boss zombie."
+Obituary "%o was exploded by the boss zombie."
+States
+{
+Heal:
+ZOMB A 10
+goto see
+See:
+ZOMB BCDE 5 A_Chase("Melee","Missile",CHF_RESURRECT)
+ZOMB B 1
+loop
+Melee:
+ZOMB F 0 A_FaceTarget
+ZOMB FG 2 A_CustomMeleeAttack(60,"misc/polarroar","weapon/slashclaw","Nope",0)
+ZOMB A 19
+ZOMB A 1 A_MonsterRefire(135,"See")
+goto see
+Missile:
+ZOMB A 1 A_Jump(256,"ChainGun","MissileFire","Dash","EarthQuake")
+goto See
+ChainGun:
+ZOMB F 0 A_FaceTarget
+ZOMB FG 2 A_CustomComboAttack("ChainGunFire",32,60,"misc/polarroar","Nope",0)
+ZOMB A 1 A_MonsterRefire(135,"See")
+goto See
+MissileFire:
+ZOMB F 0 A_FaceTarget
+ZOMB FG 2 A_CustomComboAttack("FireRocket",32,60,"misc/polarroar","Nope",0)
+ZOMB A 1 A_MonsterRefire(135,"See")
+ZOMB A 9
+goto See
+Dash:
+ZOMB BCDE 5 A_Chase("Missile","Missile",CHF_NIGHTMAREFAST)
+ZOMB BCDE 5 A_Chase("Missile","Missile",CHF_NIGHTMAREFAST)
+ZOMB BCDE 5 A_Chase("Missile","Missile",CHF_NIGHTMAREFAST)
+ZOMB BCDE 5 A_Chase("Missile","Missile",CHF_NIGHTMAREFAST)
+ZOMB BCDE 5 A_Chase("Missile","Missile",CHF_NIGHTMAREFAST)
+goto See
+Earthquake:
+ZOMB F 1 A_SpawnItemEx("MagicBoomer")
+ZOMB G 1
+ZOMB A 15
+goto See
+Death:
+TNT1 A 1 ACS_ExecuteAlways(6,0)
+TNT1 A 1 A_SpawnItemEx("FakeDeathFX", 0, 0, 32)
+TNT1 A 0 A_GiveToTarget("ZombieKilled",10)
+TNT1 A 0 A_Fall
+TNT1 A 0 A_Scream
+TNT1 A 3 A_Stop
+stop
+}
+}
+
+actor FireRocket
+{
+PROJECTILE
++FOILINVUL
+damagetype "Nope"
+scale 2.5
+Speed 40
+Radius 6
+Height 7
+Damage (0)
+States
+{
+Spawn:
+FIRE ABC 2
+loop
+Death:
+TNT1 A 0 
+TNT1 A 1 A_Explode(35,164,1)
+stop
+}
+}
+
+actor ChainGunFire : FastProjectile
+{
+PROJECTILE
+damagetype "Nope"
+Speed 170
+Damage (5)
++FOILINVUL
+radius 2
+height 2
+scale 2.5
+States
+{
+Spawn:
+PCHS C 1
+loop
+Death:
+MMFX BCDE 3
+stop
+XDeath:
+TNT1 A 1
+stop
+}
+}

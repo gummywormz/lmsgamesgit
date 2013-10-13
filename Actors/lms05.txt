@@ -1,0 +1,353 @@
+//air man scavenger
+
+actor PunishMarker : Inventory
+{
+inventory.amount 1
+inventory.maxamount 999
+}
+
+actor ScavengeItemGet : Inventory
+{
+inventory.amount 1
+inventory.maxamount 8
+}
+
+actor FanFiendMarker : Inventory
+{
+inventory.amount 1
+inventory.maxamount 1
+}
+
+actor MobyMarker : Inventory
+{
+inventory.amount 1
+inventory.maxamount 1
+}
+
+actor EyeMarker : Inventory
+{
+inventory.amount 1
+inventory.maxamount 1
+}
+
+actor BBallPastaMarker : Inventory
+{
+inventory.amount 1
+inventory.maxamount 1
+}
+
+actor DolphinMarker : Inventory
+{
+inventory.amount 1
+inventory.maxamount 1
+}
+
+actor TurtleMarker : Inventory
+{
+inventory.amount 1
+inventory.maxamount 1
+}
+
+actor FrostMarker : Inventory
+{
+inventory.amount 1
+inventory.maxamount 1
+}
+
+actor IceToyMarker : Inventory
+{
+inventory.amount 1
+inventory.maxamount 1
+}
+
+actor GutsGMarker : Inventory
+{
+inventory.amount 1
+inventory.maxamount 1
+}
+
+actor IceToyScavenge : CustomInventory
+{
++INVENTORY.AUTOACTIVATE
+inventory.respawntics 35
+inventory.amount 1
+inventory.maxamount 1
+inventory.pickupmessage "You found the Ice Man Toy!"
+Inventory.PickupSound "item/1up"
+scale 2.0
++COUNTITEM
+states
+{
+Spawn:
+TICE A 1
+LOOP
+Pickup:
+TNT1 A 1
+TNT1 A 1 A_JumpIfInventory("IceToyMarker",1,"Fale")
+TNT1 A 1 A_GiveInventory("IceToyMarker",1)
+TNT1 A 1 A_GiveInventory("ScavengeItemGet",1)
+stop
+Fale:
+TICE A 1
+fail
+}
+}
+
+actor IceToyPersistant : RandomSpawner {
+Dropitem "IceToyScavenge" 255
+}
+
+actor FanFiendScavenge : CustomInventory
+{
++NOGRAVITY
++INVENTORY.AUTOACTIVATE
+inventory.respawntics 35
+inventory.amount 1
+inventory.maxamount 1
+inventory.pickupmessage "You found the fan fiend! He never thought you would find him here..."
+Inventory.PickupSound "item/1up"
+scale 2.0
++COUNTITEM
+states
+{
+Spawn:
+FANF ABABABABA 4
+FANF C 4
+LOOP
+Pickup:
+TNT1 A 1
+TNT1 A 1 A_JumpIfInventory("FanFiendMarker",1,"Fale")
+TNT1 A 1 A_GiveInventory("FanFiendMarker",1)
+TNT1 A 1 A_GiveInventory("ScavengeItemGet",1)
+stop
+Fale:
+FANF A 1
+fail
+}
+}
+
+actor FanFiendPersistant : RandomSpawner {
+Dropitem "FanFiendScavenge" 255
+}
+
+actor GutsGScavenge : CustomInventory
+{
++INVENTORY.AUTOACTIVATE
+inventory.respawntics 35
+inventory.amount 1
+inventory.maxamount 1
+inventory.pickupmessage "You found Guts Man G! What is he doing here, though?"
+Inventory.PickupSound "item/1up"
+scale 2.0
++COUNTITEM
+states
+{
+Spawn:
+GUTG A 1
+LOOP
+Pickup:
+TNT1 A 1
+TNT1 A 1 A_JumpIfInventory("GutsGMarker",1,"Fale")
+TNT1 A 1 A_GiveInventory("GutsGMarker",1)
+TNT1 A 1 A_GiveInventory("ScavengeItemGet",1)
+stop
+Fale:
+GUTG A 1
+fail
+}
+}
+
+actor GutsGPersistant : RandomSpawner {
+Dropitem "GutsGScavenge" 255
+}
+
+actor DolphinScavenge : CustomInventory
+{
++INVENTORY.AUTOACTIVATE
++FLOORHUGGER
+inventory.respawntics 35
+inventory.amount 1
+inventory.maxamount 1
+inventory.pickupmessage "You found the sky dolphin! He's jealous of the legendary sky whale."
+Inventory.PickupSound "item/1up"
+scale 2.0
++COUNTITEM
+states
+{
+Spawn:
+DOLP A 1
+LOOP
+Pickup:
+TNT1 A 1
+TNT1 A 1 A_JumpIfInventory("DolphinMarker",1,"Fale")
+TNT1 A 1 A_GiveInventory("DolphinMarker",1)
+TNT1 A 1 A_GiveInventory("ScavengeItemGet",1)
+stop
+Fale:
+DOLP A 1
+fail
+}
+}
+
+actor DolphinPersistant : RandomSpawner {
+Dropitem "DolphinScavenge" 255
+}
+
+actor MobyScavenge : CustomInventory
+{
++INVENTORY.AUTOACTIVATE
++FLOORHUGGER
+inventory.respawntics 35
+inventory.amount 1
+inventory.maxamount 1
+inventory.pickupmessage "You found the legendary sky whale! He teaches you his mysterious ways!"
+Inventory.PickupSound "item/1up"
+scale 2.0
++COUNTITEM
+states
+{
+Spawn:
+MOBY AAABBBCCCCDDEEEFFFEEEDDDCCCBBB 2
+LOOP
+Pickup:
+TNT1 A 1
+TNT1 A 1 A_JumpIfInventory("MobyMarker",1,"Fale")
+TNT1 A 1 A_GiveInventory("MobyMarker",1)
+TNT1 A 1 A_GiveInventory("ScavengeItemGet",1)
+TNT1 A 1 SetPlayerProperty(0,1,3)
+stop
+Fale:
+MOBY AAABBBCCCCDDEEEFFFEEEDDDCCCBBB 2
+fail
+}
+}
+
+actor MobyPersistant : RandomSpawner {
+Dropitem "MobyScavenge" 255
+}
+
+actor BBallPastaScavenge : CustomInventory
+{
++INVENTORY.AUTOACTIVATE
+inventory.respawntics 35
+inventory.amount 1
+inventory.maxamount 1
+inventory.pickupmessage "You found the BBall Pasta! Don't eat it!"
+Inventory.PickupSound "item/1up"
+scale 2.0
++COUNTITEM
+states
+{
+Spawn:
+BBPS A 1
+LOOP
+Pickup:
+TNT1 A 1
+TNT1 A 1 A_JumpIfInventory("BBallPastaMarker",1,"Fale")
+TNT1 A 1 A_GiveInventory("BBallPastaMarker",1)
+TNT1 A 1 A_GiveInventory("ScavengeItemGet",1)
+stop
+Fale:
+BBPS A 1
+fail
+}
+}
+
+actor BBallPastaPersistant : RandomSpawner {
+Dropitem "BBallPastaScavenge" 255
+}
+
+actor TurtleScavenge : CustomInventory
+{
++INVENTORY.AUTOACTIVATE
+inventory.respawntics 35
+inventory.amount 1
+inventory.maxamount 1
+inventory.pickupmessage "You found the Turtle!"
+Inventory.PickupSound "item/1up"
+scale 2.0
++COUNTITEM
+states
+{
+Spawn:
+TURT A 1
+LOOP
+Pickup:
+TNT1 A 1
+TNT1 A 1 A_JumpIfInventory("TurtleMarker",1,"Fale")
+TNT1 A 1 A_GiveInventory("TurtleMarker",1)
+TNT1 A 1 A_GiveInventory("ScavengeItemGet",1)
+stop
+Fale:
+TURT A 1
+fail
+}
+}
+
+actor TurtlePersistant : RandomSpawner {
+Dropitem "TurtleScavenge" 255
+}
+
+actor FrostManScavenge : CustomInventory
+{
++INVENTORY.AUTOACTIVATE
++FLOORHUGGER
+inventory.respawntics 35
+inventory.amount 1
+inventory.maxamount 1
+inventory.pickupmessage "You found Frost Man! Why does he have an afro?"
+Inventory.PickupSound "item/1up"
+scale 2.0
++COUNTITEM
+states
+{
+Spawn:
+AFRO A 1
+LOOP
+Pickup:
+TNT1 A 1
+TNT1 A 1 A_JumpIfInventory("FrostMarker",1,"Fale")
+TNT1 A 1 A_GiveInventory("FrostMarker",1)
+TNT1 A 1 A_GiveInventory("ScavengeItemGet",1)
+stop
+Fale:
+AFRO A 1
+fail
+}
+}
+
+actor FrostPersistant : RandomSpawner {
+Dropitem "FrostManScavenge" 255
+}
+
+actor YellowEyeScavenge : CustomInventory
+{
++INVENTORY.AUTOACTIVATE
++FLOORHUGGER
+inventory.respawntics 35
+inventory.amount 1
+inventory.maxamount 1
+inventory.pickupmessage "You found Yellow Devil's Eye! Don't electocute it!"
+Inventory.PickupSound "item/1up"
+scale 2.0
++COUNTITEM
+states
+{
+Spawn:
+GEYE A 1
+LOOP
+Pickup:
+TNT1 A 1
+TNT1 A 1 A_JumpIfInventory("EyeMarker",1,"Fale")
+TNT1 A 1 A_GiveInventory("EyeMarker",1)
+TNT1 A 1 A_GiveInventory("ScavengeItemGet",1)
+stop
+Fale:
+GEYE A 1
+fail
+}
+}
+
+actor YellowEyePersistant : RandomSpawner {
+Dropitem "YellowEyeScavenge" 255
+}

@@ -1,0 +1,64 @@
+//special stage 1
+
+actor SonicRing : CustomInventory //5895
+{
+Inventory.RespawnTics 70
+inventory.amount 1
++INVENTORY.QUIET
+inventory.maxamount 9999999999
+inventory.icon "RINGICO"
+Inventory.PickupSound "misc/ring"
+scale 2.0
+-NOGRAVITY
++COUNTITEM
++INVBAR
+states
+{
+Spawn:
+TNT1 A 0
+TNT1 A 0 //ThrustThingZ(0,10,0,0)
+GSRN ABCD 3
+goto spawn+2
+Use:
+WEAP Q 0 
+WEAP Q 0
+fail
+Pickup:
+TNT1 A 0 A_PlaySound("misc/ring")
+stop
+}
+}
+
+actor SonicRingSpawner : RandomSpawner 5895 {
+Dropitem "SonicRing" 255
+}
+
+actor ChaosEmerald 5896
+{
+Scale 2.0
++CLIENTSIDEONLY
+States
+{
+Spawn:
+GCEM A 1
+loop
+}
+}
+
+actor ChaosEmerald2 5897
+{
+Scale 2.0
++CLIENTSIDEONLY
+States
+{
+Spawn:
+GCEM B 1
+loop
+}
+}
+
+actor SonicRoundChecker : Inventory
+{
+inventory.amount 1
+inventory.maxamount 999
+}

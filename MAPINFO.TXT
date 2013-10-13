@@ -84,7 +84,7 @@ map LMS12 "Knight Man's Castle of Arson, Murder, and Rainbows" //done for good
  aircontrol = 0.5
 }
 
-map LMS13 "MUSICAL ELEVATORS" //done for good
+map LMS13 "MUSICAL ELEVATOR" //done for good
 {
  next = "LMS14"
  levelnum = 589

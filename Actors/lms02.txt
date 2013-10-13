@@ -1,0 +1,702 @@
+//magical flight
+
+actor StarRodLMSWep : MegaBuster
+{
+Weapon.AmmoUse 0
+Weapon.AmmoGive 28
+Weapon.SlotNumber 1
+Obituary "%o was magic'd by %k's Star Rod."
+Inventory.Pickupmessage "Power up! Star Rod!"
+Inventory.Icon "STRICO"
+weapon.ammotype "BusterAmmo"
+inventory.pickupsound "weapon/weaponup"
++WEAPON.AMMO_OPTIONAL
+Scale 2.0
+States
+{
+Spawn:
+MSHD C 1
+loop
+Ready:
+MSHD A 0 ACS_ExecuteAlways(998,0,0)
+MSHD A 1 A_WeaponReady
+Goto Ready+1
+Deselect:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Lower
+MSHD A 1 A_Lower
+Loop
+Select:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Raise
+MSHD A 1 A_Raise
+Loop
+Fire:
+MSHD A 0 A_JumpIfNoAmmo("NoAmmo")
+MSHD A 0 A_JumpIfInventory("QuickBeamsFire",1,"QuickFire")
+MSHD A 0 A_PlaySoundEx("weapon/magicwand","Weapon")
+MSHD A 0 A_FireCustomMissile("MagicStar",0,0,15,0)
+MSHD B 3
+MSHD A 7
+MSHD A 0 A_Refire
+Goto Ready+1
+QuickFire:
+MSHD A 0 A_PlaySoundEx("misc/quicktrap","Weapon")
+MSHD A 0 A_FireCustomMissile("QuickBeam2",0,0,15,0)
+MSHD B 3
+MSHD A 7
+MSHD A 0 A_Refire
+Goto Ready+1
+NoAmmo:
+MSHD A 1 ACS_Execute(979,0)
+Goto Ready+1
+}
+}
+
+actor QuickBeam2 : QuickBeam
+{
++FOILINVUL
+}
+
+Actor QuickBeamsFire : Inventory
+{
+inventory.amount 1
+inventory.maxamount 1
+}
+
+Actor MonstersNow : Inventory
+{
+inventory.amount 1
+inventory.maxamount 1
+}
+
+actor MagicStar
+{
+PROJECTILE
++NOTARGETSWITCH
+damagetype "Bolt"
+scale 2.5
+Speed 60
+Radius 7
+Height 6
+Damage (20)
+States
+{
+Spawn:
+MSTA ABCD 4
+loop
+XDeath:
+TNT1 A 0 
+TNT1 A 0
+MSTA EFG 3
+stop
+Death:
+TNT1 A 0 
+TNT1 A 0 A_JumpIfinTargetInventory("MonstersNow",1,"MonsterSpawn")
+TNT1 A 0 A_Jump(256,"MagnetMissile","GFireBall","GSpew","Light1","Light2","Light3",
+"Fire1","Fire2","Fire3","Ice1","Ice2","Ice3","Wcap1","Wcap2","Wcap3","Wcap4",
+"FWave","Ballade","Hard","Silver","Shadow","Proto")
+MSTA EFG 3
+stop
+MonsterSpawn:
+TNT1 A 0 A_Jump(40,"Telly")
+TNT1 A 0 A_Jump(40,"Rembakun")
+TNT1 A 0 A_Jump(40,"ThunderLordM")
+MSTA EFG 3
+stop
+Telly:
+TNT1 A 0 A_SpawnItemEx("TellySoul",0,10,2,0,0,0,0)
+MSTA EFG 3
+stop
+Rembakun:
+TNT1 A 0 A_SpawnItemEx("Rembakun",0,10,2,0,0,0,0)
+MSTA EFG 3
+stop
+ThunderLordM:
+TNT1 A 0 A_SpawnItemEx("ThunderLordM",0,10,2,0,0,0,0)
+MSTA EFG 3
+stop
+MagnetMissile:
+TNT1 A 1 A_CustomMissile("MagnetMissile2",0,0,0,0,0)
+MSTA EFG 3
+stop
+GFireBall:
+TNT1 A 1 A_CustomMissile("GammaFireBall2",0,0,0,0,0)
+MSTA EFG 3
+stop
+GSpew:
+TNT1 A 1 A_CustomMissile("GammaSpew2",0,0,0,0,0)
+MSTA EFG 3
+stop
+Light1:
+TNT1 A 1 A_CustomMissile("CapsuleLightning0",0,0,0,0,0)
+MSTA EFG 3
+stop
+Light2:
+TNT1 A 1 A_CustomMissile("CapsuleLightning20",0,0,0,0,0)
+MSTA EFG 3
+stop
+Light3:
+TNT1 A 1 A_CustomMissile("CapsuleLightning31",0,0,0,0,0)
+MSTA EFG 3
+stop
+Fire1:
+TNT1 A 1 A_CustomMissile("CapsuleFire222",0,0,0,0,0)
+MSTA EFG 3
+stop
+Fire2:
+TNT1 A 1 A_CustomMissile("CapsuleFire21",0,0,0,0,0)
+MSTA EFG 3
+stop
+Fire3:
+TNT1 A 1 A_CustomMissile("CapsuleFire31",0,0,0,0,0)
+MSTA EFG 3
+stop
+Ice1:
+TNT1 A 1 A_CustomMissile("CapsuleIce22",0,0,0,0,0)
+MSTA EFG 3
+stop
+Ice2:
+TNT1 A 1 A_CustomMissile("CapsuleIce21",0,0,0,0,0)
+MSTA EFG 3
+stop
+Ice3:
+TNT1 A 1 A_CustomMissile("CapsuleIce31",0,0,0,0,0)
+MSTA EFG 3
+stop
+Wcap1:
+TNT1 A 1 A_CustomMissile("RandomWCapsuleProjectile1",0,0,0,0,0)
+MSTA EFG 3
+stop
+Wcap2:
+TNT1 A 1 A_CustomMissile("RandomWCapsuleProjectile2",0,0,0,0,0)
+MSTA EFG 3
+stop
+Wcap3:
+TNT1 A 1 A_CustomMissile("RandomWCapsuleProjectile3",0,0,0,0,0)
+MSTA EFG 3
+stop
+Wcap4:
+TNT1 A 1 A_CustomMissile("RandomWCapsuleProjectile4",0,0,0,0,0)
+MSTA EFG 3
+stop
+FWave:
+TNT1 A 1 A_CustomMissile("FireWave2",0,0,0,0,0)
+MSTA EFG 3
+stop
+Ballade:
+TNT1 A 1 A_CustomMissile("BalladeCracker2",0,0,0,0,0)
+MSTA EFG 3
+stop
+Hard:
+TNT1 A 1 A_CustomMissile("HardKnuckle2",0,0,0,0,0)
+MSTA EFG 3
+stop
+Silver:
+TNT1 A 1 A_CustomMissile("SilverTomahawk2",0,0,0,0,0)
+MSTA EFG 3
+stop
+Shadow:
+TNT1 A 1 A_CustomMissile("ShadowBlade2",0,0,0,0,0)
+MSTA EFG 3
+stop
+Proto:
+TNT1 A 1 //A_CustomMissile("ProtoShot32",0,0,0,0,0)
+MSTA EFG 3
+stop
+}
+}
+
+actor GammaFireBall2 : GammaFireBall
+{
+Speed 40
+Damagetype "Nope"
++FOILINVUL
+}
+
+actor GammaSpew2 : GammaSpew
+{
+Speed 30
+Damagetype "Nope"
++FOILINVUL
+}
+
+ACTOR TellySoul : LostSoul
+{
++ISMONSTER
++FOILINVUL
+Damagetype "Nope"
+damagefactor "Shock", 0.0
+DamageFactor "Met", 0.0
+Health 70
+Radius 16
+Height 40
+Mass 999
+Speed 10
+SCALE 2.5
+Species "Telly"
++NOINFIGHTING
+Damage 7
+PainChance 256
+MONSTER
+PainSound "misc/metdie"
++SHOOTABLE
+RenderStyle "Normal"
+-DONTFALL
++ACTIVATEMCROSS
++SOLID
+-NOBLOCKMONST
++LOOKALLAROUND
++QUICKTORETALIATE
++NOBLOOD
++NOSPLASHALERT
++WINDTHRUST
++DONTBLAST
++NODAMAGETHRUST
++FLOAT
++NOGRAVITY
++MISSILEEVENMORE
++MISSILEMORE
++STANDSTILL
+Obituary "%o watched too much Telly."
+States
+{
+Spawn:
+TELY A 1
+TELY ABCDDDEF 5 A_Look
+Loop
+See:
+TELY ABCDDDEF 6 A_Chase
+Loop
+Missile:
+TELY ABCDDDEF 10 A_FaceTarget
+TELY ABCDDDEF 4 A_SkullAttack
+TELY ABCDDDEF 4
+Goto Missile+2
+Pain:
+TELY D 3
+TELY D 3 A_Pain
+Goto See
+Death:
+MMFX B 1
+MMFX B 0 A_Fall
+MMFX B 0 A_Pain
+MMFX FGHI 3 A_Stop
+Stop
+}
+}
+
+actor MagnetMissile2 : MagnetMissile
+{
+Speed 30
++foilinvul
+Damagetype "Nope"
+}
+
+actor LightnigShot
+{
+PROJECTILE
++FOILINVUL
+-WINDTHRUST
++LOOKALLAROUND
++SKYEXPLODE
+-NOGRAVITY
++DONTBLAST
+Radius 16
+Height 11
+scale 2.5
+damage (13)
+damagetype "Nope"
+speed 30
+States
+{
+Spawn:
+TNT1 A 0 ThrustThingZ(0,4,0,1)
+TLBL A 1
+goto spawn+1
+}
+}
+
+actor RemBomb
+{
+PROJECTILE
++FOILINVUL
+Radius 6
+Height 7
+scale 2.5
+damagetype "Nope"
+-NOGRAVITY
+States
+{
+Spawn:
+NAMI A 4
+loop
+Death:
+NAPA A 0 A_Stop
+NAPA A 0 A_PlaySoundEx("weapon/napalm", "Voice")
+NAPA A 0 A_ChangeFlag("NOGRAVITY",1)
+NAPA A 0 A_Explode(35, 128, 0)
+NAPA EFGHIJKLMNOPQRS 2
+stop
+}
+}
+
+actor RemMissile
+{
++FOILINVUL
+PROJECTILE
+Radius 8
+Height 7
+scale 2.5
+Speed 43
+damagetype "Nope"
++NOGRAVITY
+States
+{
+Spawn:
+NAMI A 1
+loop
+Death:
+NAPA A 0 A_Stop
+NAPA A 0 A_PlaySoundEx("weapon/drillexplode", "Voice")
+NAPA A 0 A_Explode(20, 128, 0)
+NAPA EFGHIJKLMNOPQRS 2
+stop
+}
+}
+
+actor Rembakun
+{
+Translation "192:192=176:176", "198:198=176:176"
++SOLID
+damagefactor "Shock", 0.0
+damagefactor "Met", 0.0
++NOGRAVITY
++ISMONSTER
++STANDSTILL
++FLOAT
++SHOOTABLE
++MISSILEMORE
++ACTIVATEMCROSS
++SOLID
++LOOKALLAROUND
++NOBLOOD
++NOSPLASHALERT
+-WINDTHRUST
++DONTBLAST
++NODAMAGETHRUST
+MONSTER
+obituary "%o was bombed by a Rembakun."
+mass 999999
+damagefactor "Met", 0.0
+speed 35
+DeathSound "misc/metdie"
+PainSound "misc/metdie"
+Health 36
+painchance 256
+height 90
+radius 32
+scale 2.5
+States
+{
+Spawn:
+REMB BC 2 A_Look
+REMB BC 2
+goto Spawn
+See:
+REMB BC 2 A_Chase
+REMB BC 3 
+loop
+Missile:
+REMB D 0 A_Jumpifcloser(128,"Bomb")
+Goto ShootMissile
+Bomb:
+REMB D 3 A_FaceTarget
+REMB E 0 A_Playsoundex("weapon/mbuster","Voice")
+REMB E 2 A_CustomMissile("RemBomb",0,0,0,0)
+REMB F 1
+REMB BC 2
+goto See
+ShootMissile:
+REMB D 3 A_FaceTarget
+REMB E 0 A_Playsoundex("weapon/mbuster","Voice")
+REMB E 2 A_CustomMissile("RemMissile",0,0,0,0)
+REMB F 1
+REMB BC 3
+REMB BC 3
+REMB BC 3
+goto See
+Pain:
+REMB H 1 A_Pain
+REMB H 1 A_FaceTarget
+goto Spawn
+Death:
+MMFX B 0 A_Fall
+MMFX B 0 A_Scream
+MMFX FGHI 3 A_Stop
+Stop
+}
+}
+
+actor ThunderLordM
+{
++SOLID
+damagefactor "Shock", 0.0
+damagefactor "Met", 0.0
++NOGRAVITY
++ISMONSTER
++FLOAT
++STANDSTILL
++SHOOTABLE
++ACTIVATEMCROSS
++SOLID
++LOOKALLAROUND
++NOBLOOD
++NOSPLASHALERT
+-WINDTHRUST
++DONTBLAST
++NODAMAGETHRUST
+MONSTER
+obituary "%o was zapped by a thunder lord."
+mass 999999
+speed 24
+DeathSound "misc/metdie"
+PainSound "misc/metdie"
+Health 45
+painchance 256
+height 90
+radius 32
+scale 2.5
+States
+{
+Spawn:
+TLOR AB 3 A_Look
+TLOR AB 3
+goto Spawn
+See:
+TLOR AB 2 A_Chase
+TLOR AB 3 
+loop
+Missile:
+TLOR CD 3 A_FaceTarget
+TLOR CD 0 A_Playsoundex("weapon/sparkshock","Voice")
+TLOR C 2 A_CustomMissile("LightnigShot",64,0,0,0)
+TLOR D 1
+TLOR AB 3
+TLOR AB 3
+TLOR AB 3
+Goto See
+Pain:
+TLOR A 1 A_Pain
+TLOR A 1 A_FaceTarget
+goto Spawn
+Death:
+MMFX B 0 A_Fall
+MMFX B 0 A_Scream
+MMFX FGHI 3 A_Stop
+Stop
+}
+}
+
+actor CapsuleLightning0 : CapsuleLightning
+{
+Speed 50
+DamageType "Nope"
++FOILINVUL
+}
+
+actor CapsuleLightning20 : CapsuleLightning2
+{
+Speed 50
+DamageType "Nope"
++FOILINVUL
+}
+
+actor CapsuleLightning31 : CapsuleLightning3
+{
+Speed 50
+DamageType "Nope"
++FOILINVUL
+}
+
+actor CapsuleFire222 : CapsuleFire
+{
+Speed 40
+DamageType "Nope"
++FOILINVUL
+}
+
+actor CapsuleFire21 : CapsuleFire2
+{
+Speed 40
+DamageType "Nope"
++FOILINVUL
+}
+
+actor CapsuleFire31 : CapsuleFire3
+{
+Speed 40
+DamageType "Nope"
++FOILINVUL
+}
+
+actor CapsuleIce22 : CapsuleIce
+{
+Speed 35
+DamageType "Nope"
++FOILINVUL
+}
+
+actor CapsuleIce21 : CapsuleIce2
+{
+Speed 35
+DamageType "Nope"
++FOILINVUL
+}
+
+actor CapsuleIce31 : CapsuleIce3
+{
+Speed 35
+DamageType "Nope"
++FOILINVUL
+}
+
+actor RandomWCapsuleProjectile1
+{
+PROJECTILE
+States
+{
+Spawn:
+TNT1 A 0
+TNT1 A 0 A_Jump(85,"Lightning")
+TNT1 A 0 A_Jump(85,"Ice")
+Goto Fire
+Lightning:
+TNT1 A 0 A_SpawnItemEx("CapsuleLightning0",0,0,0,0,50,20)
+stop
+Fire:
+TNT1 A 0 A_SpawnItemEx("CapsuleFire222",0,0,0,0,40,20)
+stop
+Ice:
+TNT1 A 0 A_SpawnItemEx("CapsuleIce22",0,0,0,0,30,20)
+stop
+}
+}
+
+actor RandomWCapsuleProjectile2
+{
+PROJECTILE
+States
+{
+Spawn:
+TNT1 A 0
+TNT1 A 0 A_Jump(85,"Lightning")
+TNT1 A 0 A_Jump(85,"Ice")
+Goto Fire
+Lightning:
+TNT1 A 0 A_SpawnItemEx("CapsuleLightning0",0,0,0,0,50,20)
+stop
+Fire:
+TNT1 A 0 A_SpawnItemEx("CapsuleFire222",0,0,0,0,40,20)
+stop
+Ice:
+TNT1 A 0 A_SpawnItemEx("CapsuleIce22",0,0,0,0,30,20)
+stop
+}
+}
+
+actor RandomWCapsuleProjectile3
+{
+PROJECTILE
+States
+{
+Spawn:
+TNT1 A 0
+TNT1 A 0 A_Jump(85,"Lightning")
+TNT1 A 0 A_Jump(85,"Ice")
+Goto Fire
+Lightning:
+TNT1 A 0 A_SpawnItemEx("CapsuleLightning0",0,0,0,0,50,20)
+stop
+Fire:
+TNT1 A 0 A_SpawnItemEx("CapsuleFire222",0,0,0,0,40,20)
+stop
+Ice:
+TNT1 A 0 A_SpawnItemEx("CapsuleIce22",0,0,0,0,30,20)
+stop
+}
+}
+
+
+actor RandomWCapsuleProjectile4
+{
+PROJECTILE
+States
+{
+Spawn:
+TNT1 A 0
+TNT1 A 0 A_Jump(85,"Lightning")
+TNT1 A 0 A_Jump(85,"Ice")
+Goto Fire
+Lightning:
+TNT1 A 0 A_SpawnItemEx("CapsuleLightning0",0,0,0,0,50,20)
+stop
+Fire:
+TNT1 A 0 A_SpawnItemEx("CapsuleFire222",0,0,0,0,40,20)
+stop
+Ice:
+TNT1 A 0 A_SpawnItemEx("CapsuleIce22",0,0,0,0,30,20)
+stop
+}
+}
+
+actor FireWave2 : FireWave
+{
+Speed 40
++FOILINVUL
+Damagetype "Nope"
+}
+
+actor BalladeCracker2 : BalladeCracker
+{
+Speed 40
++FOILINVUL
+DAMAGETYPE "Nope"
+}
+
+actor HardKnuckle2 : HardKnuckle
+{
+Speed 34
++FOILINVUL
+Damagetype "Nope"
+}
+
+actor SilverTomahawk2 : SilverTomahawk
+{
+Speed 60
++FOILINVUL
+Damagetype "Nope"
+}
+
+actor ShadowBlade2 : ShadowBlade
+{
+Speed 50
++FOILINVUL
+Damagetype "Nope"
+States
+{
+Spawn:
+SBLA ABAB 3
+SBLA A 0 A_ScaleVelocity(-1)
+SBLA ABAB 3
+Stop
+Death:
+TNT1 A 1
+stop
+}
+}
+
+actor ProtoShot32 : Protoshot3
+{
+Speed 40
++FOILINVUL
+Damagetype "Nope"
+}

@@ -1,0 +1,88 @@
+//special stage plus b
+
+actor SpecialSpiney 5884
+{
+//$Category MM8BDM-Interactive Props
+//+CLIENTSIDEONLY
+//PROJECTILE
+//+RIPPER
+//Damage (255)
+//damagetype "Spiney"
+-SOLID
+Height 16
+radius 16
++DONTBLAST
+scale 2.5
++NOGRAVITY
++THRUGHOST
++NOINTERACTION
+states
+{
+Spawn:
+SPSN A 0 A_ClearTarget
+SPSN A 0 A_SpawnItemEx("SpineyDamager")
+SPSN A 17
+Loop
+Death:
+TNT1 A 1
+TNT1 A 0 A_SpawnItemEx("SpecialSpiney")
+stop
+}
+}
+
+actor SpineyDamager
+{
+PROJECTILE
+PROJECTILE
++RIPPER
+-SOLID
+Height 16
+radius 16
++DONTBLAST
+scale 2.5
++NOGRAVITY
++THRUGHOST
+Damage (255)
+damagetype "Spiney"
+
+states
+{
+Spawn:
+TNT1 A 35
+TNT1 A 0
+stop
+}
+}
+
+actor BetterRing : CustomInventory // for the new Special Stage
+{
+Inventory.RespawnTics 50
+inventory.amount 1
+inventory.maxamount 9999999999
+inventory.pickupmessage ""
+inventory.icon "RINGICO"
+Inventory.PickupSound "misc/ring"
+scale 2.0
++NOGRAVITY
++COUNTITEM
++INVBAR
++INVENTORY.QUIET
+states
+{
+Spawn:
+TNT1 A 0
+GSRN ABCD 3
+goto spawn+2
+Use:
+WEAP Q 0 
+WEAP Q 0
+fail
+Pickup:
+TNT1 A 0 A_PlaySound("misc/ring")
+stop
+}
+}
+
+actor BetterRingSpawner : RandomSpawner 5882 {
+Dropitem "BetterRing" 255
+}
