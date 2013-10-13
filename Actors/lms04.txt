@@ -41,20 +41,34 @@ States
 {
 Spawn:
 GCEM A 1
+GCEM A 1 A_Jump(256,"One","Two","Three","Four","Five","Six","Seven")
+loop
+One:
+GCEM A 1
+loop
+Two:
+GCEM B 1
+loop
+Three:
+GCEM C 1
+loop
+Four:
+GCEM D 1
+loop
+Five:
+GCEM E 1
+loop
+Six:
+GCEM F 1
+loop
+Seven:
+GCEM G 1
 loop
 }
 }
 
-actor ChaosEmerald2 5897
+actor ChaosEmerald2 : ChaosEmerald 5897
 {
-Scale 2.0
-+CLIENTSIDEONLY
-States
-{
-Spawn:
-GCEM B 1
-loop
-}
 }
 
 actor SonicRoundChecker : Inventory
