@@ -1,0 +1,214 @@
+map LMS01 "GENERIC LAVA PLATFORMS" //done for good
+{
+ next = "LMS02"
+ sky1 = "AIRSKY", 0
+ music = "LMS_MGM"
+ aircontrol = 0.5
+}
+
+map LMS02 "MAGICAL FLIGHT"//done for good
+{
+ next = "LMS03"
+ sky1 = "AIRSKY", 0
+ music = "LMS_MAGI"
+ aircontrol = 0.5
+}
+
+map LMS03 "GIANT TELLY"//done for good
+{
+ next = "LMS04"
+ music = "LMS_BTLY"
+ aircontrol = 0.5
+}
+
+map LMS04 "SPECIAL STAGE"//done for good
+{
+ next = "LMS05"
+ music = "LMS_SPST"
+ aircontrol = 0.5
+}
+
+map LMS05 "AIR MAN SCAVENGER HUNT" //done for good
+{
+ next = "LMS06"
+ music = "LMS_SCAV"
+ aircontrol = 0.5
+}
+
+map LMS06 "GCN MARIO CIRCUIT" //done for good
+{
+ next = "LMS07"
+ music = "LMS_DDC"
+ aircontrol = 0.5
+}
+
+map LMS07 "SPACE TRAIN!"// done for good
+{
+ next = "LMS08"
+ music = "LMS_SPHA"
+ aircontrol = 0.5
+}
+
+map LMS08 "Vs. Nightmare Upgraded" //done for good.
+{
+ next = "LMS09"
+ music = "LMS_NIG3"
+ aircontrol = 0.5
+}
+
+map LMS09 "ANTI-SOCIAL PROJECTILE DODGING" //DONE FOR GOOD
+{
+ next = "LMS10"
+music = "LMS_ANTI"
+ aircontrol = 0.5
+}
+
+map LMS10 "PHARAOH MAN'S SCAVENGER HUNT" //done for good
+{
+ next = "LMS11"
+ music = "LMS_PHA"
+ aircontrol = 0.5
+}
+
+map LMS11 "SPECIAL STAGE PLUS B"//redo
+{
+ next = "LMS12"
+ music = "LMS_SPS2"
+ aircontrol = 0.5
+}
+
+map LMS12 "Knight Man's Castle of Arson, Murder, and Rainbows" //done for good
+{
+ next = "LMS13"
+ music = "LMS_SKAS"
+ aircontrol = 0.5
+}
+
+map LMS13 "MUSICAL ELEVATORS" //done for good
+{
+ next = "LMS14"
+ levelnum = 589
+ music = "D_BLANK"
+ aircontrol = 0.5
+}
+
+map LMS14 "Cave Race" //done for good
+{
+ next = "LMS15"
+ music = "LMS_CAVE"
+ aircontrol = 0.5
+}
+
+map LMS15 "Fusion Jousting" //done for good
+{
+ next = "LMS16"
+ music = "LMS_JOU"
+ aircontrol = 0.5
+}
+
+map LMS16 "Generic Pac Man Map #3" //done for good
+{
+ next = "LMS17"
+ music = "LMS_Pac"
+ nojump
+ aircontrol = 0.5
+}
+
+//map LMS17 "Not So Special Stage" //crash ufos into people
+//{
+ //next = "LMS18"
+ //music = "LMS_UFO"
+ //aircontrol = 0.5
+//}
+
+//map LMS18 "CITY ESCAPE"// not mine
+//{
+ //next = "LMS19"
+ //music = "LMS_RUN"
+ //aircontrol = 0.5
+//}
+
+map LMS19 "TO THE TOP" //done for good
+{
+ next = "LMS20"
+ music = "LMS_FGHT"
+ aircontrol = 0.5
+ nojump
+}
+
+map LMS20 "123...DEATH!"
+{
+ next = "LMS21"
+ music = "LMS_DIE"
+ aircontrol = 0.5
+}
+
+//map LMS21 "Going Places"
+//{
+ //next = "LMS22"
+ //music = "LMS_WALL"
+ //aircontrol = 0.5
+//}
+
+//map LMS22 "SUPER BONUS SODA DELUXE"
+//{
+ //next = "LMS23"
+ //music = "LMS_CAN"
+ //aircontrol = 0.5
+//}
+
+//map LMS23 "Death Run"
+//{
+ //next = "LMS24"
+ //music = "LMS_DED"
+ //aircontrol = 0.5
+//}
+
+map LMS24 "STAR SEARCH"
+{
+ next = "LMS25"
+ music = "LMS_JUNG"
+ aircontrol = 0.5
+}
+
+map LMS25 "CRYSTAL MAN SCAVENGER HUNT"
+{
+ next = "LMS26"
+ music = "LMS_CRY"
+ aircontrol = 0.5
+}
+
+map LMS26 "ZOMBIE APOCALYPSE"
+{
+ next = "LMS27"
+ music = "LMS_ZOMB"
+ aircontrol = 0.5
+}
+
+//map LMS27 "Ball Kickers"//finish engine
+//{
+ //next = "LMS28"
+ //music = "LMS_KID"
+ //aircontrol = 0.5
+//}
+
+//map LMS28 "RAPID ROLL"//not mine
+//{
+ //next = "LMS29"
+ //music = "LMS_MET"
+ //aircontrol = 0.5
+//}
+
+//map LMS29 "EDDIE STORM"
+//{
+ //next = "LMS30"
+ //music = "LMS_EDD"
+ //aircontrol = 0.5
+//}
+
+//map LMS30 "Super Air Tile Man"
+//{
+ //next = "LMS31"
+ //music = "LMS_SATM"
+ //aircontrol = 0.5
+//}

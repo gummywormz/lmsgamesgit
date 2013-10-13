@@ -1,0 +1,267 @@
+actor ChaseMetKart : ChaseMet 5891
+{
+-SOLID
++INVULNERABLE
+-NOBLOCKMONST
++ACTIVATEMCROSS
++FOILINVUL
+}
+
+actor ItemBoxPersistant : RandomSpawner 5890 {
+Dropitem "ItemBox" 255
+}
+
+actor ItemBox : CustomInventory
+{
+Inventory.RespawnTics 87
+inventory.amount 1
+inventory.maxamount 1
+inventory.pickupmessage "Support Item! Item Box!"
+Inventory.PickupSound "item/1up"
+scale 2.0
++COUNTITEM
+states
+{
+Spawn:
+QBOX AB 3
+loop
+Pickup:
+WEA3 I 0 ACS_ExecuteAlways(74,0)
+WEA3 I 0 A_TakeInventory("Magnet",999)
+WEA3 I 0 A_TakeInventory("SnakeShot",999)
+WEA3 I 0 A_TakeInventory("BoostTank",999)
+WEA3 I 0 A_TakeInventory("GoldBoostTank",999)
+stop
+}
+}
+
+actor RandomItemBox : CustomInventory
+{
+Inventory.Amount 1
+Inventory.MaxAmount 1
++INVENTORY.AUTOACTIVATE
+States
+{
+Spawn:
+TNT1 A 1
+stop
+Use:
+TNT1 A 1 A_Jump(256,"Magnet1",
+"Magnet3",
+"Snake1",
+"Snake3",
+"ETank3",
+"ETank1",
+"GoldTank",
+"StarMan",
+"Magnet1",
+"Magnet3",
+"Snake1",
+"Snake3",
+"Magnet1",
+"Magnet3",
+"Snake1",
+"Snake3",
+"Magnet1",
+"Magnet3",
+"Snake1",
+"Snake3",
+"ETank3",
+"ETank1")
+stop
+Magnet1:
+TNT1 A 1 A_GiveInventory("Magnet",1)
+TNT1 A 1 A_TakeInventory("RandomItemBox",1)
+stop
+Magnet3:
+TNT1 A 1 A_GiveInventory("Magnet",3)
+TNT1 A 1 A_TakeInventory("RandomItemBox",1)
+stop
+Snake1:
+TNT1 A 1 A_GiveInventory("SnakeShot",1)
+TNT1 A 1 A_TakeInventory("RandomItemBox",1)
+stop
+Snake3:
+TNT1 A 1 A_GiveInventory("SnakeShot",3)
+TNT1 A 1 A_TakeInventory("RandomItemBox",1)
+stop
+ETank3:
+TNT1 A 1 A_GiveInventory("BoostTank",3)
+TNT1 A 1 A_TakeInventory("RandomItemBox",1)
+stop
+ETank1:
+TNT1 A 1 A_GiveInventory("BoostTank",1)
+TNT1 A 1 A_TakeInventory("RandomItemBox",1)
+stop
+GoldTank:
+TNT1 A 1 A_GiveInventory("GoldBoostTank",1)
+TNT1 A 1 ACS_ExecuteAlways(75,0)
+TNT1 A 1 A_TakeInventory("RandomItemBox",1)
+stop
+StarMan:
+TNT1 A 1 A_GiveInventory("StarManWep",1)
+TNT1 A 1 A_SelectWeapon("StarManWep")
+TNT1 A 1 A_TakeInventory("RandomItemBox",1)
+stop
+}
+}
+
+actor MagnetShock : MagnetMissile
+{
+Damage (1)
+Damagetype "SparkShock"
+}
+
+actor SearchSnakeLOL2 : SearchSnakeLOL
+{
+Damage (1)
+DamageType "SparkShock"
+}
+
+actor Magnet : CustomInventory
+{
+inventory.amount 1
+inventory.maxamount 3
+scale 2.0
++INVBAR
+inventory.icon "MAGICO"
+states
+{
+Spawn:
+QBOX A 0
+stop
+Use:
+TNT1 A 1 A_PlaySoundEx("weapon/magnetmissile","Voice")
+TNT1 A 1 A_FireCustomMissile("MagnetShock",0,0,0)
+stop
+}
+}
+
+actor SnakeShot : CustomInventory
+{
+inventory.amount 1
+inventory.maxamount 3
++INVBAR
+scale 2.0
+inventory.icon "SNKRICO"
+states
+{
+Spawn:
+QBOX A 0
+stop
+Use:
+TNT1 A 1 A_PlaySoundEx("weapon/mbuster","Voice")
+TNT1 A 1 A_FireCustomMissile("SearchSnakeLOL2",0,0,0)
+stop
+}
+}
+
+actor BoostTank : CustomInventory
+{
+inventory.amount 1
+inventory.maxamount 3
+scale 2.0
++INVBAR
+inventory.icon "ETank"
+states
+{
+Spawn:
+QBOX A 0
+stop
+Use:
+TNT1 A 1 A_PlaySoundEx("item/refill","Voice")
+TNT1 A 1 ThrustThing(angle*256/360, 35, 1, 0)
+stop
+}
+}
+
+actor GoldBoostTank : CustomInventory
+{
+inventory.amount 1
++INVBAR
+inventory.maxamount 1
+scale 2.0
+inventory.icon "GOLTICO"
+states
+{
+Spawn:
+QBOX A 0
+stop
+Use:
+TNT1 A 1 A_PlaySoundEx("item/refill","Voice")
+TNT1 A 1 ThrustThing(angle*256/360,35, 1, 0)
+fail
+}
+}
+
+actor StarManWep : MegaBuster
+{
+Weapon.AmmoUse 1
+Weapon.AmmoGive 30
+Weapon.SlotNumber 1
+Obituary "%o was brightened by %k's Star Man."
+weapon.ammotype "StarManAmmo"
+inventory.pickupsound "weapon/weaponup"
++WEAPON.AMMO_OPTIONAL
+inventory.icon "STKTICO"
+Scale 2.0
+States
+{
+Spawn:
+WEA2 J 1
+stop
+Ready:
+TNT1 A 1 A_WeaponReady
+loop
+Deselect:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Lower
+TNT1 A 1 A_Lower
+Loop
+Select:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Raise
+TNT1 A 1 A_Raise
+Loop
+Fire:
+TNT1 A 0 A_JumpIfNoAmmo("NoAmmo")
+TNT1 A 0 A_PlaySoundEx("weapon/starman","Weapon",1)
+TNT1 A 2
+TNT1 A 3 A_FireCustomMissile("StarManRadius",0,1,0,0)
+TNT1 A 1 A_Recoil(-10)
+TNT1 A 5
+TNT1 A 1
+loop
+NoAmmo:
+TNT1 A 1 ACS_Execute(979,0)
+TNT1 A 1 A_StopSound(CHAN_WEAPON)
+TNT1 A 1 A_TakeInventory("StarManWep",999)
+Goto Ready+1
+}
+}
+
+actor StarManRadius
+{
+PROJECTILE
++DONTSPLASH
++NOTARGETSWITCH
+Damagetype "SparkShock"
+Damage 0
+States
+{
+Spawn:
+TNT1 A 0
+TNT1 A 1 A_Explode(1,160,0)
+stop
+}
+}
+
+actor StarManAmmo : Ammo
+{
+inventory.amount 1
+inventory.maxamount 30
+}
+
+actor LapCounter : Inventory
+{
+inventory.amount 1
+inventory.maxamount 99
+}

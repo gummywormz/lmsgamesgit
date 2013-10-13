@@ -1,0 +1,12 @@
+#include "zcommon.acs"
+
+Script 321 OPEN
+{
+if(GetCvar("SV_NoMonsters") == 1){
+ConsoleCommand("SV_NoMonsters 0");
+}
+}
+
+Script 981 (void)
+{
+}

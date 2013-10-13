@@ -1,0 +1,55 @@
+graphic STRICO, 30, 30
+{
+   XScale 2.0
+   YScale 2.0
+   Patch MSHDC0, 0, 0
+}
+
+graphic RINGICO, 30, 30
+{
+   XScale 2.0
+   YScale 2.0
+   Patch GSRNA0, 0, 0
+}
+
+graphic PACPICO, 30, 30
+{
+   XScale 2.0
+   YScale 2.0
+   Patch PACPA0, 0, 0
+}
+
+graphic SHOMICO, 30, 30
+{
+   XScale 2.0
+   YScale 2.0
+   Patch SHKMA0, 0, 0
+}
+
+graphic MAGICO, 30, 30
+{
+   XScale 2.0
+   YScale 2.0
+   Patch MAGKA0, 0, 0
+}
+
+graphic GOLTICO, 30, 30
+{
+   XScale 2.0
+   YScale 2.0
+   Patch GOLTA0, 0, 0
+}
+
+graphic STKTICO, 30, 30
+{
+   XScale 2.0
+   YScale 2.0
+   Patch STKTA0, 0, 0
+}
+
+graphic SNKRICO, 30, 30
+{
+   XScale 2.0
+   YScale 2.0
+   Patch SNKRA0, 0, 0
+}

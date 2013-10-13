@@ -1,0 +1,50 @@
+//TIP SYSTEM
+//Stolen from Internal Conflict
+
+#library "Tips"
+#include "zcommon.acs"
+
+#DEFINE TIPCOUNT 29
+
+str Tips[TIPCOUNT] = { 
+
+"100% of people who drink water die.",
+"Ivory is every gender at once.",
+"Press Alt + F4 to get permanent invincibility!",
+"700 + 50 = 750",
+"Everyone is a terrible person, including you.",
+"The Tomato soup is poisonous.",
+"XDXDXDXDXDXDXDXDXDXD",
+"That last tip was a lie.",
+"An apple a day will keep the possibility of an apple invasion low.",
+"Behind you!",
+"I see that you're naked right now...",
+"boob",
+"Press jump to jump!",
+"Don't try this at home.",
+"666 backwards is 666! #superconspiracy2013",
+"Who are you again?",
+"You play call of duty, don't you?",
+"I saw what you did yesterday",
+"Everyone who wins is hacking.",
+"HAXOR!",
+"Sooooooooooooooooooo... wanna dance?",
+"Projectiles hurt you.",
+"The secret to the universe is to not die.",
+"You just died.",
+"How much wood could a wood chuck chuck if a wood chuck could chuck wood?",
+"42",
+"u ded lul",
+"That was terrible. You should be ashamed!",
+"I think you just died. I might be wrong though...",
+
+
+};
+
+
+script 199 DEATH
+{
+SetHudSize(800,600,0);
+SetFont("SMALLFONT");
+hudmessage(s:Tips[random(0,TIPCOUNT)]; HUDMSG_FADEINOUT|HUDMSG_LOG, 665, CR_GREEN, 400.0, 585.0, 5.0, 3.5, 1.0);
+}

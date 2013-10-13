@@ -1,0 +1,11 @@
+for beta something
+** Make Gamma Race to replace Cave Race
+** Ask Megaman for Sonic CD permission (If I even still have that)
+** Finish Pesky Kids (and give it a new name since it's not about windows anymore)
+** Pester Rozark later for City Escape
+
+for final release:
+** add a hub where people vote on maps
+** add a hard mode, set by a cvar and alters maps (like force beams on generic lava)
+** add a title / credit map and update credits
+** finish the 8 remaining maps and see how the others do

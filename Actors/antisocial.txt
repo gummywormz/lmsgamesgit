@@ -1,0 +1,402 @@
+actor BeatProp2 : BeatProp Replaces BeatProp 11644
+{
+-SOLID
+speed 10
+}
+
+
+actor RushJetProp 6899
+{
+//$Category MM8BDM-Props
+-SOLID
++NOGRAVITY
+Height 16
+Radius 16
+speed 15
+scale 2.5
+States
+{
+Spawn:
+RUSH GH 3 A_Wander
+loop
+}
+}
+
+actor FireStorm2 : FireStorm
+{
+ActiveSound "weapon/wrapfire"
+Speed 50
+SpawnID 156
+Damagetype "Nope"
++FOILINVUL
+}
+
+actor IceSlasher2 : IceSlasher
+{
+ActiveSound "weapon/wrapfire"
+SpawnID 157
+Damagetype "Nope"
++FOILINVUL
+}
+
+actor ThunderBeam2 : ThunderBeam
+{
+ActiveSound "weapon/wrapfire"
+SpawnID 158
+Damagetype "Nope"
++FOILINVUL
+}
+
+actor AtomicFire1Two : AtomicFire1
+{
+ActiveSound "weapon/wrapfire"
+SpawnID 159
+Damagetype "Nope"
++FOILINVUL
+}
+
+actor AtomicFire2Two : AtomicFire1
+{
+ActiveSound "weapon/wrapfire"
+Radius 10
+Height 10
+SpawnID 160
+Damagetype "Nope"
++FOILINVUL
+Damage (50)
++DONTBLAST
+}
+
+actor AtomicFire3Two : AtomicFire1
+{
+ActiveSound "weapon/wrapfire"
+SpawnID 161
+Damagetype "Nope"
++FOILINVUL
+Radius 15
+Height 15
++RIPPER
++DONTBLAST
+damagetype "AtomicFire3"
+Damage (100)
+}
+
+actor CrashBomb2 : CrashBomb
+{
+ActiveSound "weapon/wrapfire"
+SpawnID 162
+Damagetype "Nope"
++FOILINVUL
+}
+
+actor MetalBlade2 : MetalBlade
+{
+ActiveSound "weapon/wrapfire"
+SpawnID 163
+Damagetype "Nope"
++FOILINVUL
+}
+
+actor GeminiLaser2 : GeminiLaser
+{
+ActiveSound "weapon/wrapfire"
+SpawnID 164
+Damagetype "Nope"
++FOILINVUL
+}
+
+actor HardKnuckle3 : HardKnuckle
+{
+ActiveSound "weapon/wrapfire"
+SpawnID 165
+Damagetype "Nope"
++FOILINVUL
+}
+
+actor MagnetMissile4 : MageStaffFX2
+{
+ActiveSound "weapon/wrapfire"
+PROJECTILE
+Radius 8
+Height 5
+scale 2.5
+SpawnID 166
+Damagetype "Nope"
++FOILINVUL
+damage (24)
+speed 47
++SEEKERMISSILE
+-EXTREMEDEATH
+reactiontime 60
+States
+{
+Spawn:
+MAGG A 2
+MAGG A 00 A_MStaffTrack
+MAGG A 1 A_CountDown
+loop
+Death:
+MMFX BCDE 2
+stop
+}
+}
+
+actor Needle2 : Needle
+{
+ActiveSound "weapon/wrapfire"
+SpawnID 167
+Damagetype "Nope"
++FOILINVUL
+}
+
+actor SparkShock2 : SparkShock
+{
+ActiveSound "weapon/wrapfire"
+SpawnID 168
+Damagetype "Nope"
++FOILINVUL
+}
+
+actor SearchSnakeLOL : SearchSnake
+{
+ActiveSound "weapon/wrapfire"
+SpawnId 155
++FloorHugger
+Speed 80
+}
+
+actor DiveMissile2 : MageStaffFX2
+{
+ActiveSound "weapon/wrapfire"
+PROJECTILE
++SEEKERMISSILE
+-EXTREMEDEATH
+SpawnID 169
+Damagetype "Nope"
++FOILINVUL
+Radius 5
+Height 5
+scale 2.5
+damage (12)
+speed 35
+ReactionTime 85
+States
+{
+Spawn:
+DIVE AB 1 A_MStaffTrack
+DIVE A 1 A_CountDown
+loop
+Death:
+MMFX BCDE 2
+stop
+}
+}
+
+actor DrillBomb2 : DrillBomb
+{
+SpawnID 170
+Damagetype "Nope"
++FOILINVUL
+States
+{
+Spawn:
+DRIL A 1
+DRIL A 1 A_PlaySoundEx("weapon/drillfly","Weapon")
+loop
+Death:
+DRIL A 0 A_Stop
+DRIL A 0 A_PlaySoundEx("weapon/drillexplode", "Weapon")
+DRIL A 0 A_Explode(50, 96, 0)
+DRIL A 0 A_TakeFromTarget("DrillFlag",99)
+TNT1 A 2 A_SpawnItem("DrillExplode")
+stop
+}
+}
+
+actor DustCrusher2 : DustCrusher
+{
+ActiveSound "weapon/wrapfire"
+SpawnID 171
+Damagetype "Nope"
++FOILINVUL
+}
+
+actor PharaohShot1Two : PharaohShot1
+{
+ActiveSound "weapon/wrapfire"
+SpawnID 172
+Damagetype "Nope"
++FOILINVUL
+}
+
+actor PharaohShot2Two : PharaohShot2
+{
+ActiveSound "weapon/wrapfire"
+SpawnID 173
+Damagetype "Nope"
++FOILINVUL
+}
+
+actor PharaohShot3Two : PharaohShot3
+{
+ActiveSound "weapon/wrapfire"
+SpawnID 174
+Damagetype "Nope"
++FOILINVUL
+}
+
+actor CrystalEye2 : CrystalEye // : MaceFX1
+{
+ActiveSound "weapon/wrapfire"
+SpawnID 175
+Damagetype "Nope"
++FOILINVUL
+}
+
+actor BlizzardAttack2 : BlizzardAttack
+{
+ActiveSound "weapon/wrapfire"
+SpawnID 176
+Damagetype "Nope"
++FOILINVUL
+}
+
+actor YamatoSpear2 : YamatoSpear
+{
+ActiveSound "weapon/wrapfire"
+SpawnID 177
+Damagetype "Nope"
++FOILINVUL
+}
+
+actor FreezeCracker2 : FreezeCracker
+{
+ActiveSound "weapon/wrapfire"
+SpawnID 178
+Damagetype "Nope"
++FOILINVUL
+}
+
+actor NoiseCrushTwo : NoiseCrush
+{
+ActiveSound "weapon/wrapfire"
+SpawnID 179
+Damagetype "Nope"
++FOILINVUL
+States
+{
+Spawn:
+TNT1 A 0
+TNT1 A 0 A_SpawnItemEx("NoiseCrushTrail1",0,0,0,0,0,0,0)
+TNT1 A 1 A_CountDown
+TNT1 A 0 A_SpawnItemEx("NoiseCrushTrail2",0,0,0,0,0,0,0)
+TNT1 A 1 A_CountDown
+TNT1 A 0 A_SpawnItemEx("NoiseCrushTrail3",0,0,0,0,0,0,0)
+TNT1 A 1 A_CountDown
+TNT1 A 0 A_SpawnItemEx("NoiseCrushTrail4",0,0,0,0,0,0,0)
+TNT1 A 1 A_CountDown
+Goto Look
+Look:
+TNT1 A 0 A_SpawnItemEx("NoiseCrushTrail1",0,0,0,0,0,0,0)
+TNT1 A 1 A_CountDown
+TNT1 A 0 A_SpawnItemEx("NoiseCrushTrail2",0,0,0,0,0,0,0)
+TNT1 A 1 A_CountDown
+TNT1 A 0 A_SpawnItemEx("NoiseCrushTrail3",0,0,0,0,0,0,0)
+TNT1 A 1 A_CountDown
+TNT1 A 0 A_SpawnItemEx("NoiseCrushTrail4",0,0,0,0,0,0,0)
+TNT1 A 1 A_CountDown
+loop
+}
+}
+
+actor NoiseCrush2Two : NoiseCrush2
+{
+ActiveSound "weapon/wrapfire"
+SpawnID 180
+Damagetype "Nope"
++FOILINVUL
+}
+
+actor ThunderBolt2 : ThunderBolt
+{
+ActiveSound "weapon/wrapfire"
+SpawnID 181
+Damagetype "Nope"
++FOILINVUL
+}
+
+actor FlashBomb2 : FlashBomb
+{
+ActiveSound "weapon/wrapfire"
+SpawnID 182
+Damagetype "Nope"
++FOILINVUL
+}
+
+actor HomingSniper2 : MageStaffFX2
+{
+ActiveSound "weapon/wrapfire"
+SpawnID 183
+Damagetype "Nope"
++FOILINVUL
++MISSILE
++SEEKERMISSILE
+-EXTREMEDEATH
+Radius 5
+Height 5
+scale 2.5
+damage (18)
+speed 20
+States
+{
+Spawn:
+HSNM BBCCBBCC 1 A_MStaffTrack
+Goto Primed
+Primed:
+HSNM B 1 A_MStaffTrack
+HSNM B 0 A_JumpIfTargetInLOS("See", 0, 1)
+HSNM B 1 A_MStaffTrack
+HSNM B 0 A_JumpIfTargetInLOS("See", 0, 1)
+HSNM C 1 A_MStaffTrack
+HSNM B 0 A_JumpIfTargetInLOS("See", 0, 1)
+HSNM C 1 A_MStaffTrack
+HSNM B 1 A_JumpIfTargetInLOS("See", 0, 1)
+loop
+See:
+HSNM BBBBBB 0 A_MStaffTrack
+HSNM B 1
+HSNM B 0 A_ScaleVelocity(2.0)//A_SpawnItemEx("HomingSniper2",0,0,0,momx*2,momy*2,momz*2,0,SXF_ABSOLUTEMOMENTUM|SXF_ABSOLUTEPOSITION)
+Goto FastMode
+FastMode:
+HSNM BC 2 
+HSNM B 0 A_SpawnItemEx("HomingSniperLockon",0,0,0,momx*10,momy*10,momz*10,0,SXF_ABSOLUTEMOMENTUM|SXF_ABSOLUTEPOSITION)
+HSNM BC 2 
+HSNM B 0 A_SpawnItemEx("HomingSniperLockon",0,0,0,momx*10,momy*10,momz*10,0,SXF_ABSOLUTEMOMENTUM|SXF_ABSOLUTEPOSITION)
+HSNM BC 2 
+HSNM B 0 A_SpawnItemEx("HomingSniperLockon",0,0,0,momx*10,momy*10,momz*10,0,SXF_ABSOLUTEMOMENTUM|SXF_ABSOLUTEPOSITION)
+HSNM BC 2 //A_MStaffTrack
+HSNM B 0 A_SpawnItemEx("HomingSniperLockon",0,0,0,momx*10,momy*10,momz*10,0,SXF_ABSOLUTEMOMENTUM|SXF_ABSOLUTEPOSITION)
+Goto See+4
+//loop
+Death:
+MMFX B 0
+MMFX BCDE 2
+stop
+}
+}
+
+actor WaterBalloon2 : WaterBalloon
+{
+ActiveSound "weapon/wrapfire"
+SpawnID 184
+Damagetype "Nope"
++FOILINVUL
+}
+
+actor BalladeCracker3 : BalladeCracker
+{
+ActiveSound "weapon/wrapfire"
+SpawnID 185
+Damagetype "Nope"
++FOILINVUL
+}
