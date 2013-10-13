@@ -185,12 +185,12 @@ map LMS26 "ZOMBIE APOCALYPSE"
  aircontrol = 0.5
 }
 
-//map LMS27 "Ball Kickers"//finish engine
-//{
- //next = "LMS28"
- //music = "LMS_KID"
- //aircontrol = 0.5
-//}
+map LMS27 "Ball Kickers"//finish engine
+{
+ next = "LMS28"
+ music = "LMS_BALL"
+ aircontrol = 0.5
+}
 
 //map LMS28 "RAPID ROLL"//not mine
 //{

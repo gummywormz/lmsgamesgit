@@ -92,6 +92,9 @@ PLAY H 0 ACS_ExecuteAlways(249, 0)
 Goto pain+1
 PLAY H 0 A_GiveInventory("BrightBlind",55)
 Goto pain+1
+Pain.Simon:
+PLAY H 0 A_GiveInventory("CantFireBall",1)
+Goto Pain.SparkShock
 Pain.TimeSlow:
 PLAY H 0 A_GiveInventory("Slowed",1)
 Goto pain+1
