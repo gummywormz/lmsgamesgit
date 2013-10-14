@@ -4,7 +4,7 @@
 #library "Tips"
 #include "zcommon.acs"
 
-#DEFINE TIPCOUNT 29
+#DEFINE TIPCOUNT 36
 
 str Tips[TIPCOUNT] = { 
 
@@ -37,6 +37,13 @@ str Tips[TIPCOUNT] = {
 "u ded lul",
 "That was terrible. You should be ashamed!",
 "I think you just died. I might be wrong though...",
+"At least you're not playing saxton hale.",
+"#yolo",
+"Your fault you died.",
+"To figure out the true meaning of life, die.",
+"You're a murderer.",
+"You can't spell success without suc.",
+"You deserved that one.",
 
 
 };

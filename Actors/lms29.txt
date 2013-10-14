@@ -1,0 +1,98 @@
+actor EvilEddie : Eddie
+{
+states
+{
+Melee:
+EDDI E 4 A_FaceTarget
+EDDI F 18 A_SpawnItemEx("RandomLMSWeapon",0,0,32,0,0,0)
+EDDI F 0 A_Die
+Goto Death
+}
+}
+
+Actor RandomLMSWeapon
+{
+States
+{
+Spawn:
+TNT1 A 0
+TNT1 A 1 A_Jump(256,"HyperBomb","NapalmBomb","PowerStone","BigHealth","SmallHealth","SuperArm", //done
+"DiveMissile", "MagnetMissile","OilSlider","ThunderBeam","BubbleLead","SearchSnake","RainFlush", //done
+"WaterWave","FlameBlast","SilverTomahawk","WindStorm","DangerWrap","ScorchWheel","WildCoil", //done
+"ThunderBolt","AstroCrush","FlashBomb","WaterBalloon","SmallHealth","BigHealth","SmallHealth",
+"BigHealth","SmallHealth","BigHealth")
+stop
+HyperBomb:
+TNT1 A 0 A_SpawnItemEx("HyperBomb",0,0,0,10,0,5)
+stop
+NapalmBomb:
+TNT1 A 0 A_SpawnItemEx("NapalmBomb",0,0,0,10,0,5)
+stop
+PowerStone:
+TNT1 A 0 A_SpawnItemEx("PowerStoneSpawner",0,0,0,0,0,0)
+stop
+BigHealth:
+TNT1 A 0 A_SpawnItemEx("BigHealth",0,0,0,10,0,5)
+stop
+SmallHealth:
+TNT1 A 0 A_SpawnItemEx("SmallHealth",0,0,0,10,0,5)
+stop
+SuperArm:
+TNT1 A 0 A_SpawnItemEx("GutRock",0,0,0,10,0,5)
+stop
+DiveMissile:
+TNT1 A 0 A_SpawnItemEx("DiveMissile",0,0,0,30,0,0)
+stop
+MagnetMissile:
+TNT1 A 0 A_SpawnItemEx("MagnetMissile",0,0,0,30,0,0)
+stop
+OilSlider:
+TNT1 A 0 A_SpawnItemEx("OilShot",0,0,0,10,0,5)
+stop
+ThunderBeam:
+TNT1 A 0 A_SpawnItemEx("ThunderBeam",0,0,0,30,0,0)
+stop
+BubbleLead:
+TNT1 A 0 A_SpawnItemEx("BubbleLeadSpawner",0,0,0,10,0,5)
+stop
+SearchSnake:
+TNT1 A 0 A_SpawnItemEx("SearchSnakeSpawner",0,0,0,10,0,5)
+stop
+RainFlush:
+TNT1 A 0 A_SpawnItemEx("RainFlush")
+stop
+WaterWave:
+TNT1 A 0 A_SpawnItemEx("WaterWave",0,0,1,30,0,0)
+stop
+SilverTomahawk:
+TNT1 A 0 A_SpawnItemEx("SilverTomahawk",0,0,0,30,0,0)
+stop
+FlameBlast:
+TNT1 A 0 A_SpawnItemEx("FlameBlast",0,0,0,10,0,5)
+stop
+DangerWrap:
+TNT1 A 0 A_SpawnItemEx("DangerWrap",0,0,0,30,0,0)
+stop
+WindStorm:
+TNT1 A 0 A_SpawnItemEx("WindStormStart",0,0,0,10,0,5)
+stop
+ScorchWheel:
+TNT1 A 0 A_SpawnItemEx("ScorchWheel",0,0,0,10,0,5)
+stop
+WildCoil:
+TNT1 A 0 A_SpawnItemEx("WildCoil",0,0,0,10,0,5)
+stop
+ThunderBolt:
+TNT1 A 0 A_SpawnItemEx("ThunderBolt",0,0,0,30,0,0)
+stop
+AstroCrush:
+TNT1 A 0 A_SpawnItemEx("AstroCrushSpawner")
+stop
+FlashBomb:
+TNT1 A 0 A_SpawnItemEx("FlashBomb",0,0,0,30,0,0)
+stop
+WaterBalloon:
+TNT1 A 0 A_SpawnItemEx("WaterBalloon",0,0,0,10,0,5)
+stop
+}
+}

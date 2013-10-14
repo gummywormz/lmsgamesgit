@@ -133,7 +133,6 @@ map LMS19 "TO THE TOP" //done for good
  next = "LMS20"
  music = "LMS_FGHT"
  aircontrol = 0.5
- nojump
 }
 
 map LMS20 "123...DEATH!"
