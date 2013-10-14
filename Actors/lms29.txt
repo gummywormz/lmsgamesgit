@@ -1,5 +1,10 @@
 actor EvilEddie : Eddie
 {
+-NOBLOCKMONST
+Speed 15
+ReactionTime 350
+MeleeRange 32
++ACTIVATEMCROSS
 states
 {
 Melee:
@@ -7,6 +12,52 @@ EDDI E 4 A_FaceTarget
 EDDI F 18 A_SpawnItemEx("RandomLMSWeapon",0,0,32,0,0,0)
 EDDI F 0 A_Die
 Goto Death
+}
+}
+
+actor EddieProp2 : EddieProp Replaces EddieProp 10630
+{
++WINDTHRUST
++MOVEWITHSECTOR
+}
+
+
+Actor BigEddieProp 6911
+{
+Scale 10.0
+-SOLID
+States
+{
+Spawn:
+EDDI E 0
+EDDI E 20
+loop
+Ready:
+EDDI E 20
+EDDI E 1 A_Jump(128,"Throw")
+loop
+Throw:
+EDDI F 18 A_SpawnItemEx("RandomLMSWeapon",0,0,32,0,0,0)
+EDDI E 35
+goto Spawn+1
+Bonus1:
+EEDI E 0
+EDDI E 15
+EDDI E 1 A_Jump(128,"Throw2")
+loop
+Bonus2:
+EEDI E 0
+EDDI E 15
+EDDI E 1 A_Jump(128,"Throw3")
+loop
+Throw2:
+EDDI F 18 A_SpawnItemEx("RandomLMSWeapon",0,0,32,0,0,0)
+EDDI E 35
+goto Bonus1
+Throw3:
+EDDI F 18 A_SpawnItemEx("RandomLMSWeapon",0,0,32,0,0,0)
+EDDI E 20
+goto Bonus2
 }
 }
 
@@ -29,7 +80,7 @@ NapalmBomb:
 TNT1 A 0 A_SpawnItemEx("NapalmBomb",0,0,0,10,0,5)
 stop
 PowerStone:
-TNT1 A 0 A_SpawnItemEx("PowerStoneSpawner",0,0,0,0,0,0)
+TNT1 A 0 A_SpawnItemEx("PowerStoneSpawner")
 stop
 BigHealth:
 TNT1 A 0 A_SpawnItemEx("BigHealth",0,0,0,10,0,5)

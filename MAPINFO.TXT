@@ -198,12 +198,12 @@ map LMS27 "Ball Kickers"//finish engine
  //aircontrol = 0.5
 //}
 
-//map LMS29 "EDDIE STORM"
-//{
- //next = "LMS30"
- //music = "LMS_EDD"
- //aircontrol = 0.5
-//}
+map LMS29 "EDDIE'S REVENGE"
+{
+ next = "LMS30"
+ music = "LMS_EDD"
+ aircontrol = 0.5
+}
 
 //map LMS30 "Super Air Tile Man"
 //{
