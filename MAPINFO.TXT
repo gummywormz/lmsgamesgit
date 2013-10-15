@@ -205,9 +205,9 @@ map LMS29 "EDDIE'S REVENGE"
  aircontrol = 0.5
 }
 
-//map LMS30 "Super Air Tile Man"
-//{
- //next = "LMS31"
- //music = "LMS_SATM"
- //aircontrol = 0.5
-//}
+map LMS30 "Super Air Man Tile"
+{
+ next = "LMS01"
+ music = "LMS_SATM"
+ aircontrol = 0.5
+}

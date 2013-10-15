@@ -1,8 +1,7 @@
 actor EvilEddie : Eddie
 {
 -NOBLOCKMONST
-Speed 15
-ReactionTime 350
+Speed 10
 MeleeRange 32
 +ACTIVATEMCROSS
 states
