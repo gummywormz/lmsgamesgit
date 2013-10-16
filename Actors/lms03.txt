@@ -207,6 +207,7 @@ DamageType "Nope"
 
 Actor GenericExplosions
 {
++NOGRAVITY
 +CLIENTSIDEONLY
 States
 {

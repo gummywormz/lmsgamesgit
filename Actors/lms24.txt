@@ -155,5 +155,5 @@ actor SMSpeed : Powerspeed
 +INVENTORY.ALWAYSPICKUP
 +INVENTORY.AUTOACTIVATE
 powerup.duration 0x7FFFFFFF
-Speed 1.2
+Speed 1.333
 }

@@ -30,6 +30,7 @@ actor keeper 6910
 MONSTER
 HEALTH 99999
 +ISMONSTER
+Damagefactor "Simon", 0.0
 Scale 2.5
 HEIGHT 350
 RADIUS 200

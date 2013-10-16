@@ -19,6 +19,7 @@
 #include "Actors/lms14.txt"
 #include "Actors/lms15.txt"
 #include "Actors/lms16.txt"
+#include "Actors/lms17.txt"
 #include "Actors/lms19.txt"
 
 #include "Actors/lms20.txt"

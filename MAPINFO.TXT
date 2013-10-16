@@ -142,17 +142,17 @@ map LMS20 "123...DEATH!"
  aircontrol = 0.5
 }
 
-//map LMS21 "Going Places"
+//map LMS21 "Gamma Race"
 //{
  //next = "LMS22"
- //music = "LMS_WALL"
+ //music = "LMS_GAMM"
  //aircontrol = 0.5
 //}
 
-//map LMS22 "SUPER BONUS SODA DELUXE"
+//map LMS22 "ROCK HARDEN" hold down weapon to become invincible
 //{
  //next = "LMS23"
- //music = "LMS_CAN"
+ //music = "LMS_ROC"
  //aircontrol = 0.5
 //}
 
