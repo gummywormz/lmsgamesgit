@@ -1,3 +1,10 @@
+graphic M_DOOM, 1000,1000
+{
+   XScale 1.0
+   YScale 1.0
+   Patch LOGO, 0, 32
+}
+
 graphic STRICO, 30, 30
 {
    XScale 2.0
