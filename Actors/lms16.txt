@@ -12,8 +12,8 @@ inventory.icon "SHOMICO"
 states
 {
 Spawn:
-QBOX A 0
-stop
+SHKM A 1
+loop
 Use:
 TNT1 A 1 A_PlaySoundEx("weapon/crashland","Voice")
 TNT1 A 1 A_SpawnItemEx("ShockMine2", 30, 0, 1, 0, 0, 0, 0)
