@@ -70,7 +70,7 @@ map LMS10 "PHARAOH MAN'S SCAVENGER HUNT" //done for good
  aircontrol = 0.5
 }
 
-map LMS11 "SPECIAL STAGE PLUS B"//redo
+map LMS11 "SPECIAL STAGE PLUS B"//done for good
 {
  next = "LMS12"
  music = "LMS_SPS2"
@@ -114,12 +114,12 @@ map LMS16 "Generic Pac Man Map #3" //done for good
  aircontrol = 0.5
 }
 
-//map LMS17 "Not So Special Stage" //crash ufos into people
-//{
- //next = "LMS18"
- //music = "LMS_UFO"
- //aircontrol = 0.5
-//}
+map LMS17 "Not So Special Stage" //crash ufos into people
+{
+ next = "LMS18"
+ music = "LMS_UFO"
+ aircontrol = 0.5
+}
 
 //map LMS18 "CITY ESCAPE"// not mine
 //{
@@ -145,7 +145,7 @@ map LMS20 "123...DEATH!"
 //map LMS21 "Gamma Race"
 //{
  //next = "LMS22"
- //music = "LMS_GAMM"
+ //music = "LMS_MNTY"
  //aircontrol = 0.5
 //}
 
@@ -156,10 +156,10 @@ map LMS20 "123...DEATH!"
  //aircontrol = 0.5
 //}
 
-//map LMS23 "Death Run"
+//map LMS23 "Saku Scramble"
 //{
  //next = "LMS24"
- //music = "LMS_DED"
+ //music = "LMS_SAKU"
  //aircontrol = 0.5
 //}
 

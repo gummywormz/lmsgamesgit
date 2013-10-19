@@ -32,117 +32,117 @@ scale 2.5
 States
 {
 NotActive:
-AIRT A 1
+SATM AB 2
 loop
 Spawn:
-AIRT A 3 A_Look
-AIRT A 1
-goto Spawn
+SATM AB 2 A_Look
+loop
 See:
-AIRT A 2
-AIRT A 1 A_Chase
+SATM AB 2
+SATM A 1 A_Chase
 loop
 Missile:
-AIRT A 1 A_Jump(64,"AirTileFountain","AirTileWave")
-AIRT A 1 A_Jump(50,"AirManaga")
-AIRT A 1 A_Jump(128,"AirTileShotgun","Standard")
+SATM A 0 A_Jump(64,"AirTileFountain","AirTileWave")
+SATM A 0 A_Jump(50,"AirManaga")
+SATM A 1 A_Jump(128,"AirTileShotgun","Standard")
 loop
 AirTileFountain:
-AIRT A 1 A_FaceTarget
-AIRT A 1 A_SpawnItemEx("FountainTrap")
-AIRT A 10
+SATM AB 1 A_FaceTarget
+SATM A 1 A_SpawnItemEx("FountainTrap")
+SATM B 1
+SATM AB 10
 AirTileWave:
-AIRT A 1 A_FaceTarget
-AIRT A 1 A_CustomMissile("AirTileWaveBegin",0,0,0,0)
-AIRT A 1 A_CustomMissile("AirTileWaveBegin",0,0,0,0)
-AIRT A 10
+SATM AB 1 A_FaceTarget
+SATM A 1 A_CustomMissile("AirTileWaveBegin",0,0,0,0)
+SATM B 1 A_CustomMissile("AirTileWaveBegin",0,0,0,0)
+SATM AB 10
 AirTileShotgun:
-AIRT A 1 A_FaceTarget
-AIRT A 2 A_CustomMissile("AirTileShot",5,random(-10,10),random(-15,15),0)
-AIRT A 2 A_CustomMissile("AirTileShot",5,random(-10,10),random(-15,15),0)
-AIRT A 2 A_CustomMissile("AirTileShot",5,random(-10,10),random(-15,15),0)
-AIRT A 2 A_CustomMissile("AirTileShot",5,random(-10,10),random(-15,15),0)
+SATM AB 1 A_FaceTarget
+SATM A 1 A_CustomMissile("AirTileShot",5,random(-10,10),random(-15,15),0)
+SATM B 1 A_CustomMissile("AirTileShot",5,random(-10,10),random(-15,15),0)
+SATM A 1 A_CustomMissile("AirTileShot",5,random(-10,10),random(-15,15),0)
+SATM B 1 A_CustomMissile("AirTileShot",5,random(-10,10),random(-15,15),0)
 Standard:
-AIRT A 3 A_FaceTarget
-AIRT A 2 ThrustThingZ(0,45,0,0)
-AIRT A 0 A_Playsoundex("weapon/airshooter","Voice")
-AIRT A 2 A_CustomMissile("AirTileShot",5,0,0,0)
-AIRT A 0 A_CustomMissile("AirTileShot",5,0,90,0)
-AIRT A 0 A_CustomMissile("AirTileShot",5,0,180,0)
-AIRT A 0 A_CustomMissile("AirTileShot",5,0,70,0)
-AIRT A 0 A_CustomMissile("AirTileShot",5,0,35,0)
-AIRT A 0 A_CustomMissile("AirTileShot",5,0,45,0)
-AIRT A 0 A_CustomMissile("AirTileShot",5,0,105,0)
-AIRT A 0 A_CustomMissile("AirTileShot",5,0,135,0)
-AIRT A 0 A_CustomMissile("AirTileShot",5,0,90,0)
-AIRT A 0 A_CustomMissile("AirTileShot",5,0,180,0)
-AIRT A 0 A_CustomMissile("AirTileShot",5,0,70,0)
-AIRT A 0 A_CustomMissile("AirTileShot",5,0,35,0)
-AIRT A 0 A_CustomMissile("AirTileShot",5,0,45,0)
-AIRT A 0 A_CustomMissile("AirTileShot",5,0,105,0)
-AIRT A 0 A_CustomMissile("AirTileShot",5,0,135,0)
-AIRT A 1
-AIRT A 5
-AIRT A 3 A_FaceTarget
-AIRT A 2 ThrustThingZ(0,45,0,0)
-AIRT A 0 A_Playsoundex("weapon/airshooter","Voice")
-AIRT A 0 A_CustomMissile("AirTileShot",5,0,0,0)
-AIRT A 0 A_CustomMissile("AirTileShot",5,0,90,0)
-AIRT A 0 A_CustomMissile("AirTileShot",5,0,180,0)
-AIRT A 0 A_CustomMissile("AirTileShot",5,0,70,0)
-AIRT A 0 A_CustomMissile("AirTileShot",5,0,35,0)
-AIRT A 0 A_CustomMissile("AirTileShot",5,0,45,0)
-AIRT A 0 A_CustomMissile("AirTileShot",5,0,105,0)
-AIRT A 0 A_CustomMissile("AirTileShot",5,0,135,0)
-AIRT A 0 A_CustomMissile("AirTileShot",5,0,90,0)
-AIRT A 0 A_CustomMissile("AirTileShot",5,0,180,0)
-AIRT A 0 A_CustomMissile("AirTileShot",5,0,70,0)
-AIRT A 0 A_CustomMissile("AirTileShot",5,0,35,0)
-AIRT A 0 A_CustomMissile("AirTileShot",5,0,45,0)
-AIRT A 0 A_CustomMissile("AirTileShot",5,0,105,0)
-AIRT A 0 A_CustomMissile("AirTileShot",5,0,135,0)
-AIRT A 5
-AIRT A 3 A_FaceTarget
-AIRT A 2 ThrustThingZ(0,45,0,0)
-AIRT A 0 A_Playsoundex("weapon/airshooter","Voice")
-AIRT A 2 A_CustomMissile("AirTileShot",5,0,0,0)
-AIRT A 0 A_CustomMissile("AirTileShot",5,0,90,0)
-AIRT A 0 A_CustomMissile("AirTileShot",5,0,180,0)
-AIRT A 0 A_CustomMissile("AirTileShot",5,0,70,0)
-AIRT A 0 A_CustomMissile("AirTileShot",5,0,35,0)
-AIRT A 0 A_CustomMissile("AirTileShot",5,0,45,0)
-AIRT A 0 A_CustomMissile("AirTileShot",5,0,105,0)
-AIRT A 0 A_CustomMissile("AirTileShot",5,0,135,0)
-AIRT A 0 A_CustomMissile("AirTileShot",5,0,90,0)
-AIRT A 0 A_CustomMissile("AirTileShot",5,0,180,0)
-AIRT A 0 A_CustomMissile("AirTileShot",5,0,70,0)
-AIRT A 0 A_CustomMissile("AirTileShot",5,0,35,0)
-AIRT A 0 A_CustomMissile("AirTileShot",5,0,45,0)
-AIRT A 0 A_CustomMissile("AirTileShot",5,0,105,0)
-AIRT A 0 A_CustomMissile("AirTileShot",5,0,135,0)
+SATM A 1 A_FaceTarget
+SATM B 1 ThrustThingZ(0,45,0,0)
+SATM A 0 A_Playsoundex("weapon/airshooter","Voice")
+SATM A 0 A_CustomMissile("AirTileShot",5,0,0,0)
+SATM A 0 A_CustomMissile("AirTileShot",5,0,90,0)
+SATM A 0 A_CustomMissile("AirTileShot",5,0,180,0)
+SATM A 0 A_CustomMissile("AirTileShot",5,0,70,0)
+SATM A 0 A_CustomMissile("AirTileShot",5,0,35,0)
+SATM A 0 A_CustomMissile("AirTileShot",5,0,45,0)
+SATM A 0 A_CustomMissile("AirTileShot",5,0,105,0)
+SATM A 0 A_CustomMissile("AirTileShot",5,0,135,0)
+SATM A 0 A_CustomMissile("AirTileShot",5,0,90,0)
+SATM A 0 A_CustomMissile("AirTileShot",5,0,180,0)
+SATM A 0 A_CustomMissile("AirTileShot",5,0,70,0)
+SATM A 0 A_CustomMissile("AirTileShot",5,0,35,0)
+SATM A 0 A_CustomMissile("AirTileShot",5,0,45,0)
+SATM A 0 A_CustomMissile("AirTileShot",5,0,105,0)
+SATM A 0 A_CustomMissile("AirTileShot",5,0,135,0)
+SATM AB 2
+SATM AB 4
+SATM AB 2 A_FaceTarget
+SATM A 0 ThrustThingZ(0,45,0,0)
+SATM A 0 A_Playsoundex("weapon/airshooter","Voice")
+SATM A 0 A_CustomMissile("AirTileShot",5,0,0,0)
+SATM A 0 A_CustomMissile("AirTileShot",5,0,90,0)
+SATM A 0 A_CustomMissile("AirTileShot",5,0,180,0)
+SATM A 0 A_CustomMissile("AirTileShot",5,0,70,0)
+SATM A 0 A_CustomMissile("AirTileShot",5,0,35,0)
+SATM A 0 A_CustomMissile("AirTileShot",5,0,45,0)
+SATM A 0 A_CustomMissile("AirTileShot",5,0,105,0)
+SATM A 0 A_CustomMissile("AirTileShot",5,0,135,0)
+SATM A 0 A_CustomMissile("AirTileShot",5,0,90,0)
+SATM A 0 A_CustomMissile("AirTileShot",5,0,180,0)
+SATM A 0 A_CustomMissile("AirTileShot",5,0,70,0)
+SATM A 0 A_CustomMissile("AirTileShot",5,0,35,0)
+SATM A 0 A_CustomMissile("AirTileShot",5,0,45,0)
+SATM A 0 A_CustomMissile("AirTileShot",5,0,105,0)
+SATM A 0 A_CustomMissile("AirTileShot",5,0,135,0)
+SATM AB 4
+SATM A 1 A_FaceTarget
+SATM A 0 ThrustThingZ(0,45,0,0)
+SATM A 0 A_Playsoundex("weapon/airshooter","Voice")
+SATM A 0 A_CustomMissile("AirTileShot",5,0,0,0)
+SATM A 0 A_CustomMissile("AirTileShot",5,0,90,0)
+SATM A 0 A_CustomMissile("AirTileShot",5,0,180,0)
+SATM A 0 A_CustomMissile("AirTileShot",5,0,70,0)
+SATM A 0 A_CustomMissile("AirTileShot",5,0,35,0)
+SATM A 0 A_CustomMissile("AirTileShot",5,0,45,0)
+SATM A 0 A_CustomMissile("AirTileShot",5,0,105,0)
+SATM A 0 A_CustomMissile("AirTileShot",5,0,135,0)
+SATM A 0 A_CustomMissile("AirTileShot",5,0,90,0)
+SATM A 0 A_CustomMissile("AirTileShot",5,0,180,0)
+SATM A 0 A_CustomMissile("AirTileShot",5,0,70,0)
+SATM A 0 A_CustomMissile("AirTileShot",5,0,35,0)
+SATM A 0 A_CustomMissile("AirTileShot",5,0,45,0)
+SATM A 0 A_CustomMissile("AirTileShot",5,0,105,0)
+SATM A 1 A_CustomMissile("AirTileShot",5,0,135,0)
 goto See
 AirManaga:
-AIRT A 1 ACS_ExecuteAlways(91,0)
-AIRT A 2 ThrustThingZ(0,45,0,0)
-AIRT A 0 A_Playsoundex("weapon/airshooter","Voice")
-AIRT A 2 A_CustomMissile("AirTileShot",5,0,0,0)
-AIRT A 0 A_CustomMissile("AirTileShot",5,0,90,0)
-AIRT A 0 A_CustomMissile("AirTileShot",5,0,180,0)
-AIRT A 0 A_CustomMissile("AirTileShot",5,0,70,0)
-AIRT A 0 A_CustomMissile("AirTileShot",5,0,35,0)
-AIRT A 0 A_CustomMissile("AirTileShot",5,0,45,0)
-AIRT A 0 A_CustomMissile("AirTileShot",5,0,105,0)
-AIRT A 0 A_CustomMissile("AirTileShot",5,0,135,0)
-AIRT A 0 A_CustomMissile("AirTileShot",5,0,90,0)
-AIRT A 0 A_CustomMissile("AirTileShot",5,0,180,0)
-AIRT A 0 A_CustomMissile("AirTileShot",5,0,70,0)
-AIRT A 0 A_CustomMissile("AirTileShot",5,0,35,0)
-AIRT A 0 A_CustomMissile("AirTileShot",5,0,45,0)
-AIRT A 0 A_CustomMissile("AirTileShot",5,0,105,0)
-AIRT A 0 A_CustomMissile("AirTileShot",5,0,135,0)
-AIRT A 1
-AIRT A 10
-AIRT A 1 ACS_ExecuteAlways(91,0)
+SATM B 1 ACS_ExecuteAlways(91,0)
+SATM A 1 ThrustThingZ(0,45,0,0)
+SATM A 0 A_Playsoundex("weapon/airshooter","Voice")
+SATM B 2 A_CustomMissile("AirTileShot",5,0,0,0)
+SATM A 0 A_CustomMissile("AirTileShot",5,0,90,0)
+SATM A 0 A_CustomMissile("AirTileShot",5,0,180,0)
+SATM A 0 A_CustomMissile("AirTileShot",5,0,70,0)
+SATM A 0 A_CustomMissile("AirTileShot",5,0,35,0)
+SATM A 0 A_CustomMissile("AirTileShot",5,0,45,0)
+SATM A 0 A_CustomMissile("AirTileShot",5,0,105,0)
+SATM A 0 A_CustomMissile("AirTileShot",5,0,135,0)
+SATM A 0 A_CustomMissile("AirTileShot",5,0,90,0)
+SATM A 0 A_CustomMissile("AirTileShot",5,0,180,0)
+SATM A 0 A_CustomMissile("AirTileShot",5,0,70,0)
+SATM A 0 A_CustomMissile("AirTileShot",5,0,35,0)
+SATM A 0 A_CustomMissile("AirTileShot",5,0,45,0)
+SATM A 0 A_CustomMissile("AirTileShot",5,0,105,0)
+SATM A 0 A_CustomMissile("AirTileShot",5,0,135,0)
+SATM A 1
+SATM ABAB 10
+SATM A 1 ACS_ExecuteAlways(91,0)
 Goto Standard
 Death:
 MMFX B 0 A_Fall
@@ -178,7 +178,7 @@ Radius 12
 DamageType "Nope"
 Height 20
 scale 2.5
-Damage (4)
+Damage (8)
 Speed 36
 obituary "%o was blinded by an Air Man Tile"
 +NOGRAVITY
@@ -192,6 +192,7 @@ loop
 
 actor AirManagaShot : AirTileShot
 {
+Damage (4)
 States
 {
 Spawn:

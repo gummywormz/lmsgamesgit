@@ -197,27 +197,29 @@ stop
 actor MagnetShock : MagnetMissile
 {
 Damage (1)
-Damagetype "SparkShock"
+Damagetype "Simon"
 }
 
 actor SearchSnakeLOL2 : SearchSnakeLOL
 {
 Damage (1)
-DamageType "SparkShock"
+DamageType "Simon"
 }
 
 actor Magnet : CustomInventory
 {
 inventory.amount 1
 inventory.maxamount 3
+Inventory.PickupMessage "Power Up! Stunning Magnets!"
+Inventory.PickupSound "item/1up"
 scale 2.0
 +INVBAR
-inventory.icon "MAGICO"
+inventory.icon "MAGNETSI"
 states
 {
 Spawn:
-QBOX A 0
-stop
+WEAP I 1
+loop
 Use:
 TNT1 A 1 A_PlaySoundEx("weapon/magnetmissile","Voice")
 TNT1 A 1 A_FireCustomMissile("MagnetShock",0,0,0)
@@ -229,14 +231,16 @@ actor SnakeShot : CustomInventory
 {
 inventory.amount 1
 inventory.maxamount 3
+Inventory.PickupMessage "Power Up! Stunning Snakes!"
+Inventory.PickupSound "item/1up"
 +INVBAR
 scale 2.0
-inventory.icon "SNKRICO"
+inventory.icon "SNAKESI"
 states
 {
 Spawn:
-QBOX A 0
-stop
+WEAP K 1
+loop
 Use:
 TNT1 A 1 A_PlaySoundEx("weapon/mbuster","Voice")
 TNT1 A 1 A_FireCustomMissile("SearchSnakeLOL2",0,0,0)
@@ -286,6 +290,8 @@ actor StarManWep : MegaBuster
 {
 Weapon.AmmoUse 1
 Weapon.AmmoGive 30
+Inventory.PickupMessage "Power Up! Star Man!"
+inventory.pickupsound "weapon/weaponup"
 Weapon.SlotNumber 1
 Obituary "%o was brightened by %k's Star Man."
 weapon.ammotype "StarManAmmo"
@@ -296,8 +302,8 @@ Scale 2.0
 States
 {
 Spawn:
-WEA2 J 1
-stop
+STKT A 1
+loop
 Ready:
 TNT1 A 1 A_WeaponReady
 loop
@@ -331,7 +337,7 @@ actor StarManRadius
 PROJECTILE
 +DONTSPLASH
 +NOTARGETSWITCH
-Damagetype "SparkShock"
+Damagetype "Simon"
 Damage 0
 States
 {

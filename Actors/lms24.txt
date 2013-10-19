@@ -24,12 +24,12 @@ inventory.amount 1
 inventory.maxamount 3
 scale 2.0
 +INVBAR
-inventory.icon "TNT1A0"
+inventory.icon "SPARSI"
 states
 {
 Spawn:
-QBOX A 0
-stop
+WEA2 G 1
+loop
 Use:
 TNT1 A 1 A_PlaySoundEx("weapon/sparkshock","Voice")
 TNT1 A 1 A_FireCustomMissile("NetProjectile",0,0,0)

@@ -14,6 +14,6 @@ OB_R_SPLASH = "%o is allergic to C4";
 OB_ROCKET = "%o is allergic to C4";
 OB_DEFAULT = "%o tried too hard to live";
 OB_SUICIDE = "Turns out %o CAN self-terminate. Who knew?";
-OB_KILLEDSELF = "%o had a sad";
+OB_KILLEDSELF = "Turns out %o CAN self-terminate. Who knew?";
 OB_EXIT = "%o will rant about this on the forums";
 OB_MPTELEFRAG = "%k is op, please nerf";

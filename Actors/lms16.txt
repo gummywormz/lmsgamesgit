@@ -5,8 +5,10 @@ actor ShockMines : CustomInventory
 inventory.amount 1
 inventory.maxamount 3
 scale 2.0
+Inventory.PickupMessage "Power Up! Shock Mines!"
+inventory.pickupsound "item/1up"
 +INVBAR
-inventory.icon "SHOMICO" //add
+inventory.icon "SHOMICO"
 states
 {
 Spawn:
@@ -29,7 +31,7 @@ Health 20
 -NOGRAVITY
 Radius 32
 Height 12
-damagetype "SparkShock"
+damagetype "Simon"
 damage (1)
 speed 0
 reactiontime 200
@@ -62,7 +64,7 @@ Mass 100000
 Health 20
 Damage (1)
 obituary "%o was tazed by %k's shock mines."
-DamageType "SparkShock"
+DamageType "Simon"
 Speed 10
 gravity 1.0
 Reactiontime 200
