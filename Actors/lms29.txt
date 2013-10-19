@@ -2,7 +2,7 @@ actor EvilEddie : Eddie
 {
 -NOBLOCKMONST
 Speed 10
-MeleeRange 32
+MeleeRange 64
 +ACTIVATEMCROSS
 states
 {
@@ -25,6 +25,7 @@ Actor BigEddieProp 6911
 {
 Scale 10.0
 -SOLID
++FIXMAPTHINGPOS
 States
 {
 Spawn:
@@ -66,11 +67,10 @@ States
 {
 Spawn:
 TNT1 A 0
-TNT1 A 1 A_Jump(256,"HyperBomb","NapalmBomb","PowerStone","BigHealth","SmallHealth","SuperArm", //done
+TNT1 A 1 A_Jump(256,"HyperBomb","NapalmBomb","PowerStone","SmallHealth","SuperArm", //done
 "DiveMissile", "MagnetMissile","OilSlider","ThunderBeam","BubbleLead","SearchSnake","RainFlush", //done
 "WaterWave","FlameBlast","SilverTomahawk","WindStorm","DangerWrap","ScorchWheel","WildCoil", //done
-"ThunderBolt","AstroCrush","FlashBomb","WaterBalloon","SmallHealth","BigHealth","SmallHealth",
-"BigHealth","SmallHealth","BigHealth")
+"ThunderBolt","AstroCrush","FlashBomb","WaterBalloon","SmallHealth","SmallHealth","SmallHealth")
 stop
 HyperBomb:
 TNT1 A 0 A_SpawnItemEx("HyperBomb",0,0,0,10,0,5)

@@ -274,7 +274,7 @@ FIRE ABC 2
 loop
 Death:
 TNT1 A 0 
-TNT1 A 1 A_Explode(35,164,1)
+TNT1 A 1 A_Explode(15,164,1)
 stop
 }
 }
@@ -284,7 +284,7 @@ actor ChainGunFire : FastProjectile
 PROJECTILE
 damagetype "Nope"
 Speed 170
-Damage (5)
+Damage (4)
 +FOILINVUL
 radius 2
 height 2

@@ -11,6 +11,7 @@ RADIUS 128
 +FLOATBOB
 +CANTSEEK
 DamageFactor "SparkShock", 0.0
+DamageFactor "Simon", 0.0
 +DONTOVERLAP
 +SOLID
 PainChance 256
