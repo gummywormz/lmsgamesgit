@@ -1,4 +1,13 @@
 #################
+## Zandronum
+#################
+TODO.TXT
+*.bak
+*-slade-temp.pk3
+*-slade-temp.wad
+*.dbs
+
+#################
 ## Eclipse
 #################
 

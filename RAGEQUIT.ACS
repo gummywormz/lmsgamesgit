@@ -1,0 +1,29 @@
+#library "RAGEQUIT"
+#include "zcommon.acs"
+
+#DEFINE ragequotes 17
+str ragequote[ragequotes] = { 
+" died to toad man.",
+" is going to have 0 speed next round.",
+" IS ENRAGED!",
+" got picked as alpha zombie.",
+" is secretly tsuki.",
+" got picked as ninja spy.",
+" is going to play classes saxton quail.",
+" couldn't find the 9th scavenger hunt item.",
+" couldn't handle the proness of this mod.",
+" hates kittens.",
+" went to McDonalds to shove his face in pity fries.",
+" cant win j.",
+" lost j so hard he lost q!",
+" automatically loses the next round.",
+" is become anger!",
+" left to raeg on the forums..",
+" left to play hotel saxton quail.",
+};
+
+
+script 699 (int rq) DISCONNECT
+{
+hudmessagebold(s:"", n:rq + 1, s:RageQuote[random(0,RAGEQUOTES)]; HUDMSG_FADEINOUT|HUDMSG_LOG, 665, CR_RED, 1.5, -0.8, 2.0, 1.0, 1.0);
+}

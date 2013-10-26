@@ -1,12 +1,30 @@
 #include "zcommon.acs"
+#library "lmsacs"
 
 Script 321 OPEN
 {
 if(GetCvar("SV_NoMonsters") == 1){
 ConsoleCommand("SV_NoMonsters 0");
 }
+	if(!GetCvar("LMSGAMES_STARTIMER"))
+		{ConsoleCommand("set LMSGAMES_STARTIMER 0");
+		ConsoleCommand("archivecvar LMSGAMES_STARTIMER");}
+	if(!GetCvar("LMSGAMES_LAPCOUNT"))
+		{ConsoleCommand("set LMSGAMES_LAPCOUNT 0");
+		ConsoleCommand("archivecvar LMSGAMES_LAPCOUNT");}
 }
 
 Script 981 (void)
 {
+}
+
+script 540 (void)
+{
+int i = 0;
+for (i = 0; 0 <= 999; i++)
+{
+delay(1);
+Sector_SetDamage(i,10,MOD_EXIT);
+ChangeFloor(i, "FIRELAV");
+}
 }

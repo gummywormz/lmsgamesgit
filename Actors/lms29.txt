@@ -39,7 +39,7 @@ loop
 Throw:
 EDDI F 18 A_SpawnItemEx("RandomLMSWeapon",0,0,32,0,0,0)
 EDDI E 35
-goto Spawn+1
+goto Ready
 Bonus1:
 EEDI E 0
 EDDI E 15

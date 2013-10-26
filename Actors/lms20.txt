@@ -7,7 +7,7 @@ inventory.maxamount 1
 States
 {
 Pickup:
-TNT1 A 1 A_Jump(64,"Welp")
+TNT1 A 1 A_Jump(75,"Welp")
 stop
 Welp:
 TNT1 A 1 ACS_Execute(3,0,0)
@@ -31,7 +31,7 @@ actor OblivionExplode
 {
 PROJECTILE
 +DONTBLAST
-Obituary "%o was utterly decimated by %k's Oblivion Buster."
+Obituary "%o was caught in %k's Explosion."
 +PIERCEARMOR 
 +FORCERADIUSDMG
 +FORCEXYBILLBOARD

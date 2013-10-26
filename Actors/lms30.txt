@@ -43,7 +43,7 @@ SATM A 1 A_Chase
 loop
 Missile:
 SATM A 0 A_Jump(64,"AirTileFountain","AirTileWave")
-SATM A 0 A_Jump(50,"AirManaga")
+SATM A 0 A_Jump(28,"AirManaga")
 SATM A 1 A_Jump(128,"AirTileShotgun","Standard")
 loop
 AirTileFountain:
@@ -64,7 +64,7 @@ SATM A 1 A_CustomMissile("AirTileShot",5,random(-10,10),random(-15,15),0)
 SATM B 1 A_CustomMissile("AirTileShot",5,random(-10,10),random(-15,15),0)
 Standard:
 SATM A 1 A_FaceTarget
-SATM B 1 ThrustThingZ(0,45,0,0)
+SATM B 1 ThrustThingZ(0,20,0,0)
 SATM A 0 A_Playsoundex("weapon/airshooter","Voice")
 SATM A 0 A_CustomMissile("AirTileShot",5,0,0,0)
 SATM A 0 A_CustomMissile("AirTileShot",5,0,90,0)
@@ -84,7 +84,7 @@ SATM A 0 A_CustomMissile("AirTileShot",5,0,135,0)
 SATM AB 2
 SATM AB 4
 SATM AB 2 A_FaceTarget
-SATM A 0 ThrustThingZ(0,45,0,0)
+SATM A 0 ThrustThingZ(0,20,0,0)
 SATM A 0 A_Playsoundex("weapon/airshooter","Voice")
 SATM A 0 A_CustomMissile("AirTileShot",5,0,0,0)
 SATM A 0 A_CustomMissile("AirTileShot",5,0,90,0)
@@ -103,7 +103,7 @@ SATM A 0 A_CustomMissile("AirTileShot",5,0,105,0)
 SATM A 0 A_CustomMissile("AirTileShot",5,0,135,0)
 SATM AB 4
 SATM A 1 A_FaceTarget
-SATM A 0 ThrustThingZ(0,45,0,0)
+SATM A 0 ThrustThingZ(0,20,0,0)
 SATM A 0 A_Playsoundex("weapon/airshooter","Voice")
 SATM A 0 A_CustomMissile("AirTileShot",5,0,0,0)
 SATM A 0 A_CustomMissile("AirTileShot",5,0,90,0)
@@ -123,7 +123,7 @@ SATM A 1 A_CustomMissile("AirTileShot",5,0,135,0)
 goto See
 AirManaga:
 SATM B 1 ACS_ExecuteAlways(91,0)
-SATM A 1 ThrustThingZ(0,45,0,0)
+SATM A 1 ThrustThingZ(0,20,0,0)
 SATM A 0 A_Playsoundex("weapon/airshooter","Voice")
 SATM B 2 A_CustomMissile("AirTileShot",5,0,0,0)
 SATM A 0 A_CustomMissile("AirTileShot",5,0,90,0)
@@ -141,8 +141,8 @@ SATM A 0 A_CustomMissile("AirTileShot",5,0,45,0)
 SATM A 0 A_CustomMissile("AirTileShot",5,0,105,0)
 SATM A 0 A_CustomMissile("AirTileShot",5,0,135,0)
 SATM A 1
-SATM ABAB 10
-SATM A 1 ACS_ExecuteAlways(91,0)
+SATM ABAB 15
+SATM A 1
 Goto Standard
 Death:
 MMFX B 0 A_Fall
