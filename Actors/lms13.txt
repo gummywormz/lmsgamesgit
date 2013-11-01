@@ -85,6 +85,7 @@ SCLA G 8
 SCLA B 1
 SCLA B 2
 SCLA B 3 A_ReFire
+goto Ready2
 AltFire:
 SCLA B 1 A_JumpIfInventory("NoFiring",1,"NoAmmo")
 SCLA B 1 A_JumpIfInventory("CanWind",1,"AltFireIt")
@@ -95,10 +96,10 @@ BUBB E 0 A_FireCustomMissile("NoDamageWind",0,0,8,0)
 BUBB EF 5
 BUBB D 2
 BUBB D 0 A_Refire
-goto Ready+1
+goto Ready2
 NoAmmo:
 SCLA B 1 ACS_Execute(979,0)
-goto Ready+1
+goto Ready2
 }
 }
 

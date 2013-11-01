@@ -6,12 +6,18 @@ Script 321 OPEN
 if(GetCvar("SV_NoMonsters") == 1){
 ConsoleCommand("SV_NoMonsters 0");
 }
+if(GetCvar("SV_chasecam") == 0){
+ConsoleCommand("SV_chasecam 1");
+}
 	if(!GetCvar("LMSGAMES_STARTIMER"))
 		{ConsoleCommand("set LMSGAMES_STARTIMER 0");
 		ConsoleCommand("archivecvar LMSGAMES_STARTIMER");}
 	if(!GetCvar("LMSGAMES_LAPCOUNT"))
 		{ConsoleCommand("set LMSGAMES_LAPCOUNT 0");
 		ConsoleCommand("archivecvar LMSGAMES_LAPCOUNT");}
+	if(!GetCvar("LMSGAMES_PLAYERFREEZE"))
+		{ConsoleCommand("set LMSGAMES_PLAYERFREEZE 0");
+		ConsoleCommand("archivecvar LMSGAMES_PLAYERFREEZE");}
 }
 
 Script 981 (void)

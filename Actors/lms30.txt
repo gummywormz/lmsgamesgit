@@ -1,3 +1,5 @@
+//super air man tile
+
 actor AirTileBoss
 {
 +SOLID

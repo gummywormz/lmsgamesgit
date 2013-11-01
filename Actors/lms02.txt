@@ -2,6 +2,7 @@
 
 actor StarRodLMSWep : MegaBuster
 {
++BRIGHT
 Weapon.AmmoUse 0
 Weapon.AmmoGive 28
 Weapon.SlotNumber 1
@@ -53,6 +54,7 @@ Goto Ready+1
 
 actor QuickBeam2 : QuickBeam
 {
++BRIGHT
 +FOILINVUL
 }
 
@@ -71,6 +73,7 @@ inventory.maxamount 1
 actor MagicStar
 {
 PROJECTILE
++BRIGHT
 +NOTARGETSWITCH
 damagetype "Bolt"
 scale 2.5
@@ -699,4 +702,49 @@ actor ProtoShot32 : Protoshot3
 Speed 40
 +FOILINVUL
 Damagetype "Nope"
+}
+
+actor DaKraken
+{
+MONSTER
++INVULNERABLE
++SOLID
++FORCEYBILLBOARD
+SCALE 2.5
+SPEED 30
+HEIGHT 300
+RADIUS 96
+States
+{
+Spawn:
+OCTO A 4 A_Chase
+OCTO A 1 A_SpawnItemEx("MagicBoomer6")
+OCTO A 0 A_SpawnItemEx("MagicBoomer6",0,0,32)
+OCTO A 0 A_SpawnItemEx("MagicBoomer6",0,0,64)
+OCTO A 0 A_SpawnItemEx("MagicBoomer6",0,0,128)
+OCTO A 0 A_SpawnItemEx("MagicBoomer6",0,0,160)
+OCTO A 0 A_SpawnItemEx("MagicBoomer6",0,0,192)
+OCTO A 0 A_SpawnItemEx("MagicBoomer6",0,0,224)
+OCTO A 0 A_SpawnItemEx("MagicBoomer6",0,0,256)
+OCTO A 0 A_SpawnItemEx("MagicBoomer6",0,0,288)
+OCTO A 4 A_Chase
+loop
+}
+}
+
+actor MagicBoomer6
+{
++EXPLODEONWATER
+PROJECTILE
++DONTSPLASH
+Damage (1)
+Speed 0
+DamageType "Nope"
+States
+{
+Spawn:
+TNT1 A 1
+TNT1 A 1 A_Explode(400,180,0)
+stop
+}
 }

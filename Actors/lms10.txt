@@ -441,7 +441,7 @@ inventory.amount 1
 inventory.maxamount 1
 }
 
-actor QuickBeamShooter2 : QuickBeamShooter replaces QuickBeamShooter
+actor QuickBeamShooter2 : QuickBeamShooter replaces QuickBeamShooter 10507
 {
 +NOGRAVITY
 -SOLID

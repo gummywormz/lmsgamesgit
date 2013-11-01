@@ -55,9 +55,9 @@ BTLY ABCDDDEF 3 A_FaceTarget
 BTLY ABCDDDEF 3 A_SkullAttack
 BTLY ABCDDDEF 2
 BTLY ABCDDDEF 6 A_CustomMissile("TellyBomb",0,0,0)
-BTLY A 1 A_DualPainAttack("BombTellys")
-BTLY A 1 A_DualPainAttack("BombTellys")
-BTLY A 1 A_DualPainAttack("BombTellys")
+BTLY A 1 A_PainAttack("BombTellys")
+BTLY A 1 A_PainAttack("BombTellys")
+BTLY A 1 A_PainAttack("BombTellys")
 Goto Spawn+1
 Missile:
 BTLY A 0

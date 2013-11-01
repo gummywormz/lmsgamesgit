@@ -1,3 +1,4 @@
+//eddie invasion
 actor EvilEddie : Eddie
 {
 -NOBLOCKMONST

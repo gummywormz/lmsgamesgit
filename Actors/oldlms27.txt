@@ -1,0 +1,162 @@
+//ball kickers
+
+actor BoxcarCossack
+{
+PROJECTILE
++RIPPER
+Damage (99999)
+speed 35
+scale 2.5
+radius 32
+painchance 256
+obituary "%o was ran over by Cossack's Boxcar."
+Damagetype "CossackMole"
+States
+{
+Spawn:
+BCOS A 1 A_ClearTarget
+loop
+}
+}
+
+actor Goaled : Inventory
+{
+inventory.amount 1
+inventory.maxamount 9999
+}
+
+actor keeper 6910
+{
+MONSTER
+HEALTH 99999
++ISMONSTER
+Damagefactor "Simon", 0.0
+Scale 2.5
+HEIGHT 350
+RADIUS 200
+PainChance 256
+States
+{
+Spawn:
+KEPR A 0
+KEPR ABC 15
+loop
+Pain:
+KEPR A 1 A_GiveToTarget("Goaled",1)
+goto Spawn+1
+}
+}
+
+actor SuperMegaBallWep : MegaBuster
+{
+Weapon.AmmoUse 28
+Weapon.AmmoGive 28
+Weapon.SlotNumber 4
+Obituary "%o was bounced out by %k's Mega Ball."
+Inventory.Pickupmessage "Power up! Mega Ball!"
+weapon.ammotype "MegaBallAmmo"
+inventory.pickupsound "weapon/weaponup"
++WEAPON.AMMO_OPTIONAL
+inventory.icon "MEGABALI"
+Scale 2.0
+States
+{
+Spawn:
+WEA4 D 1
+stop
+Ready:
+MBAL N 0 ACS_ExecuteAlways(998,0,100)
+MBAL N 0 A_JumpIfInventory("CantFireBall",1,"HowAboutNo")
+MBAL N 0 A_JumpIfInventory("KickedBall",1,"MegaBallKick")
+MBAL N 15 A_WeaponReady
+MBAL N 0 A_TakeInventory("TackleFlag",1)
+Goto Ready+1
+Deselect:
+MBAL N 0 A_TakeInventory("BallFlag", 999)
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Lower
+MBAL N 1 A_Lower
+Loop
+Select:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Raise
+MBAL N 1 A_Raise
+Loop
+Fire:
+MBAL N 0 A_JumpIfNoAmmo("NoAmmo")
+MBAL N 0 A_JumpIfInventory("CantFireBall",1,"NoAmmo")
+MBAL N 0 A_JumpIfInventory("BallFlag",1,"NewBall")
+MBAL N 0 A_GiveInventory("BallFlag",100)
+MBAL N 0 A_PlaySoundEx("weapon/mbuster","Weapon")
+MBAL N 0 //A_TakeInventory("MegaBallAmmo", 2)
+MBAL N 0 A_SpawnItemEx("MegaBall",48,8,32,0,0,0,0)
+MBAL NOP 3
+MBAL NNNNNNNNNNNNNNN 1 A_JumpIfInventory("KickedBall",1,"MegaBallKick")
+MBAL N 0 A_Refire
+Goto Ready+1
+MegaBallKick:
+MBAL Q 0 A_TakeInventory("KickedBall",1)
+MBAL Q 0 A_FireCustomMissile("MegaBallKicked",0,0,0,0)
+MBAL Q 0 A_TakeInventory("BallFlag",999)
+MBAL QQRRRQQQ 1
+MBAL N 15
+Goto Ready+1
+NewBall:
+MBAL N 0
+MBAL N 0 A_TakeInventory("BallFlag",100)
+MBAL NN 2
+Goto Fire+1
+Altfire:
+MBAL N 0 A_JumpIfInventory("CantFireBall",1,"NoAmmo")
+MBAL N 1 A_JumpIfInventory("TackleFlag",random(2,5),"HowAboutNo")
+MBAL N 1 A_JumpIfInventory("MegaBallAmmo",28,"Tackle")
+goto NoAmmo
+Tackle:
+CKIC C 0 SetPlayerProperty(0,1,0)
+CKIC C 0 A_GiveInventory("TackleFlag",1)
+CKIC C 0 A_PlaySoundEx("weapon/chargekick","Weapon")
+CKIC C 2 A_ChangeVelocity(25,0,momz,CVF_RELATIVE|CVF_REPLACE)//A_Recoil(-20)
+CKIC B 2 A_FireCustomMissile("TackleKick",0,1,0,0)
+CKIC A 8 SetPlayerProperty(0,0,0)
+CKIC B 5
+CKIC C 5
+goto NoAmmo
+HowAboutNo:
+MBAL N 35
+MBAL N 35
+MBAL N 1 A_TakeInventory("CantFireBall",999)
+goto Ready+1
+NoAmmo:
+MBAL N 1 ACS_Execute(979,0)
+Goto Ready+1
+}
+}
+
+actor TackleFlag : Inventory
+{
+inventory.amount 1
+inventory.maxamount 999
+}
+
+actor CantFireBall : Inventory
+{
+inventory.amount 1
+inventory.maxamount 1
+}
+
+actor TackleKick
+{
+PROJECTILE
+Radius 14
+Height 25
+scale 2.5
+damage (1)
+damagetype "Simon"
+speed 40
+States
+{
+Spawn:
+CKIC D 0
+CKIC D 0 //A_RadiusThrust(500,64,0)
+CKIC DEF 2
+stop
+}
+}

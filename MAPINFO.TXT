@@ -77,10 +77,10 @@ map LMS11 "SPECIAL STAGE PLUS B"//done for good
  aircontrol = 0.5
 }
 
-map LMS12 "Knight Man's Castle of Arson, Murder, and Rainbows" //done for good
+map LMS12 "Mysterious Maze of Magic" //done for good
 {
  next = "LMS13"
- music = "LMS_SKAS"
+ music = "LMS_MAZ"
  aircontrol = 0.5
 }
 
@@ -184,10 +184,10 @@ map LMS26 "ZOMBIE APOCALYPSE"
  aircontrol = 0.5
 }
 
-map LMS27 "Ball Kickers"//finish engine
+map LMS27 "Quick Feet"//finish engine
 {
  next = "LMS28"
- music = "LMS_BALL"
+ music = "LMS_QFT"
  aircontrol = 0.5
 }
 
