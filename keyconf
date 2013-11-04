@@ -2,3 +2,5 @@ clearplayerclasses
 addplayerclass MegaManLMS
 
 alias AntiCamp "puke 540"
+alias explodeall "puke 542"
+alias explode_idx "puke 541 %1"

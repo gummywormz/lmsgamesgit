@@ -1,6 +1,5 @@
 //zombie invasion
 
-
 actor ZombieKilled : Inventory
 {
 inventory.amount 1

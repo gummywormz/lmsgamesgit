@@ -4,6 +4,7 @@ ACTOR GiantTelly 5894
 {
 +ISMONSTER
 +FOILINVUL
++DONTRIP
 Damagetype "Nope"
 damagefactor "Shock", 0.0
 DamageFactor "Met", 0.0
@@ -102,9 +103,7 @@ Missile:
 TELY ABCDDDEF 1 A_FaceTarget
 TELY ABCDDDEF 2 A_SkullAttack
 TELY ABCDDDEF 2
-TELY A 1 A_CustomMissile("RemMissile",0,0,0,0)
 TELY A 2
-TELY A 1 A_CustomMissile("RemMissile",0,0,0,0)
 TELY A 1
 TELY A 1 A_CustomMissile("RemMissile",0,0,0,0)
 Goto Missile+2

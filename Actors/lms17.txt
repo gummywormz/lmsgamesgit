@@ -1,4 +1,5 @@
 //not so special stage
+
 actor WilyUFOLMS 6100
 {
 MONSTER

@@ -1,4 +1,5 @@
 //inventory flags and junk.
+
 actor UndoLMS : CustomInventory
 {
 inventory.amount 1

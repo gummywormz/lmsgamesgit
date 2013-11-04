@@ -77,12 +77,12 @@ map LMS11 "SPECIAL STAGE PLUS B"//done for good
  aircontrol = 0.5
 }
 
-map LMS12 "Mysterious Maze of Magic" //done for good
-{
- next = "LMS13"
- music = "LMS_MAZ"
- aircontrol = 0.5
-}
+//map LMS12 "Mysterious Maze of Magic" //rehaul
+//{
+ //next = "LMS13"
+ //music = "LMS_MAZ"
+ //aircontrol = 0.5
+//}
 
 map LMS13 "MUSICAL ELEVATOR" //done for good
 {
@@ -124,7 +124,7 @@ map LMS17 "Not So Special Stage" //crash ufos into people
 //map LMS18 "CITY ESCAPE"// not mine
 //{
  //next = "LMS19"
- //music = "LMS_RUN"
+ //*music = "LMS_RUN"
  //aircontrol = 0.5
 //}
 
@@ -149,17 +149,18 @@ map LMS20 "123...DEATH!"
  //aircontrol = 0.5
 //}
 
-//map LMS22 "ROCK HARDEN" hold down weapon to become invincible
-//{
- //next = "LMS23"
- //music = "LMS_ROC"
- //aircontrol = 0.5
-//}
+map LMS22 "ROCK HARDEN" //done!
+{
+ nojump
+ next = "LMS23"
+ music = "LMS_ROC"
+ aircontrol = 0.5
+}
 
 //map LMS23 "Saku Scramble"
 //{
  //next = "LMS24"
- //music = "LMS_SAKU"
+ //*music = "LMS_SAKU"
  //aircontrol = 0.5
 //}
 
@@ -194,7 +195,7 @@ map LMS27 "Quick Feet"//finish engine
 //map LMS28 "RAPID ROLL"//not mine
 //{
  //next = "LMS29"
- //music = "LMS_MET"
+ //music = "LMS_PENG"
  //aircontrol = 0.5
 //}
 

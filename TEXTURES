@@ -60,10 +60,3 @@ graphic SNKRICO, 30, 30
    YScale 2.0
    Patch SNKRA0, 0, 0
 }
-
-TEXTURE ABLIND1, 64,64
-{
-   XScale 0.09
-   YScale 0.14
-   Patch ALIND1, 0, 0
-}

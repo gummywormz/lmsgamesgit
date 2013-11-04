@@ -3,6 +3,7 @@
 actor AirTileBoss
 {
 +SOLID
++DONTRIP
 damagefactor "Airman", 0.0
 damagefactor "Nope", 0.0
 +ISMONSTER

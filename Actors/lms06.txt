@@ -99,6 +99,14 @@ actor ItemBoxPersistant : RandomSpawner 5890 {
 Dropitem "ItemBox" 255
 }
 
+actor MarioSpeedChecked : Powerspeed
+{
++INVENTORY.ALWAYSPICKUP
++INVENTORY.AUTOACTIVATE
+powerup.duration -10
+Speed 1.3
+}
+
 actor ItemBox : CustomInventory
 {
 Inventory.RespawnTics 87
