@@ -21,6 +21,8 @@ alarm/1 alarm
 alarm/2 alarm2
 alarm/3 alarm3
 
+zandronum/connect   CNNCTSND
+
 weapon/magicwand MAGICSHO
 weapon/bombfall FALL
 weapon/coalgun CHUG

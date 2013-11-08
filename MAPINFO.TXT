@@ -49,7 +49,7 @@ map LMS07 "SPACE TRAIN!"// done for good
  aircontrol = 0.5
 }
 
-map LMS08 "Vs. Nightmare Upgraded" //done for good.
+map LMS08 "VS. NIGHTMARE UPGRADED" //done for good.
 {
  next = "LMS09"
  music = "LMS_NIG3"
@@ -77,7 +77,7 @@ map LMS11 "SPECIAL STAGE PLUS B"//done for good
  aircontrol = 0.5
 }
 
-//map LMS12 "Mysterious Maze of Magic" //rehaul
+//map LMS12 "MYSTERIOUS MAZE OF MAGIC" //rehaul
 //{
  //next = "LMS13"
  //music = "LMS_MAZ"
@@ -92,21 +92,21 @@ map LMS13 "MUSICAL ELEVATOR" //done for good
  aircontrol = 0.5
 }
 
-map LMS14 "Cave Race" //done for good
+map LMS14 "CAVE RACE" //done for good
 {
  next = "LMS15"
  music = "LMS_CAVE"
  aircontrol = 0.5
 }
 
-map LMS15 "Fusion Jousting" //done for good
+map LMS15 "FUSION JOUSTING" //done for good
 {
  next = "LMS16"
  music = "LMS_JOU"
  aircontrol = 0.5
 }
 
-map LMS16 "Generic Pac Man Map #3" //done for good
+map LMS16 "GENERIC PAC MAN MAP #3" //done for good
 {
  next = "LMS17"
  music = "LMS_Pac"
@@ -114,14 +114,14 @@ map LMS16 "Generic Pac Man Map #3" //done for good
  aircontrol = 0.5
 }
 
-map LMS17 "Not So Special Stage" //crash ufos into people
+map LMS17 "NOT SO SPECIAL STAGE" //done for good
 {
  next = "LMS18"
  music = "LMS_UFO"
  aircontrol = 0.5
 }
 
-//map LMS18 "CITY ESCAPE"// not mine
+//map LMS18 "CITY ESCAPE" //not mine
 //{
  //next = "LMS19"
  //*music = "LMS_RUN"
@@ -135,14 +135,14 @@ map LMS19 "TO THE TOP" //done for good
  aircontrol = 0.5
 }
 
-map LMS20 "123...DEATH!"
+map LMS20 "123...DEATH!" //done for good
 {
  next = "LMS21"
  music = "LMS_DIE"
  aircontrol = 0.5
 }
 
-//map LMS21 "Gamma Race"
+//map LMS21 "GAMMA RACE"
 //{
  //next = "LMS22"
  //music = "LMS_MNTY"
@@ -157,35 +157,35 @@ map LMS22 "ROCK HARDEN" //done!
  aircontrol = 0.5
 }
 
-//map LMS23 "Saku Scramble"
+//map LMS23 "SAKU SCRAMBLE"
 //{
  //next = "LMS24"
  //*music = "LMS_SAKU"
  //aircontrol = 0.5
 //}
 
-map LMS24 "STAR SEARCH"
+map LMS24 "STAR SEARCH" //done for good
 {
  next = "LMS25"
  music = "LMS_JUNG"
  aircontrol = 0.5
 }
 
-map LMS25 "CRYSTAL MAN SCAVENGER HUNT"
+map LMS25 "CRYSTAL MAN SCAVENGER HUNT" //done for good
 {
  next = "LMS26"
  music = "LMS_CRY"
  aircontrol = 0.5
 }
 
-map LMS26 "ZOMBIE APOCALYPSE"
+map LMS26 "ZOMBIE APOCALYPSE" //done for good
 {
  next = "LMS27"
  music = "LMS_ZOMB"
  aircontrol = 0.5
 }
 
-map LMS27 "Quick Feet"//finish engine
+map LMS27 "QUICK FEET"//done for good
 {
  next = "LMS28"
  music = "LMS_QFT"
@@ -199,14 +199,14 @@ map LMS27 "Quick Feet"//finish engine
  //aircontrol = 0.5
 //}
 
-map LMS29 "EDDIE'S REVENGE"
+map LMS29 "EDDIE'S REVENGE" //done for good
 {
  next = "LMS30"
  music = "LMS_EDD"
  aircontrol = 0.5
 }
 
-map LMS30 "Super Air Man Tile"
+map LMS30 "SUPER AIR MAN TILE" //done for good
 {
  next = "LMS01"
  music = "LMS_SATM"
