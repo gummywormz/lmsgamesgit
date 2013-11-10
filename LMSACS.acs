@@ -45,7 +45,7 @@ ChangeFloor(i, "FIRELAV");
 
 script 541 (int whichplayer) //explode players
 {
-GiveActorInventory(whichplayer + 1000,"IWillReallyExplode",1);
+GiveActorInventory(whichplayer + 1000,"ISplode2",1);
 }
 
 script 542 (void) //explode ALL players
@@ -56,19 +56,19 @@ GiveActorInventory(q,"ISplode2",1);
 }
 }
 
-Script 300 (void) //explode player message
+Script 311 (void) //explode player message
 {
-SetFont("BIGFONT");
-HudMessageBold(n:0,s:" is going to explode in 3 seconds!"; HUDMSG_PLAIN, 0, CR_RED, 1.5, 0.0, 0.95);
-AmbientSound("misc/gravitywarn",127);
-Delay(35);
-SetFont("BIGFONT");
-HudMessageBold(n:0,s:" is going to explode in 2 seconds!"; HUDMSG_PLAIN, 0, CR_RED, 1.5, 0.0, 0.95);
-AmbientSound("misc/gravitywarn",127);
-Delay(35);
-SetFont("BIGFONT");
-HudMessageBold(n:0,s:" is going to explode in 1 second!"; HUDMSG_PLAIN, 0, CR_RED, 1.5, 0.0, 0.95);
-AmbientSound("misc/gravitywarn",127);
-Delay(35);
-GiveInventory("ISplode2",1);
+//SetFont("BIGFONT");
+//HudMessageBold(n:0,s:" is going to explode in 3 seconds!"; HUDMSG_PLAIN, 0, CR_RED, 1.5, 0.0, 0.95);
+//AmbientSound("misc/gravitywarn",127);
+//Delay(35);
+//SetFont("BIGFONT");
+//HudMessageBold(n:0,s:" is going to explode in 2 seconds!"; HUDMSG_PLAIN, 0, CR_RED, 1.5, 0.0, 0.95);
+//AmbientSound("misc/gravitywarn",127);
+//Delay(35);
+//SetFont("BIGFONT");
+//HudMessageBold(n:0,s:" is going to explode in 1 second!"; HUDMSG_PLAIN, 0, CR_RED, 1.5, 0.0, 0.95);
+//AmbientSound("misc/gravitywarn",127);
+//Delay(35);
+//GiveInventory("ISplode2",1);
 }

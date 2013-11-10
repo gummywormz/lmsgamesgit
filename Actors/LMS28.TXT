@@ -12,7 +12,7 @@ speed 1
 States
 {
 Spawn:
-BALX A 0 A_Jump(256,"Green","Red")
+BALX A 1 A_Jump(256,"Green","Red")
 loop
 Red:
 BALR AAABBBCCCCDDDDCCCBBB 1 ThrustThingZ (0, 15, 0, 0)
@@ -44,5 +44,6 @@ BALA A 0 A_PlaySoundEx("weapon/crackerexplode", "Weapon")
 BALX AABBCCDD 1
 BALR A 0 A_ChangeFlag("SOLID",0)
 TNT1 A -1
+stop
 }
 }
