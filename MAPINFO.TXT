@@ -157,12 +157,12 @@ map LMS22 "ROCK HARDEN" //done!
  aircontrol = 0.5
 }
 
-//map LMS23 "SAKU SCRAMBLE"
-//{
- //next = "LMS24"
- //*music = "LMS_SAKU"
- //aircontrol = 0.5
-//}
+map LMS23 "BREAK THE TARGETS"
+{
+ next = "LMS24"
+ music = "LMS_ICE"
+ aircontrol = 0.5
+}
 
 map LMS24 "STAR SEARCH" //done for good
 {

@@ -22,6 +22,10 @@ ConsoleCommand("winlimit 1");
 	if(!GetCvar("LMSGAMES_PLAYERFREEZE"))
 		{ConsoleCommand("set LMSGAMES_PLAYERFREEZE 0");
 		ConsoleCommand("archivecvar LMSGAMES_PLAYERFREEZE");}
+	if(!GetCvar("LMSGAMES_TARGETSNEEDED"))
+		{ConsoleCommand("set LMSGAMES_TARGETSNEEDED 0");
+		ConsoleCommand("archivecvar LMSGAMES_TARGETSNEEDED");}
+
 }
 
 Script 981 (void) //useless lol
