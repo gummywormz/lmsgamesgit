@@ -77,12 +77,12 @@ map LMS11 "SPECIAL STAGE PLUS B"//done for good
  aircontrol = 0.5
 }
 
-//map LMS12 "MYSTERIOUS MAZE OF MAGIC" //rehaul
-//{
- //next = "LMS13"
- //music = "LMS_MAZ"
- //aircontrol = 0.5
-//}
+map LMS12 "MYSTERIOUS MAZE OF MAGIC" //rehaul
+{
+ next = "LMS13"
+ music = "LMS_MAZ"
+ aircontrol = 0.5
+}
 
 map LMS13 "MUSICAL ELEVATOR" //done for good
 {
@@ -192,12 +192,12 @@ map LMS27 "QUICK FEET"//done for good
  aircontrol = 0.5
 }
 
-//map LMS28 "RAPID ROLL"//not mine
-//{
- //next = "LMS29"
- //music = "LMS_PENG"
- //aircontrol = 0.5
-//}
+map LMS28 "RAPID ROLL"//not mine
+{
+ next = "LMS29"
+ music = "LMS_RROL"
+ aircontrol = 0.5
+}
 
 map LMS29 "EDDIE'S REVENGE" //done for good
 {

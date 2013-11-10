@@ -16,6 +16,7 @@ misc/hardtrap NIP
 misc/itembox itembox
 misc/lastlap FINLAP
 misc/screw SCREW
+misc/switch1 switch1
 
 alarm/1 alarm
 alarm/2 alarm2

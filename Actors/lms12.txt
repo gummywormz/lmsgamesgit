@@ -68,3 +68,58 @@ TNT1 A 1
 stop
 }
 }
+
+ACTOR TotallyInvulnerable: PowerupGiver
+{
++COUNTITEM
+powerup.duration -30
++INVENTORY.AUTOACTIVATE
++INVENTORY.ALWAYSPICKUP
+Inventory.MaxAmount 0
+Powerup.Type "Invulnerable"
+Powerup.Color InverseMap
+States
+{
+Spawn:
+PINV A 1 
+stop
+}
+}
+
+actor SwitchCounter : Inventory
+{
+INVENTORY.AMOUNT 1
+INVENTORY.MAXAMOUNT 9999999
+}
+
+actor ConfusedSpeedX : Powerspeed
+{
++INVENTORY.ALWAYSPICKUP
++INVENTORY.AUTOACTIVATE
+powerup.duration -30
+Speed -1.0
+}
+
+actor FastSpeedX : Powerspeed
+{
++INVENTORY.ALWAYSPICKUP
++INVENTORY.AUTOACTIVATE
+powerup.duration -30
+Speed 1.5
+}
+
+actor SlowedSpeedX : Powerspeed
+{
++INVENTORY.ALWAYSPICKUP
++INVENTORY.AUTOACTIVATE
+powerup.duration -30
+Speed 0.5
+}
+
+actor NormalSpeedX : Powerspeed
+{
++INVENTORY.ALWAYSPICKUP
++INVENTORY.AUTOACTIVATE
+powerup.duration -30
+Speed 1.0
+}

@@ -1,0 +1,46 @@
+actor Balloon
+{
+Damage 0
++SOLID
+height 8
+radius 16
+scale 2.5
+speed 1
++NOGRAVITY
+States
+{
+Spawn:
+BALX A 0 A_Jump(256,"Green","Red")
+loop
+Red:
+BALR AAABBBCCCCDDDDCCCBBB 1 ThrustThingZ (0, 15, 0, 0)
+BALR A 0 A_JumpIf(ceilingz-z<=64,"Death")
+loop
+Green:
+BALG AAABBBCCCCDDDDCCCBBB 1 ThrustThingZ (0, 15, 0, 0)
+BALG A 0 A_JumpIf(ceilingz-z<=64,"Death")
+loop
+Red2:
+BALR AAABBBCCCCDDDDCCCBBB 1 ThrustThingZ (0, 25, 0, 0)
+BALR A 0 A_JumpIf(ceilingz-z<=64,"Death")
+loop
+Green2:
+BALG AAABBBCCCCDDDDCCCBBB 1 ThrustThingZ (0, 25, 0, 0)
+BALG A 0 A_JumpIf(ceilingz-z<=64,"Death")
+loop
+Red3:
+BALR AAABBBCCCCDDDDCCCBBB 1 ThrustThingZ (0, 35, 0, 0)
+BALR A 0 A_JumpIf(ceilingz-z<=64,"Death")
+loop
+Green3:
+BALG AAABBBCCCCDDDDCCCBBB 1 ThrustThingZ (0, 35, 0, 0)
+BALG A 0 A_JumpIf(ceilingz-z<=64,"Death")
+loop
+Death:
+BALX A 0 A_Stop
+BALA A 0 A_PlaySoundEx("weapon/crackerexplode", "Weapon")
+BALX AABBCCDD 1
+BALR A 0 A_ChangeFlag("SOLID",0)
+TNT1 A -1
+}
+}
