@@ -106,8 +106,13 @@ PLAY H 1 A_Stop
 PLAY H 1 A_Stop
 PLAY H 1 A_Stop
 PLAY H 1 A_Stop
+PLAY H 0 A_GiveInventory("Shocked",1)
 PLAY H 1 A_Stop
 PLAY H 1 A_Stop
+PLAY H 1 A_Stop
+PLAY H 1 A_Stop
+PLAY H 1 A_Stop
+PLAY H 0 A_GiveInventory("Shocked",1)
 PLAY H 1 A_Stop
 Goto Pain+1
 Pain.CrashBomb:
