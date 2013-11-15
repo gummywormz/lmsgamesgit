@@ -70,3 +70,47 @@ Actor BeatCall2 : BeatCall Replaces BeatCall
 {
 Inventory.RespawnTics 105
 }
+
+actor RollingCutterPersistant : RandomSpawner 22243 {
+Dropitem "RollingCutterWep" 255
+}
+
+actor ScrewCrusherPersistant : RandomSpawner 22244 {
+Dropitem "ScrewCrusherWep" 255
+}
+
+actor MetalBladePersistant : RandomSpawner 22245 {
+Dropitem "MetalBladeWep" 255
+}
+
+actor QuickBoomerangPersistant : RandomSpawner 22246 {
+Dropitem "QuickBoomerangWep" 255
+}
+
+actor ThunderClawPersistant : RandomSpawner 22247 {
+Dropitem "ThunderClawWep" 255
+}
+
+actor FlameSwardPersistant : RandomSpawner 22248 {
+Dropitem "FlameSwordWep" 255
+}
+
+actor HyperBombPersistant : RandomSpawner 22249 {
+Dropitem "HyperBombWep" 255
+}
+
+actor NapalmBombPersistant : RandomSpawner 22250 {
+Dropitem "NapalmBombWep" 255
+}
+
+actor DrillBombPersistant : RandomSpawner 22251 {
+Dropitem "DrillBombWep" 255
+}
+
+actor WaterBalloonPersistant : RandomSpawner 22252 {
+Dropitem "WaterBalloonWep" 255
+}
+
+actor CentaurFlashPersistant : RandomSpawner 22253 {
+Dropitem "CentaurFlashWep" 255
+}
