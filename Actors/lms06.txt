@@ -99,12 +99,12 @@ actor ItemBoxPersistant : RandomSpawner 5890 {
 Dropitem "ItemBox" 255
 }
 
-actor MarioSpeedChecked : Powerspeed
+actor MarioSpeedChecked : PowerProtection
 {
 +INVENTORY.ALWAYSPICKUP
 +INVENTORY.AUTOACTIVATE
 powerup.duration -10
-Speed 1.3
+DamageFactor "Salt", 0.0
 }
 
 actor ItemBox : CustomInventory
@@ -270,7 +270,7 @@ QBOX A 0
 stop
 Use:
 TNT1 A 1 A_PlaySoundEx("item/refill","Voice")
-TNT1 A 1 ThrustThing(angle*256/360, 35, 1, 0)
+TNT1 A 1 ThrustThing(angle*256/360, 30, 1, 0)
 stop
 }
 }
@@ -289,7 +289,8 @@ QBOX A 0
 stop
 Use:
 TNT1 A 1 A_PlaySoundEx("item/refill","Voice")
-TNT1 A 1 ThrustThing(angle*256/360,35, 1, 0)
+TNT1 A 1 ThrustThing(angle*256/360,30, 1, 0)
+TNT1 A 8
 fail
 }
 }
