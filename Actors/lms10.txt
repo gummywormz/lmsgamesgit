@@ -13,10 +13,10 @@ PainChance 180
 Scale 2.5
 Speed 15
 Radius 30
--SOLID
 Height 56
 Mass 400
 Monster
+-SOLID
 damagefactor "Beam", 0.0
 PainSound "misc/metdie"
 DeathSound "misc/metdie"

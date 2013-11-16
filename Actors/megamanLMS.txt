@@ -12,6 +12,7 @@ player.startitem "BusterAmmo", 3
 mass 9999
 gravity 0.8
 +NODAMAGETHRUST
+-QUICKTORETALIATE
 +DONTBLAST
 +NOBLOOD
 damagefactor "Dummy", 0.0
@@ -52,6 +53,8 @@ Pain.Misc:
 Pain.Oil:
 PLAY H 0
 Goto pain+1
+Pain.Rigormortis:
+goto Missile
 Pain.Net:
 PLAY H 0 ACS_ExecuteAlways(18,0)
 goto Pain+1

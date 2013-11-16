@@ -2,27 +2,23 @@
 
 actor RockHardenWep : MegaBuster
 {
-Weapon.AmmoUse 2
-Weapon.AmmoGive 28
-Weapon.SlotNumber 1
-Obituary "%o was magic'd by %k's Star Rod."
-Inventory.Pickupmessage "Power up! Star Rod!"
-weapon.ammotype "StoneAmmo"
-inventory.pickupsound "weapon/weaponup"
-+WEAPON.AMMO_OPTIONAL
-Scale 2.0
+//Weapon.AmmoUse 2
+Obituary "%o broke %p pinsirs on %k's Rock Harden."
+Inventory.Pickupmessage "Power up! Rock Harden!"
+//weapon.ammotype "StoneAmmo"
 States
 {
 Spawn:
 MSHD C 1
 stop
 Ready:
-POWS H 1 //A_SpawnItemEx("ItsYou",0,0,96)
-POWS H 0 A_ChangeFlag("SHOOTABLE",1)
+//POWS H 0 A_SpawnItemEx("ItsYou",0,0,96)
 POWS E 0 ACS_ExecuteAlways(991,0,0)
-POWS E 8 A_WeaponReady(WRF_NOSWITCH)
-POWS E 1 A_GiveInventory("StoneAmmo",1)
-loop
+//POWS H 0 A_ChangeFlag("SHOOTABLE",1)
+POWS E 1 A_WeaponReady(WRF_NOSWITCH)
+//POWS E 8 A_WeaponReady(WRF_NOSWITCH)
+//POWS E 0 A_GiveInventory("StoneAmmo",1)
+goto Ready+1
 Deselect:
 TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Lower
 POWS E 1 A_Lower
@@ -32,22 +28,29 @@ TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Raise
 POWS E 1 A_Raise
 Loop
 Fire:
-POWS E 0 A_JumpIfNoAmmo("NoAmmo")
-POWS FG 2
+//POWS E 0 A_JumpIfNoAmmo("NoAmmo")
+//POWS FG 2
 POWS G 0 ACS_ExecuteAlways(991,0,29)
 POWS G 0 A_PlaySoundEx("weapon/powerstone","Weapon")
-POWS H 0 A_ChangeFlag("SHOOTABLE",0)
-POWS H 1 A_TakeInventory("StoneAmmo",2)
-POWS H 20
-POWS E 0 ACS_ExecuteAlways(991,0,0)
-POWS H 0 A_ChangeFlag("SHOOTABLE",1)
-POWS E 2
-POWS E 4 A_Refire
-Goto Ready
+//POWS H 0 A_ChangeFlag("SHOOTABLE",0)
+//POWS H 1 A_TakeInventory("StoneAmmo",2)
+//POWS H 20
+//POWS E 0 ACS_ExecuteAlways(991,0,0)
+//POWS H 0 A_ChangeFlag("SHOOTABLE",1)
+//POWS E 2
+//POWS E 4 A_Refire
+
 Hold:
+POWS H 0 A_GiveInventory("HardenHealthDeplete",1)
+POWS H 0 A_GiveInventory("HardenInvuln",1)
 POWS H 1
-POWS H 1 A_Refire
-goto Ready
+POWS H 0 A_Refire
+
+Goto Ready
+//Hold:
+//POWS H 1
+//POWS H 1 A_Refire
+//goto Ready
 NoAmmo:
 POWS E 1 ACS_Execute(979,0)
 Goto Ready
@@ -68,11 +71,38 @@ stop
 }
 }
 
-actor StoneAmmo : Ammo
+/*actor StoneAmmo : Ammo
 {
 +INVENTORY.IGNORESKILL
 INVENTORY.AMOUNT 1
 INVENTORY.MAXAMOUNT 28
+}*/
+
+actor HardenHealthDeplete : CustomInventory
+{
+states
+{
+Pickup:
+TNT1 A 0 A_JumpIfInventory("CutterFlag",5,"Ow")
+TNT1 A 0 A_GiveInventory("CutterFlag",1)
+stop
+Ow:
+TNT1 A 0 A_TakeInventory("CutterFlag",999)
+TNT1 A 0 ACS_ExecuteAlways(800,0,0) //Thing_Damage2(0,1,"Rigormortis")
+//TNT1 A 0 DamageThing(1)
+stop
+}
+}
+
+actor HardenInvuln : PowerProtection
+{
+DamageFactor "Normal", 0.0
+DamageFactor "Rigormortis", 1.0
+
+//DamageFactor "Normal", 1.0
+//DamageFactor "Nope", 0.0
+
+powerup.duration 2
 }
 
 actor GenericStone

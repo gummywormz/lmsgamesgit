@@ -192,12 +192,12 @@ map LMS27 "QUICK FEET"//done for good
  aircontrol = 0.5
 }
 
-map LMS28 "RAPID ROLL"//not mine
-{
- next = "LMS29"
- music = "LMS_RROL"
- aircontrol = 0.5
-}
+//map LMS28 "RAPID ROLL"//not mine
+//{
+ //next = "LMS29"
+ //music = "LMS_RROL"
+ //aircontrol = 0.5
+//}
 
 map LMS29 "EDDIE'S REVENGE" //done for good
 {

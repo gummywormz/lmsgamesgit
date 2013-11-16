@@ -1,4 +1,4 @@
-//knight man's castle
+//magical mystery maze
 
 actor ConfusedSpeed : Powerspeed
 {
@@ -96,7 +96,7 @@ actor ConfusedSpeedX : Powerspeed
 {
 +INVENTORY.ALWAYSPICKUP
 +INVENTORY.AUTOACTIVATE
-powerup.duration -30
+powerup.duration -20
 Speed -1.0
 }
 
@@ -104,7 +104,7 @@ actor FastSpeedX : Powerspeed
 {
 +INVENTORY.ALWAYSPICKUP
 +INVENTORY.AUTOACTIVATE
-powerup.duration -30
+powerup.duration -20
 Speed 1.5
 }
 
@@ -112,7 +112,7 @@ actor SlowedSpeedX : Powerspeed
 {
 +INVENTORY.ALWAYSPICKUP
 +INVENTORY.AUTOACTIVATE
-powerup.duration -30
+powerup.duration -20
 Speed 0.5
 }
 
@@ -120,6 +120,15 @@ actor NormalSpeedX : Powerspeed
 {
 +INVENTORY.ALWAYSPICKUP
 +INVENTORY.AUTOACTIVATE
-powerup.duration -30
+powerup.duration -20
+Speed 1.0
+}
+
+actor ICantPressX : PowerProtection
+{
++INVENTORY.ALWAYSPICKUP
++INVENTORY.AUTOACTIVATE
+damagefactor "Salt", 0.0
+powerup.duration -1
 Speed 1.0
 }
