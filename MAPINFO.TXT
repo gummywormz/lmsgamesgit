@@ -106,10 +106,10 @@ map LMS15 "FUSION JOUSTING" //done for good
  aircontrol = 0.5
 }
 
-map LMS16 "GENERIC PAC MAN MAP #3" //done for good
+map LMS16 "ELECMAN'S DAY OFF" //done for good
 {
  next = "LMS17"
- music = "LMS_Pac"
+ music = "LMS_ELEC"
  nojump
  aircontrol = 0.5
 }
@@ -211,5 +211,13 @@ map LMS30 "SUPER AIR MAN TILE" //done for good
 {
  next = "LMS01"
  music = "LMS_SATM"
+ aircontrol = 0.5
+}
+
+map XLMS01 "GENERIC PAC MAN MAP #3" //done for good
+{
+ next = "LMS01"
+ music = "LMS_Pac"
+ nojump
  aircontrol = 0.5
 }

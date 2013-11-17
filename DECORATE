@@ -18,6 +18,7 @@
 #include "Actors/lms13.txt"
 #include "Actors/lms14.txt"
 #include "Actors/lms15.txt"
+#include "Actors/oldlms16.txt"
 #include "Actors/lms16.txt"
 #include "Actors/lms17.txt"
 #include "Actors/lms19.txt"
