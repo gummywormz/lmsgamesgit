@@ -142,12 +142,12 @@ map LMS20 "123...DEATH!" //done for good
  aircontrol = 0.5
 }
 
-//map LMS21 "GAMMA RACE"
-//{
- //next = "LMS22"
- //music = "LMS_MNTY"
- //aircontrol = 0.5
-//}
+map LMS21 "DEATH RUN: 4 ELEMENTS"
+{
+ next = "LMS22"
+ music = "LMS_WUB"
+ aircontrol = 0.5
+}
 
 map LMS22 "ROCK HARDEN" //done!
 {
@@ -192,12 +192,13 @@ map LMS27 "QUICK FEET"//done for good
  aircontrol = 0.5
 }
 
-//map LMS28 "RAPID ROLL"//not mine
-//{
- //next = "LMS29"
- //music = "LMS_RROL"
- //aircontrol = 0.5
-//}
+map LMS28 "SOUP BOWL WAVE MAN SAYS..."
+{
+ next = "LMS29"
+ music = "LMS_SBWM"
+ aircontrol = 0.5
+ nojump
+}
 
 map LMS29 "EDDIE'S REVENGE" //done for good
 {
