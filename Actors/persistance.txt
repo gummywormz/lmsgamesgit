@@ -114,3 +114,7 @@ Dropitem "WaterBalloonWep" 255
 actor CentaurFlashPersistant : RandomSpawner 22253 {
 Dropitem "CentaurFlashWep" 255
 }
+
+actor HealthBonusPersistant : RandomSpawner 22254 {
+Dropitem "HealthBonus" 255
+}
