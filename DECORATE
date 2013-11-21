@@ -33,3 +33,5 @@
 #include "Actors/lms28.txt"
 #include "Actors/lms29.txt"
 #include "Actors/lms30.txt"
+
+#include "Actors/lms05x.txt"
