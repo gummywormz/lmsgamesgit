@@ -1,0 +1,16 @@
+//dust man's incinerator
+
+ACTOR HealthBonus2 : HealthBonus Replaces HealthBonus 2014
+{
++INVENTORY.QUIET
+States
+{
+Spawn:
+BON1 AB 3
+Loop
+Pickup:
+TNT1 A 0 A_PlaySound("item/energyup")
+stop
+}
+}
+
