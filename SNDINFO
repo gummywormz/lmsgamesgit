@@ -18,6 +18,8 @@ misc/lastlap FINLAP
 misc/screw SCREW
 misc/switch1 switch1
 
+misc/health_pkup ENERGYUP
+
 alarm/1 alarm
 alarm/2 alarm2
 alarm/3 alarm3

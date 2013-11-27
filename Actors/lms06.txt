@@ -103,7 +103,7 @@ actor MarioSpeedChecked : PowerProtection
 {
 +INVENTORY.ALWAYSPICKUP
 +INVENTORY.AUTOACTIVATE
-powerup.duration -10
+powerup.duration -5
 DamageFactor "Salt", 0.0
 }
 

@@ -3,13 +3,17 @@
 ACTOR HealthBonus2 : HealthBonus Replaces HealthBonus 2014
 {
 +INVENTORY.QUIET
+-RANDOMIZE
++SYNCHRONIZED
+Inventory.PickupSound "item/energyup"
+INVENTORY.RESPAWNTICS 210
 States
 {
 Spawn:
-BON1 AB 3 //IMPORT LATER
+BON1 AB 6 //IMPORT LATER
 Loop
 Pickup:
-TNT1 A 1 A_PlaySound("item/energyup")
+TNT1 A 0 A_PlaySound("item/energyup")
 stop
 }
 }
@@ -21,6 +25,7 @@ Powerup.duration -10
 
 Actor YashichiHealth : CustomInventory
 {
+Scale 2.5
 inventory.pickupmessage "You got a Yashichi!"
 inventory.pickupsound "item/refill"
 +INVENTORY.BIGPOWERUP
@@ -30,7 +35,7 @@ Spawn:
 YASH A 1
 loop
 Pickup:
-TNT1 A 1 A_PlaySound("item/energyup")
+TNT1 A 1 A_PlaySoundEx("item/energyup","Voice")
 TNT1 A 0 HealThing(100)
 TNT1 A 0 A_GiveInventory("TotallyInvulnerable2",1)
 stop
@@ -39,6 +44,7 @@ stop
 
 Actor NotYashichi : CustomInventory
 {
+Scale 2.5
 inventory.pickupmessage ""
 +INVENTORY.QUIET
 +INVENTORY.BIGPOWERUP

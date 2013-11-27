@@ -28,10 +28,10 @@ map LMS04 "SPECIAL STAGE"//done for good
  aircontrol = 0.5
 }
 
-map LMS05 "AIR MAN SCAVENGER HUNT" //done for good
+map LMS05 "HEAT MAN'S INCINERATOR" //done for good
 {
  next = "LMS06"
- music = "LMS_SCAV"
+ music = "LMS_HEAT"
  aircontrol = 0.5
 }
 
@@ -121,12 +121,12 @@ map LMS17 "NOT SO SPECIAL STAGE" //done for good
  aircontrol = 0.5
 }
 
-//map LMS18 "CITY ESCAPE" //not mine
-//{
- //next = "LMS19"
- //*music = "LMS_RUN"
- //aircontrol = 0.5
-//}
+map LMS18 "CITY ESCAPE" //not mine
+{
+ next = "LMS19"
+ music = "LMS_RUN"
+ aircontrol = 0.5
+}
 
 map LMS19 "TO THE TOP" //done for good
 {
@@ -213,11 +213,19 @@ map LMS30 "SUPER AIR MAN TILE" //done for good
  music = "LMS_SATM"
  aircontrol = 0.5
 }
+//ex-maps
 
 map XLMS01 "GENERIC PAC MAN MAP #3" //done for good
 {
- next = "LMS01"
+ next = "XLMS02"
  music = "LMS_Pac"
  nojump
+ aircontrol = 0.5
+}
+
+map XLMS02 "AIR MAN SCAVENGER HUNT" //done for good
+{
+ next = "XLMS03"
+ music = "LMS_SCAV"
  aircontrol = 0.5
 }

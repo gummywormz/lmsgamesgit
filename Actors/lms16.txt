@@ -1,3 +1,5 @@
+//elec man's day off
+
 actor ChargeWep : MegaBuster
 {
 Weapon.AmmoUse 2
