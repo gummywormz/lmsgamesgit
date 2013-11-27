@@ -13,7 +13,7 @@ Spawn:
 BON1 AB 6 //IMPORT LATER
 Loop
 Pickup:
-TNT1 A 0 A_PlaySound("item/energyup")
+TNT1 A 0 A_PlaySoundEx("item/energyup","auto")
 stop
 }
 }

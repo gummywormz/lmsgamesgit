@@ -31,7 +31,7 @@ map LMS04 "SPECIAL STAGE"//done for good
 map LMS05 "HEAT MAN'S INCINERATOR" //done for good
 {
  next = "LMS06"
- music = "LMS_HEAT"
+ music = "LMS_HEA"
  aircontrol = 0.5
 }
 
