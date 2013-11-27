@@ -142,12 +142,12 @@ map LMS20 "123...DEATH!" //done for good
  aircontrol = 0.5
 }
 
-map LMS21 "DEATH RUN: 4 ELEMENTS"
-{
- next = "LMS22"
- music = "LMS_WUB"
- aircontrol = 0.5
-}
+//map LMS21 "DEATH RUN: 4 ELEMENTS"
+//{
+ //next = "LMS22"
+ //music = "LMS_WUB"
+ //aircontrol = 0.5
+//}
 
 map LMS22 "ROCK HARDEN" //done!
 {
@@ -171,10 +171,10 @@ map LMS24 "STAR SEARCH" //done for good
  aircontrol = 0.5
 }
 
-map LMS25 "CRYSTAL MAN SCAVENGER HUNT" //done for good
+map LMS25 "GRENADE MAN'S BIG BLAST" //done for good
 {
  next = "LMS26"
- music = "LMS_CRY"
+ music = "LMS_BOMB"
  aircontrol = 0.5
 }
 
@@ -227,5 +227,12 @@ map XLMS02 "AIR MAN SCAVENGER HUNT" //done for good
 {
  next = "XLMS03"
  music = "LMS_SCAV"
+ aircontrol = 0.5
+}
+
+map XLMS03 "CRYSTAL MAN SCAVENGER HUNT" //done for good
+{
+ next = "LMS26"
+ music = "LMS_CRY"
  aircontrol = 0.5
 }

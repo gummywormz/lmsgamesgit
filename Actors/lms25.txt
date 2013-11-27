@@ -1,3 +1,42 @@
+//grenade man's big blast
+
+actor GrenadeManCredits2 5999
+{
+height 16
+Scale 2.5
+radius 16
+States
+{
+Spawn:
+CGRE A 1
+loop
+Explode:
+TNT1 A 1
+TNT1 A 1 A_SpawnItemEx("OblivionEffect")
+TNT1 A 35
+TNT1 A 35
+TNT1 A 35 
+TNT1 A 1 A_SpawnItemEx("TeleportFog")
+GOTO SPAWN
+}
+}
+
+ACTOR TotallyInvulnerable3 : PowerProtection
+{
++COUNTITEM
+powerup.duration -6
++INVENTORY.AUTOACTIVATE
++INVENTORY.ALWAYSPICKUP
+Inventory.MaxAmount 0
+DamageFactor "Exit", 0.0
+States
+{
+Spawn:
+PINV A 1 
+stop
+}
+}
+
 //crystal man scavenger hunt
 
 actor CrystalDropperCrystalMarker : Inventory
