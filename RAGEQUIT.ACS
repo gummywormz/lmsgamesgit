@@ -1,7 +1,7 @@
 #library "RAGEQUIT"
 #include "zcommon.acs"
 
-#DEFINE ragequotes 17
+#DEFINE ragequotes 18
 str ragequote[ragequotes] = { 
 " died to toad man.",
 " is going to have 0 speed next round.",
@@ -20,6 +20,7 @@ str ragequote[ragequotes] = {
 " is become anger!",
 " left to raeg on the forums..",
 " left to play hotel saxton quail.",
+" is not very monster.",
 };
 
 

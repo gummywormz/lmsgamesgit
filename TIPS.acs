@@ -4,7 +4,7 @@
 #library "Tips"
 #include "zcommon.acs"
 
-#DEFINE TIPCOUNT 38
+#DEFINE TIPCOUNT 39
 
 str Tips[TIPCOUNT] = { 
 
@@ -46,6 +46,7 @@ str Tips[TIPCOUNT] = {
 "You deserved that one.",
 "Join a Mega Man X Single Player Server as 'Zerp' and use zero for maximum respect.",
 "Always teamkill. Always",
+"You are so not monster",
 
 
 };

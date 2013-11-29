@@ -24,7 +24,7 @@ Loop
 Fire:
 THUN H 0 A_JumpIfNoAmmo("NoAmmo")
 THUN H 1 A_PlaySoundEx("weapon/thunderbeam","Weapon")
-THUN H 0 A_FireCustomMissile("ThunderBeam",0,1,8,0)
+THUN H 0 A_FireCustomMissile("ThunderBeam2",0,1,8,0)
 THUN IJ 5
 THUN H 8
 THUN H 1 A_Refire
@@ -32,6 +32,20 @@ GOTO READY
 NoAmmo:
 THUN H 1 ACS_Execute(979,0)
 Goto Ready
+}
+}
+
+actor ThunderBeam2 : ThunderBeam
+{
+States
+{
+Death:
+CRAS A 0 A_JumpIf(z-floorz<5, "Floor")
+CRAS A 0 A_JumpIf(z-ceilingz==0-6, "Floor")
+stop
+Floor:
+CRAS A 0 ACS_ExecuteAlways(9,0)
+stop
 }
 }
 
