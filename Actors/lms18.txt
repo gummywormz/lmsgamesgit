@@ -34,6 +34,8 @@ DamageFactor "Salt", 0.0
 actor BoostRing : CustomInventory
 {
 +NOGRAVITY
+Height 128
+Radius 64
 Inventory.Amount 1
 Inventory.Maxamount 1
 +INVENTORY.QUIET
