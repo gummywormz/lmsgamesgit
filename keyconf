@@ -1,6 +1,18 @@
 clearplayerclasses
 addplayerclass MegaManLMS
 
+addplayerclass sueclass
+addplayerclass Celebi
+addplayerclass Cockman
+addplayerclass fuzzy
+addplayerclass orb
+addplayerclass airmantile
+addplayerclass saku
+addplayerclass ringclass
+addplayerclass eddieclass
+addplayerclass nightmareclass
+
 alias AntiCamp "puke 540"
 alias explodeall "puke 542"
 alias explode_idx "puke 541 %1"
+alias forcewildcard "puke 670 %1"

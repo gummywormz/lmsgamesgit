@@ -1,0 +1,287 @@
+actor airmantile : MegamanLMS
+{
+player.displayname "air man tile"
+player.soundclass "airtile"
+player.damagescreencolor "blue"
+States
+{
+Spawn:
+AIRT A 0
+AIRT B 1
+AIRT A 1
+Goto Spawn+2
+See:
+AIRT BCDE 5
+Goto Spawn
+Missile:
+AIRT F 5 
+AIRT G 4 
+goto Spawn
+Pain.FireSpin:
+Pain.QuickBoomerang:
+Pain.Buster:
+Pain.WildCoil:
+Pain.ChargeKick:
+Pain.YamatoSpear:
+Pain.DiveMissile:
+Pain.StarCrash:
+Pain.NeedleCannon:
+Pain.CentaurFlash:
+Pain.FreezeCrack:
+Pain.ScrewCrusher:
+Pain.PharaohHold:
+Pain.TornadoHold:
+Pain.TrebleSentry:
+Pain.ScorchWheel:
+Pain.MagnetMissile:
+Pain.JunkShield:
+Pain.Misc:
+Pain.Oil:
+AIRT H 0
+Goto pain+1
+Pain.Rigormortis:
+goto Missile
+Pain.Net:
+AIRT H 0 ACS_ExecuteAlways(18,0)
+goto Pain+1
+Pain.Afterburner:
+AIRT H 0 HealThing(2)
+AIRT H 0 A_Jump(128,"OtherThrust")
+AIRT H 0 ThrustThing(random(0,255),15,0,0)
+AIRT H 0 ThrustThingZ(0,50,0,0)
+Goto pain+1
+OtherThrust:
+AIRT H 0 ThrustThing(random(0,255),20,1,0)
+AIRT H 0 ThrustThingZ(0,50,0,0)
+Goto pain+1
+Pain.MegaFist:
+AIRT H 0 ThrustThing(angle*256/360+128,random(10,15), 1, 0)
+AIRT H 1 HealThing(99)
+Goto pain+1
+Pain.FlameSword:
+AIRT H 0
+AIRT HH 0 A_SpawnItemEx("ScorchBit",0,0,0,random(-10,10),random(-10,10),random(10,15),random(0,360))
+Goto pain
+Pain.FlashBomb:
+AIRT H 0 A_ScaleVelocity(0.85)
+Goto Pain+1
+Pain.WindStorm:
+AIRT H 0 //ThrustThing(random(0,255),50,1,0)
+AIRT H 0 ThrustThing(random(0,255),40,0,0)
+AIRT H 0 ThrustThingZ(0,10,0,0)
+Goto pain+1
+Pain.SlashClaw:
+AIRT H 0 A_PlaySoundEx("weapon/slashclawhit","SoundSlot5")
+Goto Pain
+Pain.FlashStopper:
+AIRT H 0 
+AIRT H 0 A_JumpIfInventory("BrightBlind", 1,3)
+AIRT H 0 A_GiveInventory("BrightBlind",125)
+AIRT H 0 ACS_ExecuteAlways(249, 0)
+Goto pain+1
+AIRT H 0 A_GiveInventory("BrightBlind",55)
+Goto pain+1
+Pain.Simon:
+AIRT H 0
+Goto Pain.SparkShock
+Pain.TimeSlow:
+AIRT H 0 A_GiveInventory("Slowed",1)
+Goto pain+1
+Pain.SparkShock:
+AIRT H 0 A_SpawnItemEx("ShockFX",4,0,32)
+AIRT H 0 A_GiveInventory("Shocked",1)
+AIRT H 1 A_Stop
+AIRT H 1 A_Stop
+AIRT H 1 A_Stop
+AIRT H 1 A_Stop
+AIRT H 1 A_Stop
+AIRT H 0 A_GiveInventory("Shocked",1)
+AIRT H 1 A_Stop
+AIRT H 1 A_Stop
+AIRT H 1 A_Stop
+AIRT H 1 A_Stop
+AIRT H 1 A_Stop
+AIRT H 0 A_GiveInventory("Shocked",1)
+AIRT H 1 A_Stop
+Goto Pain+1
+Pain.CrashBomb:
+AIRT H 0 A_Stop
+Goto Pain+1
+Pain.GravityHold:
+AIRT H 0 ThrustThingZ(0,150,1,0)
+AIRT H 0 A_JumpIf(z-floorz>180,"GravityForce4")
+AIRT H 0 A_JumpIf(z-floorz>128,"GravityForce3")
+AIRT H 0 A_JumpIf(z-floorz>32,"GravityForce2")
+AIRT H 0 A_JumpIf(z-floorz>8,"GravityForce1")
+Goto pain+1
+GravityForce4:
+//AIRT H 0 A_Print("Gravity 4")
+AIRT H 0 A_GiveInventory("GravityForce4",1)
+Goto Pain+1
+GravityForce3:
+//AIRT H 0 A_Print("Gravity 3")
+AIRT H 0 A_GiveInventory("GravityForce3",1)
+Goto Pain+1
+GravityForce2:
+//AIRT H 0 A_Print("Gravity 2")
+AIRT H 0 A_GiveInventory("GravityForce2",1)
+Goto Pain+1
+GravityForce1:
+//AIRT H 0 A_Print("Gravity 1")
+AIRT H 0 A_GiveInventory("GravityForce1",1)
+Goto Pain+1
+Pain.WilyFire:
+AIRT H 0 //A_ChangeFlag("SHOOTABLE",0)
+AIRT H 0 A_SpawnItemEx("ImOnFire")
+AIRT H 0 A_GiveInventory("FireVision",1)
+Goto Pain
+Pain.WilyIce:
+AIRT H 0 A_ChangeFlag("SHOOTABLE",0)
+AIRT H 0 SetPlayerProperty(0,1,4)
+AIRT H 0 A_SpawnItemEx("ImFrozen")
+AIRT H 0 A_GiveInventory("IceVision",1)
+AIRT H 30 A_Stop
+AIRT H 30 A_ChangeFlag("SHOOTABLE",1)
+AIRT H 0 SetPlayerProperty(0,0,0)
+AIRT H 0 A_TakeInventory("IceVision",1)
+Goto Spawn
+Pain.Drowning:
+Pain.Fire:
+Pain.Falling:
+Pain.Slime:
+AIRT H 0 
+AIRT H 0 A_JumpIfInventory("BeatCallCheck", 1, "BeatAssist")
+Goto Pain+1
+BeatAssist:
+AIRT H 0 
+AIRT H 0 HealThing(2)
+AIRT H 0 ThrustThingZ(0,25,0,0)
+AIRT H 0 ACS_ExecuteAlways(205,0)
+Goto Pain+1
+Pain:
+AIRT H 0 A_ScaleVelocity(0.75)
+AIRT H 0 A_JumpIfInventory("EnkerMirrorCount",1,"EnkerAbsorb")
+AIRT H 0 A_Pain
+AIRT H 0 //A_GiveInventory("TempInvince",1)
+AIRT H 0 //SetPlayerProperty(0, 1, 4)
+AIRT H 1 A_SpawnItem("PainFX",0,3)
+AIRT H 1 A_Recoil(1)
+AIRT H 1 A_SpawnItem("PainFX",0,3)
+AIRT H 1 //A_Recoil(1)
+AIRT H 1 A_SpawnItem("PainFX",0,3)
+AIRT H 1 //A_Recoil(1)
+AIRT H 1 A_SpawnItem("PainFX",0,3)
+AIRT H 1 //A_Recoil(1)
+AIRT H 1 A_SpawnItem("PainFX",0,3)
+AIRT H 1 //A_Recoil(1)
+AIRT H 1 A_SpawnItem("PainFX",0,3)
+AIRT H 1 //A_Recoil(1)
+AIRT H 1 A_SpawnItem("PainFX",0,3)
+AIRT H 1 //A_Recoil(1)
+AIRT H 1 A_SpawnItem("PainFX",0,3)
+AIRT H 1 //A_Recoil(1)
+AIRT H 1 A_SpawnItem("PainFX",0,3)
+AIRT H 1 //A_Recoil(1)
+AIRT H 1 A_SpawnItem("PainFX",0,3)
+AIRT H 1 //A_Recoil(1)
+AIRT H 0 //SetPlayerProperty(0, 0, 4)
+AIRT H 0//SetPlayerProperty(0,0,1)
+Goto Spawn
+Death.Beam:
+Death.GravityHold:
+Death.instagib:
+AIRT Z 1 SetPlayerProperty(0, 0, 4)
+AIRT H 0 A_GiveToTarget("KilledMe",1)
+AIRT H 0 A_GiveToTarget("KilledMeStock",1)
+AIRT H 0 A_GiveInventory("CutterFlag",999)
+AIRT H 0 A_GiveInventory("IsDead",1)
+AIRT Z 0 A_PlayerScream
+AIRT H 0 A_SpawnItemEx("FakeDeathFX", 0, 0, 32)
+AIRT Z 1 A_CheckPlayerDone
+wait
+Death:
+AIRT H 0 SetPlayerProperty(0, 0, 4)
+AIRT H 0 A_TakeInventory("PharaohCharge",999)   
+AIRT H 0 A_NoBlocking
+AIRT H 0 A_GiveInventory("CutterFlag",999)
+AIRT H 0 A_GiveInventory("IsDead",1)
+AIRT H 0 A_Stop
+AIRT H 0 A_GiveToTarget("KilledMeStock",1)
+AIRT H 1 A_GiveToTarget("KilledMe",1)
+AIRT H 19 ACS_ExecuteAlways(999,0,0)
+AIRT H 0 SetPlayerProperty(0, 0, 4)
+AIRT H 0 A_PlayerScream
+AIRT H 1 A_JumpIfInventory("CockroachFlag",1,"CockroachFlag")
+AIRT H 0 A_SpawnItemEx("FakeDeathFX", 0, 0, 32)
+AIRT Z 1 A_CheckPlayerDone
+wait
+CockRoachFlag:
+AIRT H 0 A_SpawnItemEx("Gockroach")
+AIRT Z 1 A_CheckPlayerDone
+wait
+ExplodeDeath:
+AIRT H 1 A_SpawnItemEx("OblivionExplode")
+goto Spawn
+Death.Falling:
+AIRT H 0 SetPlayerProperty(0, 0, 4)
+AIRT H 0 A_TakeInventory("PharaohCharge",999)   
+AIRT H 0 A_NoBlocking
+AIRT H 0 A_GiveInventory("CutterFlag",999)
+AIRT H 0 A_GiveInventory("IsDead",1)
+AIRT Z 1 A_PlayerScream
+AIRT Z 1 A_Stop
+AIRT Z 1 ACS_ExecuteAlways(999,0,0)
+//AIRT Z -1
+AIRT Z 1 A_CheckPlayerDone
+wait
+Ice:
+AIRT H 0 SetPlayerProperty(0, 0, 4)
+AIRT H 1 A_PlayerScream
+AIRT H 0 A_TakeInventory("PharaohCharge",999)   
+AIRT H 0 A_GiveInventory("CutterFlag",999)
+AIRT H 0 A_GiveInventory("IsDead",1)
+AIRT H 0 ACS_ExecuteAlways(998,0,105,1)
+AIRT H 0 A_NoBlocking
+AIRT H 0 A_FreezeDeath
+AIRT H 35
+AIRT H 0 A_SpawnItemEx("FrozenDeathFX", 0, 0, 16)
+AIRT Z 1 A_CheckPlayerDone
+wait
+//stop
+PunkSpin:
+AIRT AVW 3
+AIRT XY 3
+Goto PunkSpin+3
+PunkStop:
+AIRT WV 5
+Goto Spawn
+EnkerRaise:
+AIRT Y 1
+loop
+EnkerAbsorb:
+AIRT Y 0 A_PlaySound("weapon/mirrorabsorb")
+AIRT Y 0 A_GiveInventory("EnkerMirrorCount",1)
+Goto EnkerAbsorb3
+EnkerAbsorb3:
+AIRT Y 3 ACS_ExecuteAlways(998,0,65)
+AIRT Y 0 A_JumpIfInventory("EnkerMirrorCount",1,"EnkerAbsorb2")
+Goto Spawn
+EnkerAbsorb2:
+AIRT Y 3 ACS_ExecuteAlways(998,0,66)
+AIRT Y 0 A_JumpIfInventory("EnkerMirrorCount",1,"EnkerAbsorb3")
+Goto Spawn
+DarkLeap:
+AIRT Y 1 A_SpawnItemEx("DarkDamager")
+AIRT Y 0 A_JumpIf(z-floorz==0,"Spawn")
+loop
+BalladeJump:
+AIRT Y 5 A_SpawnItemEx("BalladeMelee")
+loop
+TheEnd:
+AIRT G 4
+loop
+CreditWalk:
+AIRT BCDE 8
+loop
+}
+}

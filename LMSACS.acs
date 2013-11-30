@@ -25,6 +25,9 @@ ConsoleCommand("winlimit 1");
 	if(!GetCvar("LMSGAMES_TARGETSNEEDED"))
 		{ConsoleCommand("set LMSGAMES_TARGETSNEEDED 0");
 		ConsoleCommand("archivecvar LMSGAMES_TARGETSNEEDED");}
+	if(!GetCvar("LMSGAMES_DISABLEWILDCARDS"))
+		{ConsoleCommand("set LMSGAMES_DISABLEWILDCARDS 0");
+		ConsoleCommand("archivecvar LMSGAMES_DISABLEWILDCARDS");}
 
 }
 

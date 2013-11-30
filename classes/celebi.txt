@@ -1,0 +1,287 @@
+actor Celebi : MegamanLMS
+{
+player.displayname "Celebi"
+player.soundclass "celebi"
+player.damagescreencolor "green"
+States
+{
+Spawn:
+CELB A 0
+CELB B 1
+CELB A 1
+Goto Spawn+2
+See:
+CELB BCDE 5
+Goto Spawn
+Missile:
+CELB F 5 
+CELB G 4 
+goto Spawn
+Pain.FireSpin:
+Pain.QuickBoomerang:
+Pain.Buster:
+Pain.WildCoil:
+Pain.ChargeKick:
+Pain.YamatoSpear:
+Pain.DiveMissile:
+Pain.StarCrash:
+Pain.NeedleCannon:
+Pain.CentaurFlash:
+Pain.FreezeCrack:
+Pain.ScrewCrusher:
+Pain.PharaohHold:
+Pain.TornadoHold:
+Pain.TrebleSentry:
+Pain.ScorchWheel:
+Pain.MagnetMissile:
+Pain.JunkShield:
+Pain.Misc:
+Pain.Oil:
+CELB H 0
+Goto pain+1
+Pain.Rigormortis:
+goto Missile
+Pain.Net:
+CELB H 0 ACS_ExecuteAlways(18,0)
+goto Pain+1
+Pain.Afterburner:
+CELB H 0 HealThing(2)
+CELB H 0 A_Jump(128,"OtherThrust")
+CELB H 0 ThrustThing(random(0,255),15,0,0)
+CELB H 0 ThrustThingZ(0,50,0,0)
+Goto pain+1
+OtherThrust:
+CELB H 0 ThrustThing(random(0,255),20,1,0)
+CELB H 0 ThrustThingZ(0,50,0,0)
+Goto pain+1
+Pain.MegaFist:
+CELB H 0 ThrustThing(angle*256/360+128,random(10,15), 1, 0)
+CELB H 1 HealThing(99)
+Goto pain+1
+Pain.FlameSword:
+CELB H 0
+CELB HH 0 A_SpawnItemEx("ScorchBit",0,0,0,random(-10,10),random(-10,10),random(10,15),random(0,360))
+Goto pain
+Pain.FlashBomb:
+CELB H 0 A_ScaleVelocity(0.85)
+Goto Pain+1
+Pain.WindStorm:
+CELB H 0 //ThrustThing(random(0,255),50,1,0)
+CELB H 0 ThrustThing(random(0,255),40,0,0)
+CELB H 0 ThrustThingZ(0,10,0,0)
+Goto pain+1
+Pain.SlashClaw:
+CELB H 0 A_PlaySoundEx("weapon/slashclawhit","SoundSlot5")
+Goto Pain
+Pain.FlashStopper:
+CELB H 0 
+CELB H 0 A_JumpIfInventory("BrightBlind", 1,3)
+CELB H 0 A_GiveInventory("BrightBlind",125)
+CELB H 0 ACS_ExecuteAlways(249, 0)
+Goto pain+1
+CELB H 0 A_GiveInventory("BrightBlind",55)
+Goto pain+1
+Pain.Simon:
+CELB H 0
+Goto Pain.SparkShock
+Pain.TimeSlow:
+CELB H 0 A_GiveInventory("Slowed",1)
+Goto pain+1
+Pain.SparkShock:
+CELB H 0 A_SpawnItemEx("ShockFX",4,0,32)
+CELB H 0 A_GiveInventory("Shocked",1)
+CELB H 1 A_Stop
+CELB H 1 A_Stop
+CELB H 1 A_Stop
+CELB H 1 A_Stop
+CELB H 1 A_Stop
+CELB H 0 A_GiveInventory("Shocked",1)
+CELB H 1 A_Stop
+CELB H 1 A_Stop
+CELB H 1 A_Stop
+CELB H 1 A_Stop
+CELB H 1 A_Stop
+CELB H 0 A_GiveInventory("Shocked",1)
+CELB H 1 A_Stop
+Goto Pain+1
+Pain.CrashBomb:
+CELB H 0 A_Stop
+Goto Pain+1
+Pain.GravityHold:
+CELB H 0 ThrustThingZ(0,150,1,0)
+CELB H 0 A_JumpIf(z-floorz>180,"GravityForce4")
+CELB H 0 A_JumpIf(z-floorz>128,"GravityForce3")
+CELB H 0 A_JumpIf(z-floorz>32,"GravityForce2")
+CELB H 0 A_JumpIf(z-floorz>8,"GravityForce1")
+Goto pain+1
+GravityForce4:
+//CELB H 0 A_Print("Gravity 4")
+CELB H 0 A_GiveInventory("GravityForce4",1)
+Goto Pain+1
+GravityForce3:
+//CELB H 0 A_Print("Gravity 3")
+CELB H 0 A_GiveInventory("GravityForce3",1)
+Goto Pain+1
+GravityForce2:
+//CELB H 0 A_Print("Gravity 2")
+CELB H 0 A_GiveInventory("GravityForce2",1)
+Goto Pain+1
+GravityForce1:
+//CELB H 0 A_Print("Gravity 1")
+CELB H 0 A_GiveInventory("GravityForce1",1)
+Goto Pain+1
+Pain.WilyFire:
+CELB H 0 //A_ChangeFlag("SHOOTABLE",0)
+CELB H 0 A_SpawnItemEx("ImOnFire")
+CELB H 0 A_GiveInventory("FireVision",1)
+Goto Pain
+Pain.WilyIce:
+CELB H 0 A_ChangeFlag("SHOOTABLE",0)
+CELB H 0 SetPlayerProperty(0,1,4)
+CELB H 0 A_SpawnItemEx("ImFrozen")
+CELB H 0 A_GiveInventory("IceVision",1)
+CELB H 30 A_Stop
+CELB H 30 A_ChangeFlag("SHOOTABLE",1)
+CELB H 0 SetPlayerProperty(0,0,0)
+CELB H 0 A_TakeInventory("IceVision",1)
+Goto Spawn
+Pain.Drowning:
+Pain.Fire:
+Pain.Falling:
+Pain.Slime:
+CELB H 0 
+CELB H 0 A_JumpIfInventory("BeatCallCheck", 1, "BeatAssist")
+Goto Pain+1
+BeatAssist:
+CELB H 0 
+CELB H 0 HealThing(2)
+CELB H 0 ThrustThingZ(0,25,0,0)
+CELB H 0 ACS_ExecuteAlways(205,0)
+Goto Pain+1
+Pain:
+CELB H 0 A_ScaleVelocity(0.75)
+CELB H 0 A_JumpIfInventory("EnkerMirrorCount",1,"EnkerAbsorb")
+CELB H 0 A_Pain
+CELB H 0 //A_GiveInventory("TempInvince",1)
+CELB H 0 //SetPlayerProperty(0, 1, 4)
+CELB H 1 A_SpawnItem("PainFX",0,3)
+CELB H 1 A_Recoil(1)
+CELB H 1 A_SpawnItem("PainFX",0,3)
+CELB H 1 //A_Recoil(1)
+CELB H 1 A_SpawnItem("PainFX",0,3)
+CELB H 1 //A_Recoil(1)
+CELB H 1 A_SpawnItem("PainFX",0,3)
+CELB H 1 //A_Recoil(1)
+CELB H 1 A_SpawnItem("PainFX",0,3)
+CELB H 1 //A_Recoil(1)
+CELB H 1 A_SpawnItem("PainFX",0,3)
+CELB H 1 //A_Recoil(1)
+CELB H 1 A_SpawnItem("PainFX",0,3)
+CELB H 1 //A_Recoil(1)
+CELB H 1 A_SpawnItem("PainFX",0,3)
+CELB H 1 //A_Recoil(1)
+CELB H 1 A_SpawnItem("PainFX",0,3)
+CELB H 1 //A_Recoil(1)
+CELB H 1 A_SpawnItem("PainFX",0,3)
+CELB H 1 //A_Recoil(1)
+CELB H 0 //SetPlayerProperty(0, 0, 4)
+CELB H 0//SetPlayerProperty(0,0,1)
+Goto Spawn
+Death.Beam:
+Death.GravityHold:
+Death.instagib:
+CELB Z 1 SetPlayerProperty(0, 0, 4)
+CELB H 0 A_GiveToTarget("KilledMe",1)
+CELB H 0 A_GiveToTarget("KilledMeStock",1)
+CELB H 0 A_GiveInventory("CutterFlag",999)
+CELB H 0 A_GiveInventory("IsDead",1)
+CELB Z 0 A_PlayerScream
+CELB H 0 A_SpawnItemEx("FakeDeathFX", 0, 0, 32)
+CELB Z 1 A_CheckPlayerDone
+wait
+Death:
+CELB H 0 SetPlayerProperty(0, 0, 4)
+CELB H 0 A_TakeInventory("PharaohCharge",999)   
+CELB H 0 A_NoBlocking
+CELB H 0 A_GiveInventory("CutterFlag",999)
+CELB H 0 A_GiveInventory("IsDead",1)
+CELB H 0 A_Stop
+CELB H 0 A_GiveToTarget("KilledMeStock",1)
+CELB H 1 A_GiveToTarget("KilledMe",1)
+CELB H 19 ACS_ExecuteAlways(999,0,0)
+CELB H 0 SetPlayerProperty(0, 0, 4)
+CELB H 0 A_PlayerScream
+CELB H 1 A_JumpIfInventory("CockroachFlag",1,"CockroachFlag")
+CELB H 0 A_SpawnItemEx("FakeDeathFX", 0, 0, 32)
+CELB Z 1 A_CheckPlayerDone
+wait
+CockRoachFlag:
+CELB H 0 A_SpawnItemEx("Gockroach")
+CELB Z 1 A_CheckPlayerDone
+wait
+ExplodeDeath:
+CELB H 1 A_SpawnItemEx("OblivionExplode")
+goto Spawn
+Death.Falling:
+CELB H 0 SetPlayerProperty(0, 0, 4)
+CELB H 0 A_TakeInventory("PharaohCharge",999)   
+CELB H 0 A_NoBlocking
+CELB H 0 A_GiveInventory("CutterFlag",999)
+CELB H 0 A_GiveInventory("IsDead",1)
+CELB Z 1 A_PlayerScream
+CELB Z 1 A_Stop
+CELB Z 1 ACS_ExecuteAlways(999,0,0)
+//CELB Z -1
+CELB Z 1 A_CheckPlayerDone
+wait
+Ice:
+CELB H 0 SetPlayerProperty(0, 0, 4)
+CELB H 1 A_PlayerScream
+CELB H 0 A_TakeInventory("PharaohCharge",999)   
+CELB H 0 A_GiveInventory("CutterFlag",999)
+CELB H 0 A_GiveInventory("IsDead",1)
+CELB H 0 ACS_ExecuteAlways(998,0,105,1)
+CELB H 0 A_NoBlocking
+CELB H 0 A_FreezeDeath
+CELB H 35
+CELB H 0 A_SpawnItemEx("FrozenDeathFX", 0, 0, 16)
+CELB Z 1 A_CheckPlayerDone
+wait
+//stop
+PunkSpin:
+CELB AVW 3
+CELB XY 3
+Goto PunkSpin+3
+PunkStop:
+CELB WV 5
+Goto Spawn
+EnkerRaise:
+CELB Y 1
+loop
+EnkerAbsorb:
+CELB Y 0 A_PlaySound("weapon/mirrorabsorb")
+CELB Y 0 A_GiveInventory("EnkerMirrorCount",1)
+Goto EnkerAbsorb3
+EnkerAbsorb3:
+CELB Y 3 ACS_ExecuteAlways(998,0,65)
+CELB Y 0 A_JumpIfInventory("EnkerMirrorCount",1,"EnkerAbsorb2")
+Goto Spawn
+EnkerAbsorb2:
+CELB Y 3 ACS_ExecuteAlways(998,0,66)
+CELB Y 0 A_JumpIfInventory("EnkerMirrorCount",1,"EnkerAbsorb3")
+Goto Spawn
+DarkLeap:
+CELB Y 1 A_SpawnItemEx("DarkDamager")
+CELB Y 0 A_JumpIf(z-floorz==0,"Spawn")
+loop
+BalladeJump:
+CELB Y 5 A_SpawnItemEx("BalladeMelee")
+loop
+TheEnd:
+CELB G 4
+loop
+CreditWalk:
+CELB BCDE 8
+loop
+}
+}

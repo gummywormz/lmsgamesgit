@@ -37,3 +37,14 @@
 #include "Actors/lms30.txt"
 
 #include "Actors/lms05x.txt"
+
+#include "classes/celebi.txt"
+#include "classes/cock.txt"
+#include "classes/SUE.txt"
+#include "classes/fuzzy.txt"
+#include "classes/airmantile.txt"
+#include "classes/saku.txt"
+#include "classes/ring.txt"
+#include "classes/EDDIE.txt"
+#include "classes/NIGHTMARE.txt"
+#include "classes/orb.txt"
