@@ -4,7 +4,7 @@
 #library "Tips"
 #include "zcommon.acs"
 
-#DEFINE TIPCOUNT 39
+#DEFINE TIPCOUNT 45
 
 str Tips[TIPCOUNT] = { 
 
@@ -47,8 +47,12 @@ str Tips[TIPCOUNT] = {
 "Join a Mega Man X Single Player Server as 'Zerp' and use zero for maximum respect.",
 "Always teamkill. Always",
 "You are so not monster",
-
-
+"The next time you plan a wedding, remember to add a connect password.", //new
+"gtfo noob", //new
+"homies unite!", //new
+"The Select bug was fixed.", //new
+"MM8BDM is a great way to find that someone special.", //new
+"My fursona is a goblin shark.", //new
 };
 
 

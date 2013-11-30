@@ -1,7 +1,7 @@
 #library "RAGEQUIT"
 #include "zcommon.acs"
 
-#DEFINE ragequotes 18
+#DEFINE ragequotes 26
 str ragequote[ragequotes] = { 
 " died to toad man.",
 " is going to have 0 speed next round.",
@@ -21,6 +21,14 @@ str ragequote[ragequotes] = {
 " left to raeg on the forums..",
 " left to play hotel saxton quail.",
 " is not very monster.",
+" is secretly a roleplayer.", // new
+" is fake super sand!", // new
+" is about to leave the community.", // new
+" threw the game, ban", //new
+" should stick to Terraria.", // new
+" left the sandwich on.", // new
+" couldn't hit that last Gyro Man.", // new
+" needs help setting up a server for mega man 9 - 10 weapons.", // new
 };
 
 

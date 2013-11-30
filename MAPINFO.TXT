@@ -157,11 +157,12 @@ map LMS22 "ROCK HARDEN" //done!
  aircontrol = 0.5
 }
 
-map LMS23 "BREAK THE TARGETS"
+map LMS23 "NEEDLE PRESSURE"
 {
  next = "LMS24"
- music = "LMS_ICE"
+ music = "LMS_NEE"
  aircontrol = 0.5
+ nojump
 }
 
 map LMS24 "STAR SEARCH" //done for good
@@ -232,7 +233,14 @@ map XLMS02 "AIR MAN SCAVENGER HUNT" //done for good
 
 map XLMS03 "CRYSTAL MAN SCAVENGER HUNT" //done for good
 {
- next = "LMS26"
+ next = "XLMS04"
  music = "LMS_CRY"
+ aircontrol = 0.5
+}
+
+map XLMS04 "BREAK THE TARGETS"
+{
+ next = "XLMS05"
+ music = "LMS_ICE"
  aircontrol = 0.5
 }

@@ -1,5 +1,11 @@
 //vs nightmare upgraded
 
+actor hitcount : Inventory
+{
+Inventory.amount 1
+Inventory.maxamount 99999
+}
+
 actor StarRodLMSWep2 : MegaBuster
 {
 Weapon.AmmoUse 0
@@ -120,7 +126,7 @@ NGMR H 1 A_Jump(64,"Needle")
 NGMR H 1 A_Jump(64,"FireStorm")
 NGMR H 1 A_Jump(64,"ZappyZap")
 NGMR H 1 A_Jump(64,"FreezeMan")
-//NGMR H 1 A_Jump(10,"ForceBeamz")
+NGMR H 1 A_Jump(5,"ForceBeamz")
 NGMR H 1 A_Jump(64,"Dash")
 Goto Missile+1
 Needle:
