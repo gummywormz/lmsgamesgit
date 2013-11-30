@@ -37,6 +37,7 @@ Goto Ready
 
 actor ThunderBeam2 : ThunderBeam
 {
++RIPPER
 States
 {
 Death:

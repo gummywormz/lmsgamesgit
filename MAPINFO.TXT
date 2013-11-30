@@ -179,10 +179,10 @@ map LMS25 "GRENADE MAN'S BIG BLAST" //done for good
  aircontrol = 0.5
 }
 
-map LMS26 "ZOMBIE APOCALYPSE" //done for good
+map LMS26 "CHECKERBOARD CHASE" //done for good
 {
  next = "LMS27"
- music = "LMS_ZOMB"
+ music = "LMS_CHEC"
  aircontrol = 0.5
 }
 
@@ -242,5 +242,12 @@ map XLMS04 "BREAK THE TARGETS"
 {
  next = "XLMS05"
  music = "LMS_ICE"
+ aircontrol = 0.5
+}
+
+map XLMS05 "ZOMBIE APOCALYPSE" //done for good
+{
+ next = "XLMS06"
+ music = "LMS_ZOMB"
  aircontrol = 0.5
 }
