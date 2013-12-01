@@ -1,3 +1,5 @@
+//checkerboard chase
+
 actor NotMegaBuster : MegaBuster
 {
 States
@@ -7,7 +9,6 @@ BUST B 0 A_JumpIfNoAmmo("NoAmmo")
 BUST B 0 A_PlaySoundEx("weapon/mbuster","Weapon")
 BUST B 0 A_FireCustomMissile("MegaShot",0,0,8,0)
 BUST CD 3
-BUST B 35
 BUST B 35
 BUST B 35
 BUST B 0 A_Refire

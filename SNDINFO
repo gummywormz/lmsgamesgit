@@ -138,6 +138,34 @@ $playersound	mare	male	*fist		dsnone
 $playersound	mare	male	*usefail	LAND
 $playersound	mare	male	*taunt		dsnone
 
+$playersound	sbwm	male	*death		MEGADEAT
+$playersound	sbwm	male	*xdeath	 	MEGADEAT
+$playersound	sbwm	male	*gibbed		MEGADEAT
+$playersound	sbwm	male	*pain100	MM4PAIN
+$playersound	sbwm	male	*pain75		MM4PAIN
+$playersound	sbwm	male	*pain50		MM4PAIN
+$playersound	sbwm	male	*pain25		MM4PAIN
+$playersound	sbwm	male	*grunt		LAND
+$playersound	sbwm	male	*land		LAND
+$playersound	sbwm	male	*jump		dsnone
+$playersound	sbwm	male	*fist		dsnone
+$playersound	sbwm	male	*usefail	LAND
+$playersound	sbwm	male	*taunt		wavmus
+
+$playersound	modok	male	*death		MODODIE
+$playersound	modok	male	*xdeath		MODODIE
+$playersound	modok	male	*gibbed		MODODIE
+$playersound	modok	male	*pain100	MODOP4
+$playersound	modok	male	*pain75		MODOP3
+$playersound	modok	male	*pain50		MODOP2
+$playersound	modok	male	*pain25		MODOP1
+$playersound	modok	male	*grunt		FATLAND
+$playersound	modok	male	*land		FATLAND
+$playersound	modok	male	*jump		dsnone
+$playersound	modok	male	*fist		dsnone
+$playersound	modok	male	*usefail	FATLAND
+$playersound	modok	male	*taunt		MODOTAU
+
 
 marine/pain MEGAPAIN
 

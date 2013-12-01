@@ -184,6 +184,7 @@ map LMS26 "CHECKERBOARD CHASE" //done for good
  next = "LMS27"
  music = "LMS_CHEC"
  aircontrol = 0.5
+ levelnum = 6026
 }
 
 map LMS27 "QUICK FEET"//done for good
@@ -193,12 +194,11 @@ map LMS27 "QUICK FEET"//done for good
  aircontrol = 0.5
 }
 
-map LMS28 "SOUP BOWL WAVE MAN SAYS..."
+map LMS28 "ZOMBIE APOCALYPSE" //done for good
 {
  next = "LMS29"
- music = "LMS_SBWM"
+ music = "LMS_ZOMB"
  aircontrol = 0.5
- nojump
 }
 
 map LMS29 "EDDIE'S REVENGE" //done for good
@@ -242,12 +242,5 @@ map XLMS04 "BREAK THE TARGETS"
 {
  next = "XLMS05"
  music = "LMS_ICE"
- aircontrol = 0.5
-}
-
-map XLMS05 "ZOMBIE APOCALYPSE" //done for good
-{
- next = "XLMS06"
- music = "LMS_ZOMB"
  aircontrol = 0.5
 }

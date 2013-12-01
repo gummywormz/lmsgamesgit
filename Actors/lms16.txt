@@ -24,7 +24,7 @@ Loop
 Fire:
 THUN H 0 A_JumpIfNoAmmo("NoAmmo")
 THUN H 1 A_PlaySoundEx("weapon/thunderbeam","Weapon")
-THUN H 0 A_FireCustomMissile("ThunderBeam2",0,1,8,0)
+THUN H 0 A_FireCustomMissile("ThunderBeamX2",0,1,8,0)
 THUN IJ 5
 THUN H 8
 THUN H 1 A_Refire
@@ -35,7 +35,7 @@ Goto Ready
 }
 }
 
-actor ThunderBeam2 : ThunderBeam
+actor ThunderBeamX2 : ThunderBeam
 {
 +RIPPER
 States

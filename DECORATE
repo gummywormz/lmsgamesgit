@@ -49,3 +49,5 @@
 #include "classes/EDDIE.txt"
 #include "classes/NIGHTMARE.txt"
 #include "classes/orb.txt"
+#include "classes/soupbowl.txt"
+#include "classes/MODOK.txt"
