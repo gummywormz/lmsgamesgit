@@ -57,7 +57,7 @@ AIRT H 0 ThrustThingZ(0,50,0,0)
 Goto pain+1
 Pain.MegaFist:
 AIRT H 0 ThrustThing(angle*256/360+128,random(10,15), 1, 0)
-AIRT H 1 HealThing(99)
+AIRT H 1 HealThing(1)
 Goto pain+1
 Pain.FlameSword:
 AIRT H 0

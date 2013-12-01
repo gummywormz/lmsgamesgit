@@ -3,6 +3,7 @@ map LMS01 "GENERIC LAVA PLATFORMS" //done for good
  next = "LMS02"
  sky1 = "AIRSKY", 0
  music = "LMS_MGM"
+ levelnum =6001
  aircontrol = 0.5
 }
 
@@ -12,6 +13,7 @@ map LMS02 "MAGICAL FLIGHT"//done for good
  sky1 = "AIRSKY", 0
  music = "LMS_MAGI"
  aircontrol = 0.5
+ levelnum =6002
 }
 
 map LMS03 "GIANT TELLY"//done for good
@@ -19,6 +21,7 @@ map LMS03 "GIANT TELLY"//done for good
  next = "LMS04"
  music = "LMS_BTLY"
  aircontrol = 0.5
+ levelnum =6003
 }
 
 map LMS04 "SPECIAL STAGE"//done for good
@@ -26,6 +29,7 @@ map LMS04 "SPECIAL STAGE"//done for good
  next = "LMS05"
  music = "LMS_SPST"
  aircontrol = 0.5
+ levelnum =6004
 }
 
 map LMS05 "HEAT MAN'S INCINERATOR" //done for good
@@ -33,6 +37,7 @@ map LMS05 "HEAT MAN'S INCINERATOR" //done for good
  next = "LMS06"
  music = "LMS_HEA"
  aircontrol = 0.5
+ levelnum =6005
 }
 
 map LMS06 "GCN MARIO CIRCUIT" //done for good
@@ -40,6 +45,7 @@ map LMS06 "GCN MARIO CIRCUIT" //done for good
  next = "LMS07"
  music = "LMS_DDC"
  aircontrol = 0.5
+ levelnum =6006
 }
 
 map LMS07 "SPACE TRAIN!"// done for good
@@ -47,6 +53,7 @@ map LMS07 "SPACE TRAIN!"// done for good
  next = "LMS08"
  music = "LMS_SPHA"
  aircontrol = 0.5
+  levelnum =6007
 }
 
 map LMS08 "VS. NIGHTMARE UPGRADED" //done for good.
@@ -54,6 +61,7 @@ map LMS08 "VS. NIGHTMARE UPGRADED" //done for good.
  next = "LMS09"
  music = "LMS_NIG3"
  aircontrol = 0.5
+  levelnum =6008
 }
 
 map LMS09 "ANTI-SOCIAL PROJECTILE DODGING" //DONE FOR GOOD
@@ -61,6 +69,7 @@ map LMS09 "ANTI-SOCIAL PROJECTILE DODGING" //DONE FOR GOOD
  next = "LMS10"
 music = "LMS_ANTI"
  aircontrol = 0.5
+  levelnum =6009
 }
 
 map LMS10 "PHARAOH MAN'S SCAVENGER HUNT" //done for good
@@ -68,6 +77,7 @@ map LMS10 "PHARAOH MAN'S SCAVENGER HUNT" //done for good
  next = "LMS11"
  music = "LMS_PHA"
  aircontrol = 0.5
+  levelnum =6010
 }
 
 map LMS11 "SPECIAL STAGE PLUS B"//done for good
@@ -75,6 +85,7 @@ map LMS11 "SPECIAL STAGE PLUS B"//done for good
  next = "LMS12"
  music = "LMS_SPS2"
  aircontrol = 0.5
+  levelnum =6011
 }
 
 map LMS12 "MYSTERIOUS MAZE OF MAGIC" //rehaul
@@ -82,6 +93,7 @@ map LMS12 "MYSTERIOUS MAZE OF MAGIC" //rehaul
  next = "LMS13"
  music = "LMS_MAZ"
  aircontrol = 0.5
+  levelnum= 6012
 }
 
 map LMS13 "MUSICAL ELEVATOR" //done for good
@@ -90,6 +102,7 @@ map LMS13 "MUSICAL ELEVATOR" //done for good
  levelnum = 589
  music = "D_BLANK"
  aircontrol = 0.5
+  levelnum =6013
 }
 
 map LMS14 "CAVE RACE" //done for good
@@ -97,6 +110,7 @@ map LMS14 "CAVE RACE" //done for good
  next = "LMS15"
  music = "LMS_CAVE"
  aircontrol = 0.5
+  levelnum =6014
 }
 
 map LMS15 "FUSION JOUSTING" //done for good
@@ -104,6 +118,7 @@ map LMS15 "FUSION JOUSTING" //done for good
  next = "LMS16"
  music = "LMS_JOU"
  aircontrol = 0.5
+  levelnum =6015
 }
 
 map LMS16 "ELECMAN'S DAY OFF" //done for good
@@ -112,6 +127,7 @@ map LMS16 "ELECMAN'S DAY OFF" //done for good
  music = "LMS_ELEC"
  nojump
  aircontrol = 0.5
+  levelnum =6016
 }
 
 map LMS17 "NOT SO SPECIAL STAGE" //done for good
@@ -119,6 +135,7 @@ map LMS17 "NOT SO SPECIAL STAGE" //done for good
  next = "LMS18"
  music = "LMS_UFO"
  aircontrol = 0.5
+  levelnum =6017
 }
 
 map LMS18 "CITY ESCAPE" //not mine
@@ -126,6 +143,7 @@ map LMS18 "CITY ESCAPE" //not mine
  next = "LMS19"
  music = "LMS_RUN"
  aircontrol = 0.5
+  levelnum =6018
 }
 
 map LMS19 "TO THE TOP" //done for good
@@ -133,6 +151,7 @@ map LMS19 "TO THE TOP" //done for good
  next = "LMS20"
  music = "LMS_FGHT"
  aircontrol = 0.5
+  levelnum =6019
 }
 
 map LMS20 "123...DEATH!" //done for good
@@ -140,6 +159,7 @@ map LMS20 "123...DEATH!" //done for good
  next = "LMS21"
  music = "LMS_DIE"
  aircontrol = 0.5
+  levelnum =6020
 }
 
 //map LMS21 "DEATH RUN: 4 ELEMENTS"
@@ -147,6 +167,7 @@ map LMS20 "123...DEATH!" //done for good
  //next = "LMS22"
  //music = "LMS_WUB"
  //aircontrol = 0.5
+  //levelnum = 6021
 //}
 
 map LMS22 "ROCK HARDEN" //done!
@@ -155,6 +176,7 @@ map LMS22 "ROCK HARDEN" //done!
  next = "LMS23"
  music = "LMS_ROC"
  aircontrol = 0.5
+  levelnum =6022
 }
 
 map LMS23 "NEEDLE PRESSURE"
@@ -162,6 +184,7 @@ map LMS23 "NEEDLE PRESSURE"
  next = "LMS24"
  music = "LMS_NEE"
  aircontrol = 0.5
+  levelnum =6023
  nojump
 }
 
@@ -170,6 +193,7 @@ map LMS24 "STAR SEARCH" //done for good
  next = "LMS25"
  music = "LMS_JUNG"
  aircontrol = 0.5
+  levelnum= 6024
 }
 
 map LMS25 "GRENADE MAN'S BIG BLAST" //done for good
@@ -177,6 +201,7 @@ map LMS25 "GRENADE MAN'S BIG BLAST" //done for good
  next = "LMS26"
  music = "LMS_BOMB"
  aircontrol = 0.5
+  levelnum= 6025
 }
 
 map LMS26 "CHECKERBOARD CHASE" //done for good
@@ -192,18 +217,21 @@ map LMS27 "QUICK FEET"//done for good
  next = "LMS28"
  music = "LMS_QFT"
  aircontrol = 0.5
+  levelnum =6027
 }
 
-map LMS28 "ZOMBIE APOCALYPSE" //done for good
+map LMS28 "KING OF THE RED CIRCLE" //done for good
 {
  next = "LMS29"
- music = "LMS_ZOMB"
+ music = "LMS_KORC"
+  levelnum =6028
  aircontrol = 0.5
 }
 
 map LMS29 "EDDIE'S REVENGE" //done for good
 {
  next = "LMS30"
+  levelnum =6029
  music = "LMS_EDD"
  aircontrol = 0.5
 }
@@ -212,6 +240,7 @@ map LMS30 "SUPER AIR MAN TILE" //done for good
 {
  next = "LMS01"
  music = "LMS_SATM"
+  levelnum =6030
  aircontrol = 0.5
 }
 //ex-maps
@@ -242,5 +271,12 @@ map XLMS04 "BREAK THE TARGETS"
 {
  next = "XLMS05"
  music = "LMS_ICE"
+ aircontrol = 0.5
+}
+
+map XLMS05 "ZOMBIE APOCALYPSE" //done for good
+{
+ next = "XLMS06"
+ music = "LMS_ZOMB"
  aircontrol = 0.5
 }

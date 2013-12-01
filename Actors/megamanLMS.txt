@@ -70,7 +70,7 @@ PLAY H 0 ThrustThingZ(0,50,0,0)
 Goto pain+1
 Pain.MegaFist:
 PLAY H 0 ThrustThing(angle*256/360+128,random(10,15), 1, 0)
-PLAY H 1 HealThing(99)
+PLAY H 1 HealThing(1)
 Goto pain+1
 Pain.FlameSword:
 PLAY H 0

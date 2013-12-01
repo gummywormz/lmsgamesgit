@@ -1,7 +1,7 @@
 actor microchargeman : MegamanLMS
 {
 +NOSKIN
-scale 0.2
+scale 0.3
 player.displayname "microchargeman"
 player.soundclass "micm"
 player.damagescreencolor "yellow"
@@ -58,7 +58,7 @@ CHRM H 0 ThrustThingZ(0,50,0,0)
 Goto pain+1
 Pain.MegaFist:
 CHRM H 0 ThrustThing(angle*256/360+128,random(10,15), 1, 0)
-CHRM H 1 HealThing(99)
+CHRM H 1 HealThing(1)
 Goto pain+1
 Pain.FlameSword:
 CHRM H 0

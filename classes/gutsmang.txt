@@ -57,7 +57,7 @@ GGUS H 0 ThrustThingZ(0,50,0,0)
 Goto pain+1
 Pain.MegaFist:
 GGUS H 0 ThrustThing(angle*256/360+128,random(10,15), 1, 0)
-GGUS H 1 HealThing(99)
+GGUS H 1 HealThing(1)
 Goto pain+1
 Pain.FlameSword:
 GGUS H 0

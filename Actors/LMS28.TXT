@@ -1,122 +1,82 @@
-actor SoupBowlWaveMan 1205
+//koth
+
+actor kothcounter : inventory
 {
-+SOLID
--NOGRAVITY
-Scale 2.5
-States
-{
-Spawn:
-SBWM A 35
-SBWM A 35
-loop
-}
+inventory.amount 1
+inventory.maxamount 10000
 }
 
-actor IActioned : Inventory
+actor notkothcounter : inventory
 {
-Inventory.Amount 1
-Inventory.MaxAmount 1
+inventory.amount 1
+inventory.maxamount 1
 }
 
-actor IHeldFire : Inventory
+actor DeathWeapon : MegaBuster
 {
-Inventory.Amount 1
-Inventory.MaxAmount 1
-}
-
-actor IHeldAlt : Inventory
-{
-Inventory.Amount 1
-Inventory.MaxAmount 1
-}
-
-actor IAlted : Inventory
-{
-Inventory.Amount 1
-Inventory.MaxAmount 3
-}
-
-actor IFired : Inventory
-{
-Inventory.Amount 1
-Inventory.MaxAmount 3
-}
-
-actor IItemed : Inventory
-{
-Inventory.Amount 1
-Inventory.MaxAmount 3
-}
-
-actor ItemGiver : CustomInventory
-{
-INVENTORY.AMOUNT 1
-INVENTORY.MAXAMOUNT 1
-+INVBAR
-inventory.icon "TNT1A0"
-States
-{
-Use:
-TNT1 A 1 A_GiveInventory("IItemed",1)
-TNT1 A 1 A_PlaySoundEx("item/refill","Voice")
-TNT1 A 1 A_GiveInventory("IActioned",1)
-fail
-}
-}
-
-actor SimonWep : MegaBuster
-{
-Obituary "%o broke the universe."
-Inventory.Pickupmessage "Power up! Simon Sez!"
+Weapon.AmmoUse 0
+Weapon.AmmoGive 1
+obituary "%o is no longer living thanks to %k's death weapon."
+weapon.ammotype "ChargeAmmo"
 States
 {
 Spawn:
 MSHD C 1
 stop
 Ready:
-TNT1 A 1 ACS_ExecuteAlways(991,0,0)
-TNT1 A 1 A_WeaponReady(WRF_NOSWITCH)
-goto Ready+1
+THUN H 1 A_WeaponReady
+loop
 Deselect:
 TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Lower
-TNT1 A 1 A_Lower
+THUN H 1 A_Lower
 Loop
 Select:
 TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Raise
-TNT1 A 1 A_Raise
+THUN H 1 A_Raise
 Loop
 Fire:
-TNT1 A 0 A_JumpIfInventory("IHeldFire",1,"NoAmmo")
-TNT1 A 0 A_PlaySoundEx("weapon/FIRESTORM","Weapon")
-TNT1 A 1 A_GiveInventory("IFired",1)
-TNT1 A 1 A_GiveInventory("IActioned",1)
-TNT1 A 20
-TNT1 A 4 A_Refire
-goto Ready+1
-Hold:
-TNT1 A 0 A_GiveInventory("IHeldFire",1)
-TNT1 A 0 A_TakeInventory("IFired",1)
-TNT1 A 1 A_PlaySoundEx("weapon/geminilaser","Weapon")
-TNT1 A 20
-TNT1 A 0 A_Refire
-Goto Ready+1
-AltFire:
-TNT1 A 0 A_JumpIfInventory("IHeldAlt",1,"NoAmmo")
-TNT1 A 0 A_PlaySoundEx("weapon/Flamesword","Weapon")
-TNT1 A 1 A_GiveInventory("IAlted",1)
-TNT1 A 1 A_GiveInventory("IActioned",1)
-TNT1 A 20
-TNT1 A 4 A_Refire
-goto Ready+1
-AltHold:
-TNT1 A 0 A_GiveInventory("IHeldAlt",1)
-TNT1 A 0 A_TakeInventory("IAlted",1)
-TNT1 A 1 A_PlaySoundEx("weapon/lshot","Weapon")
-TNT1 A 20
-TNT1 A 0 A_Refire
-Goto Ready+1
+THUN H 1 A_PlaySoundEx("weapon/crosslight","Weapon")
+THUN H 0 A_FireCustomMissile("DeathBall",0,0,8,0)
+THUN IJ 5
+THUN H 18
+THUN H 1 A_Refire
+GOTO READY
 NoAmmo:
-TNT1 A 1 ACS_Execute(979,0)
+THUN H 1 ACS_Execute(979,0)
 Goto Ready
+}
+}
+
+actor DeathBall : ThunderBolt
+{
+PROJECTILE
+damagetype "Nope"
+Damage (25)
+States
+{
+Death:
+TNT1 A 0 A_CustomMissile("ThunderBoltSplit2",0,0,90,2,0)
+TNT1 A 0 A_CustomMissile("ThunderBoltSplit2",0,0,-90,2,0)
+TNT1 A 0 A_Explode(30,128,0)
+MMFX BCDE 2
+//stop
+//XDeath:
+//Crash:
+stop
+}
+}
+
+actor ThunderBoltSplit2 : ThunderBoltSplit
+{
+damagetype "Nope"
+Damage (25)
+reactiontime 180
+States
+{
+Death:
+TNT1 A 0
+TNT1 A 0 A_Explode(30,128,0)
+MMFX BCDE 2
+stop
 }
 }

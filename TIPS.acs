@@ -4,7 +4,7 @@
 #library "Tips"
 #include "zcommon.acs"
 
-#DEFINE TIPCOUNT 45
+#DEFINE TIPCOUNT 46
 
 str Tips[TIPCOUNT] = { 
 
@@ -53,6 +53,7 @@ str Tips[TIPCOUNT] = {
 "The Select bug was fixed.", //new
 "MM8BDM is a great way to find that someone special.", //new
 "My fursona is a goblin shark.", //new
+"Protips are for vaginas.", //new
 };
 
 
