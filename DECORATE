@@ -51,3 +51,4 @@
 #include "classes/orb.txt"
 #include "classes/soupbowl.txt"
 #include "classes/MODOK.txt"
+#include "classes/microchargeman.txt"

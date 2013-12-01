@@ -166,6 +166,19 @@ $playersound	modok	male	*fist		dsnone
 $playersound	modok	male	*usefail	FATLAND
 $playersound	modok	male	*taunt		MODOTAU
 
+$playersound	micm	male	*death		MINIDEAT
+$playersound	micm	male	*xdeath		MINIDEAT
+$playersound	micm	male	*gibbed		MINIDEAT
+$playersound	micm	male	*pain100	MINIPAIN
+$playersound	micm	male	*pain75		MINIPAIN
+$playersound	micm	male	*pain50		MINIPAIN
+$playersound	micm	male	*pain25		MINIPAIN
+$playersound	micm	male	*grunt		miniland
+$playersound	micm	male	*land		miniland
+$playersound	micm	male	*jump		dsnone
+$playersound	micm	male	*fist		dsnone
+$playersound	micm	male	*usefail	miniland
+$playersound	micm	male	*taunt		CHUGX
 
 marine/pain MEGAPAIN
 
