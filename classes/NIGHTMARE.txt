@@ -1,5 +1,6 @@
 actor nightmareclass : MegamanLMS
 {
++NOSKIN
 player.displayname "nightmare"
 player.soundclass "mare"
 player.damagescreencolor "black"

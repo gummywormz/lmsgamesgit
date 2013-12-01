@@ -1,5 +1,6 @@
 actor airmantile : MegamanLMS
 {
++NOSKIN
 player.displayname "air man tile"
 player.soundclass "airtile"
 player.damagescreencolor "blue"

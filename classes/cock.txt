@@ -1,5 +1,6 @@
 actor Cockman : MegamanLMS
 {
++NOSKIN
 player.displayname "Super Cock Man"
 player.soundclass "cock"
 player.damagescreencolor "purple"

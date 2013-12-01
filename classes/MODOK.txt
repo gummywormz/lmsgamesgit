@@ -1,5 +1,6 @@
 actor MODOK : MegamanLMS
 {
++NOSKIN
 player.displayname "MODOK"
 player.soundclass "modok"
 player.damagescreencolor "black"

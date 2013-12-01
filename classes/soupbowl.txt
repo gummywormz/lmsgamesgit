@@ -1,5 +1,6 @@
 actor soupbowlwavemanclass : MegamanLMS
 {
++NOSKIN
 player.displayname "soup bowl wave man"
 player.soundclass "sbwm"
 player.damagescreencolor "blue"

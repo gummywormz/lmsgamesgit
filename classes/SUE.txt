@@ -1,5 +1,6 @@
 actor sueclass : MegamanLMS
 {
++NOSKIN
 player.displayname "sue"
 player.soundclass "sue"
 player.damagescreencolor "pink"

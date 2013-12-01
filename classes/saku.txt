@@ -1,5 +1,6 @@
 actor saku : MegamanLMS
 {
++NOSKIN
 player.displayname "sakugarne"
 player.soundclass "saku"
 player.damagescreencolor "green"

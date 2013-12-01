@@ -1,5 +1,6 @@
 actor orb : MegamanLMS
 {
++NOSKIN
 player.displayname "night mare orb"
 player.soundclass "orb"
 player.damagescreencolor "black"

@@ -1,5 +1,6 @@
 actor Celebi : MegamanLMS
 {
++NOSKIN
 player.displayname "Celebi"
 player.soundclass "celebi"
 player.damagescreencolor "green"

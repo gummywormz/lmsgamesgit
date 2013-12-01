@@ -1,5 +1,6 @@
 actor eddieclass : MegamanLMS
 {
++NOSKIN
 player.displayname "EDDIE"
 player.soundclass "eddie"
 player.damagescreencolor "red"
