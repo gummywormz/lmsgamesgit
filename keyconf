@@ -14,6 +14,7 @@ addplayerclass nightmareclass
 addplayerclass soupbowlwavemanclass
 addplayerclass MODOK
 addplayerclass microchargeman
+addplayerclass gutsmangclass
 
 alias AntiCamp "puke 540"
 alias explodeall "puke 542"

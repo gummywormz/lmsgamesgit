@@ -23,7 +23,7 @@ Pain.FireSpin:
 Pain.QuickBoomerang:
 Pain.Buster:
 Pain.WildCoil:
-Pain.CHRMgeKick:
+Pain.ChargeKick:
 Pain.YamatoSpear:
 Pain.DiveMissile:
 Pain.StarCrash:
@@ -203,7 +203,7 @@ CHRM Z 1 A_CheckPlayerDone
 wait
 Death:
 CHRM H 0 SetPlayerProperty(0, 0, 4)
-CHRM H 0 A_TakeInventory("PharaohCHRMge",999)   
+CHRM H 0 A_TakeInventory("PharaohCharge",999)   
 CHRM H 0 A_NoBlocking
 CHRM H 0 A_GiveInventory("CutterFlag",999)
 CHRM H 0 A_GiveInventory("IsDead",1)
@@ -226,7 +226,7 @@ CHRM H 1 A_SpawnItemEx("OblivionExplode")
 goto Spawn
 Death.Falling:
 CHRM H 0 SetPlayerProperty(0, 0, 4)
-CHRM H 0 A_TakeInventory("PharaohCHRMge",999)   
+CHRM H 0 A_TakeInventory("PharaohCharge",999)   
 CHRM H 0 A_NoBlocking
 CHRM H 0 A_GiveInventory("CutterFlag",999)
 CHRM H 0 A_GiveInventory("IsDead",1)
@@ -239,7 +239,7 @@ wait
 Ice:
 CHRM H 0 SetPlayerProperty(0, 0, 4)
 CHRM H 1 A_PlayerScream
-CHRM H 0 A_TakeInventory("PharaohCHRMge",999)   
+CHRM H 0 A_TakeInventory("PharaohCharge",999)   
 CHRM H 0 A_GiveInventory("CutterFlag",999)
 CHRM H 0 A_GiveInventory("IsDead",1)
 CHRM H 0 ACS_ExecuteAlways(998,0,105,1)

@@ -29,7 +29,7 @@ actor FastSpeedXXX : Powerspeed
 +INVENTORY.ALWAYSPICKUP
 +INVENTORY.AUTOACTIVATE
 powerup.duration 0x7FFFFFFF
-Speed 99.0
+Speed 30.0
 }
 
 actor ConfusedSpeed2 : Powerspeed

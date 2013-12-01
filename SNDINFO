@@ -180,6 +180,20 @@ $playersound	micm	male	*fist		dsnone
 $playersound	micm	male	*usefail	miniland
 $playersound	micm	male	*taunt		CHUGX
 
+$playersound	gutsg	male	*death		MEGADEAT
+$playersound	gutsg	male	*xdeath		MEGADEAT
+$playersound	gutsg	male	*gibbed		MEGADEAT
+$playersound	gutsg	male	*pain100	MM4PAIN
+$playersound	gutsg	male	*pain75		MM4PAIN
+$playersound	gutsg	male	*pain50		MM4PAIN
+$playersound	gutsg	male	*pain25		MM4PAIN
+$playersound	gutsg	male	*grunt		FATLAND
+$playersound	gutsg	male	*land		FATLAND
+$playersound	gutsg	male	*jump		dsnone
+$playersound	gutsg	male	*fist		dsnone
+$playersound	gutsg	male	*usefail	FATLAND
+$playersound	gutsg	male	*taunt		POWERST
+
 marine/pain MEGAPAIN
 
 misc/rotate TETROTAT
