@@ -162,13 +162,13 @@ map LMS20 "123...DEATH!" //done for good
   levelnum =6020
 }
 
-//map LMS21 "DEATH RUN: 4 ELEMENTS"
-//{
- //next = "LMS22"
- //music = "LMS_WUB"
- //aircontrol = 0.5
-  //levelnum = 6021
-//}
+map LMS21 "DEATH RUN"
+{
+ next = "LMS22"
+ music = "LMS_WUB"
+ aircontrol = 0.5
+ levelnum = 6021
+}
 
 map LMS22 "ROCK HARDEN" //done!
 {
@@ -188,10 +188,10 @@ map LMS23 "NEEDLE PRESSURE"
  nojump
 }
 
-map LMS24 "STAR SEARCH" //done for good
+map LMS24 "RING ROBBERY" //done for good
 {
  next = "LMS25"
- music = "LMS_JUNG"
+ music = "LMS_ROB"
  aircontrol = 0.5
   levelnum= 6024
 }
@@ -278,5 +278,12 @@ map XLMS05 "ZOMBIE APOCALYPSE" //done for good
 {
  next = "XLMS06"
  music = "LMS_ZOMB"
+ aircontrol = 0.5
+}
+
+map XLMS06 "STAR SEARCH" //done for good
+{
+ next = "LMS01"
+ music = "LMS_JUNG"
  aircontrol = 0.5
 }

@@ -8,6 +8,14 @@ powerup.duration -3
 Speed -1.0
 }
 
+actor NoSpeed : Powerspeed
+{
++INVENTORY.ALWAYSPICKUP
++INVENTORY.AUTOACTIVATE
+powerup.duration 0x7FFFFFFF
+Speed 0.0
+}
+
 actor FastSpeed : Powerspeed
 {
 +INVENTORY.ALWAYSPICKUP
@@ -29,7 +37,7 @@ actor FastSpeedXXX : Powerspeed
 +INVENTORY.ALWAYSPICKUP
 +INVENTORY.AUTOACTIVATE
 powerup.duration 0x7FFFFFFF
-Speed 30.0
+Speed 20.0
 }
 
 actor ConfusedSpeed2 : Powerspeed

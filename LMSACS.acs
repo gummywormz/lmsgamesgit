@@ -28,12 +28,12 @@ ConsoleCommand("winlimit 1");
 	if(!GetCvar("LMSGAMES_DISABLEWILDCARDS"))
 		{ConsoleCommand("set LMSGAMES_DISABLEWILDCARDS 0");
 		ConsoleCommand("archivecvar LMSGAMES_DISABLEWILDCARDS");}
-	if(!GetCvar("LMSGAMES_RETURNTOHUB"))
-		{ConsoleCommand("set LMSGAMES_RETURNTOHUB 0");
-		ConsoleCommand("archivecvar LMSGAMES_RETURNTOHUB");}
-	if(!GetCvar("LMSGAMES_LOCKLASTMAP"))
-		{ConsoleCommand("set LMSGAMES_LOCKLASTMAP 0");
-		ConsoleCommand("archivecvar LMSGAMES_LOCKLASTMAP");}
+	//if(!GetCvar("LMSGAMES_RETURNTOHUB"))
+		//{ConsoleCommand("set LMSGAMES_RETURNTOHUB 0");
+		//ConsoleCommand("archivecvar LMSGAMES_RETURNTOHUB");}
+	//if(!GetCvar("LMSGAMES_LOCKLASTMAP"))
+		//{ConsoleCommand("set LMSGAMES_LOCKLASTMAP 0");
+		//ConsoleCommand("archivecvar LMSGAMES_LOCKLASTMAP");}
 
 
 }

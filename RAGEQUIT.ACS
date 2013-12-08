@@ -1,7 +1,7 @@
 #library "RAGEQUIT"
 #include "zcommon.acs"
 
-#DEFINE ragequotes 27
+#DEFINE ragequotes 28
 str ragequote[ragequotes] = { 
 " died to toad man.",
 " is going to have 0 speed next round.",
@@ -30,6 +30,7 @@ str ragequote[ragequotes] = {
 " couldn't hit that last Gyro Man.", // new
 " needs help setting up a server for mega man 9 - 10 weapons.", // new
 " left to guard tim.", // new
+" is going to something.", // new
 };
 
 

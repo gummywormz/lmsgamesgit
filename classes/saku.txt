@@ -45,6 +45,46 @@ goto Missile
 Pain.Net:
 SAKU H 0 ACS_ExecuteAlways(18,0)
 goto Pain+1
+Pain.RingFist:
+SAKU H 0 HealThing(99)
+Goto CheckRings
+CheckRings: // i'm sorry for the wall of A_SpawnItemEx
+SAKU H 0 A_JumpIfInventory("SonicRing",5,"Drop5Rings")
+SAKU H 0 A_JumpIfInventory("SonicRing",4,"Drop4Rings")
+SAKU H 0 A_JumpIfInventory("SonicRing",3,"Drop3Rings")
+SAKU H 0 A_JumpIfInventory("SonicRing",2,"Drop2Rings")
+SAKU H 0 A_JumpIfInventory("SonicRing",1,"DropRing")
+Goto Pain+1
+Drop5Rings:
+SAKU H 0 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-6,6),Random(-6,6),Random(-6,6),0)
+SAKU H 0 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-6,6),Random(-6,6),Random(-6,6),0)
+SAKU H 0 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-6,6),Random(-6,6),Random(-6,6),0)
+SAKU H 0 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-6,6),Random(-6,6),Random(-6,6),0)
+SAKU H 0 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-6,6),Random(-6,6),Random(-6,6),0)
+SAKU H 0 A_TakeInventory("SonicRing",5)
+Goto Pain+1
+Drop4Rings:
+SAKU H 0 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-6,6),Random(-6,6),Random(-6,6),0)
+SAKU H 0 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-6,6),Random(-6,6),Random(-6,6),0)
+SAKU H 0 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-6,6),Random(-6,6),Random(-6,6),0)
+SAKU H 0 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-6,6),Random(-6,6),Random(-6,6),0)
+SAKU H 0 A_TakeInventory("SonicRing",4)
+Goto Pain+1
+Drop3Rings:
+SAKU H 0 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-6,6),Random(-6,6),Random(-6,6),0)
+SAKU H 0 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-6,6),Random(-6,6),Random(-6,6),0)
+SAKU H 0 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-6,6),Random(-6,6),Random(-6,6),0)
+SAKU H 0 A_TakeInventory("SonicRing",3)
+Goto Pain+1
+Drop2Rings:
+SAKU H 0 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-6,6),Random(-6,6),Random(-6,6),0)
+SAKU H 0 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-6,6),Random(-6,6),Random(-6,6),0)
+SAKU H 0 A_TakeInventory("SonicRing",2)
+Goto Pain+1
+DropRing:
+SAKU H 1 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-6,6),Random(-6,6),Random(-6,6),0)
+SAKU H 0 A_TakeInventory("SonicRing",1)
+Goto Pain+1
 Pain.Afterburner:
 SAKU H 0 HealThing(2)
 SAKU H 0 A_Jump(128,"OtherThrust")

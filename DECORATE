@@ -29,6 +29,7 @@
 #include "Actors/lms23.txt"
 #include "Actors/lms23X.txt"
 #include "Actors/lms24.txt"
+#include "Actors/lms24x.txt"
 #include "Actors/lms25.txt"
 #include "Actors/lms26.txt"
 #include "Actors/lms26X.txt"

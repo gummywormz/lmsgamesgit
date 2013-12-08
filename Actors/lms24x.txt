@@ -1,0 +1,359 @@
+actor Ringitis : CustomInventory
+{
+inventory.amount 1
+inventory.maxamount 1
++INVENTORY.UNDROPPABLE
+States
+{
+Pickup:
+TNT1 A 0 A_JumpIfInventory("SonicRing",1,"Saved")
+TNT1 A 0 A_SpawnItemEx("TerminalRingitis",0,0,8)
+stop
+Saved:
+TNT1 A 0 A_TakeInventory("SonicRing",1)
+TNT1 A 0 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-16,16),Random(-16,16),Random(-16,16),0)
+stop
+}
+}
+
+actor TerminalRingitis
+{
+PROJECTILE
++DONTBLAST
+Obituary "%o... Didn't make it."
++PIERCEARMOR 
++FORCEXYBILLBOARD
+Radius 2
+Height 2
+//scale 20.0
+speed 0
+damage (255)
++FOILINVUL
+damagetype "Nope"
+States
+{
+Spawn:
+TNT1 A 0
+TNT1 A 1 A_Explode(999, 3, 1)
+stop
+}
+}
+
+actor RingBall 10652 //Shamelessly stolen from PartyBall
+{
++NOGRAVITY
++FLOATBOB
+mass 999999
+height 64
+radius 32
+scale 2.5
+States
+{
+Spawn:
+PRTB A 0
+Death:
+PRTB C 0 A_PlaySoundEx("misc/partyball", "Auto")
+PRTB C 1 ThrustThingZ(0, 20, 0, 0)
+PRTB C 0 A_SpawnItemEx("ConfettiSpawner",0,0,0,random(-3,3),random(-3,3))
+PRTB CDCD 2
+Explode: //i am sorry for the wall of A_SpawnItemEx
+PRTB C 0 A_Stop
+PRTB C 1 A_SpawnItemEx("RingBomb",0,0,4,Random(-16,16),Random(-16,16),Random(-16,-7),0)
+PRTB C 1 A_SpawnItemEx("RingBomb",0,0,4,Random(-16,16),Random(-16,16),Random(-16,-7),0)
+PRTB D 1 A_SpawnItemEx("RingBomb",0,0,4,Random(-16,16),Random(-16,16),Random(-16,-7),0)
+PRTB D 1 A_SpawnItemEx("RingBomb",0,0,4,Random(-16,16),Random(-16,16),Random(-16,-7),0)
+PRTB C 1 A_SpawnItemEx("RingBomb",0,0,4,Random(-16,16),Random(-16,16),Random(-16,-7),0)
+PRTB C 1 A_SpawnItemEx("RingBomb",0,0,4,Random(-16,16),Random(-16,16),Random(-16,-7),0)
+PRTB D 1 A_SpawnItemEx("RingBomb",0,0,4,Random(-16,16),Random(-16,16),Random(-16,-7),0)
+PRTB D 1 A_SpawnItemEx("RingBomb",0,0,4,Random(-16,16),Random(-16,16),Random(-16,-7),0)
+PRTB C 1 A_SpawnItemEx("RingBomb",0,0,4,Random(-16,16),Random(-16,16),Random(-16,-7),0)
+PRTB C 1 A_SpawnItemEx("RingBomb",0,0,4,Random(-16,16),Random(-16,16),Random(-16,-7),0)
+PRTB D 1 A_SpawnItemEx("RingBomb",0,0,4,Random(-16,16),Random(-16,16),Random(-16,-7),0)
+PRTB D 1 A_SpawnItemEx("RingBomb",0,0,4,Random(-16,16),Random(-16,16),Random(-16,-7),0)
+PRTB C 1 A_SpawnItemEx("RingBomb",0,0,4,Random(-16,16),Random(-16,16),Random(-16,-7),0)
+PRTB C 1 A_SpawnItemEx("RingBomb",0,0,4,Random(-16,16),Random(-16,16),Random(-16,-7),0)
+PRTB D 1 A_SpawnItemEx("RingBomb",0,0,4,Random(-16,16),Random(-16,16),Random(-16,-7),0)
+PRTB D 1 A_SpawnItemEx("RingBomb",0,0,4,Random(-16,16),Random(-16,16),Random(-16,-7),0)
+NAPA E 0 A_PlaySoundEx("weapon/crackerexplode", "Weapon")
+NAPA EFGHIJKLMNOPQRS 1
+stop
+}
+}
+
+actor RingBomb : NapalmBomb
+{
+reactiontime 6
+States
+{
+Spawn:
+NAPA A 0
+NAPA A 0 ThrustThingZ(0, 25, 0, 1)
+NAPA A 0 A_CountDown
+NAPA ABCD 4
+Goto Spawn+2
+Death:
+NAPA A 0 A_Stop
+NAPA A 0 A_PlaySoundEx("weapon/napalm", "Weapon")
+NAPA A 0 A_ChangeFlag("NOGRAVITY",1)
+NAPA D 0 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-16,16),Random(-16,16),Random(-16,16),0)
+NAPA D 0 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-16,16),Random(-16,16),Random(-16,16),0)
+NAPA D 0 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-16,16),Random(-16,16),Random(-16,16),0)
+NAPA D 0 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-16,16),Random(-16,16),Random(-16,16),0)
+NAPA D 0 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-16,16),Random(-16,16),Random(-16,16),0)
+NAPA D 0 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-16,16),Random(-16,16),Random(-16,16),0)
+NAPA D 0 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-16,16),Random(-16,16),Random(-16,16),0)
+NAPA D 0 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-16,16),Random(-16,16),Random(-16,16),0)
+NAPA D 0 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-16,16),Random(-16,16),Random(-16,16),0)
+NAPA D 0 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-16,16),Random(-16,16),Random(-16,16),0)
+NAPA DEFGHIJKLMNOPQRS 2
+stop
+}
+}
+
+actor SonicDroppedRing : CustomInventory //Shamelessly modified from HyperBomb
+{
+PROJECTILE
+-NOGRAVITY
++RIPPER
+-SOLID
++HEXENBOUNCE
++CANBOUNCEWATER
+Radius 6
+Height 7
+scale 2.0
+speed 13
+RenderStyle Translucent
+Alpha 0.6
+reactiontime 13
+bouncefactor 0.5
+States
+{
+Spawn:
+GSRN A 0
+GSRN A 0 ThrustThingZ(0, 20, 0, 1)
+GSRN ABCD 3 A_Countdown
+goto Spawn+2
+Death:
+GSRN A 0 A_SpawnItemEx("SonicRing", 0, 0, 2)
+stop
+}
+}
+
+actor RingBox 10650
+{
++SOLID
+-SHOOTABLE
++FORCEYBILLBOARD
+-CANNOTPUSH
++NOBLOOD
+height 40
+radius 16
+scale 2.5
+health 9999
+painchance 256
+mass 999999999
+States
+{
+Spawn:
+ITMA A 256
+ITMA A 128
+ITMA A 0 A_Jump(128,"Activating")
+goto Spawn+1
+Activating:
+ITMA A 0 A_ChangeFlag("SHOOTABLE",1)
+goto ActiveRings
+ActiveRings:
+ITMA CCB 4
+loop
+Pain:
+ITMA A 0 A_ChangeFlag("SHOOTABLE",0)
+ITMA A 0 A_SpawnItemEx("RingSign", 0, 0, 20)
+goto Spawn
+}
+}
+
+actor SuperRingBox : RingBox 10651
+{
+States
+{
+Spawn:
+ITMA A 256
+ITMA A 128
+ITMA A 0 A_Jump(128,"Activating")
+goto Spawn+1
+Activating:
+ITMA A 0 A_ChangeFlag("SHOOTABLE",1)
+ActiveRings:
+ITMA GGB 4
+loop
+Pain:
+ITMA A 0 A_ChangeFlag("SHOOTABLE",0)
+ITMA A 0 A_SpawnItemEx("SuperRingSign", 0, 0, 20)
+goto Spawn
+}
+}
+
+actor RingSign
+{
+PROJECTILE
++NOGRAVITY
+Radius 1
+Height 1
+scale 2.5
+reactiontime 40
+States
+{
+Spawn:
+ITMB A 0
+goto CountingDown
+CountingDown:
+ITMB A 0 ThrustThingZ(0, 175, 0, 0)
+ITMB A 0 A_ScaleVelocity(0.8)
+ITMB A 1 A_Countdown
+goto CountingDown+1
+Death: //i am sorry for the wall of A_SpawnItemEx
+TNT1 A 0 A_PlaySound("misc/ring")
+TNT1 A 1 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-6,6),Random(-6,6),Random(-6,6),0)
+TNT1 A 0 A_PlaySound("misc/ring")
+TNT1 A 1 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-6,6),Random(-6,6),Random(-6,6),0)
+TNT1 A 0 A_PlaySound("misc/ring")
+TNT1 A 1 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-6,6),Random(-6,6),Random(-6,6),0)
+TNT1 A 0 A_PlaySound("misc/ring")
+TNT1 A 1 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-6,6),Random(-6,6),Random(-6,6),0)
+TNT1 A 0 A_PlaySound("misc/ring")
+TNT1 A 1 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-6,6),Random(-6,6),Random(-6,6),0)
+TNT1 A 0 A_PlaySound("misc/ring")
+TNT1 A 1 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-6,6),Random(-6,6),Random(-6,6),0)
+TNT1 A 0 A_PlaySound("misc/ring")
+TNT1 A 1 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-6,6),Random(-6,6),Random(-6,6),0)
+TNT1 A 0 A_PlaySound("misc/ring")
+TNT1 A 1 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-6,6),Random(-6,6),Random(-6,6),0)
+TNT1 A 0 A_PlaySound("misc/ring")
+TNT1 A 1 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-6,6),Random(-6,6),Random(-6,6),0)
+TNT1 A 0 A_PlaySound("misc/ring")
+TNT1 A 1 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-6,6),Random(-6,6),Random(-6,6),0)
+stop
+}
+}
+
+actor SuperRingSign : RingSign
+{
+States
+{
+Spawn:
+ITMB D 0
+goto CountingDown
+CountingDown:
+ITMB D 0 ThrustThingZ(0, 175, 0, 0)
+ITMB D 0 A_ScaleVelocity(0.8)
+ITMB D 1 A_Countdown
+goto CountingDown+1
+Death: //i am sorry for the wall of A_SpawnItemEx
+TNT1 A 0 A_PlaySound("misc/ring")
+TNT1 A 1 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-3,3),Random(-3,3),Random(-3,3),0)
+TNT1 A 0 A_PlaySound("misc/ring")
+TNT1 A 1 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-3,3),Random(-3,3),Random(-3,3),0)
+TNT1 A 0 A_PlaySound("misc/ring")
+TNT1 A 1 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-3,3),Random(-3,3),Random(-3,3),0)
+TNT1 A 0 A_PlaySound("misc/ring")
+TNT1 A 1 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-3,3),Random(-3,3),Random(-3,3),0)
+TNT1 A 0 A_PlaySound("misc/ring")
+TNT1 A 1 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-3,3),Random(-3,3),Random(-3,3),0)
+TNT1 A 0 A_PlaySound("misc/ring")
+TNT1 A 1 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-3,3),Random(-3,3),Random(-3,3),0)
+TNT1 A 0 A_PlaySound("misc/ring")
+TNT1 A 1 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-3,3),Random(-3,3),Random(-3,3),0)
+TNT1 A 0 A_PlaySound("misc/ring")
+TNT1 A 1 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-3,3),Random(-3,3),Random(-3,3),0)
+TNT1 A 0 A_PlaySound("misc/ring")
+TNT1 A 1 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-3,3),Random(-3,3),Random(-3,3),0)
+TNT1 A 0 A_PlaySound("misc/ring")
+TNT1 A 1 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-3,3),Random(-3,3),Random(-3,3),0)
+TNT1 A 0 A_PlaySound("misc/ring")
+TNT1 A 1 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-3,3),Random(-3,3),Random(-3,3),0)
+TNT1 A 0 A_PlaySound("misc/ring")
+TNT1 A 1 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-3,3),Random(-3,3),Random(-3,3),0)
+TNT1 A 0 A_PlaySound("misc/ring")
+TNT1 A 1 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-3,3),Random(-3,3),Random(-3,3),0)
+TNT1 A 0 A_PlaySound("misc/ring")
+TNT1 A 1 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-3,3),Random(-3,3),Random(-3,3),0)
+TNT1 A 0 A_PlaySound("misc/ring")
+TNT1 A 1 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-3,3),Random(-3,3),Random(-3,3),0)
+TNT1 A 0 A_PlaySound("misc/ring")
+TNT1 A 1 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-3,3),Random(-3,3),Random(-3,3),0)
+TNT1 A 0 A_PlaySound("misc/ring")
+TNT1 A 1 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-3,3),Random(-3,3),Random(-3,3),0)
+TNT1 A 0 A_PlaySound("misc/ring")
+TNT1 A 1 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-3,3),Random(-3,3),Random(-3,3),0)
+TNT1 A 0 A_PlaySound("misc/ring")
+TNT1 A 1 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-3,3),Random(-3,3),Random(-3,3),0)
+TNT1 A 0 A_PlaySound("misc/ring")
+TNT1 A 1 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-3,3),Random(-3,3),Random(-3,3),0)
+stop
+}
+}
+
+actor RingWep : MegaBuster
+{
+Weapon.AmmoUse 0
+Weapon.SlotNumber 1
+Obituary "%o had the crap beaten out of %h by %k!"
+Inventory.Pickupmessage "Wat"
++WEAPON.AMMO_OPTIONAL
+Scale 2.0
+States
+{
+Ready:
+SCLA A 0 ACS_ExecuteAlways(998,0,69)
+SCLA A 1 A_WeaponReady
+Goto Ready+1
+Deselect:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Lower
+SCLA A 1 A_Lower
+Loop
+Select:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Raise
+SCLA A 1 A_Raise
+Loop
+Fire:
+SCLA BC 1
+SCLA A 0 A_PlaySoundEx("weapon/slashclaw","Weapon")
+SCLA A 0 A_FireCustomMissile("RingClaw",0,0,8,0)
+SCLA DE 2
+SCLA F 4
+SCLA G 20
+SCLA FEDCBA 2 A_WeaponReady
+Goto Ready+1
+}
+}
+
+actor RingitisWep : MegaBuster
+{
+Weapon.AmmoUse 0
+Weapon.SlotNumber 1
+Obituary "%o was coughed on by %k!"
+Inventory.Pickupmessage "Wat"
++WEAPON.AMMO_OPTIONAL
+Scale 2.0
+States
+{
+Ready:
+TNT1 A 0 ACS_ExecuteAlways(998,0,69)
+TNT1 A 1
+TNT1 A 0 A_GiveInventory("Ringitis",1)
+Goto Ready+1
+Deselect:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Lower
+SCLA A 1 A_Lower
+Loop
+Select:
+TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Raise
+SCLA A 1 A_Raise
+Loop
+}
+}
+
+actor RingClaw : NotSlashClaw
+{
+Damagetype "RingFist"
+}

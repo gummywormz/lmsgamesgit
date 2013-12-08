@@ -55,6 +55,46 @@ OtherThrust:
 PAC4 H 0 ThrustThing(random(0,255),20,1,0)
 PAC4 H 0 ThrustThingZ(0,50,0,0)
 Goto pain+1
+Pain.RingFist:
+PAC4 H 0 HealThing(99)
+Goto CheckRings
+CheckRings: // i'm sorry for the wall of A_SpawnItemEx
+PAC4 H 0 A_JumpIfInventory("SonicRing",5,"Drop5Rings")
+PAC4 H 0 A_JumpIfInventory("SonicRing",4,"Drop4Rings")
+PAC4 H 0 A_JumpIfInventory("SonicRing",3,"Drop3Rings")
+PAC4 H 0 A_JumpIfInventory("SonicRing",2,"Drop2Rings")
+PAC4 H 0 A_JumpIfInventory("SonicRing",1,"DropRing")
+Goto Pain+1
+Drop5Rings:
+PAC4 H 0 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-6,6),Random(-6,6),Random(-6,6),0)
+PAC4 H 0 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-6,6),Random(-6,6),Random(-6,6),0)
+PAC4 H 0 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-6,6),Random(-6,6),Random(-6,6),0)
+PAC4 H 0 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-6,6),Random(-6,6),Random(-6,6),0)
+PAC4 H 0 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-6,6),Random(-6,6),Random(-6,6),0)
+PAC4 H 0 A_TakeInventory("SonicRing",5)
+Goto Pain+1
+Drop4Rings:
+PAC4 H 0 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-6,6),Random(-6,6),Random(-6,6),0)
+PAC4 H 0 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-6,6),Random(-6,6),Random(-6,6),0)
+PAC4 H 0 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-6,6),Random(-6,6),Random(-6,6),0)
+PAC4 H 0 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-6,6),Random(-6,6),Random(-6,6),0)
+PAC4 H 0 A_TakeInventory("SonicRing",4)
+Goto Pain+1
+Drop3Rings:
+PAC4 H 0 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-6,6),Random(-6,6),Random(-6,6),0)
+PAC4 H 0 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-6,6),Random(-6,6),Random(-6,6),0)
+PAC4 H 0 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-6,6),Random(-6,6),Random(-6,6),0)
+PAC4 H 0 A_TakeInventory("SonicRing",3)
+Goto Pain+1
+Drop2Rings:
+PAC4 H 0 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-6,6),Random(-6,6),Random(-6,6),0)
+PAC4 H 0 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-6,6),Random(-6,6),Random(-6,6),0)
+PAC4 H 0 A_TakeInventory("SonicRing",2)
+Goto Pain+1
+DropRing:
+PAC4 H 1 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-6,6),Random(-6,6),Random(-6,6),0)
+PAC4 H 0 A_TakeInventory("SonicRing",1)
+Goto Pain+1
 Pain.MegaFist:
 PAC4 H 0 ThrustThing(angle*256/360+128,random(10,15), 1, 0)
 PAC4 H 1 HealThing(1)

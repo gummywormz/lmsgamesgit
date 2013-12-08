@@ -57,7 +57,7 @@ GIVEACTORINVENTORY(J,"ragerune",1);
 }
 if(wildchance == 5){printbold(s:"GOTTA GO FAST! CUZ UR2SLOW!");
 for (j=1000; j<1033; J++)
-{GIVEACTORINVENTORY(J,"fastspeedxx",1);}
+{GIVEACTORINVENTORY(J,"fastspeedxxx",1);}
 }
 if(wildchance == 6){printbold(s:"DBZ MODE!");
 for (j=1000; j<1033; J++)
@@ -172,7 +172,7 @@ GIVEACTORINVENTORY(J,"ragerune",1);
 }
 if(wildchance == 5){printbold(s:"GOTTA GO FAST! CUZ UR2SLOW!");
 for (j=1000; j<1033; J++)
-{GIVEACTORINVENTORY(J,"fastspeedxx",1);}
+{GIVEACTORINVENTORY(J,"fastspeedxxx",1);}
 }
 if(wildchance == 6){printbold(s:"DBZ MODE!");
 ConsoleCommand("sv_aircontrol 0");
