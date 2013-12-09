@@ -3,12 +3,17 @@
 
 int cancelwildcard = 0;
 
-Script 666 open
+Script 665 OPEN
+{
+if (!random (0, 10)) {acs_execute (666, 0);}
+}
+
+Script 666 (void)
 {
 if(GetCvar("LMSGAMES_DISABLEWILDCARDS") == 1){TERMINATE;}
 int wildchance = random(0,200);
 Delay(35);
-if(wildchance >= 150){terminate;}
+if(wildchance >= 175){terminate;}
 Delay(35 * 6);
 printbold(s:"\clw\cji\chl\cfd \cdc\cna\cmr\cvd \cd activated!");
 Delay(35 * 2);
@@ -62,8 +67,8 @@ for (j=1000; j<1033; J++)
 if(wildchance == 6){printbold(s:"DBZ MODE!");
 for (j=1000; j<1033; J++)
 {GIVEACTORINVENTORY(J,"fastspeedxx",1);
-GIVEACTORINVENTORY(J,"highjumprune",1);
-ConsoleCommand("sv_aircontrol 0");}
+GIVEACTORINVENTORY(J,"highjumprune",1);}
+ConsoleCommand("sv_aircontrol 0");
 }
 if(wildchance == 7){printbold(s:"saviorsword has logged on to rcon!");
 setmusic("gramus");
@@ -86,7 +91,7 @@ Script 668 (void)
 {
 for (int q=0; q<999; q++){Sector_SetGravity(q,-9000,0);}
 Delay(35 * random(5,10));
-if(cancelwildcard == 1){for (q=0; q<999; q++){Sector_SetGravity(q,800,0);} terminate;}
+if(cancelwildcard == 1){for (q=0; q<999; q++){Sector_SetGravity(q,1,0);} terminate;}
 for (q=0; q<999; q++){Sector_SetGravity(q,9000,0);}
 Delay(35 * random(5,10));
 restart;
@@ -200,7 +205,7 @@ for (int j=0; j<999; J++)
 Ceiling_Waggle(j, 0, 0, 0, 0);
 sector_setfriction(j,100);
 Sector_setcolor(j,255,255,255);
-Sector_SetGravity(j,800,0);
+Sector_SetGravity(j,1,0);
 }
 for (int q=1000; q<1033; q++)
 {TAKEACTORINVENTORY(q,"GOLDBOOSTTANK",1);

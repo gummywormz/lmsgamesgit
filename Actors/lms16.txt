@@ -37,15 +37,16 @@ Goto Ready
 
 actor ThunderBeamX2 : ThunderBeam
 {
-+RIPPER
+-RIPPER
 States
 {
 Death:
 CRAS A 0 A_JumpIf(z-floorz<5, "Floor")
 CRAS A 0 A_JumpIf(z-ceilingz==0-6, "Floor")
+CRAS A 1
 stop
 Floor:
-CRAS A 0 ACS_ExecuteAlways(9,0)
+CRAS A 0 A_GiveToTarget("ChargeAmmo",5)
 stop
 }
 }

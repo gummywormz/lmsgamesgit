@@ -1,94 +1,68 @@
-Credits
+===========================================================================
+Advanced engine needed  : Zandronum 1.2
+Primary purpose         : Last Man Standing
+===========================================================================
+Title                   : LMSGames
+Filename                : lmsgames-v1a.pk3
+Release date            : 12/8/2013
+Author                  : Gummywormz
+Other Files By Author   : DIRP - A weapon pack featuring 110 unique
+                          weapons.
 
-Additional Level Design:
-Rozark - LMS18 (City Escape)
-Jaxof7 - LMS22 (Rock Harden)
-SmashBroPlusB - LMS11 (Special Stage Plus B)
-Caprice - LMS24 (Ring Robbery)
+Description             : LMSGames is a game mode that is heavily inspired
+                          by StupidLMS. It's basically Mario Party without
+                          the boards. The goal of each minigame is usually
+                          either survive or get to a goal first.
 
-Quality Assurance
-TailsMK4
-AndyLucho
-Linnie
+Additional Credits to   : See Credits.txt
+===========================================================================
+* What is included *
 
-Sprites:
-NameOf_a_VGChar aka Nova - Sonic 2 Special Stage Hand Sprites
-Super Justin Bros  - 8 Bit Ring Sprites
-RM8FC - Giant Telly and Giant Telly Bombs
-Gummywormz - Terrible Star Rod HUD and even worse win / lose pics
-Kirby's Adventure - Star Rod projectiles and nightmare stuff
-<Robot Master> Dood - Rembakun sprites / soup bowl wave man
-Classes Team...? - Napalm / Rembakun Missile / snow ball
-Copy Robot - Crystal man scavenger hunt items. sakugarne skin
-ZacmarioZero - MODOK
-Obelisk - GutsmanG
-Super Justin Bros - Chaos Emeralds
-Brotoad - BBall Pasta
-Knux - LMS01's Sky
+New levels              : 30
+Sounds                  : Yes
+Music                   : Yes
+Graphics                : Yes
+Dehacked/BEX Patch      : No
+Demos                   : No
+Other                   : No
+Other files required    : lmsgames-mv1a.wad
 
-Sound Effects:
-RM8FC - Unused(?) Alarm Sounds
-Tetris - Tetris sound effects...
-Somari - Sonic checkpoint sound
-RM7FC - byon.wav / not enough rings sound
-Kirby's Adventure - Star Rod shooting sound
-Megaman (?) - fall.wav
-Megaman 5 - Coal Gun Sound
-LMS_SEL - Super Mario Bros USA (Bonus Game Sound)
 
-Music:
-D_STWIN - Wai Wai World 2 (End Of Level)
-D_STLOSE - ThreeCheersForBryan (Jeopardy Final Round / Thinking Theme)
-D_TTFTW - M (Take on Me Gimmick Edition [FCM10])
-D_RAVE - JAKAZiD (Cillit Bang Hardcore Mix)
-PPP - PushPushPenguin Ingame 1
-STRIVING - Gravis UltraSound Demo Midi
-jazz1 - Windows 98 Hidden Midi
-prtytime - Windows 98 Hidden Midi
-D_NIGHT - Something from delta invasion.
-LMS_ANTI - nin-kuuku (anti-sound 9 [FCM 9 Original])
-LMS_BTLY - HertzDevil (Gradius 3 Fire Scramble)
-LMS_BOMB - djmaximum (doom for nes)
-LMS_CAVE - XERO (Legends of the Hidden Temple Temple Run)
-LMS_CHEC - K-> (Spiral Staircase [FCM3 Original])
-LMS_CRY - Ika (Rockman No Constancy Quick Man)
-*LMS_DIE - I Don't Know (mck2ch archives)
-LMS_DDC - Spriter Gors aka NewAgeRetroGamer (Mario Kart Double Dash Mario Circuit)
-LMS_DRB - Rockman 6 Innocent Boss - (Kirby's Return to Dreamland Boss)
-LMS_DUEL - Kevvviiinnn (Boss 4 Original)
-LMS_EDD - Mega Man 10 (Solar Man)
-LMS_EMER - danooct1 (Sonic 3D Blast Emerald Get)
-LMS_ELEV - Wiz (Penguin Pop [Famicompo 1])
-LMS_ELEC - ArchJ (Elec Man Remix [Famitracker Demo Compo 5]
-LMS_FGHT - ZEX (Keyboard Mania 3rd Mix Carezza [FCM10EX])
-*LMS_ICE - Unknown
-LMS_HEA - YS (Rockman [Megaman] 2/Heatman)
-LMS_JOU - Ika (Rockman 2 DEM Flash Man)
-LMS_JUNG - Damjan Mravunac (Serious Sam The Second Encounter Serpent Yards Medium)
-LMS_KORC - ArchJ - (Braindead Evolution [Demo Compo 6]
-LMS_MAGI - Wai Wai World 2 (Final Level / Magical Action)
-LMS_MAZ - kenshirotakahashi (Apidya Meadow's Edge)
-LMS_MGM - Megaman 9 (Magma Man)
-LMS_MNTY - Monty On The Run (Main Theme)
-LMS_NIG2 - Kirby's Adventure (Final Boss / Nightmare Form 2)
-LMS_NIG3 - Kirby's Adventure (Nightmare Form 1)
-LMS_NEE - Tsu Ryu and Rushjet1 (Needle Man Remix)
-LMS_HUB - Rockman TP (Captain Square)
-LMS_PAC - Pac Mania (Title Screen)
-LMS_PACX - BonofTheDead (Re: Pacman)
-LMS_PHA - TG74 (WWW Legendary Theme)
-LMS_RROL - Jrlepage and Shock (PushPushPenguin In Game Theme 1)
-LMS_RUN - Gamma (Thunder Force 4 Metal Squad {Demo Compo 3])
-LMS_QFT - kenshirotakahashi (Robowarrior Main Theme [FCM10])
-LMS_ROB - Mr_Master (NSMBW Beach [FCM10])
-LMS_ROC - Juan Linietsky (Cutey Honey OP [FCM5])
-LMS_SATM - HertzDevil (The Road of the Apotropaic God / Touhou Mountain of Faith Stage 2 [FCM10])
-LMS_SCAV - Castlevania 2 FDS (Town Theme)
-LMS_SPST - danooct1 (Sonic 3D Blast Special Stage)
-LMS_SPHA - ZEX (Space Harrier Main Theme) [FCM8]
-LMS_SPS2 - danooct1 (Sonic 3D Blast Beta Special Stage)
-LMS_SZOM - Ika (Rockman 2 DEM Final Boss)
-LMS_UFO - Lawence Power (sc01 [FCM4])
-LMS_WIN1 - PureSabe (4MI Win Theme / Pokemon Evolved)
-LMS_WUB - GoldenShower / Fezuke / IaTM / Bari10 (FagetBass [Famicompo 10 Original])
-LMS_ZOMB - Castlevania 3 VRC6 (Demon Seed)
+* Play Information *
+
+Game                    : MM8BDM
+Map #                   : LMS01 - LMS30, XLMS01 - XLMS06
+Single Player           : Player starts only
+Cooperative 2-4 Player  : Player starts only
+Deathmatch 2-4 Player   : No
+Other game styles       : LMS
+Difficulty Settings     : Not implemented
+
+
+* Construction *
+
+Base                    : New from scratch
+Build Time              : Little over a year
+Editor(s) used          : SLADE 3, mspaint, Paint.net, Audacity, Doom
+                          Builder 2, VirtuaNSF, Famitracker
+May Not Run With...     : Any classes mods or weapon packs that use custom
+                          damagetypes.
+
+
+* Copyright / Permissions *
+
+Authors MAY use the contents of this file as a base for modification or
+reuse.  Permissions have been obtained from original authors for any of
+their resources modified or included in this file.
+
+You MAY distribute this file, provided you include this text file, with no
+modifications.  You may distribute this file in any electronic format (BBS,
+Diskette, CD, etc) as long as you include this file intact.  I have
+received permission from the original authors of any modified or included
+content in this file to allow further distribution.
+
+* Where to get the file that this text file describes *
+
+http://wadhost.fathax.com/download.php
+http://www.best-ever.org/wads/
+https://github.com/gummywormz/lmsgamesgit

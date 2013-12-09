@@ -1,7 +1,7 @@
 actor microchargeman : MegamanLMS
 {
 +NOSKIN
-scale 0.3
+scale 0.5
 player.displayname "microchargeman"
 player.soundclass "micm"
 player.damagescreencolor "yellow"
@@ -258,7 +258,7 @@ CHRM H 0 A_SpawnItemEx("FakeDeathFX", 0, 0, 32)
 CHRM Z 1 A_CheckPlayerDone
 wait
 CockRoachFlag:
-CHRM H 0 A_SpawnItemEx("Gockroach")
+CHRM H 0 A_SpawnItemEx("MicroGockroach")
 CHRM Z 1 A_CheckPlayerDone
 wait
 ExplodeDeath:
@@ -326,4 +326,9 @@ CreditWalk:
 CHRM BCDE 8
 loop
 }
+}
+
+Actor MicroGockroach : GockRoach
+{
+Scale 0.5
 }
