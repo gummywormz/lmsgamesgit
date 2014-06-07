@@ -196,10 +196,10 @@ map LMS24 "RING ROBBERY" //done for good
   levelnum= 6024
 }
 
-map LMS25 "GRENADE MAN'S BIG BLAST" //done for good
+map LMS25 "HYPER JUMP ROPE STORM H" //done for good
 {
  next = "LMS26"
- music = "LMS_BOMB"
+ music = "LMS_HSH"
  aircontrol = 0.5
   levelnum= 6025
 }
@@ -241,6 +241,14 @@ map LMS30 "SUPER AIR MAN TILE" //done for good
  next = "LMS01"
  music = "LMS_SATM"
   levelnum =6030
+ aircontrol = 0.5
+}
+
+map LMSXX "??? BATTLE" //done for good
+{
+ next = "LMS01"
+ music = "D_BLANK"
+ levelnum =6666
  aircontrol = 0.5
 }
 //ex-maps

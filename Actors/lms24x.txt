@@ -6,12 +6,12 @@ inventory.maxamount 1
 States
 {
 Pickup:
-TNT1 A 0 A_JumpIfInventory("SonicRing",1,"Saved")
-TNT1 A 0 A_SpawnItemEx("TerminalRingitis",0,0,8)
+TNT1 A 2 A_JumpIfInventory("SonicRing",1,"Saved")
+TNT1 A 2 A_SpawnItemEx("TerminalRingitis",0,0,8)
 stop
 Saved:
-TNT1 A 0 A_TakeInventory("SonicRing",1)
-TNT1 A 0 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-16,16),Random(-16,16),Random(-16,16),0)
+TNT1 A 2 A_TakeInventory("SonicRing",1)
+TNT1 A 2 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-16,16),Random(-16,16),Random(-16,16),0)
 stop
 }
 }

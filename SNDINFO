@@ -228,6 +228,66 @@ weapon/coalgun CHUG
 weapon/crosslight WILYBEAM
 weapon/starman starman
 
+//lmsxx
+$random skullact {skull1 skull2 skull3 skull4}
+skull1 skull2
+skull2 skull2
+skull3 skull2
+skull4 skull2
+skullattack skull5
+skullchips	dsrocks
+skulleating CRUNCHIN
+skulldie	skull6
+$random jitpain {jitpain1 jitpain2 jitpain3 jitpain4}
+jitpain1 BOSSPAIN
+jitpain2 BOSSPAIN
+jitpain3 BOSSPAIN
+jitpain4 BOSSPAIN
+
+creepgotya creepgot
+creeperact creep1
+creeperattack creep2
+creeperattack2 creep5
+creeperpain creep3
+creeperdie creep4
+CreeperBall dscurse
+CreeperBallD dscursed
+
+sjasattack		sjasatta
+sjasdeath		skull6
+sjaspain		sjaspain
+sjasdeath		sjasdeat
+sjasact			sjasact
+sjasreflect		TELEPORT
+
+yureiattack YHAUNT
+$volume yureiattack 10.0
+weapons/grenadeexplode NAPALMB
+
+heartbeat	heart
+spawnlightning DSGNTINI
+spinballer DSFIRBFI
+yureispincharge	DSGNTACT
+hellgate	hellgate
+icespike	frosty2
+yureispikecharge	WOOSH3
+ElementalLightning	aireligh
+Lightningcrackle	DSCRACKL
+Yureipain	yurpain
+$random Yureigiggle 		{ Yureigiggle1  Yureigiggle2 Yureigiggle3 Yureigiggle4}
+Yureigiggle1	VIKGIG1
+Yureigiggle2	VIKGIG2
+Yureigiggle3	VIKGIG3
+Yureigiggle4	VIKGIG4
+Warningx		WARN2
+Bigmeteor	DSMETEO2
+Yureidie	YURIDIE
+Yureidying	MANACHAR
+Yureistop	MANASTOP
+Yureiflash	DSFLASHR
+superscream SUPERC4
+//end lmsxx
+
 $random LMS/WIN { 
 LMS/WIN1
 LMS/WIN2

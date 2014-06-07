@@ -44,6 +44,33 @@ stop
 }
 }
 
+actor WindStormStartME
+{
+PROJECTILE
+-NOGRAVITY
++RIPPER
+Damage (8)
+damagetype "WindStorm"
+Obituary "$OB_WINDSTORM"
+Height 8
+Radius 16
+Scale 2.5
+Speed 25
+States
+{
+Spawn:
+WINS ABCD 4
+loop
+Death:
+TNT1 A 0 A_JumpIf(z-floorz==0,"Death2")
+TNT1 A 1
+stop
+Death2:
+TNT1 A 1 A_SpawnItemEx("NoDamageWind",0,0,0,18,0,0,0,0,0)
+stop
+}
+}
+
 actor ElevatorWeapon : MegaBuster
 {
 Weapon.AmmoUse 0
@@ -93,7 +120,7 @@ SCLA B 1 A_JumpIfInventory("CanWind",1,"AltFireIt")
 goto NoAmmo
 AltFireIt:
 BUBB D 0 A_PlaySoundEx("weapon/mbuster","Weapon")
-BUBB E 0 A_FireCustomMissile("NoDamageWind",0,0,8,0)
+BUBB E 0 A_FireCustomMissile("WindStormStartME",0,0,8,0)
 BUBB EF 5
 BUBB D 2
 BUBB D 0 A_Refire

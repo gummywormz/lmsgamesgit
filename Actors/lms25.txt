@@ -1,344 +1,86 @@
-//grenade man's big blast
+//hyper jump rope storm
 
-actor GrenadeManCredits2 5999
+actor RopeHyperStormH 
 {
-height 16
+speed 0
+Height 50
+Radius 50
 Scale 2.5
-radius 16
+Obituary "%o was whipped by \chHyper Jump Rope Storm H."
+Translation "192:192=218:218", "198:198=76:76"
+painchance 0
+-SOLID
+-NOBLOCKMAP
++NODAMAGE
++INVULNERABLE
 States
 {
 Spawn:
-CGRE A 1
+MWSZ I 0
+MWSZ I 0 Thing_ChangeTID(0,401)
+MWSZ I 0 //A_GiveInventory("FireStormAmmo",1)
+HSHZ S 1
 loop
-Explode:
-TNT1 A 1
-TNT1 A 1 A_SpawnItemEx("OblivionEffect")
-TNT1 A 35
-TNT1 A 35
-TNT1 A 35 
-TNT1 A 1 A_SpawnItemEx("TeleportFog")
-GOTO SPAWN
-}
-}
-
-ACTOR TotallyInvulnerable3 : PowerProtection
-{
-+COUNTITEM
-powerup.duration -6
-+INVENTORY.AUTOACTIVATE
-+INVENTORY.ALWAYSPICKUP
-Inventory.MaxAmount 0
-DamageFactor "Exit", 0.0
-States
-{
-Spawn:
-PINV A 1 
+Start:
+HSHZ S 12 A_SpawnItemEx("BetaBusterRodRodIntro",80,0,50,40,0,-5)
+Speed1:
+HSHZ S 0 A_SpawnItemEx("BusterRodBarrier")
+HSHZ S 0 A_SetAngle(angle + 4)
+HSHZ S 1 A_SpawnItemEx("BetaBusterRodRod",450,0,12,40)
+HSHZ S 0 A_SpawnItemEx("BetaBusterRodDamageLine",0,0,0,100)
+loop
+Speed2:
+HSHZ S 0 A_SpawnItemEx("BusterRodBarrier")
+HSHZ S 0 A_SetAngle(angle + 6)
+HSHZ S 1 A_SpawnItemEx("BetaBusterRodRod",450,0,12,40)
+HSHZ S 0 A_SpawnItemEx("BetaBusterRodDamageLine",0,0,0,100)
+loop
+Speed3:
+HSHZ S 0 A_SpawnItemEx("BusterRodBarrier")
+HSHZ S 0 A_SetAngle(angle + 8)
+HSHZ S 1 A_SpawnItemEx("BetaBusterRodRod",450,0,12,40)
+HSHZ S 0 A_SpawnItemEx("BetaBusterRodDamageLine",0,0,0,100)
+loop
+Speed4:
+HSHZ S 0 A_SpawnItemEx("BusterRodBarrier")
+HSHZ S 0 A_SetAngle(angle + 10)
+HSHZ S 1 A_SpawnItemEx("BetaBusterRodRod",450,0,12,40)
+HSHZ S 0 A_SpawnItemEx("BetaBusterRodDamageLine2",0,0,0,100)
+loop
+Speed5:
+HSHZ S 0 A_SpawnItemEx("BusterRodBarrier")
+HSHZ S 0 A_SetAngle(angle + 12)
+HSHZ S 1 A_SpawnItemEx("BetaBusterRodRod",450,0,12,40)
+HSHZ S 0 A_SpawnItemEx("BetaBusterRodDamageLine2",0,0,0,100)
+loop
+Speed6:
+HSHZ S 0 A_SpawnItemEx("BusterRodBarrier")
+HSHZ S 0 A_SetAngle(angle + 14)
+HSHZ S 1 A_SpawnItemEx("BetaBusterRodRod",450,0,12,40)
+HSHZ S 0 A_SpawnItemEx("BetaBusterRodDamageLine2",0,0,0,100)
+loop
+Speed7:
+HSHZ S 0 A_SpawnItemEx("BusterRodBarrier")
+HSHZ S 0 A_SetAngle(angle + 16)
+HSHZ S 1 A_SpawnItemEx("BetaBusterRodRod",450,0,12,40)
+HSHZ S 0 A_SpawnItemEx("BetaBusterRodDamageLine2",0,0,0,100)
+loop
+Speed8:
+HSHZ S 0 A_SpawnItemEx("BusterRodBarrier")
+HSHZ S 0 A_SetAngle(angle + 18)
+HSHZ S 1 A_SpawnItemEx("BetaBusterRodRod",450,0,12,40)
+HSHZ S 0 A_SpawnItemEx("BetaBusterRodDamageLine2",0,0,0,100)
+loop
+Speed9:
+HSHZ S 0 A_SpawnItemEx("BusterRodBarrier")
+HSHZ S 0 A_SetAngle(angle + 20)
+HSHZ S 1 A_SpawnItemEx("BetaBusterRodRod",450,0,12,40)
+HSHZ S 0 A_SpawnItemEx("BetaBusterRodDamageLine2",0,0,0,100)
+loop
+Death:
+HSHZ S 1
+HSHZ S 0 A_SpawnItemEx("GenesisBusterRodG",50,0,0,5,0,20)
+HSHZ S 0 A_SpawnItemEx("GenesisHyperStormH")
 stop
 }
-}
-
-//crystal man scavenger hunt
-
-actor CrystalDropperCrystalMarker : Inventory
-{
-inventory.amount 1
-inventory.maxamount 1
-}
-
-actor CrystalDropperCrystalScavenge : CustomInventory
-{
-+INVENTORY.AUTOACTIVATE
-+FLOORHUGGER
-inventory.respawntics 35
-inventory.amount 1
-inventory.maxamount 1
-inventory.pickupmessage "You found a Crystal Dropper Crystal!"
-Inventory.PickupSound "item/1up"
-scale 2.0
-+COUNTITEM
-states
-{
-Spawn:
-CRFL A 1
-LOOP
-Pickup:
-TNT1 A 1
-TNT1 A 1 A_JumpIfInventory("CrystalDropperCrystalMarker",1,"Fale")
-TNT1 A 1 A_GiveInventory("CrystalDropperCrystalMarker",1)
-TNT1 A 1 A_GiveInventory("ScavengeItemGet",1)
-stop
-Fale:
-CMHD A 1
-fail
-}
-}
-
-actor CrystalDropperCrystalPersistant : RandomSpawner {
-Dropitem "CrystalDropperCrystalScavenge" 255
-}
-
-actor EyeDropsMarker : Inventory
-{
-inventory.amount 1
-inventory.maxamount 1
-}
-
-actor EyeDropsScavenge : CustomInventory
-{
-+INVENTORY.AUTOACTIVATE
-+FLOORHUGGER
-inventory.respawntics 35
-inventory.amount 1
-inventory.maxamount 1
-inventory.pickupmessage "You found Eye Drops! Now you have crystal clear eyes!"
-Inventory.PickupSound "item/1up"
-scale 2.0
-+COUNTITEM
-states
-{
-Spawn:
-CSCV A 1
-LOOP
-Pickup:
-TNT1 A 1
-TNT1 A 1 A_JumpIfInventory("EyeDropsMarker",1,"Fale")
-TNT1 A 1 A_GiveInventory("EyeDropsMarker",1)
-TNT1 A 1 A_GiveInventory("ScavengeItemGet",1)
-stop
-Fale:
-CSCV A 1
-fail
-}
-}
-
-actor EyeDropsPersistant : RandomSpawner {
-Dropitem "EyeDropsScavenge" 255
-}
-
-actor UpsideDownWTankMarker : Inventory
-{
-inventory.amount 1
-inventory.maxamount 1
-}
-
-actor UpsideDownWTankScavenge : CustomInventory
-{
-+INVENTORY.AUTOACTIVATE
-+CEILINGHUGGER
-inventory.respawntics 35
-inventory.amount 1
-inventory.maxamount 1
-inventory.pickupmessage "You found an M-Tank! No wait it was an upside down W-Tank..."
-Inventory.PickupSound "item/1up"
-scale 2.0
-+COUNTITEM
-states
-{
-Spawn:
-EBAL EG 6
-LOOP
-Pickup:
-TNT1 A 1
-TNT1 A 1 A_JumpIfInventory("UpsideDownWTankMarker",1,"Fale")
-TNT1 A 1 A_GiveInventory("UpsideDownWTankMarker",1)
-TNT1 A 1 A_GiveInventory("ScavengeItemGet",1)
-stop
-Fale:
-CMHD A 1
-fail
-}
-}
-
-actor UpsideDownWTankPersistant : RandomSpawner {
-Dropitem "UpsideDownWTankScavenge" 255
-}
-
-actor SMB2CrystalMarker : Inventory
-{
-inventory.amount 1
-inventory.maxamount 1
-}
-
-actor SMB2CrystalScavenge : CustomInventory
-{
-+INVENTORY.AUTOACTIVATE
-+FLOORHUGGER
-inventory.respawntics 35
-inventory.amount 1
-inventory.maxamount 1
-inventory.pickupmessage "You found the Crystal!"
-Inventory.PickupSound "item/1up"
-scale 2.0
-+COUNTITEM
-states
-{
-Spawn:
-CSCV FGHI 3
-LOOP
-Pickup:
-TNT1 A 1
-TNT1 A 1 A_JumpIfInventory("SMB2CrystalMarker",1,"Fale")
-TNT1 A 1 A_GiveInventory("SMB2CrystalMarker",1)
-TNT1 A 1 A_GiveInventory("ScavengeItemGet",1)
-stop
-Fale:
-CSCV I 1
-fail
-}
-}
-
-actor SMB2CrystalPersistant : RandomSpawner {
-Dropitem "SMB2CrystalScavenge" 255
-}
-
-actor ContactLensMarker : Inventory
-{
-inventory.amount 1
-inventory.maxamount 1
-}
-
-actor ContactLensScavenge : CustomInventory
-{
-+INVENTORY.AUTOACTIVATE
-+FLOORHUGGER
-inventory.respawntics 35
-inventory.amount 1
-inventory.maxamount 1
-inventory.pickupmessage "You stepped on a contact lens..."
-Inventory.PickupSound "item/1up"
-scale 2.0
-+COUNTITEM
-states
-{
-Spawn:
-CSCV B 1
-LOOP
-Pickup:
-TNT1 A 1
-TNT1 A 1 A_JumpIfInventory("ContactLensMarker",1,"Fale")
-TNT1 A 1 A_GiveInventory("ContactLensMarker",1)
-TNT1 A 1 A_GiveInventory("ScavengeItemGet",1)
-stop
-Fale:
-CSCV B 1
-fail
-}
-}
-
-actor ContactLensPersistant : RandomSpawner {
-Dropitem "ContactLensScavenge" 255
-}
-
-actor CrystalMansLeftFootMarker : Inventory
-{
-inventory.amount 1
-inventory.maxamount 1
-}
-
-actor CrystalMansLeftFootScavenge : CustomInventory
-{
-+INVENTORY.AUTOACTIVATE
-+FLOORHUGGER
-inventory.respawntics 35
-inventory.amount 1
-inventory.maxamount 1
-inventory.pickupmessage "You found Crystal Man's Left Foot..."
-Inventory.PickupSound "item/1up"
-scale 2.0
-+COUNTITEM
-states
-{
-Spawn:
-CSCV C 1
-LOOP
-Pickup:
-TNT1 A 1
-TNT1 A 1 A_JumpIfInventory("CrystalMansLeftFootMarker",1,"Fale")
-TNT1 A 1 A_GiveInventory("CrystalMansLeftFootMarker",1)
-TNT1 A 1 A_GiveInventory("ScavengeItemGet",1)
-stop
-Fale:
-CSCV C 1
-fail
-}
-}
-
-actor CrystalMansLeftFootPersistant : RandomSpawner {
-Dropitem "CrystalMansLeftFootScavenge" 255
-}
-
-actor CrystalSkullMarker : Inventory
-{
-inventory.amount 1
-inventory.maxamount 1
-}
-
-actor CrystalSkullScavenge : CustomInventory
-{
-+INVENTORY.AUTOACTIVATE
-+FLOORHUGGER
-inventory.respawntics 35
-inventory.amount 1
-inventory.maxamount 1
-inventory.pickupmessage "You found the Crystal Skull!"
-Inventory.PickupSound "item/1up"
-scale 2.0
-+COUNTITEM
-states
-{
-Spawn:
-CSCV D 1
-LOOP
-Pickup:
-TNT1 A 1
-TNT1 A 1 A_JumpIfInventory("CrystalSkullMarker",1,"Fale")
-TNT1 A 1 A_GiveInventory("CrystalSkullMarker",1)
-TNT1 A 1 A_GiveInventory("ScavengeItemGet",1)
-stop
-Fale:
-CSCV D 1
-fail
-}
-}
-
-actor CrystalSkullPersistant : RandomSpawner 6906 {
-Dropitem "CrystalSkullScavenge" 255
-}
-
-actor GammasThirdKnuckleSpikeMarker : Inventory
-{
-inventory.amount 1
-inventory.maxamount 1
-}
-
-actor GammasThirdKnuckleSpikeScavenge : CustomInventory
-{
-+INVENTORY.AUTOACTIVATE
-+FLOORHUGGER
-inventory.respawntics 35
-inventory.amount 1
-inventory.maxamount 1
-inventory.pickupmessage "You found Gamma's Third Knuckle Spike!"
-Inventory.PickupSound "item/1up"
-scale 2.0
-+COUNTITEM
-states
-{
-Spawn:
-CSCV E 1
-LOOP
-Pickup:
-TNT1 A 1
-TNT1 A 1 A_JumpIfInventory("GammasThirdKnuckleSpikeMarker",1,"Fale")
-TNT1 A 1 A_GiveInventory("GammasThirdKnuckleSpikeMarker",1)
-TNT1 A 1 A_GiveInventory("ScavengeItemGet",1)
-stop
-Fale:
-CSCV E 1
-fail
-}
-}
-
-actor GammasThirdKnuckleSpikePersistant : RandomSpawner {
-Dropitem "GammasThirdKnuckleSpikeScavenge" 255
 }

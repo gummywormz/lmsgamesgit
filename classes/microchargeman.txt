@@ -1,14 +1,14 @@
 actor microchargeman : MegamanLMS
 {
 +NOSKIN
-scale 0.5
+scale 1.0
 player.displayname "microchargeman"
 player.soundclass "micm"
 player.damagescreencolor "yellow"
 States
 {
 Spawn:
-CHRM A 0
+PLAY A 0
 CHRM B 1
 CHRM A 1
 Goto Spawn+2
@@ -22,14 +22,14 @@ goto Spawn
 Pain.FireSpin:
 Pain.QuickBoomerang:
 Pain.Buster:
+Pain.BassBuster:
 Pain.WildCoil:
 Pain.ChargeKick:
 Pain.YamatoSpear:
 Pain.DiveMissile:
 Pain.StarCrash:
-Pain.NeedleCannon:
 Pain.CentaurFlash:
-Pain.FreezeCrack:
+Pain.FreezeCracker:
 Pain.ScrewCrusher:
 Pain.PharaohHold:
 Pain.TornadoHold:
@@ -37,9 +37,14 @@ Pain.TrebleSentry:
 Pain.ScorchWheel:
 Pain.MagnetMissile:
 Pain.JunkShield:
+Pain.OilSlider:
+Pain.BassBuster:
+Pain.WaveBurner:
+Pain.WaveBurnerUW:
 Pain.Misc:
-Pain.Oil:
-CHRM H 0
+Pain.Treble:
+Pain.FlameSwordSpark:
+CHRM H 0 
 Goto pain+1
 Pain.RingFist:
 CHRM H 0 HealThing(99)
@@ -104,13 +109,24 @@ Pain.FlameSword:
 CHRM H 0
 CHRM HH 0 A_SpawnItemEx("ScorchBit",0,0,0,random(-10,10),random(-10,10),random(10,15),random(0,360))
 Goto pain
+Pain.WaterBalloon:
 Pain.FlashBomb:
-CHRM H 0 A_ScaleVelocity(0.85)
+Pain.RemoteMine:
+Pain.IceWall:
+CHRM H 0 A_ScaleVelocity(0.9)
 Goto Pain+1
+Pain.SpreadDrill:
+Pain.SpreadDrill2:
+Pain.SpreadDrill3:
+CHRM H 0 A_JumpIfInventory("SpreadDrillProtect", 1 ,2)
+CHRM H 0 A_PlaySoundEx("weapon/spreaddrillhit","SoundSlot5")
+CHRM H 0 A_GiveInventory("SpreadDrillProtect", 1)
+Goto pain+1
 Pain.WindStorm:
+Pain.FlingDamage:
 CHRM H 0 //ThrustThing(random(0,255),50,1,0)
-CHRM H 0 ThrustThing(random(0,255),40,0,0)
-CHRM H 0 ThrustThingZ(0,10,0,0)
+CHRM H 0 ThrustThing(random(0,255),5,0,0)
+CHRM H 0 ThrustThingZ(0,30,0,0)
 Goto pain+1
 Pain.SlashClaw:
 CHRM H 0 A_PlaySoundEx("weapon/slashclawhit","SoundSlot5")
@@ -150,28 +166,55 @@ Pain.CrashBomb:
 CHRM H 0 A_Stop
 Goto Pain+1
 Pain.GravityHold:
-CHRM H 0 ThrustThingZ(0,150,1,0)
+CHRM H 0 A_ChangeVelocity(momx, momy, 0, CVF_REPLACE)
 CHRM H 0 A_JumpIf(z-floorz>180,"GravityForce4")
 CHRM H 0 A_JumpIf(z-floorz>128,"GravityForce3")
 CHRM H 0 A_JumpIf(z-floorz>32,"GravityForce2")
 CHRM H 0 A_JumpIf(z-floorz>8,"GravityForce1")
-Goto pain+1
+Goto GravityForceFinish
 GravityForce4:
-//CHRM H 0 A_Print("Gravity 4")
-CHRM H 0 A_GiveInventory("GravityForce4",1)
-Goto Pain+1
+CHRM H 2 A_GiveInventory("GravityForce4",1)
+Goto GravityForceFinish
 GravityForce3:
-//CHRM H 0 A_Print("Gravity 3")
-CHRM H 0 A_GiveInventory("GravityForce3",1)
-Goto Pain+1
+CHRM H 2 A_GiveInventory("GravityForce3",1)
+Goto GravityForceFinish
 GravityForce2:
-//CHRM H 0 A_Print("Gravity 2")
-CHRM H 0 A_GiveInventory("GravityForce2",1)
-Goto Pain+1
+CHRM H 2 A_GiveInventory("GravityForce2",1)
+Goto GravityForceFinish
 GravityForce1:
-//CHRM H 0 A_Print("Gravity 1")
-CHRM H 0 A_GiveInventory("GravityForce1",1)
+CHRM H 2 A_GiveInventory("GravityForce1",1)
+Goto GravityForceFinish
+GravityForceFinish:
+CHRM H 0 A_CheckFloor(2)
+CHRM H 0 ThrustThingZ(0,150,1,0)
+CHRM H 0
 Goto Pain+1
+Death.WindStorm:
+Death.GravityHold:
+CHRM H 0 SetPlayerProperty(0, 0, 4)
+CHRM H 0 A_ChangeFlag("NOINTERACTION", 1)
+CHRM H 0 A_TakeInventory("WeaponCharge",999)
+CHRM H 0 A_NoBlocking
+CHRM H 0 A_TakeInventory("CutterFlag",999)
+CHRM H 0 A_GiveInventory("IsDead",1)
+CHRM H 0 A_Stop
+CHRM H 0 A_GiveToTarget("KilledMeStock",1)
+CHRM H 1 A_GiveToTarget("KilledMe",1)
+CHRM H 0 ACS_ExecuteAlways(999,0,0)
+CHRM H 0 SetPlayerProperty(0, 0, 4)
+RiseMyMegaman:
+CHRM H 1 ThrustThingZ(0,10,0,1)
+CHRM H 0 A_JumpIf(ceilingz-z<64, "ExplodeNow")
+CHRM H 0 A_GiveInventory("Cutterflag", 1)
+CHRM H 0 A_JumpIfInventory("CutterFlag", 35, "ExplodeNow")
+Goto RiseMyMegaman
+ExplodeNow:
+CHRM H 0 A_Stop
+CHRM H 0 A_PlayerScream
+CHRM H 0 A_GiveInventory("CutterFlag",999)
+CHRM H 0 A_SpawnItemEx("FakeDeathFX", 0, 0, 0)
+CHRM Z 1 A_CheckPlayerDone
+wait
 Pain.WilyFire:
 CHRM H 0 //A_ChangeFlag("SHOOTABLE",0)
 CHRM H 0 A_SpawnItemEx("ImOnFire")
@@ -230,12 +273,13 @@ CHRM H 0 //SetPlayerProperty(0, 0, 4)
 CHRM H 0//SetPlayerProperty(0,0,1)
 Goto Spawn
 Death.Beam:
-Death.GravityHold:
 Death.instagib:
+Death.Telefrag:
 CHRM Z 1 SetPlayerProperty(0, 0, 4)
 CHRM H 0 A_GiveToTarget("KilledMe",1)
 CHRM H 0 A_GiveToTarget("KilledMeStock",1)
 CHRM H 0 A_GiveInventory("CutterFlag",999)
+CHRM H 0 A_TakeInventory("WeaponCharge",999)
 CHRM H 0 A_GiveInventory("IsDead",1)
 CHRM Z 0 A_PlayerScream
 CHRM H 0 A_SpawnItemEx("FakeDeathFX", 0, 0, 32)
@@ -243,7 +287,7 @@ CHRM Z 1 A_CheckPlayerDone
 wait
 Death:
 CHRM H 0 SetPlayerProperty(0, 0, 4)
-CHRM H 0 A_TakeInventory("PharaohCharge",999)   
+CHRM H 0 A_TakeInventory("WeaponCharge",999)   
 CHRM H 0 A_NoBlocking
 CHRM H 0 A_GiveInventory("CutterFlag",999)
 CHRM H 0 A_GiveInventory("IsDead",1)
@@ -266,7 +310,7 @@ CHRM H 1 A_SpawnItemEx("OblivionExplode")
 goto Spawn
 Death.Falling:
 CHRM H 0 SetPlayerProperty(0, 0, 4)
-CHRM H 0 A_TakeInventory("PharaohCharge",999)   
+CHRM H 0 A_TakeInventory("WeaponCharge",999)   
 CHRM H 0 A_NoBlocking
 CHRM H 0 A_GiveInventory("CutterFlag",999)
 CHRM H 0 A_GiveInventory("IsDead",1)
@@ -279,7 +323,7 @@ wait
 Ice:
 CHRM H 0 SetPlayerProperty(0, 0, 4)
 CHRM H 1 A_PlayerScream
-CHRM H 0 A_TakeInventory("PharaohCharge",999)   
+CHRM H 0 A_TakeInventory("WeaponCharge",999)   
 CHRM H 0 A_GiveInventory("CutterFlag",999)
 CHRM H 0 A_GiveInventory("IsDead",1)
 CHRM H 0 ACS_ExecuteAlways(998,0,105,1)
@@ -324,6 +368,9 @@ CHRM G 4
 loop
 CreditWalk:
 CHRM BCDE 8
+loop
+CreditRun:
+CHRM BCDE 5
 loop
 }
 }

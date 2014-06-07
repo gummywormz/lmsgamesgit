@@ -6,7 +6,7 @@ Jaxof7 - LMS22 (Rock Harden)
 SmashBroPlusB - LMS11 (Special Stage Plus B)
 Caprice - LMS24 (Ring Robbery)
 
-Quality Assurance
+Quality Assurance:
 TailsMK4
 AndyLucho
 Linnie
@@ -25,6 +25,7 @@ Obelisk - GutsmanG
 Super Justin Bros - Chaos Emeralds
 Brotoad - BBall Pasta
 Knux - LMS01's Sky
+GVH8BDM Team - lmsxx stuff
 
 Sound Effects:
 RM8FC - Unused(?) Alarm Sounds
@@ -38,7 +39,7 @@ LMS_SEL - Super Mario Bros USA (Bonus Game Sound)
 
 Music:
 D_STWIN - Wai Wai World 2 (End Of Level)
-D_STLOSE - ThreeCheersForBryan (Jeopardy Final Round / Thinking Theme)
+D_STLOSE - Kef Schecter (Jeopardy Theme)
 D_TTFTW - M (Take on Me Gimmick Edition [FCM10])
 D_RAVE - JAKAZiD (Cillit Bang Hardcore Mix)
 PPP - PushPushPenguin Ingame 1
@@ -74,6 +75,7 @@ LMS_NIG2 - Kirby's Adventure (Final Boss / Nightmare Form 2)
 LMS_NIG3 - Kirby's Adventure (Nightmare Form 1)
 LMS_NEE - Tsu Ryu and Rushjet1 (Needle Man Remix)
 LMS_HUB - Rockman TP (Captain Square)
+LMS_HSH - OzzyKingofKings (Amusement Park Stage [MVC2])
 LMS_PAC - Pac Mania (Title Screen)
 LMS_PACX - BonofTheDead (Re: Pacman)
 LMS_PHA - TG74 (WWW Legendary Theme)

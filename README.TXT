@@ -3,11 +3,11 @@ Advanced engine needed  : Zandronum 1.2
 Primary purpose         : Last Man Standing
 ===========================================================================
 Title                   : LMSGames
-Filename                : lmsgames-v1a.pk3
-Release date            : 12/8/2013
+Filename                : lmsgames-v1b.pk3
+Release date            : 6/7/2013
 Author                  : Gummywormz
 Other Files By Author   : DIRP - A weapon pack featuring 110 unique
-                          weapons.
+                          weapons. (not yet compatible with MM8BDM v4)
 
 Description             : LMSGames is a game mode that is heavily inspired
                           by StupidLMS. It's basically Mario Party without
@@ -18,7 +18,7 @@ Additional Credits to   : See Credits.txt
 ===========================================================================
 * What is included *
 
-New levels              : 30
+New levels              : 31 + 6 "ex - maps"
 Sounds                  : Yes
 Music                   : Yes
 Graphics                : Yes
@@ -31,7 +31,7 @@ Other files required    : lmsgames-mv1a.wad
 * Play Information *
 
 Game                    : MM8BDM
-Map #                   : LMS01 - LMS30, XLMS01 - XLMS06
+Map #                   : LMS01 - LMS30, XLMS01 - XLMS06, LMSXX
 Single Player           : Player starts only
 Cooperative 2-4 Player  : Player starts only
 Deathmatch 2-4 Player   : No

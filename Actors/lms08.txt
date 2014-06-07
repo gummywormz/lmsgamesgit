@@ -255,6 +255,7 @@ TNT1 A 1 A_Wander
 TNT1 A 1 A_Wander
 TNT1 A 1 A_Wander
 TNT1 A 15
+TNT1 A 1 ACS_ExecuteAlways(23,0)
 NGMR A 1 A_ChangeFlag("Invulnerable",0)
 NGMR A 1 A_ChangeFlag("SOLID",1)
 NGMR GFEDCBA 5

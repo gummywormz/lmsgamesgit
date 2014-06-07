@@ -44,7 +44,7 @@ stop
 }
 }
 
-actor TargetMarker : MapMarker
+actor TargetMarkerX : MapMarker
 {
 States
 {

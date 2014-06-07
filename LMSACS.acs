@@ -31,12 +31,12 @@ ConsoleCommand("winlimit 1");
 	if(!GetCvar("LMSGAMES_DISABLEWILDCARDS"))
 		{ConsoleCommand("set LMSGAMES_DISABLEWILDCARDS 0");
 		ConsoleCommand("archivecvar LMSGAMES_DISABLEWILDCARDS");}
-	//if(!GetCvar("LMSGAMES_RETURNTOHUB"))
-		//{ConsoleCommand("set LMSGAMES_RETURNTOHUB 0");
-		//ConsoleCommand("archivecvar LMSGAMES_RETURNTOHUB");}
-	//if(!GetCvar("LMSGAMES_LOCKLASTMAP"))
-		//{ConsoleCommand("set LMSGAMES_LOCKLASTMAP 0");
-		//ConsoleCommand("archivecvar LMSGAMES_LOCKLASTMAP");}
+	if(!GetCvar("LMSGAMES_DISABLEANTISPEC"))
+		{ConsoleCommand("set LMSGAMES_DISABLEANTISPEC 0");
+		ConsoleCommand("archivecvar LMSGAMES_DISABLEANTISPEC");}
+	if(!GetCvar("LMSGAMES_itsmyswampnow"))
+		{ConsoleCommand("set LMSGAMES_itsmyswampnow 0");
+		ConsoleCommand("archivecvar LMSGAMES_itsmyswampnow");}
 
 
 }
@@ -63,6 +63,7 @@ GiveActorInventory(whichplayer + 1000,"ISplode2",1);
 
 script 542 (void) //explode ALL players
 {
+ACS_ExecuteAlways(101,0);
 for (int q=1000; q<1033; q++)
 {
 GiveActorInventory(q,"ISplode2",1);

@@ -31,6 +31,7 @@
 #include "Actors/lms24.txt"
 #include "Actors/lms24x.txt"
 #include "Actors/lms25.txt"
+#include "Actors/oldlms25.txt"
 #include "Actors/lms26.txt"
 #include "Actors/lms26X.txt"
 #include "Actors/lms27.txt"
@@ -39,6 +40,7 @@
 #include "Actors/lms30.txt"
 
 #include "Actors/lms05x.txt"
+#include "Actors/lmsxx.txt"
 
 #include "classes/celebi.txt"
 #include "classes/cock.txt"

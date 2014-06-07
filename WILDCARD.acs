@@ -10,14 +10,14 @@ if (!random (0, 10)) {acs_execute (666, 0);}
 
 Script 666 (void)
 {
-if(GetCvar("LMSGAMES_DISABLEWILDCARDS") == 1){TERMINATE;}
+if(GetCvar("LMSGAMES_DISABLEWILDCARDS") == 1 || getlevelinfo(LEVELINFO_LEVELNUM) == 6666){TERMINATE;}
 int wildchance = random(0,200);
 Delay(35);
 if(wildchance >= 175){terminate;}
 Delay(35 * 6);
 printbold(s:"\clw\cji\chl\cfd \cdc\cna\cmr\cvd \cd activated!");
 Delay(35 * 2);
-wildchance = random(0,9);
+wildchance = random(0,10);
 if(wildchance == 0){
 if(getlevelinfo(LEVELINFO_LEVELNUM) == 6026){ACS_ExecuteAlways(670,0,9);Terminate;}
 printbold(s:"U jelly of my wurld?");
@@ -78,6 +78,16 @@ if(wildchance == 8){printbold(s:"rave time!");
 setmusic("d_rave");
 acs_executealways(669,0);}
 if(wildchance == 9){printbold(s:"nvm");}
+if(wildchance == 10){
+setplayerproperty(1,1,4);
+setplayerproperty(1,1,5);
+Setmusic("d_blank");
+SetFont("BIGFONT");
+HudMessageBold(s:"SHE APPROACHES..."; HUDMSG_TYPEON, 0, CR_GRAY, 1.5, 0.35, 5.0, 0.05, 0.5);
+Delay(35 * 6);
+ConsoleCommand("LMSGAMES_itsmyswampnow 1");
+ConsoleCommand("Changemap lmsxx");
+}
 }
 
 Script 667 UNLOADING
@@ -89,9 +99,12 @@ ConsoleCommand("sv_gravity 800");
 
 Script 668 (void)
 {
-for (int q=0; q<999; q++){Sector_SetGravity(q,-9000,0);}
+if(cancelwildcard == 1){for (int q=0; q<999; q++){Sector_SetGravity(q,1,0);} terminate;}
+AmbientSound("misc/gravityup",128);
+for (q=0; q<999; q++){Sector_SetGravity(q,-9000,0);}
 Delay(35 * random(5,10));
 if(cancelwildcard == 1){for (q=0; q<999; q++){Sector_SetGravity(q,1,0);} terminate;}
+AmbientSound("misc/gravitydown",128);
 for (q=0; q<999; q++){Sector_SetGravity(q,9000,0);}
 Delay(35 * random(5,10));
 restart;
@@ -132,6 +145,7 @@ Restart;
 
 Script 670 (int wildchance)
 {
+if(getlevelinfo(LEVELINFO_LEVELNUM) == 6666){terminate;}
 printbold(s:"\clw\cji\chl\cfd \cdc\cna\cmr\cvd \cd activated!");
 Delay(35 * 2);
 if(wildchance == 0){
@@ -193,6 +207,16 @@ if(wildchance == 8){printbold(s:"rave time!");
 setmusic("d_rave");
 acs_executealways(669,0);}
 if(wildchance == 9){printbold(s:"nvm");}
+if(wildchance == 10){
+setplayerproperty(1,1,4);
+setplayerproperty(1,1,5);
+Setmusic("d_blank");
+SetFont("BIGFONT");
+HudMessageBold(s:"SHE APPROACHES..."; HUDMSG_TYPEON, 0, CR_GRAY, 1.5, 0.35, 5.0, 0.05, 0.5);
+Delay(35 * 6);
+ConsoleCommand("LMSGAMES_itsmyswampnow 1");
+ConsoleCommand("Changemap lmsxx");
+}
 }
 
 Script 671 (void)

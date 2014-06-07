@@ -20,22 +20,22 @@ damagetype "Proto3"
 }
 
 //keep this part
-actor DustBit1C : DustBit1 replaces DustBit1
+actor DustBit1Cc : DustBit1 replaces DustBit1
 {
 damagetype "Dust"
 }
 
-actor DustBit2C : DustBit2 replaces DustBit2
+actor DustBit2Cc : DustBit2 replaces DustBit2
 {
 damagetype "Dust"
 }
 
-actor DustBit3C : DustBit3 replaces DustBit3
+actor DustBit3Cc : DustBit3 replaces DustBit3
 {
 damagetype "Dust"
 }
 
-actor DustBit4C : DustBit4 replaces DustBit4
+actor DustBit4Cc : DustBit4 replaces DustBit4
 {
 damagetype "Dust"
 }
@@ -244,6 +244,19 @@ damagefactor "Napalm", 0.0
 damagefactor "Tomahawk", 0.0
 damagefactor "SakuCrush", 0.0
 damagefactor "Burst", 0.0
+
+damagefactor "WaveBurner", 0.0
+damagefactor "WaveBurnerUW", 0.0
+damagefactor "TenguBlade", 0.0
+damagefactor "SpreadDrill", 0.0
+damagefactor "SpreadDrill2", 0.0
+damagefactor "SpreadDrill3", 0.0
+damagefactor "CopyVision", 0.0
+damagefactor "MagicCard", 0.0
+damagefactor "LightningBolt", 0.0
+damagefactor "IceWall", 0.0
+damagefactor "RemoteMine", 0.0
+
 damagefactor "Noise", 0.0
 damagefactor "Falling", 1.0
 damagefactor "Fire", 1.0
@@ -255,4 +268,8 @@ damagefactor "Simon", 1.0
 damagefactor "Nope", 1.0
 damagefactor "Spiney", 1.0
 damagefactor "Net", 1.0
+
+damagefactor "Jitter", 1.0
+damagefactor "SjasScream", 1.0
+damagefactor "Creeper", 1.0
 }
