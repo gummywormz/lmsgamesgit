@@ -7,7 +7,7 @@ player.damagescreencolor "red"
 States
 {
 Spawn:
-PLAY A 0
+EDD2 A 0
 EDD2 B 1
 EDD2 A 1
 Goto Spawn+2

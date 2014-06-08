@@ -1,5 +1,19 @@
-actor soupbowlwavemanclass : MegamanLMS
+actor soupbowlwavemanclass : PlayerPawn
 {
+player.forwardmove 0.8, 0.8
+player.sidemove 0.78, 0.78
+player.jumpz 10
+player.colorrange 0 0
+player.startitem "MegaBuster"
+player.startitem "BusterAmmo", 3
+mass 9999
+gravity 0.8
++NODAMAGETHRUST
+-QUICKTORETALIATE
++DONTBLAST
++NOBLOOD
+damagefactor "Dummy", 0.0
+scale 2.5
 +NOSKIN
 PLAYer.disPLAYname "soup bowl wave man"
 PLAYer.soundclass "SBWM"

@@ -7,7 +7,7 @@ player.damagescreencolor "white"
 States
 {
 Spawn:
-PLAY A 0
+FZZY A 0
 FZZY B 1
 FZZY A 1
 Goto Spawn+2

@@ -2,12 +2,12 @@ actor Celebi : MegamanLMS
 {
 +NOSKIN
 player.displayname "Celebi"
-player.soundclass "celebi"
+player.soundclass "Celebi"
 player.damagescreencolor "green"
 States
 {
 Spawn:
-PLAY A 0
+CELB A 0
 CELB B 1
 CELB A 1
 Goto Spawn+2

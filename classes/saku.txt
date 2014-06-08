@@ -7,7 +7,7 @@ player.damagescreencolor "green"
 States
 {
 Spawn:
-PLAY A 0
+SAKU A 0
 SAKU B 1
 SAKU A 1
 Goto Spawn+2

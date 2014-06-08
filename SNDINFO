@@ -12,19 +12,19 @@ $playersound	sue	male	*fist		dsnone
 $playersound	sue	male	*usefail	LAND
 $playersound	sue	male	*taunt		SUETAU
 
-$playersound	celebi	male	*death		MEGADEAT
-$playersound	celebi	male	*xdeath		MEGADEAT
-$playersound	celebi	male	*gibbed		MEGADEAT
-$playersound	celebi	male	*pain100	dmgsup
-$playersound	celebi	male	*pain75		dmgsup
-$playersound	celebi	male	*pain50		dmgneu
-$playersound	celebi	male	*pain25		dmgneu
-$playersound	celebi	male	*grunt		LAND
-$playersound	celebi	male	*land		LAND
-$playersound	celebi	male	*jump		dsnone
-$playersound	celebi	male	*fist		dsnone
-$playersound	celebi	male	*usefail	LAND
-$playersound	celebi	male	*taunt		celtau
+$playersound	Celebi	male	*death		MEGADEAT
+$playersound	Celebi	male	*xdeath		MEGADEAT
+$playersound	Celebi	male	*gibbed		MEGADEAT
+$playersound	Celebi	male	*pain100	dmgneu
+$playersound	Celebi	male	*pain75		dmgneu
+$playersound	Celebi	male	*pain50		dmgsup
+$playersound	Celebi	male	*pain25		dmgsup
+$playersound	Celebi	male	*grunt		LAND
+$playersound	Celebi	male	*land		LAND
+$playersound	Celebi	male	*jump		dsnone
+$playersound	Celebi	male	*fist		dsnone
+$playersound	Celebi	male	*usefail	LAND
+$playersound	Celebi	male	*taunt		celtau
 
 $playersound	cock	male	*death		cocdie
 $playersound	cock	male	*xdeath		cocdie
@@ -194,6 +194,7 @@ $playersound	gutsg	male	*fist		dsnone
 $playersound	gutsg	male	*usefail	FATLAND
 $playersound	gutsg	male	*taunt		POWERST
 
+
 marine/pain MEGAPAIN
 
 misc/rotate TETROTAT
@@ -227,66 +228,6 @@ weapon/bombfall FALL
 weapon/coalgun CHUG
 weapon/crosslight WILYBEAM
 weapon/starman starman
-
-//lmsxx
-$random skullact {skull1 skull2 skull3 skull4}
-skull1 skull2
-skull2 skull2
-skull3 skull2
-skull4 skull2
-skullattack skull5
-skullchips	dsrocks
-skulleating CRUNCHIN
-skulldie	skull6
-$random jitpain {jitpain1 jitpain2 jitpain3 jitpain4}
-jitpain1 BOSSPAIN
-jitpain2 BOSSPAIN
-jitpain3 BOSSPAIN
-jitpain4 BOSSPAIN
-
-creepgotya creepgot
-creeperact creep1
-creeperattack creep2
-creeperattack2 creep5
-creeperpain creep3
-creeperdie creep4
-CreeperBall dscurse
-CreeperBallD dscursed
-
-sjasattack		sjasatta
-sjasdeath		skull6
-sjaspain		sjaspain
-sjasdeath		sjasdeat
-sjasact			sjasact
-sjasreflect		TELEPORT
-
-yureiattack YHAUNT
-$volume yureiattack 10.0
-weapons/grenadeexplode NAPALMB
-
-heartbeat	heart
-spawnlightning DSGNTINI
-spinballer DSFIRBFI
-yureispincharge	DSGNTACT
-hellgate	hellgate
-icespike	frosty2
-yureispikecharge	WOOSH3
-ElementalLightning	aireligh
-Lightningcrackle	DSCRACKL
-Yureipain	yurpain
-$random Yureigiggle 		{ Yureigiggle1  Yureigiggle2 Yureigiggle3 Yureigiggle4}
-Yureigiggle1	VIKGIG1
-Yureigiggle2	VIKGIG2
-Yureigiggle3	VIKGIG3
-Yureigiggle4	VIKGIG4
-Warningx		WARN2
-Bigmeteor	DSMETEO2
-Yureidie	YURIDIE
-Yureidying	MANACHAR
-Yureistop	MANASTOP
-Yureiflash	DSFLASHR
-superscream SUPERC4
-//end lmsxx
 
 $random LMS/WIN { 
 LMS/WIN1
@@ -351,3 +292,63 @@ LMS/WIN26 LMSWIN26
 LMS/WIN27 LMSWIN27
 LMS/WIN28 LMSWIN28
 LMS/WIN29 LMSWIN29
+
+//lmsxx
+$random skullact {skull1 skull2 skull3 skull4}
+skull1 skull2
+skull2 skull2
+skull3 skull2
+skull4 skull2
+skullattack skull5
+skullchips	dsrocks
+skulleating CRUNCHIN
+skulldie	skull6
+$random jitpain {jitpain1 jitpain2 jitpain3 jitpain4}
+jitpain1 BOSSPAIN
+jitpain2 BOSSPAIN
+jitpain3 BOSSPAIN
+jitpain4 BOSSPAIN
+
+creepgotya creepgot
+creeperact creep1
+creeperattack creep2
+creeperattack2 creep5
+creeperpain creep3
+creeperdie creep4
+CreeperBall dscurse
+CreeperBallD dscursed
+
+sjasattack		sjasatta
+sjasdeath		skull6
+sjaspain		sjaspain
+sjasdeath		sjasdeat
+sjasact			sjasact
+sjasreflect		TELEPORT
+
+yureiattack YHAUNT
+$volume yureiattack 10.0
+weapons/grenadeexplode NAPALMB
+
+heartbeat	heart
+spawnlightning DSGNTINI
+spinballer DSFIRBFI
+yureispincharge	DSGNTACT
+hellgate	hellgate
+icespike	frosty2
+yureispikecharge	WOOSH3
+ElementalLightning	aireligh
+Lightningcrackle	DSCRACKL
+Yureipain	yurpain
+$random Yureigiggle 		{ Yureigiggle1  Yureigiggle2 Yureigiggle3 Yureigiggle4}
+Yureigiggle1	VIKGIG1
+Yureigiggle2	VIKGIG2
+Yureigiggle3	VIKGIG3
+Yureigiggle4	VIKGIG4
+Warningx		WARN2
+Bigmeteor	DSMETEO2
+Yureidie	YURIDIE
+Yureidying	MANACHAR
+Yureistop	MANASTOP
+Yureiflash	DSFLASHR
+superscream SUPERC4
+//end lmsxx

@@ -47,7 +47,7 @@ actor CreeperBall
 {
 speed 42
 damage 1
-damagetype "SparkShock"
+damagetype "Simon"
 obituary "%k was patient enough to kill %o with %p balls." 
 height 8
 radius 10
@@ -320,6 +320,8 @@ actor SpawnedCreeper
 	radius 13
 	+NOICEDEATH
 	+DONTBLAST
+	-SOLID
+	+GHOST
 	MONSTER
 	Speed 8
 	painchance 256
@@ -482,6 +484,8 @@ obituary "%o was crunched by a Jitterskull."
 Radius 16
 Height 56
 +NOICEDEATH
++GHOST
+-SOLID
 +LOOKALLAROUND
 +FLOORHUGGER
 damagefactor "Jitter", 0.0
@@ -645,6 +649,8 @@ MONSTER
 Radius 16
 Height 56
 +NOICEDEATH
++GHOST
+-SOLID
 +LOOKALLAROUND
 meleedamage 255
 meleesound "sjasattack"
@@ -755,7 +761,7 @@ States
 Spawn:
 NKXP A 0
 NKXP A 0 A_PlaySound("weapons/grenadeexplode")
-BOMB BCDEFGHIJKLMNOPQR 2 bright A_FadeOut(0.04)
+ASEX ABCDEF 2 bright A_FadeOut(0.04)
 Stop
 }
 }
@@ -819,8 +825,8 @@ States
 {
 Spawn:
 PBAL Z 3
-PBAL AB 5 bright
-PBAL AB 0 A_Explode(12, 140, 0)
+GAMA UVW 5 bright
+GAMA UVW 0 A_Explode(12, 140, 0)
 Goto Spawn+1
 Death:
 TNT1 A 1 bright A_SpawnItem("GrenadeExplosion")
@@ -1281,11 +1287,12 @@ speed 38
 States
 {
 Spawn:
-FINK A 0 
-FINK A 0 Thing_ChangeTID(0,555)
-FINK ABC 4 bright
+ASTR B 0 
+ASTR B 0 Thing_ChangeTID(0,555)
+ASTR BCD 4 bright
 Loop
 Death:
+ASEX A 0 A_playSoundEx("weapon/astrocrush","Weapon")
 FINK A 0 A_Explode(40, 180, 0)
 FINK A 0 A_PlaySound("weapons/grenadeexplode")
 TNT1 A 1 A_SpawnItem("GrenadeExplosion")

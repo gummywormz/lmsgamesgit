@@ -7,7 +7,7 @@ player.damagescreencolor "pink"
 States
 {
 Spawn:
-PLAY A 0
+PAC4 A 0
 PAC4 B 1
 PAC4 A 1
 Goto Spawn+2
