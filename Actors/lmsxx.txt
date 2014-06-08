@@ -262,7 +262,7 @@ PROJECTILE
 +RIPPER
 scale 2.5
 damage (30)
-Damagetype "NapalmBomb"
+Damagetype "Nope"
 speed 30
 deathsound "weapons/grenadeexplode"
 States
@@ -818,7 +818,7 @@ radius 20
 height 30
 speed 50
 scale 2.5
-DamageType "NapalmBomb"
+DamageType "Nope"
 Seesound "spinballer"
 Deathsound "weapons/grenadeexplode"
 States
