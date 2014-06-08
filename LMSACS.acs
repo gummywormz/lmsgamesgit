@@ -37,6 +37,9 @@ ConsoleCommand("winlimit 1");
 	if(!GetCvar("LMSGAMES_itsmyswampnow"))
 		{ConsoleCommand("set LMSGAMES_itsmyswampnow 0");
 		ConsoleCommand("archivecvar LMSGAMES_itsmyswampnow");}
+	if(!GetCvar("LMSGAMES_xxhardmode"))
+		{ConsoleCommand("set LMSGAMES_xxhardmode 0");
+		ConsoleCommand("archivecvar LMSGAMES_xxhardmode");}
 
 
 }

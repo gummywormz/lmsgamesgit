@@ -74,7 +74,7 @@ actor CreeperAttack
 speed 40
 Height 5
 Obituary "%o was scared to death by %k." 
-damage 210
+damage 30
 damagetype "Creeper"
 Radius 4
 PROJECTILE
@@ -141,7 +141,7 @@ damage 2
 States{
 Spawn:
 TNT1 A 0
-TNT1 A 0 A_Explode(15, 78, 0)
+TNT1 A 0 A_Explode(15, 83, 0)
 TNT1 A 1 A_RadiusThrust(500, 150, 0) 
 Stop
 }
@@ -261,7 +261,7 @@ alpha 8.0
 PROJECTILE
 +RIPPER
 scale 2.5
-damage 9999
+damage (30)
 Damagetype "NapalmBomb"
 speed 30
 deathsound "weapons/grenadeexplode"
@@ -349,7 +349,7 @@ actor SpawnedCreeper
 	Loop
 	Melee:
 	CRE6 A 0 A_SpawnItem("CreeperFind")
-	CRE7 A 0 A_GiveToTarget("CreeperGotYou",1)
+	CRE7 A 0 //A_GiveToTarget("CreeperGotYou",1)
 	Goto See
 	Pain:
 	CRE7 A 0 A_Recoil(-10)
@@ -404,8 +404,8 @@ See:
 TNT1 A 1 A_Chase
 Stop
 Melee:
-TNT1 A 1 A_CustomMeleeAttack(255, "", "", "SjasScream"/*Originally "Creeper"*/, 0) 
-TNT1 A 0 A_GiveToTarget("CreeperGotYou",1)
+TNT1 A 1 A_CustomMeleeAttack(30, "", "", "SjasScream"/*Originally "Creeper"*/, 0) 
+TNT1 A 0 //A_GiveToTarget("CreeperGotYou",1)
 Stop
 }
 }
@@ -609,7 +609,7 @@ States
 {
 Spawn:
 TNT1 A 0
-TNT1 A 0 A_Explode(55, 83, 0)
+TNT1 A 0 A_Explode(30, 83, 0)
 Stop
 }
 }
@@ -652,7 +652,7 @@ Height 56
 +GHOST
 -SOLID
 +LOOKALLAROUND
-meleedamage 255
+meleedamage 30
 meleesound "sjasattack"
 painchance 256
 translation "112:127=176:191"
@@ -813,7 +813,7 @@ actor Spinball
 obituary "%o was obliterated by the Yurei's flame vortex."
 PROJECTILE
 //+CLIENTSIDEONLY
-Damage 8//Originally 2. Wonder how that worked, only 2 damage and yet still powerfull.
+Damage (8)//Originally 2. Wonder how that worked, only 2 damage and yet still powerfull.
 radius 20
 height 30
 speed 50
@@ -830,7 +830,7 @@ GAMA UVW 0 A_Explode(12, 140, 0)
 Goto Spawn+1
 Death:
 TNT1 A 1 bright A_SpawnItem("GrenadeExplosion")
-TNT1 A 0 A_Explode(20, 140, 0)
+TNT1 A 0 A_Explode(15, 140, 0)
 Stop
 }
 }
@@ -1073,12 +1073,12 @@ Loop
 actor LightingThrower
 {
 PROJECTILE
-Damage 1
+Damage (1)
 bouncefactor 0.0
 +RIPPER
 +DOOMBOUNCE
 Height 20
-speed 33
+speed 55
 obituary "%o was destroyed by the Yurei's lightning thrower."
 Radius 78
 Scale 2.5
@@ -1257,7 +1257,7 @@ SAMA LMN 22 bright
 SAMA N 0 bright A_SpawnItem("Meteorportal", 0, 365)
 SAMA N 0 bright A_SpawnItem("Meteorportalfake", 0, 0)
 SAMA N 1 bright A_ChangeFlag("SHOOTABLE",1)
-SAMA N 0 A_Explode(100, 150, 0)
+SAMA N 0 A_Explode(40, 150, 0)
 Goto See+11
 Pain:
 SAMA N 1 bright ACS_Execute(104,0)
@@ -1293,7 +1293,7 @@ ASTR BCD 4 bright
 Loop
 Death:
 ASEX A 0 A_playSoundEx("weapon/astrocrush","Weapon")
-FINK A 0 A_Explode(40, 180, 0)
+FINK A 0 A_Explode(30, 180, 0)
 FINK A 0 A_PlaySound("weapons/grenadeexplode")
 TNT1 A 1 A_SpawnItem("GrenadeExplosion")
 Stop
