@@ -320,8 +320,8 @@ actor SpawnedCreeper
 	radius 13
 	+NOICEDEATH
 	+DONTBLAST
-	damagefactor "jitter" 0.0
-	damagefactor "sjasscream" 0.0
+	damagefactor "jitter", 0.0
+	damagefactor "sjasscream", 0.0
 	-SOLID
 	+GHOST
 	MONSTER
@@ -649,8 +649,8 @@ scale 2.5
 Speed 12
 bloodcolor "Gray"
 MONSTER
-damagefactor "jitter" 0.0
-damageFactor "sjasscream" 0.0
+damagefactor "jitter", 0.0
+damageFactor "sjasscream", 0.0
 Radius 16
 Height 56
 +NOICEDEATH
