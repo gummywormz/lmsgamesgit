@@ -6,8 +6,8 @@ Script 321 OPEN //set up cvars and force certain things on.
 if(GetCvar("SV_NoMonsters") == 1){
 ConsoleCommand("SV_NoMonsters 0");
 }
-if(GetCvar("SV_lmscountdowntime") !=7){
-ConsoleCommand("SV_lmscountdowntime 7");
+if(GetCvar("SV_lmscountdowntime") !=6){
+ConsoleCommand("SV_lmscountdowntime 6");
 }
 if(GetCvar("SV_chasecam") == 0){
 ConsoleCommand("SV_chasecam 1");

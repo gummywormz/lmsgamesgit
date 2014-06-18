@@ -22,12 +22,12 @@ if(wildchance == 0){
 if(getlevelinfo(LEVELINFO_LEVELNUM) == 6026){ACS_ExecuteAlways(670,0,9);Terminate;}
 printbold(s:"U jelly of my wurld?");
 for (int j=0; j<256; J++)
-{Floor_Waggle (j,250,100,48,0);
-Ceiling_Waggle (j,250,100,48,0);}
+{Floor_Waggle(j, 350, 138, 0, 0);
+Ceiling_Waggle(j, 450, 138, 0, 0);}
 Delay(35*2);
-//for (j=0; j<256; J++)
-//{Floor_Waggle(j, 300, 180, 0, 0);
-//Ceiling_Waggle(j, 300, 180, 8, 0);}
+for (j=0; j<256; J++)
+{Floor_Waggle(j, 350, 138, 30, 0);
+Ceiling_Waggle(j, 450, 138, 30, 0);}
 }
 if(wildchance == 1){printbold(s:"supah ice soup");
 for (j=0; j<999; J++)

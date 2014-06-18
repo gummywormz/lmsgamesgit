@@ -49,6 +49,7 @@ BTLY A 1
 BTLY ABCDDDEF 5 A_Look
 Loop
 See:
+BTLY A 0 A_ChangeFlag("INVULNERABLE",0)
 BTLY ABCDDDEF 6 A_Chase
 Loop
 Melee:
@@ -58,9 +59,9 @@ BTLY ABCDDDEF 3 A_SkullAttack
 BTLY ABCDDDEF 2
 BTLY A 0 A_ChangeFlag("INVULNERABLE",0)
 BTLY ABCDDDEF 6 A_CustomMissile("TellyBomb",0,0,0)
-BTLY A 1 A_PainAttack("BombTellys")
-BTLY A 1 A_PainAttack("BombTellys")
-BTLY A 1 A_PainAttack("BombTellys")
+BTLY A 2 A_PainAttack("BombTellys")
+BTLY A 2 A_PainAttack("BombTellys")
+BTLY A 2 A_PainAttack("BombTellys")
 Goto Spawn+1
 Missile:
 BTLY A 0

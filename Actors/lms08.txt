@@ -428,6 +428,7 @@ NIGM A 1
 NIGM ABCD 3 A_Look
 Loop
 See:
+NIGM A 0 A_ChangeFlag("INVULNERABLE",0)
 NIGM ABCD 3 A_Chase
 Loop
 Missile:
@@ -521,7 +522,8 @@ NIGM A 1 A_FaceTarget
 NIGM A 1 A_ChangeFlag("INVULNERABLE",1)
 NIGM A 1 A_PlaySoundEx("weapon/chargekick","Voice")
 NIGM A 1 A_SkullAttack(50)
-NIGM A 15 A_ChangeFlag("INVULNERABLE",0)
+NIGM A 15 
+NIGM A 0 A_ChangeFlag("INVULNERABLE",0)
 goto See
 Pain:
 NIGM E 8 A_Pain
