@@ -7,6 +7,7 @@ ACTOR HealthBonus2 : HealthBonus Replaces HealthBonus 2014
 +SYNCHRONIZED
 Inventory.PickupSound "item/energyup"
 INVENTORY.RESPAWNTICS 210
+Scale 2.5
 States
 {
 Spawn:

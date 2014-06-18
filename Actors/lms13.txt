@@ -48,8 +48,7 @@ actor WindStormStartME
 {
 PROJECTILE
 -NOGRAVITY
-+RIPPER
-Damage (8)
+Damage (1)
 damagetype "WindStorm"
 Obituary "$OB_WINDSTORM"
 Height 8

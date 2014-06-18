@@ -122,6 +122,7 @@ actor ChargeKickS
 {
 PROJECTILE
 +RIPPER
+Obituary "%o was kicked around by %k's Super charge kick."
 Radius 14
 Height 25
 scale 2.5
@@ -184,6 +185,7 @@ actor CoalShot
 {
 PROJECTILE
 +LOOKALLAROUND
+Obituary "%o was burned by %k's Coal Gun."
 +SKYEXPLODE
 +DONTBLAST
 damagetype "Met"
@@ -210,6 +212,7 @@ PROJECTILE
 Radius 8
 Height 8
 scale 2.5
+Obituary "%o was enlightened by %k's Cross Light."
 damage (8)
 damagetype "Met"
 speed 50
@@ -227,6 +230,7 @@ actor CrossLightProj2
 PROJECTILE
 Radius 8
 Height 8
+Obituary "%o was enlightened by %k's Cross Light."
 scale 2.5
 damage (10)
 damagetype "Met"
@@ -317,6 +321,7 @@ stop
 actor FlashBombExplosion2 : FlashBomb
 {
 +NOCLIP
+Obituary "%o was blinded by %k's Flash Grenade."
 +DONTBLAST
 +DONTSPLASH
 Damagetype "Met"

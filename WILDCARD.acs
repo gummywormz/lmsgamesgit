@@ -14,7 +14,7 @@ if(GetCvar("LMSGAMES_DISABLEWILDCARDS") == 1 || getlevelinfo(LEVELINFO_LEVELNUM)
 int wildchance = random(0,200);
 Delay(35);
 if(wildchance >= 175){terminate;}
-Delay(35 * 6);
+Delay(35 * 8);
 printbold(s:"\clw\cji\chl\cfd \cdc\cna\cmr\cvd \cd activated!");
 Delay(35 * 2);
 wildchance = random(0,10);
@@ -22,8 +22,8 @@ if(wildchance == 0){
 if(getlevelinfo(LEVELINFO_LEVELNUM) == 6026){ACS_ExecuteAlways(670,0,9);Terminate;}
 printbold(s:"U jelly of my wurld?");
 for (int j=0; j<256; J++)
-{Floor_Waggle (j,100,64,48,0);
-Ceiling_Waggle (j,100,64,48,0);}
+{Floor_Waggle (j,250,100,48,0);
+Ceiling_Waggle (j,250,100,48,0);}
 Delay(35*2);
 //for (j=0; j<256; J++)
 //{Floor_Waggle(j, 300, 180, 0, 0);

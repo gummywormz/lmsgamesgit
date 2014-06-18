@@ -50,6 +50,7 @@ Goto Ready
 actor DeathBall : ThunderBolt
 {
 PROJECTILE
+obituary "%o is no longer living thanks to %k's death weapon."
 damagetype "Nope"
 Damage (25)
 States

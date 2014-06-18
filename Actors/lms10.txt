@@ -53,7 +53,7 @@ LOOP
 actor EvilYashichi
 {
 scale 2.5
-speed 5
+speed 7
 Height 16
 Radius 16
 Obituary "%o touched the Evil Yashichi."

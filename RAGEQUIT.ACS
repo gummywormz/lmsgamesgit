@@ -36,5 +36,6 @@ str ragequote[ragequotes] = {
 
 script 699 (int rq) DISCONNECT
 {
+if(getlevelinfo(LEVELINFO_LEVELNUM) == 6666){TERMINATE;}
 hudmessagebold(s:"", n:rq + 1, s:RageQuote[random(0,RAGEQUOTES)]; HUDMSG_FADEINOUT|HUDMSG_LOG, 665, CR_RED, 1.5, -0.8, 2.0, 1.0, 1.0);
 }

@@ -262,7 +262,7 @@ PROJECTILE
 +RIPPER
 scale 2.5
 damage (30)
-Damagetype "Nope"
+Damagetype "Jitter"
 speed 30
 deathsound "weapons/grenadeexplode"
 States
@@ -320,6 +320,8 @@ actor SpawnedCreeper
 	radius 13
 	+NOICEDEATH
 	+DONTBLAST
+	damagefactor "jitter" 0.0
+	damagefactor "sjasscream" 0.0
 	-SOLID
 	+GHOST
 	MONSTER
@@ -489,6 +491,7 @@ Height 56
 +LOOKALLAROUND
 +FLOORHUGGER
 damagefactor "Jitter", 0.0
+damagefactor "SjasScream", 0.0
 +NORADIUSDMG
 translation "112:127=80:111"
 States
@@ -646,6 +649,8 @@ scale 2.5
 Speed 12
 bloodcolor "Gray"
 MONSTER
+damagefactor "jitter" 0.0
+damageFactor "sjasscream" 0.0
 Radius 16
 Height 56
 +NOICEDEATH
@@ -799,6 +804,7 @@ SAMA N 0 bright A_Stop
 SAMA N 0 A_Explode(8, 120, 0)
 SAMA N 1 bright A_CustomMissile("Spinball", 31, 0, 0, 2, 0)//Original frame amount 0
 SAMA N 2 bright A_CustomMissile("Spinball", 31, 0, 180, 2, 0)//Original frame amount 1
+SAMA N 2 bright
 Goto Spawn+10
 Death:
 SAMA N 40 bright 
@@ -816,7 +822,7 @@ PROJECTILE
 Damage (8)//Originally 2. Wonder how that worked, only 2 damage and yet still powerfull.
 radius 20
 height 30
-speed 50
+speed 37
 scale 2.5
 DamageType "Nope"
 Seesound "spinballer"
@@ -1351,6 +1357,7 @@ actor YureiIntro
 +DONTSPLASH
 -SHOOTABLE
 +SOLID
++NOCLIP
 bloodcolor "Black"
 mass 9999999
 Radius 30

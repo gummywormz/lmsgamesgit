@@ -1,5 +1,10 @@
 //hyper jump rope storm
 
+actor BetaBusterRodDamageLine2x : BetaBusterRodDamageLine
+{
+damage (20)
+}
+
 actor RopeHyperStormH 
 {
 speed 0
@@ -27,55 +32,55 @@ Speed1:
 HSHZ S 0 A_SpawnItemEx("BusterRodBarrier")
 HSHZ S 0 A_SetAngle(angle + 4)
 HSHZ S 1 A_SpawnItemEx("BetaBusterRodRod",450,0,12,40)
-HSHZ S 0 A_SpawnItemEx("BetaBusterRodDamageLine",0,0,0,100)
+HSHZ S 0 A_SpawnItemEx("BetaBusterRodDamageLine2x",0,0,0,100)
 loop
 Speed2:
 HSHZ S 0 A_SpawnItemEx("BusterRodBarrier")
 HSHZ S 0 A_SetAngle(angle + 6)
 HSHZ S 1 A_SpawnItemEx("BetaBusterRodRod",450,0,12,40)
-HSHZ S 0 A_SpawnItemEx("BetaBusterRodDamageLine",0,0,0,100)
+HSHZ S 0 A_SpawnItemEx("BetaBusterRodDamageLine2x",0,0,0,100)
 loop
 Speed3:
 HSHZ S 0 A_SpawnItemEx("BusterRodBarrier")
 HSHZ S 0 A_SetAngle(angle + 8)
 HSHZ S 1 A_SpawnItemEx("BetaBusterRodRod",450,0,12,40)
-HSHZ S 0 A_SpawnItemEx("BetaBusterRodDamageLine",0,0,0,100)
+HSHZ S 0 A_SpawnItemEx("BetaBusterRodDamageLine2x",0,0,0,100)
 loop
 Speed4:
 HSHZ S 0 A_SpawnItemEx("BusterRodBarrier")
 HSHZ S 0 A_SetAngle(angle + 10)
 HSHZ S 1 A_SpawnItemEx("BetaBusterRodRod",450,0,12,40)
-HSHZ S 0 A_SpawnItemEx("BetaBusterRodDamageLine2",0,0,0,100)
+HSHZ S 0 A_SpawnItemEx("BetaBusterRodDamageLine2x",0,0,0,100)
 loop
 Speed5:
 HSHZ S 0 A_SpawnItemEx("BusterRodBarrier")
 HSHZ S 0 A_SetAngle(angle + 12)
 HSHZ S 1 A_SpawnItemEx("BetaBusterRodRod",450,0,12,40)
-HSHZ S 0 A_SpawnItemEx("BetaBusterRodDamageLine2",0,0,0,100)
+HSHZ S 0 A_SpawnItemEx("BetaBusterRodDamageLine2x",0,0,0,100)
 loop
 Speed6:
 HSHZ S 0 A_SpawnItemEx("BusterRodBarrier")
 HSHZ S 0 A_SetAngle(angle + 14)
 HSHZ S 1 A_SpawnItemEx("BetaBusterRodRod",450,0,12,40)
-HSHZ S 0 A_SpawnItemEx("BetaBusterRodDamageLine2",0,0,0,100)
+HSHZ S 0 A_SpawnItemEx("BetaBusterRodDamageLine2x",0,0,0,100)
 loop
 Speed7:
 HSHZ S 0 A_SpawnItemEx("BusterRodBarrier")
 HSHZ S 0 A_SetAngle(angle + 16)
 HSHZ S 1 A_SpawnItemEx("BetaBusterRodRod",450,0,12,40)
-HSHZ S 0 A_SpawnItemEx("BetaBusterRodDamageLine2",0,0,0,100)
+HSHZ S 0 A_SpawnItemEx("BetaBusterRodDamageLine2x",0,0,0,100)
 loop
 Speed8:
 HSHZ S 0 A_SpawnItemEx("BusterRodBarrier")
 HSHZ S 0 A_SetAngle(angle + 18)
 HSHZ S 1 A_SpawnItemEx("BetaBusterRodRod",450,0,12,40)
-HSHZ S 0 A_SpawnItemEx("BetaBusterRodDamageLine2",0,0,0,100)
+HSHZ S 0 A_SpawnItemEx("BetaBusterRodDamageLine2x",0,0,0,100)
 loop
 Speed9:
 HSHZ S 0 A_SpawnItemEx("BusterRodBarrier")
 HSHZ S 0 A_SetAngle(angle + 20)
 HSHZ S 1 A_SpawnItemEx("BetaBusterRodRod",450,0,12,40)
-HSHZ S 0 A_SpawnItemEx("BetaBusterRodDamageLine2",0,0,0,100)
+HSHZ S 0 A_SpawnItemEx("BetaBusterRodDamageLine2x",0,0,0,100)
 loop
 Death:
 HSHZ S 1

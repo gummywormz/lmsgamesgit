@@ -377,5 +377,5 @@ loop
 
 Actor MicroGockroach : GockRoach
 {
-Scale 0.5
+Scale 1.0
 }
