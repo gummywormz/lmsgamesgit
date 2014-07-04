@@ -7,16 +7,16 @@ player.damagescreencolor "pink"
 States
 {
 Spawn:
-PAC4 A 0
-PAC4 B 1
-PAC4 A 1
+PACS A 0
+PACS B 1
+PACS A 1
 Goto Spawn+2
 See:
-PAC4 BCDE 5
+PACS BCDE 5
 Goto Spawn
 Missile:
-PAC4 F 5 
-PAC4 G 4 
+PACS F 5 
+PACS G 4 
 goto Spawn
 Pain.FireSpin:
 Pain.QuickBoomerang:
@@ -43,333 +43,333 @@ Pain.WaveBurnerUW:
 Pain.Misc:
 Pain.Treble:
 Pain.FlameSwordSpark:
-PAC4 H 0 
+PACS H 0 
 Goto pain+1
 Pain.Rigormortis:
 goto Missile
 Pain.Net:
-PAC4 H 0 ACS_ExecuteAlways(18,0)
+PACS H 0 ACS_ExecuteAlways(18,0)
 goto Pain+1
 Pain.Afterburner:
-PAC4 H 0 HealThing(2)
-PAC4 H 0 A_Jump(128,"OtherThrust")
-PAC4 H 0 ThrustThing(random(0,255),15,0,0)
-PAC4 H 0 ThrustThingZ(0,50,0,0)
+PACS H 0 HealThing(2)
+PACS H 0 A_Jump(128,"OtherThrust")
+PACS H 0 ThrustThing(random(0,255),15,0,0)
+PACS H 0 ThrustThingZ(0,50,0,0)
 Goto pain+1
 OtherThrust:
-PAC4 H 0 ThrustThing(random(0,255),20,1,0)
-PAC4 H 0 ThrustThingZ(0,50,0,0)
+PACS H 0 ThrustThing(random(0,255),20,1,0)
+PACS H 0 ThrustThingZ(0,50,0,0)
 Goto pain+1
 Pain.RingFist:
-PAC4 H 0 HealThing(99)
+PACS H 0 HealThing(99)
 Goto CheckRings
 CheckRings: // i'm sorry for the wall of A_SpawnItemEx
-PAC4 H 0 A_JumpIfInventory("SonicRing",5,"Drop5Rings")
-PAC4 H 0 A_JumpIfInventory("SonicRing",4,"Drop4Rings")
-PAC4 H 0 A_JumpIfInventory("SonicRing",3,"Drop3Rings")
-PAC4 H 0 A_JumpIfInventory("SonicRing",2,"Drop2Rings")
-PAC4 H 0 A_JumpIfInventory("SonicRing",1,"DropRing")
+PACS H 0 A_JumpIfInventory("SonicRing",5,"Drop5Rings")
+PACS H 0 A_JumpIfInventory("SonicRing",4,"Drop4Rings")
+PACS H 0 A_JumpIfInventory("SonicRing",3,"Drop3Rings")
+PACS H 0 A_JumpIfInventory("SonicRing",2,"Drop2Rings")
+PACS H 0 A_JumpIfInventory("SonicRing",1,"DropRing")
 Goto Pain+1
 Drop5Rings:
-PAC4 H 0 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-6,6),Random(-6,6),Random(-6,6),0)
-PAC4 H 0 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-6,6),Random(-6,6),Random(-6,6),0)
-PAC4 H 0 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-6,6),Random(-6,6),Random(-6,6),0)
-PAC4 H 0 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-6,6),Random(-6,6),Random(-6,6),0)
-PAC4 H 0 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-6,6),Random(-6,6),Random(-6,6),0)
-PAC4 H 0 A_TakeInventory("SonicRing",5)
+PACS H 0 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-6,6),Random(-6,6),Random(-6,6),0)
+PACS H 0 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-6,6),Random(-6,6),Random(-6,6),0)
+PACS H 0 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-6,6),Random(-6,6),Random(-6,6),0)
+PACS H 0 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-6,6),Random(-6,6),Random(-6,6),0)
+PACS H 0 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-6,6),Random(-6,6),Random(-6,6),0)
+PACS H 0 A_TakeInventory("SonicRing",5)
 Goto Pain+1
 Drop4Rings:
-PAC4 H 0 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-6,6),Random(-6,6),Random(-6,6),0)
-PAC4 H 0 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-6,6),Random(-6,6),Random(-6,6),0)
-PAC4 H 0 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-6,6),Random(-6,6),Random(-6,6),0)
-PAC4 H 0 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-6,6),Random(-6,6),Random(-6,6),0)
-PAC4 H 0 A_TakeInventory("SonicRing",4)
+PACS H 0 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-6,6),Random(-6,6),Random(-6,6),0)
+PACS H 0 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-6,6),Random(-6,6),Random(-6,6),0)
+PACS H 0 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-6,6),Random(-6,6),Random(-6,6),0)
+PACS H 0 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-6,6),Random(-6,6),Random(-6,6),0)
+PACS H 0 A_TakeInventory("SonicRing",4)
 Goto Pain+1
 Drop3Rings:
-PAC4 H 0 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-6,6),Random(-6,6),Random(-6,6),0)
-PAC4 H 0 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-6,6),Random(-6,6),Random(-6,6),0)
-PAC4 H 0 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-6,6),Random(-6,6),Random(-6,6),0)
-PAC4 H 0 A_TakeInventory("SonicRing",3)
+PACS H 0 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-6,6),Random(-6,6),Random(-6,6),0)
+PACS H 0 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-6,6),Random(-6,6),Random(-6,6),0)
+PACS H 0 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-6,6),Random(-6,6),Random(-6,6),0)
+PACS H 0 A_TakeInventory("SonicRing",3)
 Goto Pain+1
 Drop2Rings:
-PAC4 H 0 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-6,6),Random(-6,6),Random(-6,6),0)
-PAC4 H 0 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-6,6),Random(-6,6),Random(-6,6),0)
-PAC4 H 0 A_TakeInventory("SonicRing",2)
+PACS H 0 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-6,6),Random(-6,6),Random(-6,6),0)
+PACS H 0 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-6,6),Random(-6,6),Random(-6,6),0)
+PACS H 0 A_TakeInventory("SonicRing",2)
 Goto Pain+1
 DropRing:
-PAC4 H 1 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-6,6),Random(-6,6),Random(-6,6),0)
-PAC4 H 0 A_TakeInventory("SonicRing",1)
+PACS H 1 A_SpawnItemEx("SonicDroppedRing",0,0,4,Random(-6,6),Random(-6,6),Random(-6,6),0)
+PACS H 0 A_TakeInventory("SonicRing",1)
 Goto Pain+1
 Pain.MegaFist:
-PAC4 H 0 ThrustThing(angle*256/360+128,random(10,15), 1, 0)
-PAC4 H 1 HealThing(1)
+PACS H 0 ThrustThing(angle*256/360+128,random(10,15), 1, 0)
+PACS H 1 HealThing(1)
 Goto pain+1
 Pain.FlameSword:
-PAC4 H 0
-PAC4 HH 0 A_SpawnItemEx("ScorchBit",0,0,0,random(-10,10),random(-10,10),random(10,15),random(0,360))
+PACS H 0
+PACS HH 0 A_SpawnItemEx("ScorchBit",0,0,0,random(-10,10),random(-10,10),random(10,15),random(0,360))
 Goto pain
 Pain.WaterBalloon:
 Pain.FlashBomb:
 Pain.RemoteMine:
 Pain.IceWall:
-PAC4 H 0 A_ScaleVelocity(0.9)
+PACS H 0 A_ScaleVelocity(0.9)
 Goto Pain+1
 Pain.SpreadDrill:
 Pain.SpreadDrill2:
 Pain.SpreadDrill3:
-PAC4 H 0 A_JumpIfInventory("SpreadDrillProtect", 1 ,2)
-PAC4 H 0 A_PlaySoundEx("weapon/spreaddrillhit","SoundSlot5")
-PAC4 H 0 A_GiveInventory("SpreadDrillProtect", 1)
+PACS H 0 A_JumpIfInventory("SpreadDrillProtect", 1 ,2)
+PACS H 0 A_PlaySoundEx("weapon/spreaddrillhit","SoundSlot5")
+PACS H 0 A_GiveInventory("SpreadDrillProtect", 1)
 Goto pain+1
 Pain.WindStorm:
 Pain.FlingDamage:
-PAC4 H 0 //ThrustThing(random(0,255),50,1,0)
-PAC4 H 0 ThrustThing(random(0,255),5,0,0)
-PAC4 H 0 ThrustThingZ(0,30,0,0)
+PACS H 0 //ThrustThing(random(0,255),50,1,0)
+PACS H 0 ThrustThing(random(0,255),5,0,0)
+PACS H 0 ThrustThingZ(0,30,0,0)
 Goto pain+1
 Pain.SlashClaw:
-PAC4 H 0 A_PlaySoundEx("weapon/slashclawhit","SoundSlot5")
+PACS H 0 A_PlaySoundEx("weapon/slashclawhit","SoundSlot5")
 Goto Pain
 Pain.FlashStopper:
-PAC4 H 0 
-PAC4 H 0 A_JumpIfInventory("BrightBlind", 1,3)
-PAC4 H 0 A_GiveInventory("BrightBlind",125)
-PAC4 H 0 ACS_ExecuteAlways(249, 0)
+PACS H 0 
+PACS H 0 A_JumpIfInventory("BrightBlind", 1,3)
+PACS H 0 A_GiveInventory("BrightBlind",125)
+PACS H 0 ACS_ExecuteAlways(249, 0)
 Goto pain+1
-PAC4 H 0 A_GiveInventory("BrightBlind",55)
+PACS H 0 A_GiveInventory("BrightBlind",55)
 Goto pain+1
 Pain.Simon:
-PAC4 H 0
+PACS H 0
 Goto Pain.SparkShock
 Pain.TimeSlow:
-PAC4 H 0 A_GiveInventory("Slowed",1)
+PACS H 0 A_GiveInventory("Slowed",1)
 Goto pain+1
 Pain.SparkShock:
-PAC4 H 0 A_SpawnItemEx("ShockFX",4,0,32)
-PAC4 H 0 A_GiveInventory("Shocked",1)
-PAC4 H 1 A_Stop
-PAC4 H 1 A_Stop
-PAC4 H 1 A_Stop
-PAC4 H 1 A_Stop
-PAC4 H 1 A_Stop
-PAC4 H 0 A_GiveInventory("Shocked",1)
-PAC4 H 1 A_Stop
-PAC4 H 1 A_Stop
-PAC4 H 1 A_Stop
-PAC4 H 1 A_Stop
-PAC4 H 1 A_Stop
-PAC4 H 0 A_GiveInventory("Shocked",1)
-PAC4 H 1 A_Stop
+PACS H 0 A_SpawnItemEx("ShockFX",4,0,32)
+PACS H 0 A_GiveInventory("Shocked",1)
+PACS H 1 A_Stop
+PACS H 1 A_Stop
+PACS H 1 A_Stop
+PACS H 1 A_Stop
+PACS H 1 A_Stop
+PACS H 0 A_GiveInventory("Shocked",1)
+PACS H 1 A_Stop
+PACS H 1 A_Stop
+PACS H 1 A_Stop
+PACS H 1 A_Stop
+PACS H 1 A_Stop
+PACS H 0 A_GiveInventory("Shocked",1)
+PACS H 1 A_Stop
 Goto Pain+1
 Pain.CrashBomb:
-PAC4 H 0 A_Stop
+PACS H 0 A_Stop
 Goto Pain+1
 Pain.GravityHold:
-PAC4 H 0 A_ChangeVelocity(momx, momy, 0, CVF_REPLACE)
-PAC4 H 0 A_JumpIf(z-floorz>180,"GravityForce4")
-PAC4 H 0 A_JumpIf(z-floorz>128,"GravityForce3")
-PAC4 H 0 A_JumpIf(z-floorz>32,"GravityForce2")
-PAC4 H 0 A_JumpIf(z-floorz>8,"GravityForce1")
+PACS H 0 A_ChangeVelocity(momx, momy, 0, CVF_REPLACE)
+PACS H 0 A_JumpIf(z-floorz>180,"GravityForce4")
+PACS H 0 A_JumpIf(z-floorz>128,"GravityForce3")
+PACS H 0 A_JumpIf(z-floorz>32,"GravityForce2")
+PACS H 0 A_JumpIf(z-floorz>8,"GravityForce1")
 Goto GravityForceFinish
 GravityForce4:
-PAC4 H 2 A_GiveInventory("GravityForce4",1)
+PACS H 2 A_GiveInventory("GravityForce4",1)
 Goto GravityForceFinish
 GravityForce3:
-PAC4 H 2 A_GiveInventory("GravityForce3",1)
+PACS H 2 A_GiveInventory("GravityForce3",1)
 Goto GravityForceFinish
 GravityForce2:
-PAC4 H 2 A_GiveInventory("GravityForce2",1)
+PACS H 2 A_GiveInventory("GravityForce2",1)
 Goto GravityForceFinish
 GravityForce1:
-PAC4 H 2 A_GiveInventory("GravityForce1",1)
+PACS H 2 A_GiveInventory("GravityForce1",1)
 Goto GravityForceFinish
 GravityForceFinish:
-PAC4 H 0 A_CheckFloor(2)
-PAC4 H 0 ThrustThingZ(0,150,1,0)
-PAC4 H 0
+PACS H 0 A_CheckFloor(2)
+PACS H 0 ThrustThingZ(0,150,1,0)
+PACS H 0
 Goto Pain+1
 Pain.WilyFire:
-PAC4 H 0 //A_ChangeFlag("SHOOTABLE",0)
-PAC4 H 0 A_SpawnItemEx("ImOnFire")
-PAC4 H 0 A_GiveInventory("FireVision",1)
+PACS H 0 //A_ChangeFlag("SHOOTABLE",0)
+PACS H 0 A_SpawnItemEx("ImOnFire")
+PACS H 0 A_GiveInventory("FireVision",1)
 Goto Pain
 Pain.WilyIce:
-PAC4 H 0 A_ChangeFlag("SHOOTABLE",0)
-PAC4 H 0 SetPlayerProperty(0,1,4)
-PAC4 H 0 A_SpawnItemEx("ImFrozen")
-PAC4 H 0 A_GiveInventory("IceVision",1)
-PAC4 H 30 A_Stop
-PAC4 H 30 A_ChangeFlag("SHOOTABLE",1)
-PAC4 H 0 SetPlayerProperty(0,0,0)
-PAC4 H 0 A_TakeInventory("IceVision",1)
+PACS H 0 A_ChangeFlag("SHOOTABLE",0)
+PACS H 0 SetPlayerProperty(0,1,4)
+PACS H 0 A_SpawnItemEx("ImFrozen")
+PACS H 0 A_GiveInventory("IceVision",1)
+PACS H 30 A_Stop
+PACS H 30 A_ChangeFlag("SHOOTABLE",1)
+PACS H 0 SetPlayerProperty(0,0,0)
+PACS H 0 A_TakeInventory("IceVision",1)
 Goto Spawn
 Pain.Drowning:
 Pain.Fire:
 Pain.Falling:
 Pain.Slime:
-PAC4 H 0 
-PAC4 H 0 A_JumpIfInventory("BeatCallCheck", 1, "BeatAssist")
+PACS H 0 
+PACS H 0 A_JumpIfInventory("BeatCallCheck", 1, "BeatAssist")
 Goto Pain+1
 BeatAssist:
-PAC4 H 0 
-PAC4 H 0 HealThing(2)
-PAC4 H 0 ThrustThingZ(0,25,0,0)
-PAC4 H 0 ACS_ExecuteAlways(205,0)
+PACS H 0 
+PACS H 0 HealThing(2)
+PACS H 0 ThrustThingZ(0,25,0,0)
+PACS H 0 ACS_ExecuteAlways(205,0)
 Goto Pain+1
 Pain:
-PAC4 H 0 A_ScaleVelocity(0.75)
-PAC4 H 0 A_JumpIfInventory("EnkerMirrorCount",1,"EnkerAbsorb")
-PAC4 H 0 A_Pain
-PAC4 H 0 //A_GiveInventory("TempInvince",1)
-PAC4 H 0 //SetPlayerProperty(0, 1, 4)
-PAC4 H 1 A_SpawnItem("PainFX",0,3)
-PAC4 H 1 A_Recoil(1)
-PAC4 H 1 A_SpawnItem("PainFX",0,3)
-PAC4 H 1 //A_Recoil(1)
-PAC4 H 1 A_SpawnItem("PainFX",0,3)
-PAC4 H 1 //A_Recoil(1)
-PAC4 H 1 A_SpawnItem("PainFX",0,3)
-PAC4 H 1 //A_Recoil(1)
-PAC4 H 1 A_SpawnItem("PainFX",0,3)
-PAC4 H 1 //A_Recoil(1)
-PAC4 H 1 A_SpawnItem("PainFX",0,3)
-PAC4 H 1 //A_Recoil(1)
-PAC4 H 1 A_SpawnItem("PainFX",0,3)
-PAC4 H 1 //A_Recoil(1)
-PAC4 H 1 A_SpawnItem("PainFX",0,3)
-PAC4 H 1 //A_Recoil(1)
-PAC4 H 1 A_SpawnItem("PainFX",0,3)
-PAC4 H 1 //A_Recoil(1)
-PAC4 H 1 A_SpawnItem("PainFX",0,3)
-PAC4 H 1 //A_Recoil(1)
-PAC4 H 0 //SetPlayerProperty(0, 0, 4)
-PAC4 H 0//SetPlayerProperty(0,0,1)
+PACS H 0 A_ScaleVelocity(0.75)
+PACS H 0 A_JumpIfInventory("EnkerMirrorCount",1,"EnkerAbsorb")
+PACS H 0 A_Pain
+PACS H 0 //A_GiveInventory("TempInvince",1)
+PACS H 0 //SetPlayerProperty(0, 1, 4)
+PACS H 1 A_SpawnItem("PainFX",0,3)
+PACS H 1 A_Recoil(1)
+PACS H 1 A_SpawnItem("PainFX",0,3)
+PACS H 1 //A_Recoil(1)
+PACS H 1 A_SpawnItem("PainFX",0,3)
+PACS H 1 //A_Recoil(1)
+PACS H 1 A_SpawnItem("PainFX",0,3)
+PACS H 1 //A_Recoil(1)
+PACS H 1 A_SpawnItem("PainFX",0,3)
+PACS H 1 //A_Recoil(1)
+PACS H 1 A_SpawnItem("PainFX",0,3)
+PACS H 1 //A_Recoil(1)
+PACS H 1 A_SpawnItem("PainFX",0,3)
+PACS H 1 //A_Recoil(1)
+PACS H 1 A_SpawnItem("PainFX",0,3)
+PACS H 1 //A_Recoil(1)
+PACS H 1 A_SpawnItem("PainFX",0,3)
+PACS H 1 //A_Recoil(1)
+PACS H 1 A_SpawnItem("PainFX",0,3)
+PACS H 1 //A_Recoil(1)
+PACS H 0 //SetPlayerProperty(0, 0, 4)
+PACS H 0//SetPlayerProperty(0,0,1)
 Goto Spawn
 Death.Beam:
 Death.instagib:
 Death.Telefrag:
-PAC4 Z 1 SetPlayerProperty(0, 0, 4)
-PAC4 H 0 A_GiveToTarget("KilledMe",1)
-PAC4 H 0 A_GiveToTarget("KilledMeStock",1)
-PAC4 H 0 A_GiveInventory("CutterFlag",999)
-PAC4 H 0 A_TakeInventory("WeaponCharge",999)
-PAC4 H 0 A_GiveInventory("IsDead",1)
-PAC4 Z 0 A_PlayerScream
-PAC4 H 0 A_SpawnItemEx("FakeDeathFX", 0, 0, 32)
-PAC4 Z 1 A_CheckPlayerDone
+PACS Z 1 SetPlayerProperty(0, 0, 4)
+PACS H 0 A_GiveToTarget("KilledMe",1)
+PACS H 0 A_GiveToTarget("KilledMeStock",1)
+PACS H 0 A_GiveInventory("CutterFlag",999)
+PACS H 0 A_TakeInventory("WeaponCharge",999)
+PACS H 0 A_GiveInventory("IsDead",1)
+PACS Z 0 A_PlayerScream
+PACS H 0 A_SpawnItemEx("FakeDeathFX", 0, 0, 32)
+PACS Z 1 A_CheckPlayerDone
 wait
 Death.WindStorm:
 Death.GravityHold:
-PAC4 H 0 SetPlayerProperty(0, 0, 4)
-PAC4 H 0 A_ChangeFlag("NOINTERACTION", 1)
-PAC4 H 0 A_TakeInventory("WeaponCharge",999)
-PAC4 H 0 A_NoBlocking
-PAC4 H 0 A_TakeInventory("CutterFlag",999)
-PAC4 H 0 A_GiveInventory("IsDead",1)
-PAC4 H 0 A_Stop
-PAC4 H 0 A_GiveToTarget("KilledMeStock",1)
-PAC4 H 1 A_GiveToTarget("KilledMe",1)
-PAC4 H 0 ACS_ExecuteAlways(999,0,0)
-PAC4 H 0 SetPlayerProperty(0, 0, 4)
+PACS H 0 SetPlayerProperty(0, 0, 4)
+PACS H 0 A_ChangeFlag("NOINTERACTION", 1)
+PACS H 0 A_TakeInventory("WeaponCharge",999)
+PACS H 0 A_NoBlocking
+PACS H 0 A_TakeInventory("CutterFlag",999)
+PACS H 0 A_GiveInventory("IsDead",1)
+PACS H 0 A_Stop
+PACS H 0 A_GiveToTarget("KilledMeStock",1)
+PACS H 1 A_GiveToTarget("KilledMe",1)
+PACS H 0 ACS_ExecuteAlways(999,0,0)
+PACS H 0 SetPlayerProperty(0, 0, 4)
 RiseMyMegaman:
-PAC4 H 1 ThrustThingZ(0,10,0,1)
-PAC4 H 0 A_JumpIf(ceilingz-z<64, "ExplodeNow")
-PAC4 H 0 A_GiveInventory("Cutterflag", 1)
-PAC4 H 0 A_JumpIfInventory("CutterFlag", 35, "ExplodeNow")
+PACS H 1 ThrustThingZ(0,10,0,1)
+PACS H 0 A_JumpIf(ceilingz-z<64, "ExplodeNow")
+PACS H 0 A_GiveInventory("Cutterflag", 1)
+PACS H 0 A_JumpIfInventory("CutterFlag", 35, "ExplodeNow")
 Goto RiseMyMegaman
 ExplodeNow:
-PAC4 H 0 A_Stop
-PAC4 H 0 A_PlayerScream
-PAC4 H 0 A_GiveInventory("CutterFlag",999)
-PAC4 H 0 A_SpawnItemEx("FakeDeathFX", 0, 0, 0)
-PAC4 Z 1 A_CheckPlayerDone
+PACS H 0 A_Stop
+PACS H 0 A_PlayerScream
+PACS H 0 A_GiveInventory("CutterFlag",999)
+PACS H 0 A_SpawnItemEx("FakeDeathFX", 0, 0, 0)
+PACS Z 1 A_CheckPlayerDone
 wait
 Death:
-PAC4 H 0 SetPlayerProperty(0, 0, 4)
-PAC4 H 0 A_TakeInventory("WeaponCharge",999)   
-PAC4 H 0 A_NoBlocking
-PAC4 H 0 A_GiveInventory("CutterFlag",999)
-PAC4 H 0 A_GiveInventory("IsDead",1)
-PAC4 H 0 A_Stop
-PAC4 H 0 A_GiveToTarget("KilledMeStock",1)
-PAC4 H 1 A_GiveToTarget("KilledMe",1)
-PAC4 H 19 ACS_ExecuteAlways(999,0,0)
-PAC4 H 0 SetPlayerProperty(0, 0, 4)
-PAC4 H 0 A_PlayerScream
-PAC4 H 1 A_JumpIfInventory("CockroachFlag",1,"CockroachFlag")
-PAC4 H 0 A_SpawnItemEx("FakeDeathFX", 0, 0, 32)
-PAC4 Z 1 A_CheckPlayerDone
+PACS H 0 SetPlayerProperty(0, 0, 4)
+PACS H 0 A_TakeInventory("WeaponCharge",999)   
+PACS H 0 A_NoBlocking
+PACS H 0 A_GiveInventory("CutterFlag",999)
+PACS H 0 A_GiveInventory("IsDead",1)
+PACS H 0 A_Stop
+PACS H 0 A_GiveToTarget("KilledMeStock",1)
+PACS H 1 A_GiveToTarget("KilledMe",1)
+PACS H 19 ACS_ExecuteAlways(999,0,0)
+PACS H 0 SetPlayerProperty(0, 0, 4)
+PACS H 0 A_PlayerScream
+PACS H 1 A_JumpIfInventory("CockroachFlag",1,"CockroachFlag")
+PACS H 0 A_SpawnItemEx("FakeDeathFX", 0, 0, 32)
+PACS Z 1 A_CheckPlayerDone
 wait
 CockRoachFlag:
-PAC4 H 0 A_SpawnItemEx("Gockroach")
-PAC4 Z 1 A_CheckPlayerDone
+PACS H 0 A_SpawnItemEx("Gockroach")
+PACS Z 1 A_CheckPlayerDone
 wait
 ExplodeDeath:
-PAC4 H 1 A_SpawnItemEx("OblivionExplode")
+PACS H 1 A_SpawnItemEx("OblivionExplode")
 goto Spawn
 Death.Falling:
-PAC4 H 0 SetPlayerProperty(0, 0, 4)
-PAC4 H 0 A_TakeInventory("WeaponCharge",999)   
-PAC4 H 0 A_NoBlocking
-PAC4 H 0 A_GiveInventory("CutterFlag",999)
-PAC4 H 0 A_GiveInventory("IsDead",1)
-PAC4 Z 1 A_PlayerScream
-PAC4 Z 1 A_Stop
-PAC4 Z 1 ACS_ExecuteAlways(999,0,0)
-//PAC4 Z -1
-PAC4 Z 1 A_CheckPlayerDone
+PACS H 0 SetPlayerProperty(0, 0, 4)
+PACS H 0 A_TakeInventory("WeaponCharge",999)   
+PACS H 0 A_NoBlocking
+PACS H 0 A_GiveInventory("CutterFlag",999)
+PACS H 0 A_GiveInventory("IsDead",1)
+PACS Z 1 A_PlayerScream
+PACS Z 1 A_Stop
+PACS Z 1 ACS_ExecuteAlways(999,0,0)
+//PACS Z -1
+PACS Z 1 A_CheckPlayerDone
 wait
 Ice:
-PAC4 H 0 SetPlayerProperty(0, 0, 4)
-PAC4 H 1 A_PlayerScream
-PAC4 H 0 A_TakeInventory("WeaponCharge",999)   
-PAC4 H 0 A_GiveInventory("CutterFlag",999)
-PAC4 H 0 A_GiveInventory("IsDead",1)
-PAC4 H 0 ACS_ExecuteAlways(998,0,105,1)
-PAC4 H 0 A_NoBlocking
-PAC4 H 0 A_FreezeDeath
-PAC4 H 35
-PAC4 H 0 A_SpawnItemEx("FrozenDeathFX", 0, 0, 16)
-PAC4 Z 1 A_CheckPlayerDone
+PACS H 0 SetPlayerProperty(0, 0, 4)
+PACS H 1 A_PlayerScream
+PACS H 0 A_TakeInventory("WeaponCharge",999)   
+PACS H 0 A_GiveInventory("CutterFlag",999)
+PACS H 0 A_GiveInventory("IsDead",1)
+PACS H 0 ACS_ExecuteAlways(998,0,105,1)
+PACS H 0 A_NoBlocking
+PACS H 0 A_FreezeDeath
+PACS H 35
+PACS H 0 A_SpawnItemEx("FrozenDeathFX", 0, 0, 16)
+PACS Z 1 A_CheckPlayerDone
 wait
 //stop
 PunkSpin:
-PAC4 AVW 3
-PAC4 XY 3
+PACS AVW 3
+PACS XY 3
 Goto PunkSpin+3
 PunkStop:
-PAC4 WV 5
+PACS WV 5
 Goto Spawn
 EnkerRaise:
-PAC4 Y 1
+PACS Y 1
 loop
 EnkerAbsorb:
-PAC4 Y 0 A_PlaySound("weapon/mirrorabsorb")
-PAC4 Y 0 A_GiveInventory("EnkerMirrorCount",1)
+PACS Y 0 A_PlaySound("weapon/mirrorabsorb")
+PACS Y 0 A_GiveInventory("EnkerMirrorCount",1)
 Goto EnkerAbsorb3
 EnkerAbsorb3:
-PAC4 Y 3 ACS_ExecuteAlways(998,0,65)
-PAC4 Y 0 A_JumpIfInventory("EnkerMirrorCount",1,"EnkerAbsorb2")
+PACS Y 3 ACS_ExecuteAlways(998,0,65)
+PACS Y 0 A_JumpIfInventory("EnkerMirrorCount",1,"EnkerAbsorb2")
 Goto Spawn
 EnkerAbsorb2:
-PAC4 Y 3 ACS_ExecuteAlways(998,0,66)
-PAC4 Y 0 A_JumpIfInventory("EnkerMirrorCount",1,"EnkerAbsorb3")
+PACS Y 3 ACS_ExecuteAlways(998,0,66)
+PACS Y 0 A_JumpIfInventory("EnkerMirrorCount",1,"EnkerAbsorb3")
 Goto Spawn
 DarkLeap:
-PAC4 Y 1 A_SpawnItemEx("DarkDamager")
-PAC4 Y 0 A_JumpIf(z-floorz==0,"Spawn")
+PACS Y 1 A_SpawnItemEx("DarkDamager")
+PACS Y 0 A_JumpIf(z-floorz==0,"Spawn")
 loop
 BalladeJump:
-PAC4 Y 5 A_SpawnItemEx("BalladeMelee")
+PACS Y 5 A_SpawnItemEx("BalladeMelee")
 loop
 TheEnd:
-PAC4 G 4
+PACS G 4
 loop
 CreditWalk:
-PAC4 BCDE 8
+PACS BCDE 8
 loop
 CreditRun:
-PAC4 BCDE 5
+PACS BCDE 5
 loop
 }
 }
