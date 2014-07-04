@@ -73,7 +73,7 @@ GiveActorInventory(q,"ISplode2",1);
 }
 }
 
-Script 543 OPEN clientside{
+Script 543 ENTER clientside{
 if(GetCvar("chase_dist") <= 359 && random(0,150) >= 50){
 Print(s:"Your chase_dist is too low. A recommended value is between 360 - 600.");
 }

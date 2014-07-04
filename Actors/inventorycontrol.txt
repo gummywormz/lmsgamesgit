@@ -100,3 +100,18 @@ damagefactor "Simon", 2
 damagefactor "Normal", 2
 Powerup.Duration 0x7FFFFFFF
 }
+
+actor NoTargetMe : CustomInventory
+{
+inventory.amount 1
+inventory.maxamount 1
+States
+{
+Spawn:
+TNT1 A 1
+stop
+Pickup:
+SKLB G 0 SetPlayerProperty(0,1,1)
+stop
+}
+}
