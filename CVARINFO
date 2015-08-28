@@ -1,0 +1,11 @@
+server int LMSGAMES_STARTIMER = 0;
+server int LMSGAMES_LAPCOUNT = 3;
+server int LMSGAMES_PLAYERFREEZE = 0;
+server int LMSGAMES_TARGETSNEEDED = 0;
+server int LMSGAMES_DISABLEWILDCARDS = 0;
+server int LMSGAMES_DISABLEANTISPEC = 0;
+server int LMSGAMES_itsmyswampnow = 0;
+server int LMSGAMES_xxhardmode = 0;
+server int LMSGAMES_LOCKLASTMAP = 0;
+
+user noarchive int LMSGAMES_chaseremind = 0;

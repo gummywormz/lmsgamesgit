@@ -37,7 +37,7 @@ actor FastSpeedXXX : Powerspeed
 +INVENTORY.ALWAYSPICKUP
 +INVENTORY.AUTOACTIVATE
 powerup.duration 0x7FFFFFFF
-Speed 20.0
+Speed 10.0
 }
 
 actor ConfusedSpeed2 : Powerspeed
@@ -105,7 +105,7 @@ Powerup.Color InverseMap
 States
 {
 Spawn:
-PINV A 1 
+PINV A 1
 stop
 }
 }
