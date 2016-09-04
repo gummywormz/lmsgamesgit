@@ -15,6 +15,7 @@ gravity 0.8
 damagefactor "Dummy", 0.0
 scale 2.5
 +NOSKIN
+Player.MaxSkinSizeFactor 0, 0
 player.displayname "gutsmang"
 player.soundclass "gutsg"
 player.damagescreencolor "yellow"
@@ -28,6 +29,27 @@ Goto Spawn+2
 See:
 GGUS BCDE 5
 Goto Spawn
+Pain.BotSight:
+GGUS B 5 HealThing(1)
+Goto Spawn+2
+pain.YureiIceSpike:
+GGUS H 0 A_GiveInventory("YureiSpikeProtect", 1)
+goto pain
+pain.LaserTrident:
+GGUS H 0 A_GiveInventory("LaserTridentProtect", 1)
+goto pain
+Pain.ConcreteShot:
+GGUS H 0 A_JumpIfInventory("ConcreteVision", 1, "ConcreteReset")
+GGUS H 0 A_GiveInventory("ConcreteVision", 1)
+GGUS H 0 A_GiveInventory("ConcreteTime", 105)
+GGUS H 0 A_SpawnItemEx("ConcreteWatcher")
+goto Pain+1
+ConcreteReset:
+GGUS H 0 A_GiveInventory("ConcreteTime", 105)
+goto Pain+1
+Pain.TornadoBlow:
+GGUS H 0 ThrustThingZ(0, 60, 0, 0)
+goto Pain+1
 Missile:
 GGUS F 5 
 GGUS G 4 
@@ -204,6 +226,7 @@ GGUS H 0
 Goto Pain+1
 Death.WindStorm:
 Death.GravityHold:
+Death.TornadoBlow:
 GGUS H 0 SetPlayerProperty(0, 0, 4)
 GGUS H 0 A_ChangeFlag("NOINTERACTION", 1)
 GGUS H 0 A_TakeInventory("WeaponCharge",999)

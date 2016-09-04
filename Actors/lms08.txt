@@ -51,6 +51,7 @@ Fire:
 MSHD A 0 A_JumpIfNoAmmo("NoAmmo")
 MSHD A 0 A_PlaySoundEx("weapon/magicwand","Weapon")
 MSHD A 0 A_FireCustomMissile("MagicStar2",0,0,15,0)
+MSHD A 0 A_FireCustomMissile("MagicMelee",0,0,15,0)
 MSHD B 3
 MSHD A 12
 MSHD A 0 A_Refire
@@ -80,6 +81,27 @@ Death:
 TNT1 A 0 
 TNT1 A 0
 MSTA EFG 3
+stop
+}
+}
+
+actor MagicMelee
+{
+PROJECTILE
++NOTARGETSWITCH
+damagetype "Bolt"
+scale 2.5
+Speed 20
+Radius 7
+Height 6
+Damage (50)
+States
+{
+Spawn:
+TNT1 A 0
+TNT1 A 4
+Death:
+TNT1 A 0 
 stop
 }
 }

@@ -38,7 +38,7 @@ Fire:
 THUN H 1 A_PlaySoundEx("weapon/crosslight","Weapon")
 THUN H 0 A_FireCustomMissile("DeathBall",0,0,8,0)
 THUN IJ 5
-THUN H 18
+THUN H 30
 THUN H 1 A_Refire
 GOTO READY
 NoAmmo:
