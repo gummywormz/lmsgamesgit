@@ -21,6 +21,7 @@ loop
 actor StarRodLMSWep2 : MegaBuster
 {
 Weapon.AmmoUse 0
+Tag "Star Rod"
 Weapon.AmmoGive 28
 Weapon.SlotNumber 1
 Obituary "%o was magic'd by %k's Star Rod."
@@ -94,12 +95,12 @@ scale 2.5
 Speed 20
 Radius 7
 Height 6
-Damage (50)
+Damage (30)
 States
 {
 Spawn:
 TNT1 A 0
-TNT1 A 4
+TNT1 A 8
 Death:
 TNT1 A 0 
 stop

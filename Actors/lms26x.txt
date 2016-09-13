@@ -2,6 +2,7 @@
 
 actor NotMegaBuster : MegaBuster
 {
+Tag "Not the Mega Buster"
 States
 {
 Fire:

@@ -14,6 +14,7 @@ inventory.maxamount 1
 
 actor DeathWeapon : MegaBuster
 {
+Tag "Death Weapon"
 Weapon.AmmoUse 0
 Weapon.AmmoGive 1
 obituary "%o is no longer living thanks to %k's death weapon."

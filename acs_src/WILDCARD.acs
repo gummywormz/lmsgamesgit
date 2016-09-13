@@ -19,7 +19,13 @@ printbold(s:"\clw\cji\chl\cfd \cdc\cna\cmr\cvd \cd activated!");
 Delay(35 * 2);
 wildchance = random(0,10);
 if(wildchance == 0){
-if(getlevelinfo(LEVELINFO_LEVELNUM) == 6026){ACS_ExecuteAlways(670,0,9);Terminate;}
+
+if(getlevelinfo(LEVELINFO_LEVELNUM) == 6026 || getlevelinfo(LEVELINFO_LEVELNUM) == 6005)
+{
+ACS_ExecuteAlways(670,0,9);
+Terminate;
+}
+
 printbold(s:"U jelly of my wurld?");
 for (int j=0; j<256; J++)
 {Floor_Waggle(j, 350, 138, 0, 0);

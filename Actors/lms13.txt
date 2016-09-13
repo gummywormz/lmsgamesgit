@@ -73,6 +73,7 @@ stop
 actor ElevatorWeapon : MegaBuster
 {
 Weapon.AmmoUse 0
+Tag "Elevator Weapon"
 Weapon.SlotNumber 1
 Obituary "%o was hacked by %k's elevator weapons."
 Inventory.Pickupmessage "Wat"

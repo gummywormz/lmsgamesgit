@@ -1,13 +1,13 @@
 ===========================================================================
-Advanced engine needed  : Zandronum 1.2
+Advanced engine needed  : Zandronum 2.0
 Primary purpose         : Last Man Standing
 ===========================================================================
 Title                   : LMSGames
-Filename                : lmsgames-v1b.pk3
-Release date            : 6/7/2013
+Filename                : lmsgames-v1d.pk3
+Release date            : 9/13/2016
 Author                  : Gummywormz
 Other Files By Author   : DIRP - A weapon pack featuring 110 unique
-                          weapons. (not yet compatible with MM8BDM v4)
+                          weapons.
 
 Description             : LMSGames is a game mode that is heavily inspired
                           by StupidLMS. It's basically Mario Party without

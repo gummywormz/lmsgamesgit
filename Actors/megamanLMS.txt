@@ -412,6 +412,6 @@ loop
 
 actor YureiSpikeProtect : PowerProtection
 {
-Powerup.Duration -2
+Powerup.Duration 5
 damagefactor "YureiIceSpike", 0.0
 }
