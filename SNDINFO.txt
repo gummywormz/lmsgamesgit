@@ -1,0 +1,355 @@
+$playersound	sue	male	*death		SUEDEAT
+$playersound	sue	male	*xdeath		SUEDEAT
+$playersound	sue	male	*gibbed		SUEDEAT
+$playersound	sue	male	*pain100	SUEPAIN
+$playersound	sue	male	*pain75		SUEPAIN
+$playersound	sue	male	*pain50		SUEPAIN
+$playersound	sue	male	*pain25		SUEPAIN
+$playersound	sue	male	*grunt		LAND
+$playersound	sue	male	*land		LAND
+$playersound	sue	male	*jump		dsnone
+$playersound	sue	male	*fist		dsnone
+$playersound	sue	male	*usefail	LAND
+$playersound	sue	male	*taunt		SUETAU
+
+$playersound	Celebi	male	*death		MEGADEAT
+$playersound	Celebi	male	*xdeath		MEGADEAT
+$playersound	Celebi	male	*gibbed		MEGADEAT
+$playersound	Celebi	male	*pain100	dmgneu
+$playersound	Celebi	male	*pain75		dmgneu
+$playersound	Celebi	male	*pain50		dmgsup
+$playersound	Celebi	male	*pain25		dmgsup
+$playersound	Celebi	male	*grunt		LAND
+$playersound	Celebi	male	*land		LAND
+$playersound	Celebi	male	*jump		dsnone
+$playersound	Celebi	male	*fist		dsnone
+$playersound	Celebi	male	*usefail	LAND
+$playersound	Celebi	male	*taunt		celtau
+
+$playersound	cock	male	*death		cocdie
+$playersound	cock	male	*xdeath		cocdie
+$playersound	cock	male	*gibbed		cocdie
+$playersound	cock	male	*pain100	cocpain
+$playersound	cock	male	*pain75		cocpain
+$playersound	cock	male	*pain50		cocpain
+$playersound	cock	male	*pain25		cocpain
+$playersound	cock	male	*grunt		LAND
+$playersound	cock	male	*land		LAND
+$playersound	cock	male	*jump		dsnone
+$playersound	cock	male	*fist		dsnone
+$playersound	cock	male	*usefail	LAND
+$playersound	cock	male	*taunt		coctau
+
+$playersound	fuzzy	male	*death		FZDIE
+$playersound	fuzzy	male	*xdeath	 	FZDIE
+$playersound	fuzzy	male	*gibbed		FZDIE
+$playersound	fuzzy	male	*pain100	FZPAIN
+$playersound	fuzzy	male	*pain75		FZPAIN
+$playersound	fuzzy	male	*pain50		FZPAIN
+$playersound	fuzzy	male	*pain25		FZPAIN
+$playersound	fuzzy	male	*grunt		LAND
+$playersound	fuzzy	male	*land		LAND
+$playersound	fuzzy	male	*jump		dsnone
+$playersound	fuzzy	male	*fist		dsnone
+$playersound	fuzzy	male	*usefail	LAND
+$playersound	fuzzy	male	*taunt		FZTAU
+
+$playersound	airtile	male	*death		AIRSHOT
+$playersound	airtile	male	*xdeath	 	AIRSHOT
+$playersound	airtile	male	*gibbed		AIRSHOT
+$playersound	airtile	male	*pain100	MM2PAIN
+$playersound	airtile	male	*pain75		MM2PAIN
+$playersound	airtile	male	*pain50		MM2PAIN
+$playersound	airtile	male	*pain25		MM2PAIN
+$playersound	airtile	male	*grunt		LAND
+$playersound	airtile	male	*land		LAND
+$playersound	airtile	male	*jump		dsnone
+$playersound	airtile	male	*fist		dsnone
+$playersound	airtile	male	*usefail	LAND
+$playersound	airtile	male	*taunt		AIRSHOT
+
+$playersound	saku	male	*death		MEGADEAT
+$playersound	saku	male	*xdeath	 	MEGADEAT
+$playersound	saku	male	*gibbed		MEGADEAT
+$playersound	saku	male	*pain100	MM2PAIN
+$playersound	saku	male	*pain75		MM2PAIN
+$playersound	saku	male	*pain50		MM2PAIN
+$playersound	saku	male	*pain25		MM2PAIN
+$playersound	saku	male	*grunt		SAKUC
+$playersound	saku	male	*land		SAKUC
+$playersound	saku	male	*jump		dsnone
+$playersound	saku	male	*fist		dsnone
+$playersound	saku	male	*usefail	SAKUC
+$playersound	saku	male	*taunt		SAKUC
+
+$playersound	ring	male	*death		RINGDIE
+$playersound	ring	male	*xdeath	 	RINGDIE
+$playersound	ring	male	*gibbed		RINGDIE
+$playersound	ring	male	*pain100	RINGSND
+$playersound	ring	male	*pain75		RINGSND
+$playersound	ring	male	*pain50		RINGSND
+$playersound	ring	male	*pain25		RINGSND
+$playersound	ring	male	*grunt		LAND
+$playersound	ring	male	*land		LAND
+$playersound	ring	male	*jump		dsnone
+$playersound	ring	male	*fist		dsnone
+$playersound	ring	male	*usefail	LAND
+$playersound	ring	male	*taunt		RINGSND
+
+$playersound	eddie	male	*death		MEGADEAT
+$playersound	eddie	male	*xdeath	 	MEGADEAT
+$playersound	eddie	male	*gibbed		MEGADEAT
+$playersound	eddie	male	*pain100	MM3PAIN
+$playersound	eddie	male	*pain75		MM3PAIN
+$playersound	eddie	male	*pain50		MM3PAIN
+$playersound	eddie	male	*pain25		MM3PAIN
+$playersound	eddie	male	*grunt		LAND
+$playersound	eddie	male	*land		LAND
+$playersound	eddie	male	*jump		dsnone
+$playersound	eddie	male	*fist		dsnone
+$playersound	eddie	male	*usefail	LAND
+$playersound	eddie	male	*taunt		EDDTAU
+
+$playersound	orb	male	*death		MEGADEAT
+$playersound	orb	male	*xdeath	 	MEGADEAT
+$playersound	orb	male	*gibbed		MEGADEAT
+$playersound	orb	male	*pain100	MM3PAIN
+$playersound	orb	male	*pain75		MM3PAIN
+$playersound	orb	male	*pain50		MM3PAIN
+$playersound	orb	male	*pain25		MM3PAIN
+$playersound	orb	male	*grunt		LAND
+$playersound	orb	male	*land		LAND
+$playersound	orb	male	*jump		dsnone
+$playersound	orb	male	*fist		dsnone
+$playersound	orb	male	*usefail	LAND
+$playersound	orb	male	*taunt		dsnone
+
+$playersound	mare	male	*death		MEGADEAT
+$playersound	mare	male	*xdeath	 	MEGADEAT
+$playersound	mare	male	*gibbed		MEGADEAT
+$playersound	mare	male	*pain100	MM3PAIN
+$playersound	mare	male	*pain75		MM3PAIN
+$playersound	mare	male	*pain50		MM3PAIN
+$playersound	mare	male	*pain25		MM3PAIN
+$playersound	mare	male	*grunt		LAND
+$playersound	mare	male	*land		LAND
+$playersound	mare	male	*jump		dsnone
+$playersound	mare	male	*fist		dsnone
+$playersound	mare	male	*usefail	LAND
+$playersound	mare	male	*taunt		dsnone
+
+$playersound	sbwm	male	*death		MEGADEAT
+$playersound	sbwm	male	*xdeath	 	MEGADEAT
+$playersound	sbwm	male	*gibbed		MEGADEAT
+$playersound	sbwm	male	*pain100	MM4PAIN
+$playersound	sbwm	male	*pain75		MM4PAIN
+$playersound	sbwm	male	*pain50		MM4PAIN
+$playersound	sbwm	male	*pain25		MM4PAIN
+$playersound	sbwm	male	*grunt		LAND
+$playersound	sbwm	male	*land		LAND
+$playersound	sbwm	male	*jump		dsnone
+$playersound	sbwm	male	*fist		dsnone
+$playersound	sbwm	male	*usefail	LAND
+$playersound	sbwm	male	*taunt		wavmus
+
+$playersound	modok	male	*death		MODODIE
+$playersound	modok	male	*xdeath		MODODIE
+$playersound	modok	male	*gibbed		MODODIE
+$playersound	modok	male	*pain100	MODOP4
+$playersound	modok	male	*pain75		MODOP3
+$playersound	modok	male	*pain50		MODOP2
+$playersound	modok	male	*pain25		MODOP1
+$playersound	modok	male	*grunt		FATLAND
+$playersound	modok	male	*land		FATLAND
+$playersound	modok	male	*jump		dsnone
+$playersound	modok	male	*fist		dsnone
+$playersound	modok	male	*usefail	FATLAND
+$playersound	modok	male	*taunt		MODOTAU
+
+$playersound	micm	male	*death		MINIDEAT
+$playersound	micm	male	*xdeath		MINIDEAT
+$playersound	micm	male	*gibbed		MINIDEAT
+$playersound	micm	male	*pain100	MINIPAIN
+$playersound	micm	male	*pain75		MINIPAIN
+$playersound	micm	male	*pain50		MINIPAIN
+$playersound	micm	male	*pain25		MINIPAIN
+$playersound	micm	male	*grunt		miniland
+$playersound	micm	male	*land		miniland
+$playersound	micm	male	*jump		dsnone
+$playersound	micm	male	*fist		dsnone
+$playersound	micm	male	*usefail	miniland
+$playersound	micm	male	*taunt		CHUGX
+
+$playersound	gutsg	male	*death		MEGADEAT
+$playersound	gutsg	male	*xdeath		MEGADEAT
+$playersound	gutsg	male	*gibbed		MEGADEAT
+$playersound	gutsg	male	*pain100	MM4PAIN
+$playersound	gutsg	male	*pain75		MM4PAIN
+$playersound	gutsg	male	*pain50		MM4PAIN
+$playersound	gutsg	male	*pain25		MM4PAIN
+$playersound	gutsg	male	*grunt		FATLAND
+$playersound	gutsg	male	*land		FATLAND
+$playersound	gutsg	male	*jump		dsnone
+$playersound	gutsg	male	*fist		dsnone
+$playersound	gutsg	male	*usefail	FATLAND
+$playersound	gutsg	male	*taunt		POWERST
+
+
+marine/pain MEGAPAIN
+
+misc/rotate TETROTAT
+misc/tetfall TETFALL
+misc/tetclear ROWCLEAR
+misc/tetmove TETMOVE
+misc/springpin BYON
+misc/ring RINGSND
+misc/norings ERROR
+misc/songet SONGET
+misc/hubsel LMS_SEL
+misc/elevatorstart ELES
+misc/elevatorloop ELEL
+misc/elevatorend ELEE
+misc/hardtrap NIP
+misc/itembox itembox
+misc/lastlap FINLAP
+misc/screw SCREW
+misc/switch1 switch1
+
+misc/health_pkup ENERGYUP
+
+alarm/1 alarm
+alarm/2 alarm2
+alarm/3 alarm3
+
+weapon/magicwand MAGICSHO
+weapon/bombfall FALL
+weapon/coalgun CHUG
+weapon/crosslight WILYBEAM
+weapon/starman starman
+
+$random LMS/WIN { 
+LMS/WIN1
+LMS/WIN2
+LMS/WIN3
+LMS/WIN4
+LMS/WIN5
+LMS/WIN6
+LMS/WIN7
+LMS/WIN8
+LMS/WIN9
+LMS/WIN10
+LMS/WIN11
+LMS/WIN12
+LMS/WIN13
+LMS/WIN14
+LMS/WIN15
+LMS/WIN16
+LMS/WIN17
+LMS/WIN18
+LMS/WIN19
+LMS/WIN20
+LMS/WIN21
+LMS/WIN22
+LMS/WIN23
+LMS/WIN24
+LMS/WIN25
+LMS/WIN26
+LMS/WIN27
+LMS/WIN28
+LMS/WIN29
+}
+
+$limit LMS/WIN 1
+
+LMS/WIN1 LMSWIN1
+LMS/WIN2 LMSWIN2
+LMS/WIN3 LMSWIN3
+LMS/WIN4 LMSWIN4
+LMS/WIN5 LMSWIN5
+LMS/WIN6 LMSWIN6
+LMS/WIN7 LMSWIN7
+LMS/WIN8 LMSWIN8
+LMS/WIN9 LMSWIN9
+LMS/WIN10 LMSWIN10
+LMS/WIN11 LMSWIN11
+LMS/WIN12 LMSWIN12
+LMS/WIN13 LMSWIN13
+LMS/WIN14 LMSWIN14
+LMS/WIN15 LMSWIN15
+LMS/WIN16 LMSWIN16
+LMS/WIN17 LMSWIN17
+LMS/WIN18 LMSWIN18
+LMS/WIN19 LMSWIN19
+LMS/WIN20 LMSWIN20
+LMS/WIN21 LMSWIN21
+LMS/WIN22 LMSWIN22
+LMS/WIN23 LMSWIN23
+LMS/WIN24 LMSWIN24
+LMS/WIN25 LMSWIN25
+LMS/WIN26 LMSWIN26
+LMS/WIN27 LMSWIN27
+LMS/WIN28 LMSWIN28
+LMS/WIN29 LMSWIN29
+
+//lmsxx
+$random skullact {skull1 skull2 skull3 skull4}
+skull1 skull2
+skull2 skull2
+skull3 skull2
+skull4 skull2
+skullattack skull5
+skullchips	dsrocks
+skulleating CRUNCHIN
+skulldie	skull6
+$random jitpain {jitpain1 jitpain2 jitpain3 jitpain4}
+jitpain1 BOSSPAIN
+jitpain2 BOSSPAIN
+jitpain3 BOSSPAIN
+jitpain4 BOSSPAIN
+
+creepgotya creepgot
+creeperact creep1
+creeperattack creep2
+creeperattack2 creep5
+creeperpain creep3
+creeperdie creep4
+CreeperBall dscurse
+CreeperBallD dscursed
+
+sjasattack		sjasatta
+sjasdeath		skull6
+sjaspain		sjaspain
+sjasdeath		sjasdeat
+sjasact			sjasact
+sjasreflect		TELEPORT
+
+yureiattack YHAUNT
+$volume yureiattack 10.0
+weapons/grenadeexplode NAPALMB
+
+heartbeat	heart
+spawnlightning DSGNTINI
+spinballer DSFIRBFI
+yureispincharge	DSGNTACT
+hellgate	hellgate
+icespike	frosty2
+yureispikecharge	WOOSH3
+ElementalLightning	aireligh
+Lightningcrackle	DSCRACKL
+Yureipain	yurpain
+$random Yureigiggle 		{ Yureigiggle1  Yureigiggle2 Yureigiggle3 Yureigiggle4}
+Yureigiggle1	VIKGIG1
+Yureigiggle2	VIKGIG2
+Yureigiggle3	VIKGIG3
+Yureigiggle4	VIKGIG4
+Warningx		WARN2
+Bigmeteor	DSMETEO2
+Yureidie	YURIDIE
+Yureidying	MANACHAR
+Yureistop	MANASTOP
+Yureiflash	DSFLASHR
+superscream SUPERC4
+
+xx/scream YHAUNT
+xx/gutsman GUTSMAN
+//end lmsxx

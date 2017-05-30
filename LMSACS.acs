@@ -16,32 +16,10 @@ ConsoleCommand("SV_chasecam 1");
 if(GetCvar("Winlimit") == 0){
 ConsoleCommand("winlimit 1");
 }
-	if(!GetCvar("LMSGAMES_STARTIMER"))
-		{ConsoleCommand("set LMSGAMES_STARTIMER 0");
-		ConsoleCommand("archivecvar LMSGAMES_STARTIMER");}
-	if(!GetCvar("LMSGAMES_LAPCOUNT"))
-		{ConsoleCommand("set LMSGAMES_LAPCOUNT 0");
-		ConsoleCommand("archivecvar LMSGAMES_LAPCOUNT");}
-	if(!GetCvar("LMSGAMES_PLAYERFREEZE"))
-		{ConsoleCommand("set LMSGAMES_PLAYERFREEZE 0");
-		ConsoleCommand("archivecvar LMSGAMES_PLAYERFREEZE");}
-	if(!GetCvar("LMSGAMES_TARGETSNEEDED"))
-		{ConsoleCommand("set LMSGAMES_TARGETSNEEDED 0");
-		ConsoleCommand("archivecvar LMSGAMES_TARGETSNEEDED");}
-	if(!GetCvar("LMSGAMES_DISABLEWILDCARDS"))
-		{ConsoleCommand("set LMSGAMES_DISABLEWILDCARDS 0");
-		ConsoleCommand("archivecvar LMSGAMES_DISABLEWILDCARDS");}
-	if(!GetCvar("LMSGAMES_DISABLEANTISPEC"))
-		{ConsoleCommand("set LMSGAMES_DISABLEANTISPEC 0");
-		ConsoleCommand("archivecvar LMSGAMES_DISABLEANTISPEC");}
-	if(!GetCvar("LMSGAMES_itsmyswampnow"))
-		{ConsoleCommand("set LMSGAMES_itsmyswampnow 0");
-		ConsoleCommand("archivecvar LMSGAMES_itsmyswampnow");}
-	if(!GetCvar("LMSGAMES_xxhardmode"))
-		{ConsoleCommand("set LMSGAMES_xxhardmode 0");
-		ConsoleCommand("archivecvar LMSGAMES_xxhardmode");}
 
-
+if(GetCvar("mm8bdm_sv_nolmsweapons") == false){
+ConsoleCommand("mm8bdm_sv_nolmsweapons true");
+}
 }
 
 Script 981 (void) //useless lol
@@ -74,8 +52,9 @@ GiveActorInventory(q,"ISplode2",1);
 }
 
 Script 543 ENTER clientside{
-if(GetCvar("chase_dist") <= 359 && random(0,150) >= 50){
+if(GetCvar("chase_dist") <= 359 && GetCvar("LMSGAMES_chaseremind") == 0){
 Print(s:"Your chase_dist is too low. A recommended value is between 360 - 600.");
+ConsoleCommand("LMSGAMES_chaseremind 1");
 }
 }
 

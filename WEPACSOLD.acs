@@ -4,6 +4,7 @@ BOOL IsATeamGame = 0;
 
 
 #include "zcommon.acs"
+#include "8bdmlib.acs"
 #library "wcolors"
 
 #DEFINE MEGABUSTER 0
@@ -150,6 +151,8 @@ BOOL IsATeamGame = 0;
 #DEFINE ICEWALLB 185
 #DEFINE LIGHTNINGBOLTB 186
 
+#DEFINE MAX_BUSTERS 7
+#DEFINE MAX_WEAPONS_GLOBAL 87
 
 #DEFINE MAX_WEAPONS 77 //Maximum number of weapons for the following arrays
 
@@ -240,6 +243,18 @@ str weapons_ammo[MAX_WEAPONS][3] =
 {"IceWallWep", "IceWallAmmo", "Ice Wall"},
 {"LightningBoltWep", "LightningBoltAmmo", "Lightning Bolt"},
 {"TrebleBoost", "TrebleBoostAmmo", "Treble Boost"} //Can't be stolen, but just in case
+};
+
+str BusterUpgrades[MAX_BUSTERS] =
+{
+"ProtoUpgrade",
+"ArrowBusterUpgrade",
+"LaserBusterUpgrade",
+"BassUpgrade",
+"DuoFistUpgrade",
+"AdaptorUpgrade",
+"TrebleBoostUpgrade"/*,
+"MegaArmUpgrade"*/
 };
 
 int AmmoMax_Modifier[MAX_WEAPONS][2] =
@@ -713,66 +728,271 @@ SetActorProperty(0,APROP_JUMPZ,13.0);
 
 }
 
+// Health checker for hit-based shields.
+// hits - the number of hits the shield can tank for the player
+// customProtect (true or false) - whether the shield uses the generic protection or its own
+script 982 (int hits, int customProtect)
+{
+	if(hits == 0)
+	{
+		hits = 1;
+	}
+	else if(hits > 999)
+	{
+		//Log(s:"\cgSCRIPT 982: SPECIFIED HITS VALUE TOO HIGH. TERMINATING.");
+		terminate;
+	}
+	
+	int health = GetActorProperty(0, APROP_HEALTH);
+	int maxHealth = GetActorProperty(0, APROP_SPAWNHEALTH);
+	int healCurrent = health;
+	bool loanHP = false;
+	
+	if(maxHealth == 0)
+	{
+		maxHealth = 100;
+	}
+	
+	TakeInventory("ShieldHits", 999);
+	GiveInventory("ShieldHits", hits);
+	
+	SetPlayerProperty(0, 1, PROP_BUDDHA);
+	
+	if(health < 2)
+	{
+		healCurrent = 2;
+		loanHP = true;
+		SetActorProperty(0, APROP_HEALTH, 2);
+	}
+	
+	while(CheckInventory("ShieldHits")>0 && CheckInventory("StopHitShield")==0)
+	{
+		Delay(1);
+		if(GetActorProperty(0, APROP_HEALTH) > health)
+		{
+			health = GetActorProperty(0, APROP_HEALTH);
+			healCurrent = GetActorProperty(0, APROP_HEALTH);
+		}
+		
+		if(healCurrent > GetActorProperty(0, APROP_HEALTH))
+		{
+			TakeInventory("ShieldHits", 1);
+			
+			if(CheckInventory("ShieldHits")>0)
+			{
+				SetActorProperty(0, APROP_HEALTH, healCurrent);
+			}
+			else
+			{
+				SetActorProperty(0, APROP_HEALTH, health);
+			}
+			
+			if(!customProtect)
+			{
+				GiveInventory("HitShieldProtection", 1);
+			}
+		}
+	}
+	
+	if(loanHP && GetActorProperty(0, APROP_HEALTH) < maxHealth)
+	{
+		SetActorProperty(0, APROP_HEALTH, GetActorProperty(0, APROP_HEALTH)-1);
+	}
+	
+	if(CheckInventory("ShieldCheck")==0 && CheckInventory("BasicArmor")==0 && !customProtect)
+	{
+		GiveInventory("HitShieldProtection", 1);
+	}
+	
+	SetPlayerProperty(0, 0, PROP_BUDDHA);
+}
+
+
 //CMM
 // NOTE it's in WCOLORS because it uses the Energy Balancer weapon script. Feel free to change the script number later (called only by the actor ReggaeEffect)
 
-Script 260 (int AssignTID)
+function int BotWeaponSelect (void)
 {
-If(AssignTID == 1)
+int SelectedWeapon;
+int WeaponName;
+int i = 0;
+
+While(i <= 15)
 	{
-	int ServerMAX = GetCVAR("sv_MaxClients");
-	int Retry=0;
-	For(int a=0; a <= ServerMAX; a++)
+	SelectedWeapon = Random(0, MAX_WEAPONS_GLOBAL + MAX_BUSTERS-1);
+	If(SelectedWeapon >= MAX_WEAPONS_GLOBAL)
 		{
-		If(PlayerInGame(a))
+		WeaponName = BusterUpgrades[SelectedWeapon-MAX_WEAPONS_GLOBAL];
+		}
+	Else
+		{
+		WeaponName = weapons_ammo[SelectedWeapon][0];
+		If(WeaponName == "TrebleBoost"){WeaponName = "TrebleBoostUpgrade";}
+		}
+	i++;
+	If(CheckInventory(WeaponName)){Return(SelectedWeapon);}
+	}
+Return(-1);
+}
+
+Script 252 ENTER
+{
+if(PlayerIsBot(PlayerNumber()))
+	{
+	int xPos;
+	int yPos;
+	int d = 10;
+	int BotWeapon;
+	int MaxPlayers = GetMaxPlayers();
+	Delay(35);
+	if(CheckInventory("NoBotFix")==1){terminate;}
+	While(GetActorProperty(ActivatorTID(), APROP_HEALTH) > 0 && !CheckInventory("IsDead")==1)
+		{
+		xPos = GetActorX(0);
+		yPos = GetActorY(0);
+		Delay(35);
+		BotWeapon = BotWeaponSelect();
+		If(d <= 0 && BotWeapon >= 0)
 			{
-			If(CheckActorInventory(a+1000, "ReggaeFlag"))
+			If(BotWeapon >= MAX_WEAPONS_GLOBAL)
 				{
-				TakeActorInventory(a+1000, "ReggaeFlag", 1);
-				Thing_ChangeTID(0, a+2064);
-				terminate;
+				UseInventory(BusterUpgrades[BotWeapon-MAX_WEAPONS_GLOBAL]);
+				d=Random(15, 25);
 				}
-			If(a==ServerMAX && Retry < 2)
+			Else
 				{
-				a=0;
-				Delay(1);
-				Retry++;
+				If(weapons_ammo[BotWeapon][0] == "TrebleBoost")
+					{
+					UseInventory("TrebleBoostUpgrade");
+					d=Random(15, 25);
+					}
+				Else
+					{
+					SetWeapon(weapons_ammo[BotWeapon][0]);
+					//printbold(s:weapons_ammo[BotWeapon][0]);
+					d=Random(5, 15);
+					}
 				}
 			}
+		Else
+			{
+			If(d > 0){d--;}
+			}
+		if(ACS_ExecuteWithResult(972)==2 || GetActorProperty(ActivatorTID(), APROP_HEALTH) <= 0 || CheckInventory("IsDead")==1){terminate;}
+
 		}
-	Thing_Remove(0);
 	}
-str StolenWeapon;
-str StolenName;
-int WeaponSlot;
+}
 
-bool Stolen = false;
-int ReggaeTID = ActivatorTID();
-If(ReggaeTID == 0){terminate;}
-SetActivatorToTarget(0);
-int VictimTID = ActivatorTID();
-If(VictimTID >=1000){GiveActorInventory(VictimTID, "ReggaeBanish", 1);}
-
-WeaponSlot = WhichWeapon();
-Delay(1);
-If(WeaponSlot >= 0)
+// [Lego] To keep Plug Ball from travelling across sky planes
+//
+script 206 (void)
+{
+	int checkDistance = false;
+	while(CheckInventory("Once")>0 && ThingCountName("PlugBall", T_NONE)>0)
 	{
-	StolenWeapon = weapons_ammo[WeaponSlot][0];
-	StolenName = weapons_ammo[WeaponSlot][2];
-	If(!(StolenWeapon == "TrebleBoost"))
+		if(CheckActorFloorTexture(0, "F_SKY1"))
 		{
-		TakeInventory(StolenWeapon,1);
-		GiveInventory("ResetPlayerStats", 1);
-		Delay(1);
-		GiveActorInventory(ReggaeTID - 1064,StolenWeapon,1);
-		Stolen = TRUE;
+			if(GetActorVelZ(0) < 0)
+			{
+				checkDistance = true;
+			}
+			
+			if((GetActorZ(0) - GetActorFloorZ(0)) < 10.0 && checkDistance)
+			{
+				SetActorState(0, "Death");
+			}
 		}
+		else
+		{
+			checkDistance = false;
+		}
+		Delay(1);
 	}
+}
 
-	LocalAmbientSound("item/reggae",127);
+// Script called by most shield warpers
+Script "core_shieldwarper" (int noshieldcheck) CLIENTSIDE
+{
+	int Player = ACS_NamedExecuteWithResult("core_gettarget",0);
+	int Weapon = ACS_NamedExecuteWithResult("core_getplayerweapon", Player - 1000);
+
+	// Loop if shield is active
+	while(GetActorProperty(Player, APROP_HEALTH)>0
+	&& ACS_NamedExecuteWithResult("core_getplayerweapon", Player - 1000) == Weapon
+	){
+		// Used for warpers using ShieldCheck
+		if(noshieldcheck == 0 && CheckActorInventory(Player, "ShieldCheck") == 0){
+		break;
+		}
+		Delay(1);
+	}
 	
-	SetActivator(ReggaeTID - 1064);
-	SetHudSize(600,380,0);
-	if(Stolen == TRUE){HudMessage(s:"You stole \cc", s:StolenName, s:"\c- from ", n:VictimTID - 999, s:"!";HUDMSG_FADEOUT,2,CR_ORANGE,300.4,50.0,2.0,0.5); terminate;}
-	HudMessage(s:"Couldn't steal a weapon from ", n:VictimTID - 999, s:"!";HUDMSG_FADEOUT,2,CR_ORANGE,300.4,50.0,2.0,0.5);
+	// Remove
+	Thing_Remove(0);
+}
+
+// Script called by Skull Barrier
+Script "core_shieldwarper_skull" (void) CLIENTSIDE
+{
+	int Player = ACS_NamedExecuteWithResult("core_gettarget",0);
+	
+	// Loop if shield is active
+	while(GetActorProperty(Player, APROP_HEALTH)>0
+	&& CheckActorInventory(Player, "SkullShieldCheck") > 0
+	){
+		Delay(1);
+	}
+	
+	// Remove
+	Thing_Remove(0);
+}
+
+// Script called by Scorch Wheel
+Script "core_shieldwarper_scorch" (void) CLIENTSIDE
+{
+	int Player = ACS_NamedExecuteWithResult("core_gettarget",0);
+	
+	// Loop if shield is active
+	while(GetActorProperty(Player, APROP_HEALTH)>0
+	&& CheckActorInventory(Player, "ScorchWheelPowerup")>0
+	){
+		Delay(1);
+	}
+	
+	// Remove
+	Thing_Remove(0);
+}
+
+// Script called by Jewel Satellite
+Script "core_shieldwarper_jewel" (int jewelno) CLIENTSIDE
+{
+	int Player = ACS_NamedExecuteWithResult("core_gettarget",0);
+	int Weapon = ACS_NamedExecuteWithResult("core_getplayerweapon", Player - 1000);
+	
+	// Loop if shield is active
+	while(GetActorProperty(Player, APROP_HEALTH)>0
+	&& ACS_NamedExecuteWithResult("core_getplayerweapon", Player - 1000) == Weapon
+	&& CheckActorInventory(Player, "ShieldCheck") > 0
+	&& CheckActorInventory(Player, "JewelShieldCheck") > jewelno
+	){
+		Delay(1);
+	}
+	
+	// Remove
+	Thing_Remove(0);
+}
+
+// Return the actor's target
+Script "core_gettarget" (void)
+{
+	SetActivatorToTarget(0);
+	SetResultValue(ActivatorTID());
+}
+
+// Return a player's current weapon
+Script "core_getplayerweapon" (int playerno)
+{
+	SetActivator(playerno + 1000);
+	SetResultValue(GetWeapon());
 }
