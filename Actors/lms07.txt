@@ -95,7 +95,6 @@ loop
 
 actor SuperChargeKickWep : ChargeKickWep
 {
-tag "Super Charge Kick"
 inventory.icon "TNT1A0"
 Obituary "%o was kicked around by %k's Super charge kick."
 States
@@ -142,7 +141,6 @@ stop
 
 actor CoalGunWep : MegaBuster
 {
-tag "Coal Gun"
 Weapon.AmmoUse 2
 Weapon.AmmoGive 112
 Weapon.SlotNumber 1
@@ -248,7 +246,6 @@ loop
 actor CrossLightWep : MegaBuster
 {
 Weapon.AmmoUse 2
-Tag "Cross Light"
 Weapon.AmmoGive 112
 Weapon.SlotNumber 1
 Obituary "%o was enlightened by %k's Cross Light."
@@ -380,7 +377,6 @@ actor FlashGrenadeWep : MegaBuster
 {
 Weapon.AmmoUse 3
 Weapon.AmmoGive 28
-Tag "Flash Grenade"
 Weapon.SlotNumber 5
 Obituary "%o was blinded by %k's Flash Grenade."
 Inventory.Pickupmessage "Power up! Flash Grenade!"

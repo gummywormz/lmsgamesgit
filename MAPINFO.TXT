@@ -2,7 +2,7 @@ map LMS01 "GENERIC LAVA PLATFORMS" //done for good
 {
  next = "LMS02"
  sky1 = "AIRSKY", 0
- music = "MGMMUS"
+ music = "LMS_MGM"
  levelnum =6001
  aircontrol = 0.5
 }

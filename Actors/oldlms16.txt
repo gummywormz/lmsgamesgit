@@ -2,7 +2,6 @@
 
 actor ShockMines : CustomInventory
 {
-tag "Shock Mines"
 inventory.amount 1
 inventory.maxamount 3
 scale 2.0
@@ -123,7 +122,6 @@ stop
 
 actor PacPellet : CustomInventory
 {
-Tag "Pac Pellet"
 inventory.amount 1
 +INVBAR
 inventory.pickupmessage ""

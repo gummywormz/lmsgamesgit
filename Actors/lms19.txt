@@ -4,7 +4,6 @@ actor FistBreakerWep : MegaBuster
 {
 Weapon.AmmoUse 0
 Weapon.SlotNumber 1
-Tag "Manly Fist"
 Obituary "%o was hacked by %k's elevator weapons."
 Inventory.Pickupmessage "Wat"
 +WEAPON.AMMO_OPTIONAL
