@@ -105,7 +105,7 @@ Health 20
 Speed 100
 }
 
-Actor ChainGunZombie : MissileZombie replaces ChainGunZombie
+Actor ChainGunZombie : MissileZombie
 {
 HitObituary "%o was eaten by a chaingun zombie."
 Obituary "%o was perforated by a chaingun zombie."
@@ -193,7 +193,7 @@ loop
 }
 }
 
-Actor BossZombie : MissileZombie replaces BossZombie
+Actor BossZombie : MissileZombie
 {
 Health 4000
 +BOSS
@@ -272,7 +272,7 @@ Spawn:
 FIRE ABC 2
 loop
 Death:
-TNT1 A 0 
+TNT1 A 0
 TNT1 A 1 A_Explode(15,164,1)
 stop
 }

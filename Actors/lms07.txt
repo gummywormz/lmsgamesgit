@@ -156,27 +156,27 @@ Spawn:
 WEA2 P 1
 stop
 Ready:
-FLMB I 0 ACS_ExecuteAlways(998,0,24)
-FLMB I 1 A_WeaponReady
+FLMB P 0 ACS_ExecuteAlways(998,0,24)
+FLMB P 1 A_WeaponReady
 Goto Ready+1
 Deselect:
 TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Lower
-FLMB I 1 A_Lower
+FLMB P 1 A_Lower
 Loop
 Select:
 TNT1 AAAAAAAAAAAAAAAAAAAAAA 0 A_Raise
-FLMB I 1 A_Raise
+FLMB P 1 A_Raise
 Loop
 Fire:
-FLMB I 0 A_JumpIfNoAmmo("NoAmmo")
-FLMB I 0 A_PlaySoundEx("weapon/coalgun","Weapon")
-FLMB I 0 A_FireCustomMissile("CoalShot",0,0,8,0)
-FLMB JKI 5
-FLMB I 2
-FLMB I 0 A_Refire
+FLMB P 0 A_JumpIfNoAmmo("NoAmmo")
+FLMB P 0 A_PlaySoundEx("weapon/coalgun","Weapon")
+FLMB P 0 A_FireCustomMissile("CoalShot",0,0,8,0)
+FLMB QRP 5
+FLMB P 2
+FLMB P 0 A_Refire
 Goto Ready+1
 NoAmmo:
-FLMB I 1 ACS_Execute(979,0)
+FLMB P 1 ACS_Execute(979,0)
 Goto Ready+1
 }
 }
@@ -330,7 +330,7 @@ Scale 3.5
 States
 {
 Spawn:
-FLEX AB 1 bright 
+FLEX AB 1 bright
 FLEX CD 1 bright
 FLEX A 0 A_Explode(4, 80, 1)
 FLEX EE 0 A_SpawnItemEx("FlashBombFX2",Random(-16, 16),Random(-40, 40), Random(-32, 32),0,0,0,0)
@@ -363,11 +363,11 @@ Goto Death
 Death:
 FLEX A 0 A_Changeflag("NOGRAVITY", 1)
 FLEX G 1 bright
-TNT1 A 1 
+TNT1 A 1
 FLEX D 1 bright
-TNT1 A 1 
+TNT1 A 1
 FLEX D 1 bright
-TNT1 A 1 
+TNT1 A 1
 FLEZ C 1 bright
 stop
 }
