@@ -255,7 +255,16 @@ damagefactor "CopyVision", 0.0
 damagefactor "MagicCard", 0.0
 damagefactor "LightningBolt", 0.0
 damagefactor "IceWall", 0.0
+
 damagefactor "RemoteMine", 0.0
+damagefactor "LaserTrident", 0.0
+damagefactor "ConcreteShot", 0.0
+damagefactor "TornadoBlow",0.0
+damagefactor "PlugBall", 0.0
+damagefactor "MagmaBazooka1", 0.0
+damagefactor "MagmaBazooka2", 0.0
+damagefactor "HornetChaser", 0.0
+damagefactor "JewelSatellite", 0.0
 
 damagefactor "Noise", 0.0
 damagefactor "Falling", 1.0

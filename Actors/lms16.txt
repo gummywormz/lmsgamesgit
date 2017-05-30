@@ -2,6 +2,7 @@
 
 actor ChargeWep : MegaBuster
 {
+Tag "Charge Weapon"
 Weapon.AmmoUse 2
 Weapon.AmmoGive 0
 weapon.ammotype "ChargeAmmo"

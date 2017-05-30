@@ -4,6 +4,7 @@ actor nightmareclass : MegamanLMS
 player.displayname "nightmare"
 player.soundclass "mare"
 player.damagescreencolor "black"
+Scale 1.5
 States
 {
 Spawn:

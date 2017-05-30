@@ -118,6 +118,7 @@ actor ItemBox : CustomInventory
 Inventory.RespawnTics 87
 inventory.amount 1
 inventory.maxamount 1
+tag "Item Box"
 inventory.pickupmessage "Support Item! Item Box!"
 Inventory.PickupSound "item/1up"
 scale 2.0
@@ -221,6 +222,7 @@ Damagetype "Simon"
 
 actor SearchSnakeLOL2 : SearchSnakeLOL
 {
+Speed 35
 Damage (1)
 DamageType "Simon"
 }
@@ -229,6 +231,7 @@ actor Magnet : CustomInventory
 {
 inventory.amount 1
 inventory.maxamount 3
+Tag "Magnet"
 Inventory.PickupMessage "Power Up! Stunning Magnets!"
 Inventory.PickupSound "item/1up"
 scale 2.0
@@ -250,6 +253,7 @@ actor SnakeShot : CustomInventory
 {
 inventory.amount 1
 inventory.maxamount 3
+Tag "Snake"
 Inventory.PickupMessage "Power Up! Stunning Snakes!"
 Inventory.PickupSound "item/1up"
 +INVBAR
@@ -271,6 +275,7 @@ actor BoostTank : CustomInventory
 {
 inventory.amount 1
 inventory.maxamount 3
+Tag "Boost Tank"
 scale 2.0
 +INVBAR
 inventory.icon "ETank"
@@ -290,6 +295,7 @@ actor GoldBoostTank : CustomInventory
 {
 inventory.amount 1
 +INVBAR
+Tag "Gold Boost Tank"
 inventory.maxamount 1
 scale 2.0
 inventory.icon "GOLTICO"
@@ -310,6 +316,7 @@ actor StarManWep : MegaBuster
 {
 Weapon.AmmoUse 3
 Weapon.AmmoGive 30
+Tag "Star Man"
 Inventory.PickupMessage "Power Up! Star Man!"
 inventory.pickupsound "weapon/weaponup"
 Weapon.SlotNumber 1

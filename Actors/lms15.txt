@@ -2,6 +2,7 @@
 
 actor JoustWeapon : MegaBuster
 {
+Tag "Joust Weapon"
 Weapon.AmmoUse 1
 Weapon.Ammogive 50
 Weapon.AmmoType "JoustAmmo"

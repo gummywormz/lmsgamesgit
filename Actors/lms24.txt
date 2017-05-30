@@ -20,6 +20,7 @@ STOP
 
 actor NetItem : CustomInventory
 {
+Tag "Net"
 inventory.amount 1
 inventory.maxamount 3
 scale 2.0
@@ -78,6 +79,7 @@ fail
 
 actor StarManWep2 : MegaBuster
 {
+Tag "Star Man"
 Weapon.AmmoUse 0
 Weapon.SlotNumber 1
 Obituary "%o was caught by the star man (%k)."
@@ -135,11 +137,12 @@ actor NotSlashClaw3 : SlashClaw
 {
 +FOILINVUL
 Damage (255)
+Speed 20
 Damagetype "Nope"
 States
 {
 Spawn:
-SCLA HIJKL 1
+SCLA HIJKL 2
 stop
 }
 }

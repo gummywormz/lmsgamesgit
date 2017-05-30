@@ -295,6 +295,7 @@ stop
 
 actor RingWep : MegaBuster
 {
+Tag "Ring Claw"
 Weapon.AmmoUse 0
 Weapon.SlotNumber 1
 Obituary "%o had the crap beaten out of %h by %k!"

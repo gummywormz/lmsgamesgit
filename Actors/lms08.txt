@@ -21,6 +21,7 @@ loop
 actor StarRodLMSWep2 : MegaBuster
 {
 Weapon.AmmoUse 0
+Tag "Star Rod"
 Weapon.AmmoGive 28
 Weapon.SlotNumber 1
 Obituary "%o was magic'd by %k's Star Rod."
@@ -51,6 +52,7 @@ Fire:
 MSHD A 0 A_JumpIfNoAmmo("NoAmmo")
 MSHD A 0 A_PlaySoundEx("weapon/magicwand","Weapon")
 MSHD A 0 A_FireCustomMissile("MagicStar2",0,0,15,0)
+MSHD A 0 A_FireCustomMissile("MagicMelee",0,0,15,0)
 MSHD B 3
 MSHD A 12
 MSHD A 0 A_Refire
@@ -80,6 +82,27 @@ Death:
 TNT1 A 0 
 TNT1 A 0
 MSTA EFG 3
+stop
+}
+}
+
+actor MagicMelee
+{
+PROJECTILE
++NOTARGETSWITCH
+damagetype "Bolt"
+scale 2.5
+Speed 20
+Radius 7
+Height 6
+Damage (30)
+States
+{
+Spawn:
+TNT1 A 0
+TNT1 A 8
+Death:
+TNT1 A 0 
 stop
 }
 }

@@ -2,6 +2,7 @@
 
 actor RockHardenWep : MegaBuster
 {
+Tag "Rock Harden"
 //Weapon.AmmoUse 2
 Obituary "%o broke %p pinsirs on %k's Rock Harden."
 Inventory.Pickupmessage "Power up! Rock Harden!"

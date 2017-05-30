@@ -1,12 +1,61 @@
-FROM V1C TO V2A:
+FROM V1C TO V1D:
+
+General:
 Added solar.code's lms29x patch
-Removed connect sound as it was before the official one
-Nerfed the gotta go fast wild card from 20 speed to 10
 CVARs now defined properly
 All classes now have player.maxskinsize set.
-??? now has more time to be hit. (ps actually test this broski)
+Removed connect sound as it was before the official one
+Nerfed the gotta go fast wild card from 20 speed to 10
 Sue is no longer cut off for reals
+
+LMS03:
+Added a few mm9 weapons
+
+LMS04:
+Fixed the issue with the skybox in the beta
+
+LMS05:
+Disabled Jelly world because it was broken for some reason
+
+LMS06:
+Fixed lap string
+
+LMS07:
 Coal Shot no longer has a glitched HUD
+
+LMS08:
+Added a melee attack to the star rod. Just get up close and use it
+
+LMS12:
+Halved the size of the map
+Halved the amount of switches to press
+
+LMS16:
+Halved the charge penalty to 25 damage.
 
 LMS17:
 Snakes now do 10 damage but do not stun in order to encourage shooting the ufos more or something like that
+
+LMS20:
+Added mm9 weapons
+
+LMS25:
+Changed the arena to a circle
+
+LMS30:
+Added mm9 weapons
+
+LMSXX:
+Nerfed fire balls
+You now take less damage from ice spikes.
+??? now has more time to be hit.
+
+XLMS03:
+Fixed teleporter crash
+
+XLMS06:
+Fixed the star man getting frozen at the start
+Reduced count down time to 10 seconds
+Increased time bonus by 10 seconds. 
+Increased slash claw range.
+You now get nets for killing players.

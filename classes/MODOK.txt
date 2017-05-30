@@ -14,7 +14,7 @@ gravity 0.8
 +DONTBLAST
 +NOBLOOD
 damagefactor "Dummy", 0.0
-scale 2.5
+scale 1.5
 +NOSKIN
 player.displayname "MODOK"
 player.soundclass "modok"

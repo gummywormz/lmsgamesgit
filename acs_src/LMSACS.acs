@@ -16,6 +16,10 @@ ConsoleCommand("SV_chasecam 1");
 if(GetCvar("Winlimit") == 0){
 ConsoleCommand("winlimit 1");
 }
+
+if(GetCvar("mm8bdm_sv_nolmsweapons") == false){
+ConsoleCommand("mm8bdm_sv_nolmsweapons true");
+}
 }
 
 Script 981 (void) //useless lol
@@ -47,8 +51,9 @@ GiveActorInventory(q,"ISplode2",1);
 }
 }
 
-Script 543 ENTER clientside{
-if(GetCvar("chase_dist") <= 359 && GetCvar("LMSGAMES_chaseremind") == 0){
+Script 543 ENTER clientside
+{
+if(GetCvar("chase_dist") >> 16 <= 359 && GetCvar("LMSGAMES_chaseremind") == 0){
 Print(s:"Your chase_dist is too low. A recommended value is between 360 - 600.");
 ConsoleCommand("LMSGAMES_chaseremind 1");
 }

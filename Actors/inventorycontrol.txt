@@ -6,6 +6,7 @@ inventory.amount 1
 inventory.maxamount 999
 }
 
+
 actor UndoLMS : CustomInventory
 {
 inventory.amount 1

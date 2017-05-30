@@ -124,6 +124,7 @@ stop
 
 actor SnakeShot2 : CustomInventory
 {
+Tag "Snake"
 inventory.amount 1
 inventory.maxamount 3
 Inventory.PickupMessage "Power Up! Stunning Snakes!"
@@ -146,5 +147,6 @@ stop
 actor SearchSnakeLOL3 : SearchSnakeLOL
 {
 Damage (10)
+Speed 45
 DamageType "SearchSnake"
 }
