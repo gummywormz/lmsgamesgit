@@ -2,6 +2,7 @@
 
 actor RocketCrackerWep : BalladeCrackerWep
 {
+Tag "Rocket Cracker"
 Inventory.PickupMessage "Power up! Rocket cracker! Aim at your feet to rocket jump!"
 inventory.icon "TNT1A0"
 States

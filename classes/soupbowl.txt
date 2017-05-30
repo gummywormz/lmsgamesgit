@@ -6,6 +6,7 @@ player.jumpz 10
 player.colorrange 0 0
 player.startitem "MegaBuster"
 player.startitem "BusterAmmo", 3
+Player.MaxSkinSizeFactor 0, 0
 mass 9999
 gravity 0.8
 +NODAMAGETHRUST
@@ -32,6 +33,27 @@ Missile:
 SBWM F 5 
 SBWM G 4 
 goto Spawn
+Pain.BotSight:
+SBWM B 5 HealThing(1)
+Goto Spawn+2
+pain.LaserTrident:
+SBWM H 0 A_GiveInventory("LaserTridentProtect", 1)
+goto pain
+pain.YureiIceSpike:
+SBWM H 0 A_GiveInventory("YureiSpikeProtect", 1)
+goto pain
+Pain.ConcreteShot:
+SBWM H 0 A_JumpIfInventory("ConcreteVision", 1, "ConcreteReset")
+SBWM H 0 A_GiveInventory("ConcreteVision", 1)
+SBWM H 0 A_GiveInventory("ConcreteTime", 105)
+SBWM H 0 A_SpawnItemEx("ConcreteWatcher")
+goto Pain+1
+ConcreteReset:
+SBWM H 0 A_GiveInventory("ConcreteTime", 105)
+goto Pain+1
+Pain.TornadoBlow:
+SBWM H 0 ThrustThingZ(0, 60, 0, 0)
+goto Pain+1
 Pain.FireSpin:
 Pain.QuickBoomerang:
 Pain.Buster:
@@ -274,6 +296,7 @@ SBWM Z 1 A_CheckPLAYerDone
 wait
 Death.WindStorm:
 Death.GravityHold:
+Death.TornadoBlow:
 SBWM H 0 SetPLAYerProperty(0, 0, 4)
 SBWM H 0 A_ChangeFlag("NOINTERACTION", 1)
 SBWM H 0 A_TakeInventory("WeaponCharge",999)

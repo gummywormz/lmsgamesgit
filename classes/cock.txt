@@ -18,6 +18,27 @@ Missile:
 COCK F 5 
 COCK G 4 
 goto Spawn
+Pain.BotSight:
+COCK B 5 HealThing(1)
+Goto Spawn+2
+pain.LaserTrident:
+COCK H 0 A_GiveInventory("LaserTridentProtect", 1)
+goto pain
+pain.YureiIceSpike:
+COCK H 0 A_GiveInventory("YureiSpikeProtect", 1)
+goto pain
+Pain.ConcreteShot:
+COCK H 0 A_JumpIfInventory("ConcreteVision", 1, "ConcreteReset")
+COCK H 0 A_GiveInventory("ConcreteVision", 1)
+COCK H 0 A_GiveInventory("ConcreteTime", 105)
+COCK H 0 A_SpawnItemEx("ConcreteWatcher")
+goto Pain+1
+ConcreteReset:
+COCK H 0 A_GiveInventory("ConcreteTime", 105)
+goto Pain+1
+Pain.TornadoBlow:
+COCK H 0 ThrustThingZ(0, 60, 0, 0)
+goto Pain+1
 Pain.FireSpin:
 Pain.QuickBoomerang:
 Pain.Buster:
@@ -247,6 +268,7 @@ COCK H 0//SetPlayerProperty(0,0,1)
 Goto Spawn
 Death.WindStorm:
 Death.GravityHold:
+Death.TornadoBlow:
 COCK H 0 SetPlayerProperty(0, 0, 4)
 COCK H 0 A_ChangeFlag("NOINTERACTION", 1)
 COCK H 0 A_TakeInventory("WeaponCharge",999)
